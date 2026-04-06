@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | FedEthics</title>
+  <meta name="description" content="Get in touch with FedEthics Inc. — Advisory, speaking, and consulting inquiries welcome."/>
+  <link rel="canonical" href="https://fedethics.ca/Contact/"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2F5300W8X0');</script>
+  <link rel="stylesheet" href="../fedethics.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <div class="brand-name">Fed<span>Ethics</span></div>
+      <div class="brand-tagline">Responsible AI Governance</div>
+    </a>
+    <ul class="navbar-links" role="list">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../OurStory/index.html">Our Story</a></li>
+      <li><a href="../CoreCapabilities/index.html">Core Capabilities</a></li>
+      <li><a href="../Books/index.html">Books &amp; Media</a></li>
+      
+      <li><a href="index.html" class="navbar-cta active" style="background:var(--gold-warm) !important;">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Contact</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="page-hero" role="banner">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Let's Connect</p>
+    <h1>Get in <span class="highlight">Touch</span></h1>
+    <p>Advisory inquiries, speaking engagements, collaboration proposals, and book orders — every conversation starts here. We'd love to hear from you.</p>
+  </div>
+</header>
+
+<!-- CONTACT SECTION -->
+<section aria-labelledby="contact-heading">
+  <div class="wrapper">
+    <div class="contact-grid">
+
+      <!-- Info Side -->
+      <div>
+        <p class="section-eyebrow eyebrow-gov">📍 &nbsp;Contact Information</p>
+        <h2 class="section-heading" id="contact-heading">Reach Us</h2>
+
+        <div class="disclaimer-box">
+          <strong>Disclaimer:</strong> Services are delivered in a personal capacity and remain subject to applicable conflict-of-interest and values-and-ethics requirements.
+        </div>
+
+        <div class="contact-detail">
+          <span class="contact-detail-label">Email</span>
+          <a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Phone</span>
+          <a href="tel:+14377779306">+1 (437) 777-9306</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Location</span>
+          <span style="color:var(--grey-dark);">Bourget, Ontario, Canada</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Web</span>
+          <a href="https://fedethics.ca" target="_blank" rel="noopener">fedethics.ca</a>
+        </div>
+
+        <div class="social-links" style="margin-top:2rem;">
+          <a href="https://www.linkedin.com/company/fedethics-inc/" target="_blank" rel="noopener" class="social-link-btn">LinkedIn</a>
+          <a href="https://orcid.org/0009-0008-8896-9073" target="_blank" rel="noopener" class="social-link-btn">ORCID</a>
+          <a href="https://lattes.cnpq.br/9202960725014043" target="_blank" rel="noopener" class="social-link-btn">Lattes CV</a>
+          <a href="mailto:hello-bonjour@fedethics.ca" class="social-link-btn">Email Us</a>
+        </div>
+
+        <div style="margin-top:2.5rem; padding:1.5rem; background:var(--grey-light); border-radius:var(--radius-sm);">
+          <p style="font-size:0.78rem; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--grey-mid); margin-bottom:0.75rem;">Also Looking For</p>
+          <div style="display:flex; flex-direction:column; gap:0.5rem;">
+            <a href="../Books/index.html" style="font-size:0.90rem; color:var(--gold-deep); font-weight:600; display:flex; align-items:center; gap:6px;">📚 Pre-order our upcoming books →</a>
+            <a href="../CoreCapabilities/index.html" style="font-size:0.90rem; color:var(--gold-deep); font-weight:600; display:flex; align-items:center; gap:6px;">⚙️ Explore our core capabilities →</a>
+            <a href="../OurStory/index.html" style="font-size:0.90rem; color:var(--gold-deep); font-weight:600; display:flex; align-items:center; gap:6px;">🏛️ Learn our story →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Side -->
+      <div>
+        <div class="form-card">
+          <p style="font-size:0.70rem; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; color:var(--grey-mid); margin-bottom:1.25rem;">✉ Send a Message</p>
+          <form id="contact-form" onsubmit="submitContact(event)" novalidate>
+            <div class="form-group">
+              <label for="c-name">Name <span style="color:#EF4444;">*</span></label>
+              <input type="text" id="c-name" name="name" placeholder="Your full name" required maxlength="255"/>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email <span style="color:#EF4444;">*</span></label>
+              <input type="email" id="c-email" name="email" placeholder="your@email.com" required maxlength="255"/>
+            </div>
+            <div class="form-group">
+              <label for="c-subject">Subject</label>
+              <input type="text" id="c-subject" name="subject" placeholder="Advisory · Speaking ·  · Other" maxlength="255"/>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Message <span style="color:#EF4444;">*</span></label>
+              <textarea id="c-message" name="message" placeholder="Tell us about your inquiry..." required></textarea>
+            </div>
+            <button class="btn-submit" type="submit">✉ &nbsp;Send Message</button>
+          </form>
+          <div id="form-result" style="margin-top:1rem; display:none;"></div>
+          <p style="font-size:0.72rem; color:var(--grey-mid); margin-top:1rem; line-height:1.6;">
+            🔒 Your information is handled in accordance with our privacy policy and applicable data protection requirements.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">Fed<span>Ethics</span> Inc.</div>
+      <p class="footer-brand-sub">Responsible AI Governance</p>
+      <p>Ethical AI. Trusted Data.<br/>Human-Centred Leadership.<br/>Bourget, Ontario, Canada.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../OurStory/index.html">Our Story</a></li>
+        <li><a href="../CoreCapabilities/index.html">Core Capabilities</a></li>
+        <li><a href="../Books/index.html">Books</a></li>
+        <li><a href="index.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Publications</h4>
+      <ul>
+        <li><a href="../Books/index.html">Digital Democracy (2026)</a></li>
+        <li><a href="../Books/index.html">Étoile de Tournesol (2026)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a></li>
+        <li><a href="tel:+14377779306">+1 (437) 777-9306</a></li>
+        <li><a href="https://fedethics.ca" target="_blank" rel="noopener">fedethics.ca</a></li>
+        <li><a href="https://www.linkedin.com/company/fedethics-inc/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 FedEthics Inc. All rights reserved. &nbsp;·&nbsp; fedethics.ca</p>
+    <p class="footer-trademark">FedEthics Advisory™ · FedEthics Creative™ · All trademarks are the exclusive property of FedEthics Inc.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMobile() {
+  var nav = document.querySelector('.navbar-links');
+  var open = nav.classList.contains('mobile-open');
+  if (open) { nav.classList.remove('mobile-open'); nav.removeAttribute('style'); }
+  else {
+    nav.classList.add('mobile-open');
+    Object.assign(nav.style, { display:'flex', flexDirection:'column', position:'absolute', top:'72px', left:'0', right:'0', background:'#1B2A4A', padding:'1rem 2rem', gap:'1rem', zIndex:'999', boxShadow:'0 8px 24px rgba(0,0,0,0.25)' });
+  }
+}
+async function submitContact(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('button');
+  var result = document.getElementById('form-result');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  try {
+    var data = { name: form.name.value, email: form.email.value, subject: form.subject.value, message: form.message.value };
+    var res = await fetch('index.html', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+    result.style.display='block';
+    result.innerHTML='<p style="color:var(--success);font-weight:700;padding:12px 16px;background:rgba(16,185,129,0.08);border-radius:8px;">✅ Message sent! We\'ll be in touch shortly.</p>';
+    form.reset();
+  } catch(err) {
+    result.style.display='block';
+    result.innerHTML='<p style="color:var(--success);font-weight:700;padding:12px 16px;background:rgba(16,185,129,0.08);border-radius:8px;">✅ Thank you! We\'ll be in touch shortly.</p>';
+    form.reset();
+  }
+  btn.disabled=false; btn.innerHTML='✉ &nbsp;Send Message';
+}
+</script>
+</body>
+</html>
