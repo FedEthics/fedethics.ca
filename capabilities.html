@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FedEthics core capabilities — AI governance frameworks, data strategy, and executive education by Celio Oliveira." />
+  <title>Core Capabilities — FedEthics Inc.</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());gtag('config','G-2F5300W8X0');
+    function track(l){gtag('event','click',{event_category:'CTA',event_label:l});}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#1B2A4A; --navy-light:#243558; --gold:#C9A84C; --gold-light:#E8C96D;
+      --gold-pale:#F5EDD6; --white:#FFFFFF; --off-white:#F8F9FA; --light-gray:#F0F2F5;
+      --text-primary:#1A1F2E; --text-secondary:#4A5568; --text-light:#718096;
+      --border:#E2E6EA; --border-strong:#CBD5E0;
+      --serif:'Playfair Display',Georgia,serif; --sans:'Inter',-apple-system,sans-serif;
+      --max-w:1200px; --radius:8px; --radius-lg:16px;
+      --shadow-sm:0 1px 4px rgba(0,0,0,.06),0 2px 12px rgba(0,0,0,.04);
+      --shadow-md:0 4px 16px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
+      --shadow-lg:0 8px 40px rgba(0,0,0,.12);
+      --transition:.2s ease;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); background: var(--white); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 80px 0; }
+    .bg-white  { background: var(--white); }
+    .bg-off    { background: var(--off-white); }
+    .bg-navy   { background: var(--navy); }
+    .bg-gold-pale { background: var(--gold-pale); }
+    .text-center { text-align: center; }
+    .text-center .section-lead { margin-left: auto; margin-right: auto; }
+
+    .eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+    }
+    .eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold); }
+    .eyebrow-white { color: rgba(255,255,255,.7); }
+    .eyebrow-white::before { background: var(--gold); }
+
+    .section-title {
+      font-family: var(--serif); font-weight: 700;
+      font-size: clamp(1.9rem,3.5vw,2.8rem); line-height: 1.15;
+      color: var(--navy); margin-bottom: 16px;
+    }
+    .section-title em { color: var(--gold); font-style: italic; }
+    .section-title-white { color: var(--white); }
+    .section-lead { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
+    .section-lead-white { color: rgba(255,255,255,.75); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 28px; border-radius: var(--radius);
+      font-family: var(--sans); font-size: .9rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: 2px solid transparent;
+      transition: all var(--transition); white-space: nowrap; line-height: 1;
+    }
+    .btn-primary { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,168,76,.35); }
+    .btn-outline-navy { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+    .btn-outline-white { background: transparent; color: var(--white); border-color: rgba(255,255,255,.5); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
+    .btn-lg { padding: 15px 36px; font-size: .95rem; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border); height: 68px;
+    }
+    .nav-inner {
+      height: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark {
+      width: 36px; height: 36px; background: var(--navy); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 1rem; color: var(--gold); font-weight: 700; flex-shrink: 0;
+    }
+    .nav-logo-text { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--navy); }
+    .nav-logo-sub { font-size: .6rem; color: var(--text-light); text-transform: uppercase; letter-spacing: .1em; display: block; line-height: 1; margin-top: 1px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: .88rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
+    .nav-links a.active { font-weight: 600; }
+    .nav-cta { margin-left: 8px; }
+
+    /* ── PAGE HERO (navy) ── */
+    .page-hero { background: var(--navy); padding: 72px 0 60px; }
+    .page-hero h1 {
+      font-family: var(--serif); font-size: clamp(2rem,4vw,3.2rem); font-weight: 700;
+      color: var(--white); margin-bottom: 16px; line-height: 1.15;
+    }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,.72); max-width: 580px; line-height: 1.75; }
+
+    /* ── CAPABILITIES FULL GRID ── */
+    .cap-full-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+    .cap-full-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 36px; transition: all var(--transition); display: flex; flex-direction: column;
+    }
+    .cap-full-card:hover { box-shadow: var(--shadow-md); border-color: rgba(27,42,74,.3); transform: translateY(-2px); }
+    .cap-full-icon { font-size: 2.2rem; margin-bottom: 20px; }
+    .cap-full-card h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--navy); margin-bottom: 12px; font-weight: 700; }
+    .cap-full-card > p { font-size: .9rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 20px; }
+    .cap-feature-list { list-style: none; margin-top: auto; }
+    .cap-feature-list li {
+      font-size: .84rem; color: var(--text-secondary); padding: 8px 0;
+      border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px;
+    }
+    .cap-feature-list li:last-child { border-bottom: none; }
+    .cap-feature-list li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── FRAMEWORKS SHOWCASE ── */
+    .fw-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+    .fw-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 28px; position: relative; overflow: hidden;
+    }
+    .fw-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 100%);
+    }
+    .fw-name {
+      display: inline-block; background: var(--gold-pale); color: #7A5C1A;
+      border: 1px solid rgba(201,168,76,.3); border-radius: 4px;
+      padding: 3px 10px; font-size: .68rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .fw-card h3 { font-family: var(--serif); font-size: 1.05rem; color: var(--navy); margin-bottom: 8px; font-weight: 700; }
+    .fw-card p  { font-size: .84rem; color: var(--text-secondary); line-height: 1.65; }
+    .fw-source  { font-size: .72rem; color: var(--gold); font-weight: 600; margin-top: 12px; display: block; }
+
+    /* ── SPEAKING SECTION ── */
+    .speaking-section { background: var(--navy); padding: 80px 0; }
+    .speaking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .speaking-grid h2 { font-family: var(--serif); color: var(--white); font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 700; margin-bottom: 16px; }
+    .speaking-grid > div > p { color: rgba(255,255,255,.7); font-size: .95rem; line-height: 1.75; margin-bottom: 32px; }
+    .talk-list { list-style: none; }
+    .talk-item {
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.1);
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .talk-item:last-child { border-bottom: none; }
+    .talk-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .talk-title { font-size: .9rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .talk-desc  { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.55; }
+    .speaking-cta-box {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-lg); padding: 32px;
+    }
+    .speaking-cta-box h3 { font-family: var(--serif); color: var(--gold); font-size: 1.15rem; margin-bottom: 12px; font-weight: 700; }
+    .speaking-cta-box p  { font-size: .88rem; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 24px; }
+    .speaking-formats { list-style: none; margin-bottom: 28px; }
+    .speaking-formats li { font-size: .85rem; color: rgba(255,255,255,.7); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; gap: 10px; }
+    .speaking-formats li:last-child { border-bottom: none; }
+    .speaking-formats li::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+    /* ── BOOK TIE-IN STRIP ── */
+    .book-tiein { background: var(--gold-pale); padding: 64px 0; border-top: 1px solid rgba(201,168,76,.25); border-bottom: 1px solid rgba(201,168,76,.25); }
+    .book-tiein-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .bti-card {
+      background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid rgba(201,168,76,.2); box-shadow: var(--shadow-sm);
+      text-decoration: none; display: block; transition: all var(--transition);
+    }
+    .bti-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .bti-header { padding: 24px 22px; }
+    .bti-ci  { background: linear-gradient(135deg,#1E3A5F,#0D1F38); }
+    .bti-edt { background: linear-gradient(135deg,#2C5F3E,#14301E); }
+    .bti-imprint { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .bti-title { font-family: var(--serif); font-size: 1.15rem; color: var(--white); font-weight: 700; }
+    .bti-body { padding: 18px 22px; }
+    .bti-body p { font-size: .85rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px; }
+    .bti-link { font-size: .82rem; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 6px; }
+
+    /* ── CTA BAND ── */
+    .cta-band { background: linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); padding: 72px 0; }
+    .cta-band-inner { text-align: center; max-width: 600px; margin: 0 auto; }
+    .cta-band h2 { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.2rem); color: var(--white); margin-bottom: 14px; font-weight: 700; }
+    .cta-band p { color: rgba(255,255,255,.72); font-size: .95rem; line-height: 1.75; margin-bottom: 32px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: rgba(255,255,255,.75); padding: 56px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .footer-brand-name { font-family: var(--serif); font-size: 1.2rem; color: var(--white); margin-bottom: 4px; font-weight: 700; }
+    .footer-brand-sub   { font-size: .72rem; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
+    .footer-tagline { font-size: .82rem; line-height: 1.7; color: rgba(255,255,255,.5); max-width: 240px; }
+    footer h4 { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+    footer a { display: block; font-size: .85rem; color: rgba(255,255,255,.6); text-decoration: none; margin-bottom: 10px; transition: color var(--transition); }
+    footer a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.4); }
+    .footer-disclaimer { font-size: .7rem; color: rgba(255,255,255,.3); max-width: 500px; line-height: 1.6; }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+      .cap-full-grid, .speaking-grid, .book-tiein-grid { grid-template-columns: 1fr; }
+      .fw-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:768px) {
+      .section-pad { padding: 56px 0; }
+      .fw-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+    @media(max-width:480px) { .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">F</div>
+      <div><span class="nav-logo-text">FedEthics</span><span class="nav-logo-sub">Inc.</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="capabilities.html" class="active">Core Capabilities</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="books.html" class="btn btn-primary nav-cta" onclick="track('nav_books')">Order a Book</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="eyebrow eyebrow-white">What FedEthics Does</div>
+    <h1>Advisory work built on<br/>real-world governance experience</h1>
+    <p>Over 15 years of senior leadership — translated into practical frameworks, executive education, and two books that carry this work into the field and into the imagination.</p>
+  </div>
+</div>
+
+<!-- CAPABILITIES FULL -->
+<section class="section-pad bg-off">
+  <div class="container">
+    <div class="eyebrow">Core Capabilities</div>
+    <h2 class="section-title">Four areas where<br/><em>FedEthics creates impact</em></h2>
+    <p class="section-lead">Each capability area is grounded in real experience — not theoretical models. The frameworks have been tested in high-accountability environments where the cost of getting it wrong is measured in public trust.</p>
+    <div class="cap-full-grid">
+
+      <div class="cap-full-card">
+        <div class="cap-full-icon">🏛️</div>
+        <h3>AI Governance Frameworks</h3>
+        <p>Structured methodologies for embedding ethical, constitutionally accountable AI into democratic institutions — including Westminster parliamentary systems. This is the core of Constitutional Intelligence.</p>
+        <ul class="cap-feature-list">
+          <li>IMPACT™ Information Architecture for governance design</li>
+          <li>DECIDE-PLUS™ methodology for constitutional evaluation of technical decisions</li>
+          <li>FIVE-LAYER™ Architecture for cross-departmental AI coordination</li>
+          <li>Risk tiering and legacy planning across electoral changeover</li>
+          <li>Phoenix-style disaster prevention — real Canadian government cases</li>
+        </ul>
+      </div>
+
+      <div class="cap-full-card">
+        <div class="cap-full-icon">📊</div>
+        <h3>Data Strategy &amp; Leadership</h3>
+        <p>Building decision-ready data capabilities that serve both operational excellence and accountability. Designed for senior executives who need results, not just architecture diagrams.</p>
+        <ul class="cap-feature-list">
+          <li>Chief Data Officer advisory and capacity building</li>
+          <li>Data governance alignment with institutional mandates</li>
+          <li>Talent and capability development for data-intensive environments</li>
+          <li>Ethical AI adoption roadmaps for public and private sector</li>
+          <li>Translating data strategy into citizen service outcomes</li>
+        </ul>
+      </div>
+
+      <div class="cap-full-card">
+        <div class="cap-full-icon">🎙️</div>
+        <h3>Speaking &amp; Executive Education</h3>
+        <p>International keynotes, expert panels, co-hosting, and workshops for senior leaders and their teams — delivered in English, French, Portuguese, or Spanish depending on the audience.</p>
+        <ul class="cap-feature-list">
+          <li>Keynote addresses at international AI governance forums</li>
+          <li>Executive workshops on responsible AI implementation</li>
+          <li>Panel moderation and expert commentary</li>
+          <li>Visiting faculty — executive and senior leadership programs</li>
+          <li>Book-tied speaking for bulk order clients (see Books page)</li>
+        </ul>
+      </div>
+
+      <div class="cap-full-card">
+        <div class="cap-full-icon">🔬</div>
+        <h3>Research &amp; Policy Analysis</h3>
+        <p>Applied research connecting academic rigour with policy reality. PhD-level analytical capability deployed in service of practical institutional change — not abstract theory.</p>
+        <ul class="cap-feature-list">
+          <li>AI policy landscape analysis for government decision-makers</li>
+          <li>Comparative review of parliamentary AI governance approaches</li>
+          <li>G7 and international AI governance framework synthesis</li>
+          <li>Written briefs, white papers, and executive summaries</li>
+          <li>Academic publications translated for practitioner audiences</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORKS SHOWCASE -->
+<section class="section-pad bg-white">
+  <div class="container">
+    <div class="eyebrow">Proprietary Frameworks</div>
+    <h2 class="section-title">The tools inside<br/><em>Constitutional Intelligence</em></h2>
+    <p class="section-lead">These frameworks were developed from real Canadian government experience and formalized in Constitutional Intelligence (FriesenPress, 2025). They are available to organizations through advisory engagements and the book itself.</p>
+    <div class="fw-grid">
+      <div class="fw-card">
+        <span class="fw-name">IMPACT™</span>
+        <h3>Information Architecture</h3>
+        <p>The structural backbone of the book. IMPACT™ provides a systematic way to map, assess, and govern AI initiatives across the full institutional lifecycle — from inception to delivery to audit.</p>
+        <span class="fw-source">From: Constitutional Intelligence (Ch. 2–4)</span>
+      </div>
+      <div class="fw-card">
+        <span class="fw-name">DECIDE-PLUS™</span>
+        <h3>Constitutional Evaluation</h3>
+        <p>A decision methodology for evaluating AI choices against constitutional responsibilities. Designed specifically for Westminster systems where legal and democratic accountability are non-negotiable.</p>
+        <span class="fw-source">From: Constitutional Intelligence (Ch. 5–7)</span>
+      </div>
+      <div class="fw-card">
+        <span class="fw-name">FIVE-LAYER™</span>
+        <h3>Coordination Architecture</h3>
+        <p>Five structured layers for coordinating AI governance across departments, mandates, and electoral cycles — preventing the siloed failures that cause Phoenix-style disasters.</p>
+        <span class="fw-source">From: Constitutional Intelligence (Ch. 8–10)</span>
+      </div>
+    </div>
+    <div style="margin-top:36px;">
+      <a href="book-ci.html" class="btn btn-primary" onclick="track('caps_ci_book')">Read Constitutional Intelligence →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING IN DEPTH -->
+<section class="speaking-section">
+  <div class="container">
+    <div class="speaking-grid">
+      <div>
+        <div class="eyebrow eyebrow-white">Speaking &amp; Events</div>
+        <h2>Five talk formats.<br/>One clear voice.</h2>
+        <p>Celio delivers keynotes, workshops, and panels for government, corporate, and academic audiences — in four languages. Each talk is grounded in real practice and tailored to the specific decision-makers in the room.</p>
+        <ul class="talk-list">
+          <li class="talk-item">
+            <span class="talk-icon">🏛️</span>
+            <div>
+              <p class="talk-title">AI Governance in Parliamentary Democracies</p>
+              <p class="talk-desc">For government executives, policy leaders, and public sector CDOs. Draws directly from Constitutional Intelligence frameworks.</p>
+            </div>
+          </li>
+          <li class="talk-item">
+            <span class="talk-icon">⚖️</span>
+            <div>
+              <p class="talk-title">Responsible AI Adoption for Public Institutions</p>
+              <p class="talk-desc">Practical frameworks for executives who need to implement AI without abandoning accountability. Available as keynote or workshop.</p>
+            </div>
+          </li>
+          <li class="talk-item">
+            <span class="talk-icon">🔧</span>
+            <div>
+              <p class="talk-title">Building Ethical AI from the Ground Up</p>
+              <p class="talk-desc">For technical and leadership teams who need to translate governance principles into operating practice. Includes case studies.</p>
+            </div>
+          </li>
+          <li class="talk-item">
+            <span class="talk-icon">🤝</span>
+            <div>
+              <p class="talk-title">The Human Side of Data Leadership</p>
+              <p class="talk-desc">Bridges Constitutional Intelligence and Étoile de Tournesol — exploring what it means to lead with both rigour and humanity.</p>
+            </div>
+          </li>
+          <li class="talk-item">
+            <span class="talk-icon">📚</span>
+            <div>
+              <p class="talk-title">Author Talk — Étoile de Tournesol</p>
+              <p class="talk-desc">For schools, libraries, book clubs, and literary events. Available in French or English. Perfect for bulk order clients.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="speaking-cta-box">
+          <h3>Book Celio for your event</h3>
+          <p>Celio speaks at conferences, universities, government events, corporate retreats, and book clubs. All engagements are arranged through FedEthics Inc. directly.</p>
+          <ul class="speaking-formats">
+            <li>Keynote — 45 min, 60 min, or 90 min</li>
+            <li>Executive workshop — half day or full day</li>
+            <li>Panel participation or moderation</li>
+            <li>Author talk and Q&amp;A (book events)</li>
+            <li>Free for bulk book order clients (5+ copies)</li>
+          </ul>
+          <div class="btn-group">
+            <a href="contact.html" class="btn btn-gold btn-lg" onclick="track('caps_speaking_contact')" style="width:100%;justify-content:center;">Request a Speaking Engagement</a>
+          </div>
+          <p style="font-size:.75rem;color:rgba(255,255,255,.45);text-align:center;margin-top:12px;">Responds within 48 hours · Available in EN, FR, PT, ES</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK TIE-IN -->
+<section class="book-tiein">
+  <div class="container">
+    <div class="eyebrow">The Books</div>
+    <h2 class="section-title" style="margin-bottom:8px;">Our capabilities, in writing</h2>
+    <p class="section-lead">Every framework and insight described on this page is documented and expanded in two books — available to order direct, with autographed copies included.</p>
+    <div class="book-tiein-grid">
+      <a href="book-ci.html" class="bti-card" onclick="track('caps_bti_ci')">
+        <div class="bti-header bti-ci">
+          <div class="bti-imprint">FedEthics Advisory™ · FriesenPress · ISBN 978-1-0383-5671-0</div>
+          <div class="bti-title">Constitutional Intelligence</div>
+        </div>
+        <div class="bti-body">
+          <p>IMPACT™, DECIDE-PLUS™, FIVE-LAYER™ — all three frameworks, with real Canadian government case studies and a blueprint for constitutional AI stewardship. Endorsed by former Clerks of the Privy Council, CIOs, and Chief Statisticians.</p>
+          <span class="bti-link">Order autographed copy →</span>
+        </div>
+      </a>
+      <a href="book-edt.html" class="bti-card" onclick="track('caps_bti_edt')">
+        <div class="bti-header bti-edt">
+          <div class="bti-imprint">FedEthics Creative™ · Self-Published</div>
+          <div class="bti-title">Étoile de Tournesol</div>
+        </div>
+        <div class="bti-body">
+          <p>Un roman jeunesse en français sur la magie de la diversité, l'appartenance et le courage. Sept jeunes gardiens aux dons extraordinaires — parfait pour les classes, les clubs de lecture, et les événements littéraires. Disponible avec dédicace personnalisée.</p>
+          <span class="bti-link" style="color:#2C5F3E;">Commander un exemplaire dédicacé →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-band-inner">
+      <h2>Ready to work together?</h2>
+      <p>Whether you need advisory support, a keynote speaker, or simply want to order the book — the best next step is a conversation. Celio responds personally.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-gold btn-lg" onclick="track('caps_cta_contact')">Get in Touch</a>
+        <a href="books.html"   class="btn btn-outline-white btn-lg" onclick="track('caps_cta_books')">Order the Books</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">FedEthics Inc.</div>
+        <div class="footer-brand-sub">Ethical Leadership in the Age of AI</div>
+        <p class="footer-tagline">Advisory, education, and publishing — all in a personal capacity, independent of any employer.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="capabilities.html">Core Capabilities</a>
+        <a href="books.html">Books</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Books</h4>
+        <a href="book-ci.html">Constitutional Intelligence</a>
+        <a href="book-edt.html">Étoile de Tournesol</a>
+        <a href="books.html#bulk">Bulk Orders</a>
+        <a href="books.html#claim">Claim Your Offer</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="mailto:celio.oliveira@fedethics.ca">celio.oliveira@fedethics.ca</a>
+        <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="books.html#newsletter">Newsletter</a>
+        <a href="contact.html">Speaking Enquiries</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 FedEthics Inc. All rights reserved.</span>
+      <p class="footer-disclaimer">FedEthics Inc. is an independent organization. All views expressed in FedEthics publications are those of the author in a personal capacity and do not represent any government institution or employer.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
