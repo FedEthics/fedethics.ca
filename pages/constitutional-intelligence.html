@@ -7,6 +7,7 @@
   <meta property="og:title" content="Constitutional Intelligence — Celio Oliveira" />
   <title>Constitutional Intelligence — FedEthics Advisory™</title>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,36 +17,17 @@
     function track(l){ gtag('event','click',{event_category:'CTA',event_label:l}); }
   </script>
 
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../css/fedethics.css" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
+  <!-- Page-specific styles (CI book) -->
   <style>
-    /* ============================================================
-       FEDETHICS v2 — Constitutional Intelligence
-       Typography: Cormorant Garamond + DM Sans
-       Book identity: Parliamentary Blue #1E3A5F + Senate Red #8B1A1A
-       Global chrome: Ink Navy · Parliamentary Gold · Parchment
-       ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    /* CI brand — Parliamentary */
     :root {
-      /* FedEthics v2 core */
-      --ink:        #12192C;
-      --navy:       #1B2A4A;
-      --navy-mid:   #243558;
-      --gold:       #B8903A;
-      --gold-bright:#D4A84B;
-      --gold-pale:  #F4EDD6;
-      --gold-wash:  #FBF6EA;
-      --parchment:  #FDFBF7;
-      --white:      #FFFFFF;
-      --off-white:  #F8F7F4;
-      --stone:      #EEE9E0;
-      --text-body:  #2D3242;
-      --text-mid:   #4A5165;
-      --text-muted: #717897;
-      --rule:       #DDD8CE;
-      /* CI brand — Parliamentary */
       --ci:         #1E3A5F;
       --ci-light:   #2A4F7F;
       --ci-dark:    #0F1F38;
@@ -53,130 +35,20 @@
       --ci-red-l:   #A52020;
       --ci-pale:    #EEF3FA;
       --ci-pale-red:#FDF0F0;
-      /* EDT (cross-sell) */
-      --edt-green:  #2C5F3E;
-      --edt-dark:   #14301E;
-      --serif: 'Cormorant Garamond', 'Georgia', serif;
-      --sans:  'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max-w: 1200px;
-      --r-sm:  6px;  --r-md: 10px;  --r-lg: 18px;
-      --shadow-xs:  0 1px 3px rgba(18,25,44,.06);
-      --shadow-sm:  0 2px 8px rgba(18,25,44,.08), 0 1px 3px rgba(18,25,44,.05);
-      --shadow-md:  0 6px 24px rgba(18,25,44,.10), 0 2px 8px rgba(18,25,44,.06);
-      --shadow-lg:  0 16px 56px rgba(18,25,44,.14), 0 4px 16px rgba(18,25,44,.08);
-      --t: .22s ease;
     }
 
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: var(--sans); background: var(--parchment); color: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-
-    .container  { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
-    .section-pad{ padding: 96px 0; }
-    .text-center{ text-align: center; }
-    .text-center .section-lead { margin-left: auto; margin-right: auto; }
-    .text-center .eyebrow { justify-content: center; }
-    .text-center .eyebrow::before { display: none; }
-
-    /* EYEBROW */
-    .eyebrow {
-      font-family: var(--sans); font-size: .68rem; font-weight: 600;
-      letter-spacing: .20em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 14px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .eyebrow::before { content: ''; flex-shrink: 0; display: block; width: 28px; height: 1px; background: var(--gold); }
-    .eyebrow-ci { color: var(--ci); }
-    .eyebrow-ci::before { background: var(--ci); }
-    .eyebrow-light { color: rgba(255,255,255,.7); }
-    .eyebrow-light::before { background: var(--gold); }
-
-    /* SECTION TYPOGRAPHY */
-    .section-title {
-      font-family: var(--serif); font-weight: 600;
-      font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.12;
-      color: var(--ink); margin-bottom: 20px; letter-spacing: -.01em;
-    }
-    .section-title em { color: var(--ci); font-style: italic; font-weight: 400; }
-    .section-lead { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; max-width: 560px; margin-bottom: 44px; }
-
-    /* BADGES */
-    .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: .71rem; font-weight: 600; letter-spacing: .04em; }
     .badge-ci   { background: var(--ci-pale); color: var(--ci); border: 1px solid rgba(30,58,95,.2); }
     .badge-red  { background: var(--ci-pale-red); color: var(--ci-red); border: 1px solid rgba(139,26,26,.2); }
     .badge-gold { background: var(--gold-pale); color: #7A5C1A; border: 1px solid rgba(184,144,58,.28); }
 
-    /* BUTTONS */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 28px; border-radius: var(--r-sm);
-      font-family: var(--sans); font-size: .875rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: 1.5px solid transparent;
-      transition: all var(--t); white-space: nowrap; line-height: 1; letter-spacing: .01em;
-    }
     .btn-ci           { background: var(--ci);       color: var(--white); border-color: var(--ci); }
     .btn-ci:hover     { background: var(--ci-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }
     .btn-red          { background: var(--ci-red);   color: var(--white); border-color: var(--ci-red); }
     .btn-red:hover    { background: var(--ci-red-l); transform: translateY(-1px); }
-    .btn-gold         { background: var(--gold);     color: var(--white); border-color: var(--gold); }
-    .btn-gold:hover   { background: var(--gold-bright); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(184,144,58,.35); }
     .btn-outline-ci   { background: transparent;     color: var(--ci); border-color: var(--ci); }
     .btn-outline-ci:hover { background: var(--ci); color: var(--white); }
-    .btn-outline-navy { background: transparent;     color: var(--navy); border-color: var(--navy); }
-    .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
-    .btn-outline-light{ background: transparent;     color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.35); }
-    .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
-    .btn-lg  { padding: 15px 36px; font-size: .9375rem; }
-    .btn-sm  { padding: 8px 18px; font-size: .8rem; }
-    .btn-full{ width: 100%; justify-content: center; }
-    .btn-group{ display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
-    /* PAYMENT BUTTONS */
-    .pay-btn {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 12px 16px; border-radius: var(--r-sm);
-      font-family: var(--sans); font-size: .84rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: none;
-      transition: all var(--t); margin-bottom: 8px;
-    }
-    .pay-btn:last-child { margin-bottom: 0; }
-    .pay-stripe   { background: #635BFF; color: #fff; }
-    .pay-stripe:hover   { background: #4F46E5; transform: translateY(-1px); }
-    .pay-payhip   { background: #00B09B; color: #fff; }
-    .pay-payhip:hover   { background: #009688; transform: translateY(-1px); }
-    .pay-payoneer { background: #FF6C2F; color: #fff; }
-    .pay-payoneer:hover { background: #E5601F; transform: translateY(-1px); }
-    .pay-amazon   { background: #FF9900; color: #111; }
-    .pay-amazon:hover   { background: #E68A00; transform: translateY(-1px); }
-    .pay-section-label { font-size: .64rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin: 12px 0 7px; display: block; }
-    .pay-note { font-size: .71rem; color: var(--text-muted); text-align: center; margin-top: 10px; line-height: 1.5; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 300;
-      background: rgba(253,251,247,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule); height: 72px;
-    }
-    .nav-inner { height: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo  { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo-mark { width: 40px; height: 40px; background: var(--ink); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-    .nav-logo-wordmark { display: flex; flex-direction: column; gap: 1px; }
-    .nav-logo-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1; letter-spacing: -.01em; }
-    .nav-logo-tagline { font-size: .58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .14em; line-height: 1; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color var(--t); position: relative; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transition: transform var(--t); }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-    .nav-links a.active { color: var(--ink); font-weight: 600; }
-    .nav-right { display: flex; align-items: center; gap: 10px; }
     .nav-imprint { font-size: .65rem; background: var(--ci-pale); color: var(--ci); border: 1px solid rgba(30,58,95,.2); border-radius: 4px; padding: 3px 8px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; margin-left: 6px; }
-    .nav-ham span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; }
-    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 400; background: rgba(18,25,44,.95); backdrop-filter: blur(8px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-family: var(--serif); font-size: 1.8rem; color: var(--white); text-decoration: none; font-weight: 600; transition: color var(--t); }
-    .mobile-nav a:hover { color: var(--gold-bright); }
-    .mobile-nav-close { position: absolute; top: 24px; right: 28px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: rgba(255,255,255,.6); }
 
     /* BOOK HERO */
     .book-hero {
@@ -318,21 +190,6 @@
     .claim-wrap  { max-width: 680px; margin: 0 auto; }
     .claim-note  { background: var(--gold-wash); border: 1px solid rgba(184,144,58,.25); border-radius: var(--r-lg); padding: 16px 20px; margin-bottom: 28px; font-size: .86rem; color: var(--navy); line-height: 1.65; }
     .claim-note strong { font-weight: 600; }
-    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-row    { margin-bottom: 18px; }
-    .form-label  { display: block; font-size: .8rem; font-weight: 600; color: var(--text-mid); margin-bottom: 7px; }
-    .form-label span { color: #C53030; margin-left: 2px; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%; padding: 11px 14px; border-radius: var(--r-sm);
-      border: 1.5px solid var(--rule); background: var(--white);
-      font-family: var(--sans); font-size: .9rem; color: var(--text-body);
-      outline: none; transition: border-color var(--t); appearance: none;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--ci); background: var(--parchment); }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
-    .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231E3A5F' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-    .form-textarea { min-height: 96px; resize: vertical; }
-    .form-disclaimer { font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 12px; line-height: 1.6; }
 
     /* BONUS */
     .bonus-section { background: var(--ci-dark); padding: 64px 0; }
@@ -342,34 +199,11 @@
     .bonus-qr { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--r-lg); padding: 24px; display: inline-block; margin-bottom: 20px; }
     .bonus-qr p { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 10px; }
 
-    /* FOOTER */
-    footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 64px 0 36px; border-top: 1px solid rgba(255,255,255,.07); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
-    .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-    .footer-brand-mark { width: 40px; height: 40px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; }
-    .footer-brand-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); font-weight: 600; letter-spacing: -.01em; }
-    .footer-tagline { font-size: .82rem; line-height: 1.7; color: rgba(255,255,255,.45); max-width: 240px; margin-bottom: 16px; }
-    .footer-imprints { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-    .footer-imprint  { font-size: .64rem; padding: 3px 10px; border-radius: 4px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .fi-advisory { background: rgba(30,58,95,.5); color: rgba(184,144,58,.85); border: 1px solid rgba(30,58,95,.8); }
-    .fi-creative  { background: rgba(44,95,62,.5); color: rgba(184,144,58,.85); border: 1px solid rgba(44,95,62,.8); }
-    .footer-social { display: flex; gap: 10px; }
-    .footer-social a { width: 34px; height: 34px; border-radius: var(--r-sm); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); font-size: .8rem; text-decoration: none; transition: all var(--t); }
-    .footer-social a:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
-    .footer-col h4 { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
-    .footer-col a  { display: block; font-size: .85rem; color: rgba(255,255,255,.58); text-decoration: none; margin-bottom: 10px; transition: color var(--t); }
-    .footer-col a:hover { color: var(--gold); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
-    .footer-disclaimer { font-size: .7rem; color: rgba(255,255,255,.28); max-width: 520px; line-height: 1.65; }
-
-    /* RESPONSIVE */
     @media (max-width:1024px) {
       .book-hero-grid, .ps-grid, .payments-grid { grid-template-columns: 1fr; }
       .book-hero-panel { max-width: 400px; }
       .fw-grid { grid-template-columns: 1fr 1fr; }
       .payment-panel { position: static; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width:768px) {
       .section-pad { padding: 64px 0; }
@@ -377,10 +211,7 @@
       .overview-item { border-right: none; padding: 16px 0; border-bottom: 1px solid var(--rule); }
       .audience-grid, .endorse-grid, .ci-offers-grid, .fw-grid { grid-template-columns: 1fr; }
       .form-grid-2 { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .nav-ham { display: block; }
     }
-    @media (max-width:480px) { .footer-grid { grid-template-columns: 1fr; } .container { padding: 0 20px; } }
   </style>
 </head>
 <body>
@@ -388,17 +219,17 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
-  <a href="index.html">Home</a>
-  <a href="story.html">Our Story</a>
+  <a href="../index.html">Home</a>
+  <a href="our-story.html">Our Story</a>
   <a href="capabilities.html">Capabilities</a>
-  <a href="books_hub.html">Books</a>
+  <a href="books-hub.html">Books</a>
   <a href="contact.html">Contact</a>
 </div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
       <div class="nav-logo-mark">FE</div>
       <div class="nav-logo-wordmark">
         <span class="nav-logo-name">FedEthics Inc.</span>
@@ -406,10 +237,10 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="story.html">Our Story</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
       <li><a href="capabilities.html">Capabilities</a></li>
-      <li><a href="books_hub.html">Books</a></li>
+      <li><a href="books-hub.html">Books</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -448,7 +279,6 @@
 
       <div class="book-hero-panel">
         <div class="book-cover-display">
-          <!-- Replace with: <img src="images/CI_cover.jpg" alt="Constitutional Intelligence" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:4px 12px 12px 4px;" /> -->
           <div class="book-cover-imprint">FedEthics Advisory™</div>
           <div class="book-cover-title">Constitutional Intelligence</div>
           <div class="book-cover-author">Celio Oliveira · FriesenPress</div>
@@ -526,7 +356,7 @@
 <!-- FRAMEWORKS -->
 <section class="fw-section section-pad" id="frameworks">
   <div class="container">
-    <div class="eyebrow eyebrow-ci">Proprietary Frameworks</div>
+    <div class="eyebrow">Proprietary Frameworks</div>
     <h2 class="section-title">The tools inside <em>the book</em></h2>
     <p class="section-lead">Three interoperable frameworks that together form a complete decision architecture for AI governance in Westminster parliamentary democracies.</p>
     <div class="fw-grid">
@@ -626,7 +456,7 @@
 <!-- PAYMENT SECTION -->
 <section class="payments-section section-pad" id="payments">
   <div class="container">
-    <div class="eyebrow eyebrow-ci">Order Your Copy</div>
+    <div class="eyebrow">Order Your Copy</div>
     <h2 class="section-title">Every print order<br/><em>is autographed</em></h2>
     <div class="payments-grid">
       <div class="payment-panel">
@@ -699,7 +529,7 @@
 <section class="claim-section" id="claim">
   <div class="container">
     <div class="claim-wrap">
-      <div class="eyebrow eyebrow-ci">Claim Your Offer</div>
+      <div class="eyebrow">Claim Your Offer</div>
       <h2 class="section-title" style="margin-bottom:8px;">Request your consultation<br/>or personalized dedication</h2>
       <p style="color:var(--text-mid);font-size:.9rem;margin-bottom:28px;line-height:1.7;">Complete this form after purchasing 5 or more copies. Our team responds within 2 business days.</p>
       <div class="claim-note">
@@ -748,7 +578,6 @@
       <p>The back cover of Constitutional Intelligence includes a QR code linking to exclusive supplementary content — additional frameworks, implementation templates, and case study deep-dives that extend the book's value beyond the printed pages.</p>
       <div class="bonus-qr">
         <div style="width:120px;height:120px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
-          <!-- Replace with: <img src="images/CI_bonus_qr.png" alt="Bonus QR Code" width="120" height="120" /> -->
           <span style="font-size:2rem;opacity:.4;">📱</span>
         </div>
         <p>Scan QR code inside your book to access exclusive bonus content</p>
@@ -770,7 +599,7 @@
     <h2 class="section-title" style="margin-bottom:12px;">Also by Celio Oliveira</h2>
     <p class="section-lead" style="margin:0 auto 36px;">A completely different book — same author, same commitment to rigour and humanity. Étoile de Tournesol is a French-language young adult literary novel with its own world, its own identity, and its own reader.</p>
     <div style="max-width:480px;margin:0 auto;">
-      <a href="etoile.html" style="display:block;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--rule);box-shadow:var(--shadow-sm);text-decoration:none;transition:box-shadow .22s,transform .22s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 56px rgba(18,25,44,.14)'" onmouseout="this.style.transform='';this.style.boxShadow=''" onclick="track('ci_crossell_edt')">
+      <a href="etoile-de-tournesol.html" style="display:block;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--rule);box-shadow:var(--shadow-sm);text-decoration:none;transition:box-shadow .22s,transform .22s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 56px rgba(18,25,44,.14)'" onmouseout="this.style.transform='';this.style.boxShadow=''" onclick="track('ci_crossell_edt')">
         <div style="background:linear-gradient(135deg,#2D1461,#3D1F6E);padding:28px 24px;">
           <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:8px;">FedEthics Creative™ · Auto-publié</div>
           <div style="font-family:var(--serif);font-size:1.5rem;color:#fff;font-weight:600;font-style:italic;">Étoile de Tournesol</div>
@@ -783,7 +612,7 @@
       </a>
     </div>
     <div style="margin-top:32px;">
-      <a href="books_hub.html" class="btn btn-outline-navy" onclick="track('ci_back_hub')">← Back to Books Hub</a>
+      <a href="books-hub.html" class="btn btn-outline-navy" onclick="track('ci_back_hub')">← Back to Books Hub</a>
     </div>
   </div>
 </section>
@@ -810,10 +639,10 @@
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="index.html">Home</a>
-        <a href="story.html">Our Story</a>
+        <a href="../index.html">Home</a>
+        <a href="our-story.html">Our Story</a>
         <a href="capabilities.html">Core Capabilities</a>
-        <a href="books_hub.html">Books</a>
+        <a href="books-hub.html">Books</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
@@ -827,7 +656,7 @@
         <h4>Connect</h4>
         <a href="mailto:hello@fedethics.ca">hello@fedethics.ca</a>
         <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="books_hub.html#newsletter">Newsletter</a>
+        <a href="books-hub.html#newsletter">Newsletter</a>
         <a href="contact.html">Speaking Enquiries</a>
       </div>
     </div>

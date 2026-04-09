@@ -6,6 +6,7 @@
   <meta name="description" content="Contact FedEthics Inc. — Book Celio Oliveira for speaking engagements, advisory work, bulk book orders, or media enquiries." />
   <title>Contact — FedEthics Inc.</title>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
   <script>
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -13,71 +14,15 @@
     function track(l){gtag('event','click',{event_category:'CTA',event_label:l});}
   </script>
 
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../css/fedethics.css" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
+  <!-- Page-specific styles -->
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --ink:#12192C; --navy:#1B2A4A; --navy-mid:#243558;
-      --gold:#B8903A; --gold-bright:#D4A84B; --gold-pale:#F4EDD6; --gold-wash:#FBF6EA;
-      --parchment:#FDFBF7; --white:#FFFFFF; --off-white:#F8F7F4;
-      --stone:#EEE9E0; --slate:#E2DDD5; --text-body:#2D3242;
-      --text-mid:#4A5165; --text-muted:#717897; --rule:#DDD8CE;
-      --ci-blue:#1E3A5F; --ci-dark:#0F1F38;
-      --edt-green:#2C5F3E; --edt-dark:#14301E;
-      --serif:'Cormorant Garamond','Georgia',serif;
-      --sans:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
-      --max-w:1200px; --r-sm:6px; --r-md:10px; --r-lg:18px;
-      --shadow-xs:0 1px 3px rgba(18,25,44,.06);
-      --shadow-sm:0 2px 8px rgba(18,25,44,.08);
-      --shadow-md:0 6px 24px rgba(18,25,44,.10);
-      --shadow-lg:0 16px 56px rgba(18,25,44,.14);
-      --t:.22s ease;
-    }
-    html{scroll-behavior:smooth;font-size:16px;}
-    body{font-family:var(--sans);background:var(--parchment);color:var(--text-body);line-height:1.65;-webkit-font-smoothing:antialiased;}
-    .container{max-width:var(--max-w);margin:0 auto;padding:0 28px;}
-    .section-pad{padding:96px 0;}
-    .bg-off{background:var(--off-white);}
-    .bg-white{background:var(--white);}
-
-    .eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.20em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-    .eyebrow::before{content:'';flex-shrink:0;display:block;width:28px;height:1px;background:var(--gold);}
-
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:var(--r-sm);font-family:var(--sans);font-size:.875rem;font-weight:600;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:all var(--t);white-space:nowrap;line-height:1;}
-    .btn-primary{background:var(--ink);color:var(--white);border-color:var(--ink);}
-    .btn-primary:hover{background:var(--navy);transform:translateY(-1px);box-shadow:var(--shadow-md);}
-    .btn-gold{background:var(--gold);color:var(--white);}
-    .btn-gold:hover{background:var(--gold-bright);}
-    .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink);}
-    .btn-outline:hover{background:var(--ink);color:var(--white);}
-    .btn-lg{padding:15px 36px;font-size:.9375rem;}
-    .btn-full{width:100%;justify-content:center;}
-
-    /* NAV */
-    nav{position:sticky;top:0;z-index:300;background:rgba(253,251,247,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:72px;}
-    .nav-inner{height:100%;max-width:var(--max-w);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
-    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-    .nav-logo-mark{width:40px;height:40px;background:var(--ink);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;color:var(--gold);font-weight:700;flex-shrink:0;}
-    .nav-logo-wordmark{display:flex;flex-direction:column;gap:1px;}
-    .nav-logo-name{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);line-height:1;letter-spacing:-.01em;}
-    .nav-logo-tagline{font-size:.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.14em;line-height:1;}
-    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
-    .nav-links a{font-size:.875rem;font-weight:500;color:var(--text-mid);text-decoration:none;transition:color var(--t);position:relative;}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--gold);transform:scaleX(0);transition:transform var(--t);}
-    .nav-links a:hover{color:var(--ink);}
-    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
-    .nav-links a.active{color:var(--ink);font-weight:600;}
-    .nav-right{display:flex;align-items:center;gap:16px;}
-    .nav-ham{display:none;background:none;border:none;cursor:pointer;padding:4px;}
-    .nav-ham span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px 0;}
-    .mobile-nav{display:none;position:fixed;inset:0;z-index:400;background:rgba(18,25,44,.95);backdrop-filter:blur(8px);flex-direction:column;align-items:center;justify-content:center;gap:32px;}
-    .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-family:var(--serif);font-size:1.8rem;color:var(--white);text-decoration:none;font-weight:600;transition:color var(--t);}
-    .mobile-nav a:hover{color:var(--gold-bright);}
-    .mobile-nav-close{position:absolute;top:24px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:rgba(255,255,255,.6);}
-
     /* PAGE HERO — dark navy for contact */
     .page-hero{
       background:var(--ink);
@@ -188,44 +133,26 @@
     .faq-a a{color:var(--gold);text-decoration:none;}
     .faq-a a:hover{text-decoration:underline;}
 
-    /* FOOTER */
-    footer{background:#0E1421;color:rgba(255,255,255,.65);padding:64px 0 36px;}
-    .footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07);}
-    .footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-    .footer-brand-mark{width:36px;height:36px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--gold);font-weight:700;}
-    .footer-brand-name-text{font-family:var(--serif);font-size:1.15rem;color:var(--white);font-weight:600;}
-    .footer-tagline{font-size:.82rem;line-height:1.72;color:rgba(255,255,255,.4);max-width:220px;margin-bottom:20px;}
-    .footer-imprints{display:flex;gap:10px;flex-wrap:wrap;}
-    .footer-imprint{font-size:.6rem;padding:3px 10px;border-radius:3px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
-    .fi-advisory{background:rgba(30,58,95,.45);color:rgba(201,168,76,.75);border:1px solid rgba(30,58,95,.7);}
-    .fi-creative{background:rgba(44,95,62,.45);color:rgba(201,168,76,.75);border:1px solid rgba(44,95,62,.7);}
-    .footer-col h4{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:18px;}
-    .footer-col a{display:block;font-size:.84rem;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:11px;transition:color var(--t);}
-    .footer-col a:hover{color:var(--gold-bright);}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
-    .footer-copy{font-size:.75rem;color:rgba(255,255,255,.3);}
-    .footer-disclaimer{font-size:.68rem;color:rgba(255,255,255,.22);max-width:480px;line-height:1.65;}
-
     @media(max-width:1100px){.enquiry-grid{grid-template-columns:1fr 1fr;}}
     @media(max-width:900px){.contact-layout{grid-template-columns:1fr;}}
-    @media(max-width:768px){.section-pad{padding:64px 0;}.faq-grid{grid-template-columns:1fr;}.nav-links{display:none;}.nav-ham{display:block;}}
-    @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.container{padding:0 20px;}.form-grid-2{grid-template-columns:1fr;}}
+    @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+    @media(max-width:480px){.form-grid-2{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
 
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
-  <a href="index.html">Home</a>
-  <a href="story.html">Our Story</a>
+  <a href="../index.html">Home</a>
+  <a href="our-story.html">Our Story</a>
   <a href="capabilities.html">Core Capabilities</a>
-  <a href="books_hub.html">Books</a>
+  <a href="books-hub.html">Books</a>
   <a href="contact.html">Contact</a>
 </div>
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
       <div class="nav-logo-mark">FE</div>
       <div class="nav-logo-wordmark">
         <span class="nav-logo-name">FedEthics</span>
@@ -233,14 +160,14 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="story.html">Our Story</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
       <li><a href="capabilities.html">Core Capabilities</a></li>
-      <li><a href="books_hub.html">Books</a></li>
+      <li><a href="books-hub.html">Books</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="books_hub.html" class="btn btn-gold" style="padding:8px 18px;font-size:.8rem;" onclick="track('nav_order')">Order a Book</a>
+      <a href="books-hub.html" class="btn btn-gold" style="padding:8px 18px;font-size:.8rem;" onclick="track('nav_order')">Order a Book</a>
       <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -403,14 +330,14 @@
           <h3>Order the Books</h3>
           <p style="font-size:.84rem;color:var(--text-mid);margin-bottom:14px;line-height:1.65;">Both books autographed. Buy 5+ to unlock a free consultation or speaking session.</p>
           <div class="book-shortcut-pair">
-            <a href="constitutional_intelligence_page.html" class="bsc-card" onclick="track('contact_ci')">
+            <a href="constitutional-intelligence.html" class="bsc-card" onclick="track('contact_ci')">
               <div class="bsc-header bsc-ci">
                 <div class="bsc-imprint">FedEthics Advisory™</div>
                 <div class="bsc-title">Constitutional Intelligence</div>
               </div>
               <div class="bsc-footer">Order → autographed</div>
             </a>
-            <a href="etoile.html" class="bsc-card" onclick="track('contact_edt')">
+            <a href="etoile-de-tournesol.html" class="bsc-card" onclick="track('contact_edt')">
               <div class="bsc-header bsc-edt">
                 <div class="bsc-imprint">FedEthics Creative™</div>
                 <div class="bsc-title">Étoile de Tournesol</div>
@@ -438,11 +365,11 @@
     <div class="faq-grid">
       <div class="faq-item">
         <p class="faq-q">How do I get an autographed copy?</p>
-        <p class="faq-a">Order directly through <a href="books_hub.html">fedethics.ca/books</a>. Every print order placed through this site is personally autographed by Celio before shipping — at no extra charge.</p>
+        <p class="faq-a">Order directly through <a href="books-hub.html">fedethics.ca/books</a>. Every print order placed through this site is personally autographed by Celio before shipping — at no extra charge.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">How does the free consultation offer work?</p>
-        <p class="faq-a">Purchase 5 or more copies of either book through this site, then complete the <a href="books_hub.html#claim">claim form on the books page</a>. The offer is redeemable as a virtual call or a live speaking engagement.</p>
+        <p class="faq-a">Purchase 5 or more copies of either book through this site, then complete the <a href="books-hub.html#claim">claim form on the books page</a>. The offer is redeemable as a virtual call or a live speaking engagement.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">Can Celio speak at our event?</p>
@@ -458,7 +385,7 @@
       </div>
       <div class="faq-item">
         <p class="faq-q">Comment commander Étoile de Tournesol pour ma classe ou club de lecture?</p>
-        <p class="faq-a">Commandez directement via <a href="etoile.html">la page du livre</a>. Pour 5 exemplaires ou plus, vous débloquez une rencontre avec l'auteur et une dédicace personnalisée pour chaque lecteur.</p>
+        <p class="faq-a">Commandez directement via <a href="etoile-de-tournesol.html">la page du livre</a>. Pour 5 exemplaires ou plus, vous débloquez une rencontre avec l'auteur et une dédicace personnalisée pour chaque lecteur.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">What is FedEthics Inc.?</p>
@@ -478,7 +405,7 @@
       <div>
         <div class="footer-brand-logo">
           <div class="footer-brand-mark">FE</div>
-          <span class="footer-brand-name-text">FedEthics Inc.</span>
+          <span class="footer-brand-name">FedEthics Inc.</span>
         </div>
         <p class="footer-tagline">Advisory, education, and publishing — in a personal capacity, independent of any employer.</p>
         <div class="footer-imprints">
@@ -488,24 +415,24 @@
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="index.html">Home</a>
-        <a href="story.html">Our Story</a>
+        <a href="../index.html">Home</a>
+        <a href="our-story.html">Our Story</a>
         <a href="capabilities.html">Core Capabilities</a>
-        <a href="books_hub.html">Books</a>
+        <a href="books-hub.html">Books</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Books</h4>
-        <a href="constitutional_intelligence_page.html">Constitutional Intelligence</a>
-        <a href="etoile.html">Étoile de Tournesol</a>
-        <a href="books_hub.html#bulk">Bulk Orders</a>
-        <a href="books_hub.html#claim">Claim Your Offer</a>
+        <a href="constitutional-intelligence.html">Constitutional Intelligence</a>
+        <a href="etoile-de-tournesol.html">Étoile de Tournesol</a>
+        <a href="books-hub.html#bulk">Bulk Orders</a>
+        <a href="books-hub.html#claim">Claim Your Offer</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="mailto:celio.oliveira@fedethics.ca">celio.oliveira@fedethics.ca</a>
         <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="books_hub.html#newsletter">Newsletter</a>
+        <a href="books-hub.html#newsletter">Newsletter</a>
       </div>
     </div>
     <div class="footer-bottom">

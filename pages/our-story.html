@@ -6,6 +6,7 @@
   <meta name="description" content="The story of Celio Oliveira and FedEthics Inc. — Global Top 100 AI Innovator, Fellow at the Future Government Institute, and author of two books on AI governance and literary fiction." />
   <title>Our Story — FedEthics Inc.</title>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
   <script>
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -13,68 +14,15 @@
     function track(l){gtag('event','click',{event_category:'CTA',event_label:l});}
   </script>
 
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../css/fedethics.css" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
+  <!-- Page-specific styles -->
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --ink:#12192C; --navy:#1B2A4A; --navy-mid:#243558; --navy-soft:#2D4270;
-      --gold:#B8903A; --gold-bright:#D4A84B; --gold-pale:#F4EDD6; --gold-wash:#FBF6EA;
-      --parchment:#FDFBF7; --white:#FFFFFF; --off-white:#F8F7F4;
-      --stone:#EEE9E0; --slate:#E2DDD5; --text-body:#2D3242;
-      --text-mid:#4A5165; --text-muted:#717897; --rule:#DDD8CE;
-      --ci-blue:#1E3A5F; --ci-dark:#0F1F38;
-      --edt-green:#2C5F3E; --edt-dark:#14301E;
-      --serif:'Cormorant Garamond','Georgia',serif;
-      --sans:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
-      --max-w:1200px; --r-sm:6px; --r-md:10px; --r-lg:18px;
-      --shadow-xs:0 1px 3px rgba(18,25,44,.06);
-      --shadow-sm:0 2px 8px rgba(18,25,44,.08),0 1px 3px rgba(18,25,44,.05);
-      --shadow-md:0 6px 24px rgba(18,25,44,.10),0 2px 8px rgba(18,25,44,.06);
-      --shadow-lg:0 16px 56px rgba(18,25,44,.14),0 4px 16px rgba(18,25,44,.08);
-      --t:.22s ease;
-    }
-    html{scroll-behavior:smooth;font-size:16px;}
-    body{font-family:var(--sans);background:var(--parchment);color:var(--text-body);line-height:1.65;-webkit-font-smoothing:antialiased;}
-    .container{max-width:var(--max-w);margin:0 auto;padding:0 28px;}
-    .section-pad{padding:96px 0;}
-
-    .eyebrow{font-family:var(--sans);font-size:.68rem;font-weight:600;letter-spacing:.20em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-    .eyebrow::before{content:'';flex-shrink:0;display:block;width:28px;height:1px;background:var(--gold);}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 28px;border-radius:var(--r-sm);font-family:var(--sans);font-size:.875rem;font-weight:600;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:all var(--t);white-space:nowrap;line-height:1;letter-spacing:.01em;}
-    .btn-primary{background:var(--ink);color:var(--white);border-color:var(--ink);}
-    .btn-primary:hover{background:var(--navy);transform:translateY(-1px);box-shadow:var(--shadow-md);}
-    .btn-gold{background:var(--gold);color:var(--white);border-color:var(--gold);}
-    .btn-gold:hover{background:var(--gold-bright);transform:translateY(-1px);}
-    .btn-outline{background:transparent;color:var(--ink);border-color:var(--ink);}
-    .btn-outline:hover{background:var(--ink);color:var(--white);}
-    .btn-lg{padding:15px 36px;font-size:.9375rem;}
-    .btn-group{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
-
-    /* NAV */
-    nav{position:sticky;top:0;z-index:300;background:rgba(253,251,247,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:72px;}
-    .nav-inner{height:100%;max-width:var(--max-w);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;}
-    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-    .nav-logo-mark{width:40px;height:40px;background:var(--ink);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;color:var(--gold);font-weight:700;flex-shrink:0;letter-spacing:-.02em;}
-    .nav-logo-wordmark{display:flex;flex-direction:column;gap:1px;}
-    .nav-logo-name{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--ink);line-height:1;letter-spacing:-.01em;}
-    .nav-logo-tagline{font-size:.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.14em;line-height:1;}
-    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
-    .nav-links a{font-size:.875rem;font-weight:500;color:var(--text-mid);text-decoration:none;transition:color var(--t);position:relative;}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--gold);transform:scaleX(0);transition:transform var(--t);}
-    .nav-links a:hover{color:var(--ink);}
-    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
-    .nav-links a.active{color:var(--ink);font-weight:600;}
-    .nav-right{display:flex;align-items:center;gap:16px;}
-    .nav-ham{display:none;background:none;border:none;cursor:pointer;padding:4px;}
-    .nav-ham span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px 0;transition:all var(--t);}
-    .mobile-nav{display:none;position:fixed;inset:0;z-index:400;background:rgba(18,25,44,.95);backdrop-filter:blur(8px);flex-direction:column;align-items:center;justify-content:center;gap:32px;}
-    .mobile-nav.open{display:flex;}
-    .mobile-nav a{font-family:var(--serif);font-size:1.8rem;color:var(--white);text-decoration:none;font-weight:600;transition:color var(--t);}
-    .mobile-nav a:hover{color:var(--gold-bright);}
-    .mobile-nav-close{position:absolute;top:24px;right:28px;background:none;border:none;cursor:pointer;font-size:1.5rem;color:rgba(255,255,255,.6);}
-
     /* PAGE HERO */
     .page-hero{
       background: var(--off-white);
@@ -155,53 +103,30 @@
     .value-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:10px;}
     .value-desc{font-size:.875rem;color:var(--text-mid);line-height:1.7;}
 
-    /* FOOTER */
-    footer{background:#0E1421;color:rgba(255,255,255,.65);padding:64px 0 36px;}
-    .footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07);}
-    .footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-    .footer-brand-mark{width:36px;height:36px;background:var(--navy);border-radius:5px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--gold);font-weight:700;}
-    .footer-brand-name{font-family:var(--serif);font-size:1.15rem;color:var(--white);font-weight:600;}
-    .footer-tagline{font-size:.82rem;line-height:1.72;color:rgba(255,255,255,.4);max-width:220px;margin-bottom:20px;}
-    .footer-imprints{display:flex;gap:10px;flex-wrap:wrap;}
-    .footer-imprint{font-size:.6rem;padding:3px 10px;border-radius:3px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
-    .fi-advisory{background:rgba(30,58,95,.45);color:rgba(201,168,76,.75);border:1px solid rgba(30,58,95,.7);}
-    .fi-creative{background:rgba(44,95,62,.45);color:rgba(201,168,76,.75);border:1px solid rgba(44,95,62,.7);}
-    .footer-col h4{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:18px;}
-    .footer-col a{display:block;font-size:.84rem;color:rgba(255,255,255,.52);text-decoration:none;margin-bottom:11px;transition:color var(--t);}
-    .footer-col a:hover{color:var(--gold-bright);}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
-    .footer-copy{font-size:.75rem;color:rgba(255,255,255,.3);}
-    .footer-disclaimer{font-size:.68rem;color:rgba(255,255,255,.22);max-width:480px;line-height:1.65;}
-
     @media(max-width:1024px){
       .story-grid{grid-template-columns:1fr;}
       .story-photo{position:static;max-width:280px;aspect-ratio:1/1;}
       .story-photo-col::before{display:none;}
-      .footer-grid{grid-template-columns:1fr 1fr;}
     }
     @media(max-width:768px){
-      .section-pad{padding:64px 0;}
       .cred-grid,.imprints-grid,.values-grid{grid-template-columns:1fr;}
-      .nav-links{display:none;}
-      .nav-ham{display:block;}
     }
-    @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}.container{padding:0 20px;}}
   </style>
 </head>
 <body>
 
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
-  <a href="index.html">Home</a>
-  <a href="story.html">Our Story</a>
+  <a href="../index.html">Home</a>
+  <a href="our-story.html">Our Story</a>
   <a href="capabilities.html">Core Capabilities</a>
-  <a href="books_hub.html">Books</a>
+  <a href="books-hub.html">Books</a>
   <a href="contact.html">Contact</a>
 </div>
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
       <div class="nav-logo-mark">FE</div>
       <div class="nav-logo-wordmark">
         <span class="nav-logo-name">FedEthics</span>
@@ -209,14 +134,14 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="story.html" class="active">Our Story</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="our-story.html" class="active">Our Story</a></li>
       <li><a href="capabilities.html">Core Capabilities</a></li>
-      <li><a href="books_hub.html">Books</a></li>
+      <li><a href="books-hub.html">Books</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="books_hub.html" class="btn btn-gold" style="padding:8px 18px;font-size:.8rem;" onclick="track('nav_order')">Order a Book</a>
+      <a href="books-hub.html" class="btn btn-gold" style="padding:8px 18px;font-size:.8rem;" onclick="track('nav_order')">Order a Book</a>
       <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -238,7 +163,6 @@
       <!-- PHOTO COLUMN -->
       <div class="story-photo-col">
         <div class="story-photo">
-          <!-- Replace with: <img src="images/celio_photo.jpg" alt="Celio Oliveira — Founder, FedEthics Inc." /> -->
           <div class="story-photo-placeholder">
             <div class="story-photo-placeholder-circle">C</div>
             <span style="font-size:.75rem;color:var(--text-muted);">Add headshot:<br/>images/celio_photo.jpg</span>
@@ -304,7 +228,7 @@
         <p>FedEthics Inc. operates two distinct publishing imprints — each with its own identity, audience, and aesthetic — but both rooted in the same commitment to rigour, honesty, and impact.</p>
 
         <div class="imprints-grid">
-          <a href="constitutional_intelligence_page.html" class="imprint-card" onclick="track('story_ci')">
+          <a href="constitutional-intelligence.html" class="imprint-card" onclick="track('story_ci')">
             <div class="imprint-header imprint-header-ci">
               <div class="imprint-badge">FedEthics Advisory™</div>
               <div class="imprint-title">Constitutional Intelligence</div>
@@ -314,7 +238,7 @@
               <span class="imprint-arrow">→</span>
             </div>
           </a>
-          <a href="etoile.html" class="imprint-card" onclick="track('story_edt')">
+          <a href="etoile-de-tournesol.html" class="imprint-card" onclick="track('story_edt')">
             <div class="imprint-header imprint-header-edt">
               <div class="imprint-badge">FedEthics Creative™</div>
               <div class="imprint-title">Étoile de Tournesol</div>
@@ -379,17 +303,17 @@
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="index.html">Home</a>
-        <a href="story.html">Our Story</a>
+        <a href="../index.html">Home</a>
+        <a href="our-story.html">Our Story</a>
         <a href="capabilities.html">Capabilities</a>
-        <a href="books_hub.html">Books</a>
+        <a href="books-hub.html">Books</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Books</h4>
-        <a href="constitutional_intelligence_page.html">Constitutional Intelligence</a>
-        <a href="etoile.html">Étoile de Tournesol</a>
-        <a href="books_hub.html#bulk">Bulk Orders</a>
+        <a href="constitutional-intelligence.html">Constitutional Intelligence</a>
+        <a href="etoile-de-tournesol.html">Étoile de Tournesol</a>
+        <a href="books-hub.html#bulk">Bulk Orders</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>

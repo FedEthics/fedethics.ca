@@ -6,6 +6,7 @@
   <meta name="description" content="Order Constitutional Intelligence and Étoile de Tournesol by Celio Oliveira. Every direct order includes an autographed copy. Buy 5+ copies to unlock a free consultation or speaking engagement." />
   <title>Books — FedEthics Inc.</title>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -15,155 +16,15 @@
     function track(l){ gtag('event','click',{event_category:'CTA',event_label:l}); }
   </script>
 
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="../css/fedethics.css" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
+  <!-- Page-specific styles (books hub) -->
   <style>
-    /* ============================================================
-       FEDETHICS v2 — Design System · Books Hub
-       Typography: Cormorant Garamond (display) + DM Sans (body)
-       Palette: Ink Navy · Parliamentary Gold · Parchment
-       ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink:        #12192C;
-      --navy:       #1B2A4A;
-      --navy-mid:   #243558;
-      --gold:       #B8903A;
-      --gold-bright:#D4A84B;
-      --gold-pale:  #F4EDD6;
-      --gold-wash:  #FBF6EA;
-      --parchment:  #FDFBF7;
-      --white:      #FFFFFF;
-      --off-white:  #F8F7F4;
-      --stone:      #EEE9E0;
-      --slate:      #E2DDD5;
-      --text-body:  #2D3242;
-      --text-mid:   #4A5165;
-      --text-muted: #717897;
-      --rule:       #DDD8CE;
-      --ci-blue:    #1E3A5F;
-      --ci-dark:    #0F1F38;
-      --edt-green:  #2C5F3E;
-      --edt-dark:   #14301E;
-      --serif: 'Cormorant Garamond', 'Georgia', serif;
-      --sans:  'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max-w: 1200px;
-      --r-sm:  6px;  --r-md: 10px;  --r-lg: 18px;
-      --shadow-xs:  0 1px 3px rgba(18,25,44,.06);
-      --shadow-sm:  0 2px 8px rgba(18,25,44,.08), 0 1px 3px rgba(18,25,44,.05);
-      --shadow-md:  0 6px 24px rgba(18,25,44,.10), 0 2px 8px rgba(18,25,44,.06);
-      --shadow-lg:  0 16px 56px rgba(18,25,44,.14), 0 4px 16px rgba(18,25,44,.08);
-      --t: .22s ease;
-    }
-
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: var(--sans); background: var(--parchment); color: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
-    .section-pad { padding: 96px 0; }
-    .text-center { text-align: center; }
-    .text-center .section-lead { margin-left: auto; margin-right: auto; }
-    .text-center .eyebrow { justify-content: center; }
-    .text-center .eyebrow::before { display: none; }
-
-    /* EYEBROW */
-    .eyebrow {
-      font-family: var(--sans); font-size: .68rem; font-weight: 600;
-      letter-spacing: .20em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 14px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .eyebrow::before { content: ''; flex-shrink: 0; display: block; width: 28px; height: 1px; background: var(--gold); }
-    .eyebrow-light { color: rgba(255,255,255,.7); }
-    .eyebrow-light::before { background: var(--gold); }
-
-    /* SECTION TYPOGRAPHY */
-    .section-title {
-      font-family: var(--serif); font-weight: 600;
-      font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.12;
-      color: var(--ink); margin-bottom: 20px; letter-spacing: -.01em;
-    }
-    .section-title em { color: var(--gold); font-style: italic; font-weight: 400; }
-    .section-lead { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; max-width: 560px; margin-bottom: 44px; }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 28px; border-radius: var(--r-sm);
-      font-family: var(--sans); font-size: .875rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: 1.5px solid transparent;
-      transition: all var(--t); white-space: nowrap; line-height: 1; letter-spacing: .01em;
-    }
-    .btn-primary      { background: var(--ink);       color: var(--white); border-color: var(--ink); }
-    .btn-primary:hover{ background: var(--navy);      transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-gold         { background: var(--gold);      color: var(--white); border-color: var(--gold); }
-    .btn-gold:hover   { background: var(--gold-bright); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(184,144,58,.35); }
-    .btn-ci           { background: var(--ci-blue);   color: var(--white); border-color: var(--ci-blue); }
-    .btn-ci:hover     { background: #16304F; transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-edt          { background: var(--edt-green); color: var(--white); border-color: var(--edt-green); }
-    .btn-edt:hover    { background: #234F33; transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-outline-navy { background: transparent; color: var(--navy); border-color: var(--navy); }
-    .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
-    .btn-outline-light{ background: transparent; color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.35); }
-    .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
-    .btn-lg  { padding: 15px 36px; font-size: .9375rem; }
-    .btn-sm  { padding: 8px 18px;  font-size: .8rem; }
-    .btn-full{ width: 100%; justify-content: center; }
-    .btn-group{ display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-
-    /* PAYMENT BUTTONS */
-    .pay-btn {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 11px 16px; border-radius: var(--r-sm);
-      font-family: var(--sans); font-size: .83rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: none;
-      transition: all var(--t); margin-bottom: 7px;
-    }
-    .pay-btn:last-child { margin-bottom: 0; }
-    .pay-stripe   { background: #635BFF; color: #fff; }
-    .pay-stripe:hover   { background: #4F46E5; transform: translateY(-1px); }
-    .pay-payhip   { background: #00B09B; color: #fff; }
-    .pay-payhip:hover   { background: #009688; transform: translateY(-1px); }
-    .pay-payoneer { background: #FF6C2F; color: #fff; }
-    .pay-payoneer:hover { background: #E5601F; transform: translateY(-1px); }
-    .pay-amazon   { background: #FF9900; color: #111; }
-    .pay-amazon:hover   { background: #E68A00; transform: translateY(-1px); }
-    .pay-label { font-size: .63rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin: 12px 0 6px; display: block; }
-    .pay-note  { font-size: .7rem; color: var(--text-muted); text-align: center; margin-top: 8px; line-height: 1.5; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 300;
-      background: rgba(253,251,247,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule); height: 72px;
-    }
-    .nav-inner { height: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo  { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo-mark {
-      width: 40px; height: 40px; background: var(--ink); border-radius: var(--r-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; flex-shrink: 0;
-    }
-    .nav-logo-wordmark { display: flex; flex-direction: column; gap: 1px; }
-    .nav-logo-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1; letter-spacing: -.01em; }
-    .nav-logo-tagline { font-size: .58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .14em; line-height: 1; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color var(--t); position: relative; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transition: transform var(--t); }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-    .nav-links a.active { color: var(--ink); font-weight: 600; }
-    .nav-right { display: flex; align-items: center; gap: 16px; }
-    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .nav-ham span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; }
-    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 400; background: rgba(18,25,44,.95); backdrop-filter: blur(8px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-family: var(--serif); font-size: 1.8rem; color: var(--white); text-decoration: none; font-weight: 600; transition: color var(--t); }
-    .mobile-nav a:hover { color: var(--gold-bright); }
-    .mobile-nav-close { position: absolute; top: 24px; right: 28px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: rgba(255,255,255,.6); }
-
     /* AUTOGRAPH BANNER */
     .autograph-banner { background: var(--gold-wash); border-bottom: 1px solid rgba(184,144,58,.25); padding: 13px 28px; text-align: center; }
     .autograph-banner p { font-size: .86rem; color: var(--ink); font-weight: 500; }
@@ -205,11 +66,37 @@
     .quick-pay-section { margin-bottom: 10px; }
     .quick-pay-section:last-child { margin-bottom: 0; }
 
+    /* PAYMENT BUTTONS */
+    .pay-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 11px 16px; border-radius: var(--r-sm);
+      font-family: var(--sans); font-size: .83rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all var(--t); margin-bottom: 7px;
+    }
+    .pay-btn:last-child { margin-bottom: 0; }
+    .pay-stripe   { background: #635BFF; color: #fff; }
+    .pay-stripe:hover   { background: #4F46E5; transform: translateY(-1px); }
+    .pay-payhip   { background: #00B09B; color: #fff; }
+    .pay-payhip:hover   { background: #009688; transform: translateY(-1px); }
+    .pay-payoneer { background: #FF6C2F; color: #fff; }
+    .pay-payoneer:hover { background: #E5601F; transform: translateY(-1px); }
+    .pay-amazon   { background: #FF9900; color: #111; }
+    .pay-amazon:hover   { background: #E68A00; transform: translateY(-1px); }
+    .pay-label { font-size: .63rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin: 12px 0 6px; display: block; }
+    .pay-note  { font-size: .7rem; color: var(--text-muted); text-align: center; margin-top: 8px; line-height: 1.5; }
+
+    .btn-ci           { background: var(--ci-blue);   color: var(--white); border-color: var(--ci-blue); }
+    .btn-ci:hover     { background: #16304F; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-edt          { background: var(--edt-green); color: var(--white); border-color: var(--edt-green); }
+    .btn-edt:hover    { background: #234F33; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-outline-navy { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+
     /* AUTHOR SECTION */
     .author-section { background: var(--navy); padding: 96px 0; }
     .author-grid { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start; }
     .author-photo { border-radius: var(--r-lg); overflow: hidden; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); aspect-ratio: 3/4; box-shadow: var(--shadow-lg); }
-    .author-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .author-photo-placeholder { width: 100%; height: 100%; min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,.3); font-size: .8rem; text-align: center; padding: 24px; }
     .author-name  { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.4rem); color: var(--white); font-weight: 600; margin-bottom: 6px; }
     .author-title { font-size: .85rem; color: var(--gold); font-weight: 500; margin-bottom: 22px; line-height: 1.6; }
@@ -291,43 +178,14 @@
     .newsletter-form input:focus { border-color: var(--gold); }
     .newsletter-note { font-size: .72rem; color: rgba(255,255,255,.35); margin-top: 12px; line-height: 1.5; }
 
-    /* FOOTER */
-    footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 64px 0 36px; border-top: 1px solid rgba(255,255,255,.07); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
-    .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-    .footer-brand-mark { width: 40px; height: 40px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; }
-    .footer-brand-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); font-weight: 600; letter-spacing: -.01em; }
-    .footer-tagline { font-size: .82rem; line-height: 1.7; color: rgba(255,255,255,.45); max-width: 240px; margin-bottom: 16px; }
-    .footer-imprints { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-    .footer-imprint  { font-size: .64rem; padding: 3px 10px; border-radius: 4px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .fi-advisory { background: rgba(30,58,95,.5); color: rgba(201,168,76,.85); border: 1px solid rgba(30,58,95,.8); }
-    .fi-creative  { background: rgba(44,95,62,.5); color: rgba(201,168,76,.85); border: 1px solid rgba(44,95,62,.8); }
-    .footer-social { display: flex; gap: 10px; }
-    .footer-social a { width: 34px; height: 34px; border-radius: var(--r-sm); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); font-size: .8rem; text-decoration: none; transition: all var(--t); }
-    .footer-social a:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
-    .footer-col h4 { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
-    .footer-col a  { display: block; font-size: .85rem; color: rgba(255,255,255,.58); text-decoration: none; margin-bottom: 10px; transition: color var(--t); }
-    .footer-col a:hover { color: var(--gold); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
-    .footer-disclaimer { font-size: .7rem; color: rgba(255,255,255,.28); max-width: 520px; line-height: 1.65; }
-
-    /* RESPONSIVE */
     @media (max-width:1024px) {
       .author-grid { grid-template-columns: 1fr; }
       .author-photo { max-width: 280px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width:768px) {
       .section-pad { padding: 64px 0; }
       .books-hub-grid, .offers-books-grid, .endorse-grid { grid-template-columns: 1fr; }
       .form-grid-2 { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .nav-ham { display: block; }
-    }
-    @media (max-width:480px) {
-      .footer-grid { grid-template-columns: 1fr; }
-      .container { padding: 0 20px; }
     }
   </style>
 </head>
@@ -336,17 +194,17 @@
 <!-- MOBILE NAV OVERLAY -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
-  <a href="index.html">Home</a>
-  <a href="story.html">Our Story</a>
+  <a href="../index.html">Home</a>
+  <a href="our-story.html">Our Story</a>
   <a href="capabilities.html">Capabilities</a>
-  <a href="books_hub.html">Books</a>
+  <a href="books-hub.html">Books</a>
   <a href="contact.html">Contact</a>
 </div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
       <div class="nav-logo-mark">FE</div>
       <div class="nav-logo-wordmark">
         <span class="nav-logo-name">FedEthics Inc.</span>
@@ -354,10 +212,10 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="story.html">Our Story</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
       <li><a href="capabilities.html">Capabilities</a></li>
-      <li><a href="books_hub.html" class="active">Books</a></li>
+      <li><a href="books-hub.html" class="active">Books</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -387,8 +245,8 @@
       <span class="hero-chip">🎙️ Buy 5+ → free consultation</span>
     </div>
     <div class="btn-group">
-      <a href="constitutional_intelligence_page.html" class="btn btn-ci btn-lg" onclick="track('hub_hero_ci')">Constitutional Intelligence →</a>
-      <a href="etoile.html" class="btn btn-edt btn-lg" onclick="track('hub_hero_edt')">Étoile de Tournesol →</a>
+      <a href="constitutional-intelligence.html" class="btn btn-ci btn-lg" onclick="track('hub_hero_ci')">Constitutional Intelligence →</a>
+      <a href="etoile-de-tournesol.html" class="btn btn-edt btn-lg" onclick="track('hub_hero_edt')">Étoile de Tournesol →</a>
     </div>
   </div>
 </header>
@@ -423,8 +281,8 @@
             <span class="bhc-tag bhc-tag-ci">Executive Leadership</span>
           </div>
           <div class="btn-group" style="margin-bottom:20px;">
-            <a href="constitutional_intelligence_page.html" class="btn btn-ci" onclick="track('hub_ci_page')">Full Book Page →</a>
-            <a href="constitutional_intelligence_page.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_ci_pay')">Quick Order</a>
+            <a href="constitutional-intelligence.html" class="btn btn-ci" onclick="track('hub_ci_page')">Full Book Page →</a>
+            <a href="constitutional-intelligence.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_ci_pay')">Quick Order</a>
           </div>
           <div class="quick-pay">
             <p class="quick-pay-title">Quick Order — Constitutional Intelligence</p>
@@ -468,8 +326,8 @@
             <span class="bhc-tag bhc-tag-edt">Club de lecture</span>
           </div>
           <div class="btn-group" style="margin-bottom:20px;">
-            <a href="etoile.html" class="btn btn-edt" onclick="track('hub_edt_page')">Page complète du livre →</a>
-            <a href="etoile.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_edt_pay')">Commander vite</a>
+            <a href="etoile-de-tournesol.html" class="btn btn-edt" onclick="track('hub_edt_page')">Page complète du livre →</a>
+            <a href="etoile-de-tournesol.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_edt_pay')">Commander vite</a>
           </div>
           <div class="quick-pay">
             <p class="quick-pay-title">Commander — Étoile de Tournesol</p>
@@ -497,7 +355,6 @@
     <div class="author-grid">
       <div>
         <div class="author-photo">
-          <!-- Replace with: <img src="images/celio_photo.jpg" alt="Celio Oliveira" /> -->
           <div class="author-photo-placeholder">
             <span style="font-size:3rem;opacity:.2;">👤</span>
             <span>Add photo:<br/>images/celio_photo.jpg</span>
@@ -528,7 +385,7 @@
           <span>Communicates in English, French, Portuguese &amp; Spanish</span>
         </div>
         <div class="btn-group">
-          <a href="story.html" class="btn btn-outline-light">Read the Full Story</a>
+          <a href="our-story.html" class="btn btn-outline-light">Read the Full Story</a>
           <a href="contact.html" class="btn btn-gold">Book a Speaking Engagement</a>
         </div>
       </div>
@@ -561,7 +418,7 @@
             <span class="offer-trigger">Any direct purchase</span>
             <h4>✍️ Autographed Copy</h4>
             <p>Every copy ordered directly from this page is personally signed by Celio Oliveira. No form, no extra charge — it happens automatically for every print order.</p>
-            <a href="constitutional_intelligence_page.html#payments" class="pay-btn offer-btn-ci" onclick="track('offer_ci_autograph')">Order Now</a>
+            <a href="constitutional-intelligence.html#payments" class="pay-btn offer-btn-ci" onclick="track('offer_ci_autograph')">Order Now</a>
           </div>
           <div class="offer-item">
             <span class="offer-trigger">Buy 5 or more copies</span>
@@ -590,7 +447,7 @@
             <span class="offer-trigger">Tout achat direct</span>
             <h4>✍️ Exemplaire dédicacé</h4>
             <p>Chaque exemplaire commandé directement sur ce site est signé personnellement par Celio Oliveira — automatiquement, sans frais supplémentaires.</p>
-            <a href="etoile.html#payments" class="pay-btn offer-btn-edt" onclick="track('offer_edt_autograph')">Commander</a>
+            <a href="etoile-de-tournesol.html#payments" class="pay-btn offer-btn-edt" onclick="track('offer_edt_autograph')">Commander</a>
           </div>
           <div class="offer-item">
             <span class="offer-trigger">5 exemplaires ou plus</span>
@@ -762,18 +619,18 @@
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
-        <a href="index.html">Home</a>
-        <a href="story.html">Our Story</a>
+        <a href="../index.html">Home</a>
+        <a href="our-story.html">Our Story</a>
         <a href="capabilities.html">Core Capabilities</a>
-        <a href="books_hub.html">Books</a>
+        <a href="books-hub.html">Books</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Books</h4>
-        <a href="constitutional_intelligence_page.html">Constitutional Intelligence</a>
-        <a href="etoile.html">Étoile de Tournesol</a>
-        <a href="books_hub.html#bulk">Bulk Offers</a>
-        <a href="books_hub.html#claim">Claim Your Offer</a>
+        <a href="constitutional-intelligence.html">Constitutional Intelligence</a>
+        <a href="etoile-de-tournesol.html">Étoile de Tournesol</a>
+        <a href="books-hub.html#bulk">Bulk Offers</a>
+        <a href="books-hub.html#claim">Claim Your Offer</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
