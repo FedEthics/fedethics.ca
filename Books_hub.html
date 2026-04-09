@@ -6,7 +6,6 @@
   <meta name="description" content="Order Constitutional Intelligence and Étoile de Tournesol by Celio Oliveira. Every direct order includes an autographed copy. Buy 5+ copies to unlock a free consultation or speaking engagement." />
   <title>Books — FedEthics Inc.</title>
 
-  <!-- Google Analytics — G-2F5300W8X0 provided by Celio -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,116 +16,110 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
   <style>
     /* ============================================================
-       FEDETHICS DESIGN SYSTEM — Books Hub
-       White / light background, professional, preserving builder aesthetic
-       CI colour: parliamentary blue #1E3A5F
-       EDT colour: forest green #2C5F3E
-       Both anchored by FedEthics navy #1B2A4A + gold #C9A84C
+       FEDETHICS v2 — Design System · Books Hub
+       Typography: Cormorant Garamond (display) + DM Sans (body)
+       Palette: Ink Navy · Parliamentary Gold · Parchment
        ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Core brand */
-      --navy:        #1B2A4A;
-      --navy-light:  #243558;
-      --gold:        #C9A84C;
-      --gold-light:  #E8C96D;
-      --gold-pale:   #F5EDD6;
-      --white:       #FFFFFF;
-      --off-white:   #F8F9FA;
-      --light-gray:  #F0F2F5;
-      --text-primary:#1A1F2E;
-      --text-secondary:#4A5568;
-      --text-light:  #718096;
-      --border:      #E2E6EA;
-      /* CI — FedEthics Advisory: parliamentary blue + deep red accent */
-      --ci-blue:     #1E3A5F;
-      --ci-dark:     #0D1F38;
-      --ci-red:      #8B1A1A;
-      /* EDT — FedEthics Creative: forest green + warm gold */
-      --edt-green:   #2C5F3E;
-      --edt-dark:    #14301E;
-      /* Typography */
-      --serif:  'Playfair Display', Georgia, serif;
-      --sans:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      /* Layout */
-      --max-w:  1200px;
-      --radius: 8px;
-      --radius-lg: 16px;
-      --shadow-sm: 0 1px 4px rgba(0,0,0,.06), 0 2px 12px rgba(0,0,0,.04);
-      --shadow-md: 0 4px 16px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
-      --shadow-lg: 0 8px 40px rgba(0,0,0,.12);
-      --transition: .2s ease;
+      --ink:        #12192C;
+      --navy:       #1B2A4A;
+      --navy-mid:   #243558;
+      --gold:       #B8903A;
+      --gold-bright:#D4A84B;
+      --gold-pale:  #F4EDD6;
+      --gold-wash:  #FBF6EA;
+      --parchment:  #FDFBF7;
+      --white:      #FFFFFF;
+      --off-white:  #F8F7F4;
+      --stone:      #EEE9E0;
+      --slate:      #E2DDD5;
+      --text-body:  #2D3242;
+      --text-mid:   #4A5165;
+      --text-muted: #717897;
+      --rule:       #DDD8CE;
+      --ci-blue:    #1E3A5F;
+      --ci-dark:    #0F1F38;
+      --edt-green:  #2C5F3E;
+      --edt-dark:   #14301E;
+      --serif: 'Cormorant Garamond', 'Georgia', serif;
+      --sans:  'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max-w: 1200px;
+      --r-sm:  6px;  --r-md: 10px;  --r-lg: 18px;
+      --shadow-xs:  0 1px 3px rgba(18,25,44,.06);
+      --shadow-sm:  0 2px 8px rgba(18,25,44,.08), 0 1px 3px rgba(18,25,44,.05);
+      --shadow-md:  0 6px 24px rgba(18,25,44,.10), 0 2px 8px rgba(18,25,44,.06);
+      --shadow-lg:  0 16px 56px rgba(18,25,44,.14), 0 4px 16px rgba(18,25,44,.08);
+      --t: .22s ease;
     }
 
-    html  { scroll-behavior: smooth; font-size: 16px; }
-    body  { font-family: var(--sans); background: var(--white); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); background: var(--parchment); color: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
-    /* ── LAYOUT UTILITIES ── */
-    .container   { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-    .section-pad { padding: 80px 0; }
-    .bg-white    { background: var(--white); }
-    .bg-off      { background: var(--off-white); }
-    .bg-gold-pale{ background: var(--gold-pale); }
-    .bg-navy     { background: var(--navy); }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+    .section-pad { padding: 96px 0; }
     .text-center { text-align: center; }
     .text-center .section-lead { margin-left: auto; margin-right: auto; }
+    .text-center .eyebrow { justify-content: center; }
+    .text-center .eyebrow::before { display: none; }
 
-    /* ── TYPOGRAPHY ── */
+    /* EYEBROW */
     .eyebrow {
-      font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+      font-family: var(--sans); font-size: .68rem; font-weight: 600;
+      letter-spacing: .20em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--gold); }
-    .eyebrow-light { color: rgba(255,255,255,.65); }
+    .eyebrow::before { content: ''; flex-shrink: 0; display: block; width: 28px; height: 1px; background: var(--gold); }
+    .eyebrow-light { color: rgba(255,255,255,.7); }
     .eyebrow-light::before { background: var(--gold); }
 
+    /* SECTION TYPOGRAPHY */
     .section-title {
-      font-family: var(--serif); font-weight: 700;
-      font-size: clamp(1.9rem, 3.5vw, 2.8rem); line-height: 1.15;
-      color: var(--navy); margin-bottom: 16px;
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.12;
+      color: var(--ink); margin-bottom: 20px; letter-spacing: -.01em;
     }
-    .section-title em { color: var(--gold); font-style: italic; }
-    .section-title-white { color: var(--white); }
-    .section-lead { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; max-width: 640px; margin-bottom: 40px; }
-    .section-lead-white { color: rgba(255,255,255,.72); }
+    .section-title em { color: var(--gold); font-style: italic; font-weight: 400; }
+    .section-lead { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; max-width: 560px; margin-bottom: 44px; }
 
-    /* ── BUTTONS ── */
+    /* BUTTONS */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 28px; border-radius: var(--radius);
-      font-family: var(--sans); font-size: .9rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: 2px solid transparent;
-      transition: all var(--transition); white-space: nowrap; line-height: 1;
+      padding: 12px 28px; border-radius: var(--r-sm);
+      font-family: var(--sans); font-size: .875rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: 1.5px solid transparent;
+      transition: all var(--t); white-space: nowrap; line-height: 1; letter-spacing: .01em;
     }
-    .btn-primary        { background: var(--navy);      color: var(--white); border-color: var(--navy); }
-    .btn-primary:hover  { background: var(--navy-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-gold           { background: var(--gold);       color: var(--navy); border-color: var(--gold); }
-    .btn-gold:hover     { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,168,76,.35); }
-    .btn-ci             { background: var(--ci-blue);    color: var(--white); border-color: var(--ci-blue); }
-    .btn-ci:hover       { background: #16304F;           transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-edt            { background: var(--edt-green);  color: var(--white); border-color: var(--edt-green); }
-    .btn-edt:hover      { background: #234F33;           transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-outline-navy   { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-primary      { background: var(--ink);       color: var(--white); border-color: var(--ink); }
+    .btn-primary:hover{ background: var(--navy);      transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-gold         { background: var(--gold);      color: var(--white); border-color: var(--gold); }
+    .btn-gold:hover   { background: var(--gold-bright); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(184,144,58,.35); }
+    .btn-ci           { background: var(--ci-blue);   color: var(--white); border-color: var(--ci-blue); }
+    .btn-ci:hover     { background: #16304F; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-edt          { background: var(--edt-green); color: var(--white); border-color: var(--edt-green); }
+    .btn-edt:hover    { background: #234F33; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .btn-outline-navy { background: transparent; color: var(--navy); border-color: var(--navy); }
     .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
-    .btn-outline-white  { background: transparent; color: var(--white); border-color: rgba(255,255,255,.5); }
-    .btn-outline-white:hover { background: rgba(255,255,255,.08); border-color: var(--white); }
-    .btn-lg  { padding: 15px 36px; font-size: .95rem; }
-    .btn-sm  { padding: 9px 20px; font-size: .82rem; }
-    .btn-full { width: 100%; justify-content: center; }
-    .btn-group { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn-outline-light{ background: transparent; color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.35); }
+    .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
+    .btn-lg  { padding: 15px 36px; font-size: .9375rem; }
+    .btn-sm  { padding: 8px 18px;  font-size: .8rem; }
+    .btn-full{ width: 100%; justify-content: center; }
+    .btn-group{ display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
-    /* Payment buttons — distinct per platform */
+    /* PAYMENT BUTTONS */
     .pay-btn {
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 11px 16px; border-radius: var(--radius);
+      width: 100%; padding: 11px 16px; border-radius: var(--r-sm);
       font-family: var(--sans); font-size: .83rem; font-weight: 600;
       text-decoration: none; cursor: pointer; border: none;
-      transition: all var(--transition); margin-bottom: 7px;
+      transition: all var(--t); margin-bottom: 7px;
     }
     .pay-btn:last-child { margin-bottom: 0; }
     .pay-stripe   { background: #635BFF; color: #fff; }
@@ -137,304 +130,271 @@
     .pay-payoneer:hover { background: #E5601F; transform: translateY(-1px); }
     .pay-amazon   { background: #FF9900; color: #111; }
     .pay-amazon:hover   { background: #E68A00; transform: translateY(-1px); }
-    .pay-label {
-      font-size: .63rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--text-light); margin: 12px 0 6px; display: block;
-    }
-    .pay-note { font-size: .7rem; color: var(--text-light); text-align: center; margin-top: 8px; line-height: 1.5; }
+    .pay-label { font-size: .63rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin: 12px 0 6px; display: block; }
+    .pay-note  { font-size: .7rem; color: var(--text-muted); text-align: center; margin-top: 8px; line-height: 1.5; }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      position: sticky; top: 0; z-index: 200;
-      background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border); height: 68px;
+      position: sticky; top: 0; z-index: 300;
+      background: rgba(253,251,247,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule); height: 72px;
     }
-    .nav-inner {
-      height: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-inner { height: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo  { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .nav-logo-mark {
-      width: 36px; height: 36px; background: var(--navy); border-radius: 6px;
+      width: 40px; height: 40px; background: var(--ink); border-radius: var(--r-sm);
       display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 1rem; color: var(--gold); font-weight: 700; flex-shrink: 0;
+      font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; flex-shrink: 0;
     }
-    .nav-logo-text { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--navy); }
-    .nav-logo-sub  { font-size: .6rem; color: var(--text-light); text-transform: uppercase; letter-spacing: .1em; display: block; line-height: 1; margin-top: 1px; }
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { font-size: .88rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color var(--transition); }
-    .nav-links a:hover, .nav-links a.active { color: var(--navy); }
-    .nav-links a.active { font-weight: 600; }
-    .nav-cta { margin-left: 8px; }
+    .nav-logo-wordmark { display: flex; flex-direction: column; gap: 1px; }
+    .nav-logo-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1; letter-spacing: -.01em; }
+    .nav-logo-tagline { font-size: .58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .14em; line-height: 1; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color var(--t); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transition: transform var(--t); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-links a.active { color: var(--ink); font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-ham span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 400; background: rgba(18,25,44,.95); backdrop-filter: blur(8px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-family: var(--serif); font-size: 1.8rem; color: var(--white); text-decoration: none; font-weight: 600; transition: color var(--t); }
+    .mobile-nav a:hover { color: var(--gold-bright); }
+    .mobile-nav-close { position: absolute; top: 24px; right: 28px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: rgba(255,255,255,.6); }
 
-    /* ── AUTOGRAPH ANNOUNCEMENT BANNER ── */
-    .autograph-banner {
-      background: var(--gold-pale);
-      border-bottom: 1px solid rgba(201,168,76,.3);
-      padding: 13px 24px;
-      text-align: center;
-    }
-    .autograph-banner p { font-size: .86rem; color: var(--navy); font-weight: 500; }
+    /* AUTOGRAPH BANNER */
+    .autograph-banner { background: var(--gold-wash); border-bottom: 1px solid rgba(184,144,58,.25); padding: 13px 28px; text-align: center; }
+    .autograph-banner p { font-size: .86rem; color: var(--ink); font-weight: 500; }
     .autograph-banner strong { font-weight: 700; color: #7A5C1A; }
     .autograph-banner a { color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
 
-    /* ── PAGE HERO ── */
-    .page-hero { background: var(--off-white); padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
-    .page-hero h1 {
-      font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.15;
-    }
-    .page-hero p  { font-size: 1.05rem; color: var(--text-secondary); max-width: 580px; line-height: 1.75; margin-bottom: 28px; }
-    .page-hero-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .hero-chip {
-      background: var(--white); border: 1px solid var(--border); border-radius: 20px;
-      padding: 5px 14px; font-size: .73rem; color: var(--text-secondary); font-weight: 500;
-    }
+    /* PAGE HERO */
+    .page-hero { background: var(--ink); padding: 80px 0 64px; position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; right: -80px; top: -80px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(184,144,58,.08) 0%, transparent 70%); pointer-events: none; }
+    .page-hero .eyebrow { color: var(--gold-bright); }
+    .page-hero .eyebrow::before { background: var(--gold-bright); }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(2.2rem, 4.2vw, 3.4rem); font-weight: 600; color: var(--white); margin-bottom: 18px; line-height: 1.1; letter-spacing: -.02em; }
+    .page-hero p  { font-size: 1.05rem; color: rgba(255,255,255,.6); max-width: 560px; line-height: 1.8; margin-bottom: 28px; }
+    .page-hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .hero-chip { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 20px; padding: 5px 14px; font-size: .73rem; color: rgba(255,255,255,.75); font-weight: 500; }
 
-    /* ── BOOK CARDS — hub overview ── */
+    /* BOOK CARDS */
     .books-hub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
-
-    .book-hub-card {
-      border-radius: var(--radius-lg); overflow: hidden;
-      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-      display: flex; flex-direction: column; transition: box-shadow var(--transition), transform var(--transition);
-    }
+    .book-hub-card { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--rule); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: box-shadow var(--t), transform var(--t); background: var(--white); }
     .book-hub-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-
-    /* Card header — coloured by imprint */
     .bhc-header { padding: 32px 28px 26px; flex-shrink: 0; }
-    .bhc-ci   { background: linear-gradient(145deg, var(--ci-blue) 0%, var(--ci-dark) 100%); }
-    .bhc-edt  { background: linear-gradient(145deg, var(--edt-green) 0%, var(--edt-dark) 100%); }
+    .bhc-ci  { background: linear-gradient(145deg, var(--ci-blue) 0%, var(--ci-dark) 100%); }
+    .bhc-edt { background: linear-gradient(145deg, var(--edt-green) 0%, var(--edt-dark) 100%); }
     .bhc-imprint { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .bhc-title   { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 6px; }
-    .bhc-subtitle { font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.5; margin-bottom: 20px; }
+    .bhc-title   { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; color: var(--white); line-height: 1.2; margin-bottom: 6px; }
+    .bhc-subtitle{ font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.5; margin-bottom: 20px; }
     .bhc-price-row { display: flex; align-items: baseline; gap: 6px; }
     .bhc-from   { font-size: .72rem; color: rgba(255,255,255,.55); }
-    .bhc-amount { font-family: var(--serif); font-size: 1.9rem; font-weight: 700; color: var(--white); }
+    .bhc-amount { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: var(--white); }
     .bhc-cad    { font-size: .75rem; color: rgba(255,255,255,.55); }
-
-    /* Card body */
-    .bhc-body { background: var(--white); padding: 26px 28px 28px; flex: 1; display: flex; flex-direction: column; }
-    .bhc-desc { font-size: .88rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 18px; }
-    .bhc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
-    .bhc-tag  { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: .7rem; font-weight: 600; }
-    .bhc-tag-ci  { background: rgba(30,58,95,.08); color: var(--ci-blue); border: 1px solid rgba(30,58,95,.18); }
-    .bhc-tag-edt { background: rgba(44,95,62,.08); color: var(--edt-green); border: 1px solid rgba(44,95,62,.18); }
-
-    /* Quick pay panel inside card */
-    .quick-pay { background: var(--light-gray); border-radius: var(--radius); padding: 18px; margin-top: auto; }
-    .quick-pay-title { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 10px; }
+    .bhc-body   { background: var(--white); padding: 26px 28px 28px; flex: 1; display: flex; flex-direction: column; }
+    .bhc-desc   { font-size: .88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 18px; }
+    .bhc-tags   { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+    .bhc-tag    { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: .7rem; font-weight: 600; }
+    .bhc-tag-ci  { background: rgba(30,58,95,.07); color: var(--ci-blue); border: 1px solid rgba(30,58,95,.15); }
+    .bhc-tag-edt { background: rgba(44,95,62,.07); color: var(--edt-green); border: 1px solid rgba(44,95,62,.15); }
+    .quick-pay { background: var(--off-white); border-radius: var(--r-md); padding: 18px; margin-top: auto; border: 1px solid var(--rule); }
+    .quick-pay-title { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
     .quick-pay-section { margin-bottom: 10px; }
     .quick-pay-section:last-child { margin-bottom: 0; }
 
-    /* ── AUTHOR BACKGROUNDER ── */
-    .author-section { background: var(--navy); padding: 80px 0; }
+    /* AUTHOR SECTION */
+    .author-section { background: var(--navy); padding: 96px 0; }
     .author-grid { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start; }
-    .author-photo {
-      border-radius: var(--radius-lg); overflow: hidden;
-      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
-      aspect-ratio: 3/4; box-shadow: var(--shadow-lg);
-    }
+    .author-photo { border-radius: var(--r-lg); overflow: hidden; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); aspect-ratio: 3/4; box-shadow: var(--shadow-lg); }
     .author-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .author-photo-placeholder {
-      width: 100%; height: 100%; min-height: 360px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 10px; color: rgba(255,255,255,.3); font-size: .8rem; text-align: center; padding: 24px;
-    }
-    .author-name  { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.3rem); color: var(--white); font-weight: 700; margin-bottom: 6px; }
-    .author-title { font-size: .85rem; color: var(--gold); font-weight: 600; margin-bottom: 22px; line-height: 1.5; }
+    .author-photo-placeholder { width: 100%; height: 100%; min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,.3); font-size: .8rem; text-align: center; padding: 24px; }
+    .author-name  { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.4rem); color: var(--white); font-weight: 600; margin-bottom: 6px; }
+    .author-title { font-size: .85rem; color: var(--gold); font-weight: 500; margin-bottom: 22px; line-height: 1.6; }
     .author-bio   { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.8; margin-bottom: 20px; }
     .cred-chips   { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
-    .cred-chip {
-      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
-      border-radius: 6px; padding: 5px 13px; font-size: .75rem; font-weight: 500; color: rgba(255,255,255,.72);
-    }
-    .cred-chip.gold { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.28); color: var(--gold); font-weight: 700; }
+    .cred-chip    { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-sm); padding: 5px 13px; font-size: .75rem; font-weight: 500; color: rgba(255,255,255,.72); }
+    .cred-chip.gold { background: rgba(184,144,58,.12); border-color: rgba(184,144,58,.28); color: var(--gold); font-weight: 600; }
     .lang-row { display: flex; align-items: center; gap: 10px; font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 28px; }
-    .lang-flags span { font-size: 1.1rem; }
-    .author-quote {
-      border-left: 2px solid var(--gold); padding: 14px 20px;
-      background: rgba(255,255,255,.04); border-radius: 0 var(--radius) var(--radius) 0;
-      margin-bottom: 28px;
-    }
+    .author-quote { border-left: 2px solid var(--gold); padding: 14px 20px; background: rgba(255,255,255,.04); border-radius: 0 var(--r-md) var(--r-md) 0; margin-bottom: 28px; }
     .author-quote p { font-family: var(--serif); font-size: .95rem; font-style: italic; color: rgba(255,255,255,.8); line-height: 1.7; }
 
-    /* ── SPECIAL OFFERS SECTION ── */
-    .offers-section { background: var(--off-white); padding: 80px 0; }
-    .offers-how {
-      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 22px 26px; margin-bottom: 40px; display: flex; align-items: flex-start; gap: 16px;
-    }
+    /* OFFERS SECTION */
+    .offers-section { background: var(--off-white); padding: 96px 0; }
+    .offers-how { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 22px 26px; margin-bottom: 40px; display: flex; align-items: flex-start; gap: 16px; box-shadow: var(--shadow-xs); }
     .offers-how-icon { font-size: 1.6rem; flex-shrink: 0; }
-    .offers-how p { font-size: .88rem; color: var(--text-secondary); line-height: 1.65; }
-    .offers-how strong { color: var(--text-primary); font-weight: 700; }
-
-    /* Two-column offer blocks, one per book */
+    .offers-how p  { font-size: .88rem; color: var(--text-mid); line-height: 1.65; }
+    .offers-how strong { color: var(--text-body); font-weight: 600; }
     .offers-books-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-
-    .offer-book-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .offer-book-block { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-xs); }
     .obb-header { padding: 22px 24px 18px; }
     .obb-ci  { background: linear-gradient(135deg, var(--ci-blue), var(--ci-dark)); }
     .obb-edt { background: linear-gradient(135deg, var(--edt-green), var(--edt-dark)); }
     .obb-imprint { font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-    .obb-title   { font-family: var(--serif); font-size: 1.2rem; color: var(--white); font-weight: 700; }
+    .obb-title   { font-family: var(--serif); font-size: 1.25rem; color: var(--white); font-weight: 600; }
     .obb-body    { padding: 22px 24px; }
-
-    .offer-item { border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-bottom: 14px; transition: border-color var(--transition), box-shadow var(--transition); }
-    .offer-item:hover { border-color: var(--gold); box-shadow: 0 2px 12px rgba(201,168,76,.12); }
+    .offer-item  { border: 1px solid var(--rule); border-radius: var(--r-md); padding: 18px; margin-bottom: 14px; transition: border-color var(--t), box-shadow var(--t); }
+    .offer-item:hover { border-color: var(--gold); box-shadow: 0 2px 12px rgba(184,144,58,.12); }
     .offer-item:last-child { margin-bottom: 0; }
     .offer-trigger { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; display: block; }
-    .offer-item h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .offer-item p  { font-size: .82rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px; }
-    .offer-btn-ci  { background: var(--ci-blue);    color: #fff; }
+    .offer-item h4 { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .offer-item p  { font-size: .82rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 12px; }
+    .offer-btn-ci  { background: var(--ci-blue);   color: #fff; }
     .offer-btn-ci:hover  { background: #16304F; }
-    .offer-btn-edt { background: var(--edt-green);  color: #fff; }
+    .offer-btn-edt { background: var(--edt-green); color: #fff; }
     .offer-btn-edt:hover { background: #234F33; }
 
-    /* ── CLAIM FORM ── */
-    .claim-section { background: var(--white); padding: 80px 0; }
-    .claim-wrap { max-width: 700px; margin: 0 auto; }
-    .claim-how {
-      background: var(--gold-pale); border: 1px solid rgba(201,168,76,.3); border-radius: var(--radius-lg);
-      padding: 20px 24px; margin-bottom: 32px;
-      display: flex; align-items: flex-start; gap: 14px;
-    }
+    /* CLAIM FORM */
+    .claim-section { background: var(--parchment); padding: 96px 0; }
+    .claim-wrap  { max-width: 700px; margin: 0 auto; }
+    .claim-how { background: var(--gold-wash); border: 1px solid rgba(184,144,58,.25); border-radius: var(--r-lg); padding: 20px 24px; margin-bottom: 32px; display: flex; align-items: flex-start; gap: 14px; }
     .claim-how-icon { font-size: 1.4rem; flex-shrink: 0; }
     .claim-how p { font-size: .86rem; color: var(--navy); line-height: 1.65; }
-    .claim-how strong { font-weight: 700; }
-    /* Form */
+    .claim-how strong { font-weight: 600; }
     .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-row { margin-bottom: 18px; }
-    .form-label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 7px; }
+    .form-row    { margin-bottom: 18px; }
+    .form-label  { display: block; font-size: .8rem; font-weight: 600; color: var(--text-mid); margin-bottom: 7px; }
     .form-label span { color: #C53030; margin-left: 2px; }
     .form-input, .form-select, .form-textarea {
-      width: 100%; padding: 11px 14px; border-radius: var(--radius);
-      border: 1.5px solid var(--border); background: var(--white);
-      font-family: var(--sans); font-size: .9rem; color: var(--text-primary);
-      outline: none; transition: border-color var(--transition); appearance: none;
+      width: 100%; padding: 11px 14px; border-radius: var(--r-sm);
+      border: 1.5px solid var(--rule); background: var(--white);
+      font-family: var(--sans); font-size: .9rem; color: var(--text-body);
+      outline: none; transition: border-color var(--t); appearance: none;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--navy); background: var(--off-white); }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-light); }
-    .form-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231B2A4A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
-    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); background: var(--parchment); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+    .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231B2A4A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
     .form-textarea { min-height: 100px; resize: vertical; }
-    .form-disclaimer { font-size: .72rem; color: var(--text-light); text-align: center; margin-top: 12px; line-height: 1.6; }
+    .form-disclaimer { font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 12px; line-height: 1.6; }
     .form-disclaimer a { color: var(--navy); }
 
-    /* ── ENDORSEMENTS ── */
-    .endorse-section { background: var(--off-white); padding: 80px 0; }
+    /* ENDORSEMENTS */
+    .endorse-section { background: var(--stone); padding: 96px 0; }
     .endorse-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
-    .endorse-card {
-      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 28px; position: relative;
-    }
-    .endorse-bar { width: 32px; height: 2px; background: var(--gold); margin-bottom: 16px; }
-    .endorse-quote { font-size: .9rem; color: var(--text-secondary); line-height: 1.75; font-style: italic; margin-bottom: 20px; }
-    .endorse-quote::before { content: '\201C'; font-family: var(--serif); font-size: 1.3rem; color: var(--gold); line-height: 0; vertical-align: -.25em; margin-right: 2px; }
-    .endorse-name { font-size: .84rem; font-weight: 700; color: var(--navy); }
-    .endorse-role { font-size: .76rem; color: var(--text-light); margin-top: 3px; }
+    .endorse-card { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow-xs); }
+    .endorse-mark { font-family: var(--serif); font-size: 3.5rem; color: var(--gold); line-height: 1; margin-bottom: 8px; opacity: .7; }
+    .endorse-rule { width: 32px; height: 1px; background: var(--gold); margin-bottom: 18px; }
+    .endorse-quote { font-size: .9rem; color: var(--text-mid); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
+    .endorse-name  { font-family: var(--serif); font-size: .95rem; font-weight: 600; color: var(--ink); }
+    .endorse-role  { font-size: .76rem; color: var(--text-muted); margin-top: 3px; }
 
-    /* ── NEWSLETTER ── */
-    .newsletter-section { background: var(--navy); padding: 72px 0; }
+    /* NEWSLETTER */
+    .newsletter-section { background: var(--ink); padding: 80px 0; }
     .newsletter-inner { max-width: 560px; margin: 0 auto; text-align: center; }
-    .newsletter-inner h2 { font-family: var(--serif); color: var(--white); font-size: clamp(1.6rem,3vw,2rem); font-weight: 700; margin-bottom: 12px; }
-    .newsletter-inner p  { color: rgba(255,255,255,.68); font-size: .9rem; line-height: 1.75; margin-bottom: 28px; }
+    .newsletter-inner h2 { font-family: var(--serif); color: var(--white); font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 600; margin-bottom: 12px; }
+    .newsletter-inner p  { color: rgba(255,255,255,.6); font-size: .9rem; line-height: 1.8; margin-bottom: 28px; }
     .newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-    .newsletter-form input {
-      flex: 1; min-width: 200px; padding: 11px 16px; border-radius: var(--radius);
-      border: 1.5px solid rgba(255,255,255,.2); background: rgba(255,255,255,.07);
-      color: var(--white); font-family: var(--sans); font-size: .9rem;
-      outline: none; transition: border-color var(--transition);
-    }
+    .newsletter-form input { flex: 1; min-width: 200px; padding: 11px 16px; border-radius: var(--r-sm); border: 1.5px solid rgba(255,255,255,.2); background: rgba(255,255,255,.07); color: var(--white); font-family: var(--sans); font-size: .9rem; outline: none; transition: border-color var(--t); }
     .newsletter-form input::placeholder { color: rgba(255,255,255,.38); }
     .newsletter-form input:focus { border-color: var(--gold); }
-    .newsletter-note { font-size: .72rem; color: rgba(255,255,255,.36); margin-top: 12px; line-height: 1.5; }
+    .newsletter-note { font-size: .72rem; color: rgba(255,255,255,.35); margin-top: 12px; line-height: 1.5; }
 
-    /* ── FOOTER ── */
-    footer { background: var(--navy); color: rgba(255,255,255,.75); padding: 56px 0 32px; border-top: 1px solid rgba(255,255,255,.08); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
-    .footer-brand-name { font-family: var(--serif); font-size: 1.2rem; color: var(--white); margin-bottom: 4px; font-weight: 700; }
-    .footer-brand-sub  { font-size: .72rem; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 14px; }
-    .footer-tagline { font-size: .82rem; line-height: 1.7; color: rgba(255,255,255,.5); max-width: 240px; }
-    footer h4 { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
-    footer a  { display: block; font-size: .85rem; color: rgba(255,255,255,.6); text-decoration: none; margin-bottom: 10px; transition: color var(--transition); }
-    footer a:hover { color: var(--gold); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.4); }
-    .footer-disclaimer { font-size: .7rem; color: rgba(255,255,255,.3); max-width: 500px; line-height: 1.6; }
-    .footer-imprints { display: flex; gap: 10px; margin-top: 14px; }
-    .fi-badge { font-size: .64rem; padding: 3px 10px; border-radius: 4px; font-weight: 700; letter-spacing: .06em; }
-    .fi-advisory { background: rgba(30,58,95,.5); color: rgba(201,168,76,.8); border: 1px solid rgba(30,58,95,.8); }
-    .fi-creative  { background: rgba(44,95,62,.5); color: rgba(201,168,76,.8); border: 1px solid rgba(44,95,62,.8); }
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 64px 0 36px; border-top: 1px solid rgba(255,255,255,.07); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
+    .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .footer-brand-mark { width: 40px; height: 40px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; }
+    .footer-brand-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); font-weight: 600; letter-spacing: -.01em; }
+    .footer-tagline { font-size: .82rem; line-height: 1.7; color: rgba(255,255,255,.45); max-width: 240px; margin-bottom: 16px; }
+    .footer-imprints { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-imprint  { font-size: .64rem; padding: 3px 10px; border-radius: 4px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .fi-advisory { background: rgba(30,58,95,.5); color: rgba(201,168,76,.85); border: 1px solid rgba(30,58,95,.8); }
+    .fi-creative  { background: rgba(44,95,62,.5); color: rgba(201,168,76,.85); border: 1px solid rgba(44,95,62,.8); }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a { width: 34px; height: 34px; border-radius: var(--r-sm); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); font-size: .8rem; text-decoration: none; transition: all var(--t); }
+    .footer-social a:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .footer-col h4 { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
+    .footer-col a  { display: block; font-size: .85rem; color: rgba(255,255,255,.58); text-decoration: none; margin-bottom: 10px; transition: color var(--t); }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
+    .footer-disclaimer { font-size: .7rem; color: rgba(255,255,255,.28); max-width: 520px; line-height: 1.65; }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width:1024px) {
       .author-grid { grid-template-columns: 1fr; }
       .author-photo { max-width: 280px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width:768px) {
-      .section-pad { padding: 56px 0; }
+      .section-pad { padding: 64px 0; }
       .books-hub-grid, .offers-books-grid, .endorse-grid { grid-template-columns: 1fr; }
       .form-grid-2 { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .nav-ham { display: block; }
     }
     @media (max-width:480px) {
       .footer-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 20px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
+<!-- MOBILE NAV OVERLAY -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="capabilities.html">Capabilities</a>
+  <a href="books_hub.html">Books</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logo-mark">F</div>
-      <div>
-        <span class="nav-logo-text">FedEthics</span>
-        <span class="nav-logo-sub">Inc.</span>
+      <div class="nav-logo-mark">FE</div>
+      <div class="nav-logo-wordmark">
+        <span class="nav-logo-name">FedEthics Inc.</span>
+        <span class="nav-logo-tagline">Ethical Leadership in the Age of AI</span>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="story.html">Our Story</a></li>
-      <li><a href="capabilities.html">Core Capabilities</a></li>
-      <li><a href="books.html" class="active">Books</a></li>
+      <li><a href="capabilities.html">Capabilities</a></li>
+      <li><a href="books_hub.html" class="active">Books</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="#bulk" class="btn btn-gold nav-cta" onclick="track('nav_bulk')">Bulk Offers ↓</a>
+    <div class="nav-right">
+      <a href="#bulk" class="btn btn-gold" onclick="track('nav_bulk')">Bulk Offers ↓</a>
+      <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
-<!-- ═══ AUTOGRAPH BANNER ═══ -->
+<!-- AUTOGRAPH BANNER -->
 <div class="autograph-banner">
   <p>✍️ <strong>Every book ordered directly from this page is personally autographed by Celio Oliveira</strong> — at no extra charge. <a href="#bulk">Buy 5+ copies</a> to unlock a free consultation or speaking engagement.</p>
 </div>
 
-<!-- ═══ PAGE HERO ═══ -->
-<div class="page-hero">
+<!-- PAGE HERO -->
+<header class="page-hero">
   <div class="container">
     <div class="eyebrow">The FedEthics Library</div>
     <h1>Two books. One author.<br/>Every order autographed.</h1>
-    <p>Two very different books — one for the boardroom, one for the imagination — both unmistakably FedEthics. Order direct to receive a copy signed personally by Celio Oliveira.</p>
-    <div class="page-hero-chips" style="margin-bottom:28px;">
+    <p>Two very different books — one for the boardroom, one for the imagination — both unmistakably FedEthics. Order direct and receive a copy signed personally by Celio Oliveira.</p>
+    <div class="page-hero-chips">
       <span class="hero-chip">✍️ Every copy autographed</span>
       <span class="hero-chip">🌍 International payments available</span>
       <span class="hero-chip">📚 Print + Digital formats</span>
       <span class="hero-chip">🎙️ Buy 5+ → free consultation</span>
     </div>
     <div class="btn-group">
-      <a href="book-ci.html"  class="btn btn-ci  btn-lg" onclick="track('hub_hero_ci')">Constitutional Intelligence →</a>
-      <a href="book-edt.html" class="btn btn-edt btn-lg" onclick="track('hub_hero_edt')">Étoile de Tournesol →</a>
+      <a href="constitutional_intelligence_page.html" class="btn btn-ci btn-lg" onclick="track('hub_hero_ci')">Constitutional Intelligence →</a>
+      <a href="etoile.html" class="btn btn-edt btn-lg" onclick="track('hub_hero_edt')">Étoile de Tournesol →</a>
     </div>
   </div>
-</div>
+</header>
 
-<!-- ═══ BOOKS HUB CARDS ═══ -->
-<section class="section-pad bg-white" id="books">
+<!-- BOOKS HUB CARDS -->
+<section class="section-pad" style="background:var(--off-white);" id="books">
   <div class="container">
     <div class="eyebrow">Select a Book</div>
     <h2 class="section-title">Explore each book's<br/><em>dedicated page</em></h2>
@@ -442,7 +402,7 @@
 
     <div class="books-hub-grid">
 
-      <!-- ── CI CARD ── -->
+      <!-- CI CARD -->
       <div class="book-hub-card">
         <div class="bhc-header bhc-ci">
           <div class="bhc-imprint">FedEthics Advisory™ · FriesenPress · ISBN 978-1-0383-5671-0</div>
@@ -463,27 +423,22 @@
             <span class="bhc-tag bhc-tag-ci">Executive Leadership</span>
           </div>
           <div class="btn-group" style="margin-bottom:20px;">
-            <a href="book-ci.html" class="btn btn-ci" onclick="track('hub_ci_page')">Full Book Page →</a>
-            <a href="book-ci.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_ci_pay')">Quick Order</a>
+            <a href="constitutional_intelligence_page.html" class="btn btn-ci" onclick="track('hub_ci_page')">Full Book Page →</a>
+            <a href="constitutional_intelligence_page.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_ci_pay')">Quick Order</a>
           </div>
-          <!-- Quick pay -->
           <div class="quick-pay">
             <p class="quick-pay-title">Quick Order — Constitutional Intelligence</p>
             <div class="quick-pay-section">
               <span class="pay-label">🇨🇦 Canada &amp; USA</span>
-              <!-- STRIPE: Log into dashboard.stripe.com → Payment Links → Create → replace URL -->
               <a href="https://buy.stripe.com/REPLACE_WITH_CI_PRINT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hub_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
-              <!-- PAYHIP: Log into payhip.com → Products → get share link → replace URL -->
               <a href="https://payhip.com/REPLACE_WITH_CI_DIGITAL_PAYHIP_LINK" class="pay-btn pay-payhip" onclick="track('hub_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital — Payhip</a>
             </div>
             <div class="quick-pay-section">
               <span class="pay-label">🌍 International</span>
-              <!-- PAYONEER: Log into myaccount.payoneer.com → Request Payment → get link → replace URL -->
               <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER_LINK" class="pay-btn pay-payoneer" onclick="track('hub_ci_payoneer')" target="_blank" rel="noopener">🌐 International Payment — Payoneer</a>
             </div>
             <div class="quick-pay-section">
               <span class="pay-label">🛒 Also On</span>
-              <!-- AMAZON: Confirm URL with FriesenPress via books.friesenpress.com → replace URL -->
               <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON_URL" class="pay-btn pay-amazon" onclick="track('hub_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon</a>
             </div>
             <p class="pay-note">✍️ Print orders autographed &amp; shipped within 5–7 business days</p>
@@ -491,7 +446,7 @@
         </div>
       </div>
 
-      <!-- ── EDT CARD ── -->
+      <!-- EDT CARD -->
       <div class="book-hub-card">
         <div class="bhc-header bhc-edt">
           <div class="bhc-imprint">FedEthics Creative™ · Auto-publié · Roman jeunesse français</div>
@@ -513,22 +468,18 @@
             <span class="bhc-tag bhc-tag-edt">Club de lecture</span>
           </div>
           <div class="btn-group" style="margin-bottom:20px;">
-            <a href="book-edt.html" class="btn btn-edt" onclick="track('hub_edt_page')">Page complète du livre →</a>
-            <a href="book-edt.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_edt_pay')">Commander vite</a>
+            <a href="etoile.html" class="btn btn-edt" onclick="track('hub_edt_page')">Page complète du livre →</a>
+            <a href="etoile.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_edt_pay')">Commander vite</a>
           </div>
-          <!-- Quick pay -->
           <div class="quick-pay">
             <p class="quick-pay-title">Commander — Étoile de Tournesol</p>
             <div class="quick-pay-section">
               <span class="pay-label">🇨🇦 Canada &amp; USA</span>
-              <!-- STRIPE: Create separate Stripe payment link for EDT → replace URL -->
               <a href="https://buy.stripe.com/REPLACE_WITH_EDT_PRINT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hub_edt_stripe')" target="_blank" rel="noopener">💳 Commander imprimé (dédicacé) — Stripe</a>
-              <!-- PAYHIP: Create EDT product on Payhip → replace URL -->
               <a href="https://payhip.com/REPLACE_WITH_EDT_DIGITAL_PAYHIP_LINK" class="pay-btn pay-payhip" onclick="track('hub_edt_payhip')" target="_blank" rel="noopener">📥 Acheter numérique — Payhip</a>
             </div>
             <div class="quick-pay-section">
               <span class="pay-label">🌍 International</span>
-              <!-- PAYONEER: Create separate EDT payment request → replace URL -->
               <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER_LINK" class="pay-btn pay-payoneer" onclick="track('hub_edt_payoneer')" target="_blank" rel="noopener">🌐 Paiement international — Payoneer</a>
             </div>
             <p class="pay-note">✍️ Chaque exemplaire dédicacé · livraison 5–7 jours ouvrables</p>
@@ -540,13 +491,13 @@
   </div>
 </section>
 
-<!-- ═══ AUTHOR BACKGROUNDER ═══ -->
+<!-- AUTHOR SECTION -->
 <section class="author-section" id="author">
   <div class="container">
     <div class="author-grid">
       <div>
         <div class="author-photo">
-          <!-- Replace div below with: <img src="images/celio_photo.jpg" alt="Celio Oliveira" /> -->
+          <!-- Replace with: <img src="images/celio_photo.jpg" alt="Celio Oliveira" /> -->
           <div class="author-photo-placeholder">
             <span style="font-size:3rem;opacity:.2;">👤</span>
             <span>Add photo:<br/>images/celio_photo.jpg</span>
@@ -568,30 +519,24 @@
           <span class="cred-chip">Chair, CDAO Canada Public Sector</span>
           <span class="cred-chip">PhD Candidate — University of Toronto</span>
           <span class="cred-chip">MSc Human-Centred Data Science</span>
-          <span class="cred-chip">MBA Digital Media</span>
-          <span class="cred-chip">G7 GovAI Grand Challenge — Team Lead</span>
-          <span class="cred-chip">Visiting Faculty — Canada School of Public Service</span>
+          <span class="cred-chip">MBA · IBM Watson AI Certified</span>
+          <span class="cred-chip">15+ Years Federal Leadership</span>
+          <span class="cred-chip">CBSA · Health Canada · StatCan · PCO</span>
         </div>
         <div class="lang-row">
-          <span>Speaks:</span>
-          <div class="lang-flags">
-            <span title="English">🇬🇧</span>
-            <span title="French">🇫🇷</span>
-            <span title="Portuguese">🇧🇷</span>
-            <span title="Spanish">🇪🇸</span>
-          </div>
-          <span>English · French · Portuguese · Spanish</span>
+          <span>🇨🇦 🇧🇷 🇪🇸 🇫🇷</span>
+          <span>Communicates in English, French, Portuguese &amp; Spanish</span>
         </div>
         <div class="btn-group">
-          <a href="contact.html"     class="btn btn-gold"          onclick="track('author_contact')">Book a Speaking Engagement</a>
-          <a href="https://linkedin.com/in/celioroliveira" target="_blank" class="btn btn-outline-white" onclick="track('author_linkedin')">LinkedIn ↗</a>
+          <a href="story.html" class="btn btn-outline-light">Read the Full Story</a>
+          <a href="contact.html" class="btn btn-gold">Book a Speaking Engagement</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SPECIAL OFFERS ═══ -->
+<!-- SPECIAL OFFERS -->
 <section class="offers-section" id="bulk">
   <div class="container">
     <div class="eyebrow">Direct Purchase Benefits</div>
@@ -604,7 +549,6 @@
     </div>
 
     <div class="offers-books-grid">
-
       <!-- CI OFFERS -->
       <div class="offer-book-block">
         <div class="obb-header obb-ci">
@@ -612,22 +556,19 @@
           <div class="obb-title">Constitutional Intelligence</div>
         </div>
         <div class="obb-body">
-          <p style="font-size:.84rem;color:var(--text-secondary);margin-bottom:18px;line-height:1.65;">For executives, teams, and organizations ordering multiple copies.</p>
-
+          <p style="font-size:.84rem;color:var(--text-mid);margin-bottom:18px;line-height:1.65;">For executives, teams, and organizations ordering multiple copies.</p>
           <div class="offer-item">
             <span class="offer-trigger">Any direct purchase</span>
             <h4>✍️ Autographed Copy</h4>
             <p>Every copy ordered directly from this page is personally signed by Celio Oliveira. No form, no extra charge — it happens automatically for every print order.</p>
-            <a href="#ci-pay" class="pay-btn offer-btn-ci btn-sm" onclick="track('offer_ci_autograph')">Order Now</a>
+            <a href="constitutional_intelligence_page.html#payments" class="pay-btn offer-btn-ci" onclick="track('offer_ci_autograph')">Order Now</a>
           </div>
-
           <div class="offer-item">
             <span class="offer-trigger">Buy 5 or more copies</span>
             <h4>🎯 Free 30-Minute Consultation</h4>
-            <p>Order 5+ copies and receive 30 minutes of advisory time with Celio — available as a virtual call or a live speaking engagement at your institution, department, or leadership event.</p>
+            <p>Order 5+ copies and receive 30 minutes of advisory time with Celio — available as a virtual call or a live speaking engagement at your institution at no cost.</p>
             <a href="#claim" class="pay-btn offer-btn-ci" onclick="track('offer_ci_consult')">Claim This Offer</a>
           </div>
-
           <div class="offer-item">
             <span class="offer-trigger">Buy 5 or more copies</span>
             <h4>🖊️ Personalized Handwritten Dedication</h4>
@@ -644,22 +585,19 @@
           <div class="obb-title">Étoile de Tournesol</div>
         </div>
         <div class="obb-body">
-          <p style="font-size:.84rem;color:var(--text-secondary);margin-bottom:18px;line-height:1.65;">Pour les classes, clubs de lecture, bibliothèques et familles.</p>
-
+          <p style="font-size:.84rem;color:var(--text-mid);margin-bottom:18px;line-height:1.65;">Pour les classes, clubs de lecture, bibliothèques et familles.</p>
           <div class="offer-item">
             <span class="offer-trigger">Tout achat direct</span>
             <h4>✍️ Exemplaire dédicacé</h4>
             <p>Chaque exemplaire commandé directement sur ce site est signé personnellement par Celio Oliveira — automatiquement, sans frais supplémentaires.</p>
-            <a href="#edt-pay" class="pay-btn offer-btn-edt btn-sm" onclick="track('offer_edt_autograph')">Commander</a>
+            <a href="etoile.html#payments" class="pay-btn offer-btn-edt" onclick="track('offer_edt_autograph')">Commander</a>
           </div>
-
           <div class="offer-item">
             <span class="offer-trigger">5 exemplaires ou plus</span>
             <h4>💬 Rencontre de 15 minutes avec l'auteur</h4>
-            <p>Commandez 5 exemplaires et recevez une rencontre virtuelle de 15 minutes avec Celio pour discuter du livre : ses personnages, ses thèmes, son processus créatif — en français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
+            <p>Commandez 5 exemplaires et recevez une rencontre virtuelle de 15 minutes avec Celio pour discuter du livre — en français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
             <a href="#claim" class="pay-btn offer-btn-edt" onclick="track('offer_edt_call')">Demander la rencontre</a>
           </div>
-
           <div class="offer-item">
             <span class="offer-trigger">5 exemplaires ou plus</span>
             <h4>🖊️ Dédicace personnalisée</h4>
@@ -668,30 +606,26 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══ CLAIM FORM ═══ -->
+<!-- CLAIM FORM -->
 <section class="claim-section" id="claim">
   <div class="container">
     <div class="claim-wrap">
       <div class="eyebrow">Claim Your Offer</div>
       <h2 class="section-title" style="margin-bottom:8px;">Request your consultation<br/>or personalized dedication</h2>
-      <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:28px;line-height:1.7;">Complete this form after purchasing 5 or more copies. Mila from our team will respond within 2 business days to confirm your offer and next steps.</p>
+      <p style="color:var(--text-mid);font-size:.9rem;margin-bottom:28px;line-height:1.7;">Complete this form after purchasing 5 or more copies. Our team responds within 2 business days to confirm your offer and next steps.</p>
 
       <div class="claim-how">
         <div class="claim-how-icon">📋</div>
         <p><strong>Process:</strong> Purchase using any payment button above → fill in this form → we contact you within 48 hours. For <strong>consultations</strong>, we will propose 2–3 date options. For <strong>dedications</strong>, we will ask for each recipient's name.</p>
       </div>
 
-      <!-- Form action: replace with your Formspree endpoint (formspree.io — free tier available) -->
-      <!-- Or use PHP mail() via Namecheap cPanel hosting if you prefer self-hosted -->
       <form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID" method="POST" onsubmit="track('form_submit_claim')">
         <input type="hidden" name="_subject" value="FedEthics — Bulk Purchase Offer Claim" />
         <input type="hidden" name="_cc"      value="communications@fedethics.ca" />
-        <input type="hidden" name="_next"    value="https://fedethics.ca/books.html?submitted=true" />
 
         <div class="form-grid-2">
           <div class="form-row" style="margin-bottom:0;">
@@ -703,7 +637,6 @@
             <input class="form-input" type="text" id="lname" name="last_name" required placeholder="Your last name" />
           </div>
         </div>
-
         <div class="form-grid-2" style="margin-top:18px;">
           <div class="form-row" style="margin-bottom:0;">
             <label class="form-label" for="email">Email Address <span>*</span></label>
@@ -711,15 +644,13 @@
           </div>
           <div class="form-row" style="margin-bottom:0;">
             <label class="form-label" for="phone">Phone (Optional)</label>
-            <input class="form-input" type="tel"   id="phone" name="phone" placeholder="+1 (___) ___-____" />
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="+1 (___) ___-____" />
           </div>
         </div>
-
         <div class="form-row" style="margin-top:18px;">
           <label class="form-label" for="org">Organization / School / Institution <span>*</span></label>
           <input class="form-input" type="text" id="org" name="organization" required placeholder="e.g. Deloitte Canada, École Polytechnique, Treasury Board Secretariat" />
         </div>
-
         <div class="form-grid-2">
           <div class="form-row" style="margin-bottom:0;">
             <label class="form-label" for="book">Which book? <span>*</span></label>
@@ -735,7 +666,6 @@
             <input class="form-input" type="number" id="qty" name="quantity" required min="5" placeholder="Minimum 5" />
           </div>
         </div>
-
         <div class="form-row">
           <label class="form-label" for="offer">Preferred Offer <span>*</span></label>
           <select class="form-input form-select" id="offer" name="preferred_offer" required>
@@ -747,49 +677,44 @@
             <option>Personalized Handwritten Dedication (both books)</option>
           </select>
         </div>
-
         <div class="form-row">
           <label class="form-label" for="dates">Preferred Dates or Times (Optional)</label>
           <input class="form-input" type="text" id="dates" name="preferred_dates" placeholder="e.g. Any Tuesday in March, or week of April 7" />
         </div>
-
         <div class="form-row">
           <label class="form-label" for="notes">Additional Notes</label>
           <textarea class="form-input form-textarea" id="notes" name="notes" placeholder="Tell us about your team, class, or event. Any specific topics or questions you'd like Celio to address?"></textarea>
         </div>
-
-        <button type="submit" class="btn btn-primary btn-lg btn-full" style="margin-top:4px;">
-          Submit My Request
-        </button>
-        <p class="form-disclaimer">
-          Your information is used only to process this request and will never be shared with third parties.<br/>
-          Questions? Contact us at <a href="mailto:celio.oliveira@fedethics.ca">celio.oliveira@fedethics.ca</a>
-        </p>
+        <button type="submit" class="btn btn-primary btn-lg btn-full" style="margin-top:4px;">Submit My Request</button>
+        <p class="form-disclaimer">Your information is used only to process this request and will never be shared with third parties.<br/>Questions? Contact us at <a href="mailto:books@fedethics.ca">books@fedethics.ca</a></p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ═══ ENDORSEMENTS ═══ -->
+<!-- ENDORSEMENTS -->
 <section class="endorse-section">
   <div class="container text-center">
-    <div class="eyebrow" style="justify-content:center;">What Leaders Are Saying</div>
+    <div class="eyebrow">What Leaders Are Saying</div>
     <h2 class="section-title">Endorsed at the<br/><em>highest levels</em></h2>
     <div class="endorse-grid">
       <div class="endorse-card">
-        <div class="endorse-bar"></div>
+        <div class="endorse-mark">"</div>
+        <div class="endorse-rule"></div>
         <p class="endorse-quote">A timely and essential contribution to how Canada must think about the intersection of AI and democratic governance.</p>
         <p class="endorse-name">Former Clerk of the Privy Council</p>
         <p class="endorse-role">Government of Canada</p>
       </div>
       <div class="endorse-card">
-        <div class="endorse-bar"></div>
+        <div class="endorse-mark">"</div>
+        <div class="endorse-rule"></div>
         <p class="endorse-quote">Celio brings rare clarity to a complex field. This book belongs in every executive's library and every public servant's toolkit.</p>
         <p class="endorse-name">Former Chief Information Officer of Canada</p>
         <p class="endorse-role">Government of Canada</p>
       </div>
       <div class="endorse-card">
-        <div class="endorse-bar"></div>
+        <div class="endorse-mark">"</div>
+        <div class="endorse-rule"></div>
         <p class="endorse-quote">Constitutional Intelligence offers the framework public institutions have been missing as they navigate the AI era responsibly.</p>
         <p class="endorse-name">Chief Statistician of Canada</p>
         <p class="endorse-role">Statistics Canada</p>
@@ -798,14 +723,13 @@
   </div>
 </section>
 
-<!-- ═══ NEWSLETTER ═══ -->
+<!-- NEWSLETTER -->
 <section class="newsletter-section" id="newsletter">
   <div class="container">
     <div class="newsletter-inner">
       <div class="eyebrow eyebrow-light" style="justify-content:center;">Stay Connected</div>
       <h2>The FedEthics Dispatch</h2>
       <p>AI governance insights, book updates, and speaking announcements — delivered to executives, policy leaders, and senior practitioners. No noise. Unsubscribe anytime.</p>
-      <!-- Replace form action with your Formspree newsletter endpoint or Mailchimp embed URL -->
       <form class="newsletter-form" action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORMSPREE" method="POST" onsubmit="track('newsletter_signup')">
         <input type="text"  name="fname" placeholder="First name" />
         <input type="email" name="email" placeholder="Email address" required />
@@ -816,45 +740,52 @@
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">FedEthics Inc.</div>
-        <div class="footer-brand-sub">Ethical Leadership in the Age of AI</div>
+        <div class="footer-brand-logo">
+          <div class="footer-brand-mark">FE</div>
+          <span class="footer-brand-name">FedEthics Inc.</span>
+        </div>
         <p class="footer-tagline">Advisory, education, and publishing — in a personal capacity, independent of any employer.</p>
         <div class="footer-imprints">
-          <span class="fi-badge fi-advisory">FedEthics Advisory™</span>
-          <span class="fi-badge fi-creative">FedEthics Creative™</span>
+          <span class="footer-imprint fi-advisory">FedEthics Advisory™</span>
+          <span class="footer-imprint fi-creative">FedEthics Creative™</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://orcid.org/0009-0008-8896-9073" target="_blank" rel="noopener" aria-label="ORCID">◎</a>
+          <a href="mailto:hello@fedethics.ca" aria-label="Email">✉</a>
         </div>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Navigate</h4>
         <a href="index.html">Home</a>
         <a href="story.html">Our Story</a>
         <a href="capabilities.html">Core Capabilities</a>
-        <a href="books.html">Books</a>
+        <a href="books_hub.html">Books</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Books</h4>
-        <a href="book-ci.html">Constitutional Intelligence</a>
-        <a href="book-edt.html">Étoile de Tournesol</a>
-        <a href="books.html#bulk">Bulk Offers</a>
-        <a href="books.html#claim">Claim Your Offer</a>
+        <a href="constitutional_intelligence_page.html">Constitutional Intelligence</a>
+        <a href="etoile.html">Étoile de Tournesol</a>
+        <a href="books_hub.html#bulk">Bulk Offers</a>
+        <a href="books_hub.html#claim">Claim Your Offer</a>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Connect</h4>
-        <a href="mailto:celio.oliveira@fedethics.ca">celio.oliveira@fedethics.ca</a>
+        <a href="mailto:hello@fedethics.ca">hello@fedethics.ca</a>
         <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="books.html#newsletter">Newsletter</a>
+        <a href="#newsletter">Newsletter</a>
         <a href="contact.html">Speaking Enquiries</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2025 FedEthics Inc. All rights reserved.</span>
-      <p class="footer-disclaimer">FedEthics Inc. is an independent organization. All views expressed in FedEthics publications are those of the author in a personal capacity and do not represent any government institution or employer.</p>
+      <span class="footer-copy">© 2026 FedEthics Inc. All rights reserved.</span>
+      <p class="footer-disclaimer">FedEthics Inc. is an independent organization. All views, books, and advisory services are produced and delivered by Celio Oliveira in a strictly personal capacity, independent of any government institution or employer.</p>
     </div>
   </div>
 </footer>

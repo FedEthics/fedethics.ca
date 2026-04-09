@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Étoile de Tournesol par Celio Oliveira — Roman jeunesse français sur sept gardiens aux dons extraordinaires dans une ville secrète et magique. Commandez votre exemplaire dédicacé." />
+  <meta property="og:title" content="Étoile de Tournesol — FedEthics Creative™" />
+  <title>Étoile de Tournesol — FedEthics Creative™</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2F5300W8X0');
+    function track(l){ gtag('event','click',{event_category:'CTA',event_label:l}); }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       FEDETHICS v2 — Étoile de Tournesol
+       Typography: Cormorant Garamond + DM Sans
+       Book identity: derived from the actual cover art
+         Deep violet #1E0B3C → mid purple #3D1F6E → indigo glow #6B40A8
+         Gold emblem #D4A048 · Sunflower amber #E8A020
+       Global chrome: Ink Navy · Parliamentary Gold · Parchment (v2 system)
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* FedEthics v2 core */
+      --ink:        #12192C;
+      --navy:       #1B2A4A;
+      --navy-mid:   #243558;
+      --gold:       #B8903A;
+      --gold-bright:#D4A84B;
+      --gold-pale:  #F4EDD6;
+      --gold-wash:  #FBF6EA;
+      --parchment:  #FDFBF7;
+      --white:      #FFFFFF;
+      --off-white:  #F8F7F4;
+      --stone:      #EEE9E0;
+      --text-body:  #2D3242;
+      --text-mid:   #4A5165;
+      --text-muted: #717897;
+      --rule:       #DDD8CE;
+
+      /* EDT — cover-derived purple palette */
+      --edt-deep:       #1E0B3C;   /* darkest violet — hero bg bottom */
+      --edt-dark:       #2D1461;   /* deep purple */
+      --edt-purple:     #3D1F6E;   /* main brand purple */
+      --edt-mid:        #5B2D9E;   /* mid violet */
+      --edt-light:      #7B50B8;   /* lighter violet for accents */
+      --edt-glow:       #9B70CC;   /* soft violet glow */
+      --edt-pale:       #EDE0F5;   /* very light lavender */
+      --edt-parchment:  #F8F4FC;   /* near-white with lavender tint */
+      --edt-gold:       #D4A048;   /* cover title gold */
+      --edt-sunflower:  #E8A820;   /* sunflower emblem amber */
+      --edt-border:     rgba(123,80,184,0.2);
+
+      /* Typography */
+      --serif: 'Cormorant Garamond', 'Georgia', serif;
+      --sans:  'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Layout */
+      --max-w: 1200px;
+      --r-sm:  6px;  --r-md: 10px;  --r-lg: 18px;
+      --shadow-xs:  0 1px 3px rgba(30,11,60,.07);
+      --shadow-sm:  0 2px 8px rgba(30,11,60,.10), 0 1px 3px rgba(30,11,60,.06);
+      --shadow-md:  0 6px 24px rgba(30,11,60,.14), 0 2px 8px rgba(30,11,60,.08);
+      --shadow-lg:  0 16px 56px rgba(30,11,60,.18), 0 4px 16px rgba(30,11,60,.10);
+      --t: .22s ease;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); background: var(--edt-parchment); color: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* LAYOUT */
+    .container  { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+    .section-pad{ padding: 96px 0; }
+    .text-center{ text-align: center; }
+    .text-center .section-lead { margin-left: auto; margin-right: auto; }
+    .text-center .eyebrow { justify-content: center; }
+    .text-center .eyebrow::before { display: none; }
+
+    /* EYEBROW */
+    .eyebrow {
+      font-family: var(--sans); font-size: .68rem; font-weight: 600;
+      letter-spacing: .20em; text-transform: uppercase;
+      color: var(--edt-gold); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .eyebrow::before { content: ''; flex-shrink: 0; display: block; width: 28px; height: 1px; background: var(--edt-gold); }
+    .eyebrow-light { color: rgba(255,255,255,.65); }
+    .eyebrow-light::before { background: var(--edt-gold); }
+    .eyebrow-purple { color: var(--edt-purple); }
+    .eyebrow-purple::before { background: var(--edt-purple); }
+
+    /* SECTION TYPOGRAPHY */
+    .section-title {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(2rem, 3.8vw, 3rem); line-height: 1.12;
+      color: var(--ink); margin-bottom: 20px; letter-spacing: -.01em;
+    }
+    .section-title em { color: var(--edt-purple); font-style: italic; font-weight: 400; }
+    .section-lead { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; max-width: 560px; margin-bottom: 44px; }
+
+    /* BADGES */
+    .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: .71rem; font-weight: 600; letter-spacing: .04em; }
+    .badge-purple { background: rgba(61,31,110,.09); color: var(--edt-purple); border: 1px solid rgba(61,31,110,.2); }
+    .badge-gold   { background: var(--gold-pale); color: #7A5C1A; border: 1px solid rgba(184,144,58,.28); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 28px; border-radius: var(--r-sm);
+      font-family: var(--sans); font-size: .875rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: 1.5px solid transparent;
+      transition: all var(--t); white-space: nowrap; line-height: 1; letter-spacing: .01em;
+    }
+    .btn-purple        { background: var(--edt-purple);  color: var(--white); border-color: var(--edt-purple); }
+    .btn-purple:hover  { background: var(--edt-mid);     transform: translateY(-1px); box-shadow: 0 6px 24px rgba(61,31,110,.35); }
+    .btn-gold          { background: var(--edt-gold);    color: var(--ink); border-color: var(--edt-gold); }
+    .btn-gold:hover    { background: var(--edt-sunflower); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(212,160,72,.40); }
+    .btn-navy          { background: var(--navy);        color: var(--white); border-color: var(--navy); }
+    .btn-navy:hover    { background: var(--navy-mid);    transform: translateY(-1px); }
+    .btn-outline-purple{ background: transparent; color: var(--edt-purple); border-color: var(--edt-purple); }
+    .btn-outline-purple:hover { background: var(--edt-purple); color: var(--white); }
+    .btn-outline-navy  { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+    .btn-outline-light { background: transparent; color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.35); }
+    .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.65); }
+    .btn-lg  { padding: 15px 36px; font-size: .9375rem; }
+    .btn-sm  { padding: 8px 18px; font-size: .8rem; }
+    .btn-full{ width: 100%; justify-content: center; }
+    .btn-group{ display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    /* PAYMENT BUTTONS */
+    .pay-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 12px 16px; border-radius: var(--r-sm);
+      font-family: var(--sans); font-size: .84rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all var(--t); margin-bottom: 8px;
+    }
+    .pay-btn:last-child { margin-bottom: 0; }
+    .pay-stripe   { background: #635BFF; color: #fff; }
+    .pay-stripe:hover   { background: #4F46E5; transform: translateY(-1px); }
+    .pay-payhip   { background: #00B09B; color: #fff; }
+    .pay-payhip:hover   { background: #009688; transform: translateY(-1px); }
+    .pay-payoneer { background: #FF6C2F; color: #fff; }
+    .pay-payoneer:hover { background: #E5601F; transform: translateY(-1px); }
+    .pay-section-label { font-size: .64rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin: 12px 0 7px; display: block; }
+    .pay-note { font-size: .71rem; color: var(--text-muted); text-align: center; margin-top: 10px; line-height: 1.5; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 300;
+      background: rgba(253,251,247,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule); height: 72px;
+    }
+    .nav-inner { height: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo  { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-mark { width: 40px; height: 40px; background: var(--ink); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .nav-logo-wordmark { display: flex; flex-direction: column; gap: 1px; }
+    .nav-logo-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1; letter-spacing: -.01em; }
+    .nav-logo-tagline { font-size: .58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .14em; line-height: 1; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color var(--t); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px; background: var(--edt-gold); transform: scaleX(0); transition: transform var(--t); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-links a.active { color: var(--ink); font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .nav-imprint { font-size: .65rem; background: rgba(61,31,110,.09); color: var(--edt-purple); border: 1px solid rgba(61,31,110,.2); border-radius: 4px; padding: 3px 8px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; margin-left: 6px; }
+    .nav-ham span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 400; background: rgba(30,11,60,.97); backdrop-filter: blur(8px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-family: var(--serif); font-size: 1.8rem; color: var(--white); text-decoration: none; font-weight: 600; transition: color var(--t); }
+    .mobile-nav a:hover { color: var(--edt-gold); }
+    .mobile-nav-close { position: absolute; top: 24px; right: 28px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: rgba(255,255,255,.55); }
+
+    /* BOOK HERO — full cover-palette immersion */
+    .book-hero {
+      background: linear-gradient(170deg, var(--edt-deep) 0%, var(--edt-dark) 35%, var(--edt-purple) 70%, #4A2880 100%);
+      padding: 80px 0 72px; position: relative; overflow: hidden;
+    }
+    /* Radial glow — mimics the cover's central sunflower light */
+    .book-hero::before {
+      content: ''; position: absolute;
+      top: -10%; left: 38%; transform: translateX(-50%);
+      width: 60%; height: 80%;
+      background: radial-gradient(ellipse at center, rgba(212,160,72,.14) 0%, rgba(155,112,204,.10) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Corner ornament hint */
+    .book-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(212,160,72,.06) 0%, transparent 25%),
+        radial-gradient(circle at 92% 8%, rgba(212,160,72,.06) 0%, transparent 25%),
+        radial-gradient(circle at 8% 92%, rgba(212,160,72,.04) 0%, transparent 20%),
+        radial-gradient(circle at 92% 92%, rgba(212,160,72,.04) 0%, transparent 20%);
+      pointer-events: none;
+    }
+    .book-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; z-index: 1; }
+    .book-hero-imprint { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: var(--r-sm); padding: 6px 14px; }
+    .book-hero-imprint span { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--edt-gold); }
+    .book-hero h1 {
+      font-family: var(--serif); font-weight: 600; font-style: italic;
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem); line-height: 1.05;
+      color: var(--white); margin-bottom: 8px; letter-spacing: -.01em;
+      /* mimics the cover's gold-toned title */
+      text-shadow: 0 2px 24px rgba(212,160,72,.25);
+    }
+    .book-hero-subtitle {
+      font-family: var(--sans); font-size: .82rem; color: rgba(255,255,255,.55);
+      margin-bottom: 24px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
+    }
+    .book-hero-excerpt {
+      background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.11);
+      border-left: 2px solid var(--edt-gold); border-radius: 0 var(--r-md) var(--r-md) 0;
+      padding: 16px 20px; margin-bottom: 28px;
+    }
+    .book-hero-excerpt p { font-family: var(--serif); font-size: .92rem; font-style: italic; color: rgba(255,255,255,.82); line-height: 1.75; margin-bottom: 6px; }
+    .book-hero-excerpt cite { font-size: .7rem; color: var(--edt-gold); font-style: normal; font-weight: 600; }
+    .book-hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .hero-badge { background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.16); border-radius: 20px; padding: 5px 14px; font-size: .73rem; color: rgba(255,255,255,.78); font-weight: 500; }
+    .hero-badge.gold-badge { background: rgba(212,160,72,.14); border-color: rgba(212,160,72,.32); color: var(--edt-gold); }
+
+    /* Cover panel */
+    .book-hero-panel { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.11); border-radius: var(--r-lg); padding: 28px; backdrop-filter: blur(6px); position: relative; z-index: 1; }
+
+    /* The cover image placeholder — designed to match the actual cover's feel */
+    .book-cover-display {
+      width: 100%; aspect-ratio: 2/3; border-radius: 4px 12px 12px 4px;
+      background: linear-gradient(170deg, var(--edt-dark) 0%, var(--edt-purple) 50%, #4A2880 100%);
+      border: 1px solid rgba(212,160,72,.30);
+      box-shadow: 8px 14px 48px rgba(0,0,0,.55), 0 0 40px rgba(212,160,72,.08);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 24px 20px; position: relative; overflow: hidden; margin-bottom: 20px;
+    }
+    /* Spine shadow */
+    .book-cover-display::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: rgba(0,0,0,.45); box-shadow: inset -5px 0 12px rgba(0,0,0,.35); }
+    /* Sunflower-amber spine accent */
+    .book-cover-display::after  { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--edt-sunflower); opacity: .75; }
+    /* Central glow — the sunflower lantern from the cover */
+    .cover-glow {
+      position: absolute; top: 18%; left: 50%; transform: translateX(-50%);
+      width: 72px; height: 72px; border-radius: 50%;
+      background: radial-gradient(circle, var(--edt-sunflower) 0%, rgba(232,168,32,.4) 40%, transparent 70%);
+      box-shadow: 0 0 32px 8px rgba(232,168,32,.3);
+    }
+    /* Cover ornament corners */
+    .cover-ornament { position: absolute; font-size: 1.1rem; opacity: .45; color: var(--edt-gold); }
+    .cover-ornament.tl { top: 10px; left: 14px; }
+    .cover-ornament.tr { top: 10px; right: 14px; transform: scaleX(-1); }
+    .cover-ornament.bl { bottom: 68px; left: 14px; }
+    .cover-ornament.br { bottom: 68px; right: 14px; transform: scaleX(-1); }
+    .book-cover-imprint { font-size: .58rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--edt-gold); margin-bottom: 6px; position: relative; z-index: 1; }
+    .book-cover-title   { font-family: var(--serif); font-size: 1.05rem; color: var(--white); line-height: 1.3; font-weight: 600; font-style: italic; margin-bottom: 4px; position: relative; z-index: 1; }
+    .book-cover-author  { font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); position: relative; z-index: 1; }
+
+    .hero-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
+    .hero-price-from{ font-size: .75rem; color: rgba(255,255,255,.5); }
+    .hero-price-amt { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--white); }
+    .hero-price-cad { font-size: .75rem; color: rgba(255,255,255,.5); }
+
+    /* OVERVIEW STRIP */
+    .overview-strip { background: var(--white); border-bottom: 1px solid var(--rule); }
+    .overview-grid  { display: grid; grid-template-columns: repeat(4,1fr); }
+    .overview-item  { padding: 22px 24px; border-right: 1px solid var(--rule); }
+    .overview-item:last-child { border-right: none; }
+    .overview-icon  { font-size: 1.3rem; margin-bottom: 8px; }
+    .overview-label { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--edt-purple); margin-bottom: 4px; }
+    .overview-value { font-size: .85rem; color: var(--text-mid); font-weight: 500; line-height: 1.4; }
+
+    /* STORY SECTION */
+    .story-section { background: var(--edt-parchment); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 48px; align-items: start; }
+    .story-text h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 14px; font-weight: 600; }
+    .story-text p  { font-size: .92rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 16px; }
+    .story-text p:last-child { margin-bottom: 0; }
+    .story-quote {
+      border-left: 2px solid var(--edt-gold); padding: 18px 22px;
+      background: rgba(61,31,110,.05); border-radius: 0 var(--r-md) var(--r-md) 0;
+      margin: 24px 0;
+    }
+    .story-quote p { font-family: var(--serif); font-size: .98rem; font-style: italic; color: var(--edt-purple); line-height: 1.75; margin: 0; }
+    .story-quote cite { font-size: .72rem; color: var(--text-muted); font-style: normal; font-weight: 600; display: block; margin-top: 8px; }
+    .story-aside { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 24px; box-shadow: var(--shadow-xs); }
+    .story-aside h4 { font-family: var(--serif); font-size: 1rem; color: var(--ink); margin-bottom: 12px; font-weight: 600; }
+    .story-aside-extract { background: var(--edt-parchment); border: 1px solid var(--edt-border); border-radius: var(--r-md); padding: 20px; font-size: .88rem; color: var(--text-mid); line-height: 1.85; font-style: italic; margin-bottom: 20px; }
+    .story-struct-row { padding: 8px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 12px; font-size: .84rem; color: var(--text-mid); }
+    .story-struct-row:last-child { border-bottom: none; }
+    .story-struct-row strong { color: var(--edt-purple); font-weight: 700; flex-shrink: 0; }
+
+    /* CHARACTERS SECTION */
+    .characters-section {
+      background: linear-gradient(170deg, var(--edt-deep) 0%, var(--edt-dark) 40%, var(--edt-purple) 100%);
+      padding: 96px 0; position: relative; overflow: hidden;
+    }
+    .characters-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(212,160,72,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .chars-intro { max-width: 600px; margin: 0 auto 48px; text-align: center; position: relative; z-index: 1; }
+    .chars-intro h2 { font-family: var(--serif); color: var(--white); font-size: clamp(1.8rem,3.2vw,2.6rem); font-weight: 600; margin-bottom: 12px; }
+    .chars-intro h2 span { font-style: italic; color: var(--edt-gold); }
+    .chars-intro p { color: rgba(255,255,255,.65); font-size: .9rem; line-height: 1.75; }
+    .chars-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; position: relative; z-index: 1; }
+    .char-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r-lg); padding: 22px 18px; text-align: center;
+      transition: background var(--t), transform var(--t), border-color var(--t);
+    }
+    .char-card:hover { background: rgba(255,255,255,.13); transform: translateY(-3px); border-color: rgba(212,160,72,.3); }
+    .char-icon   { font-size: 2rem; margin-bottom: 10px; }
+    .char-name   { font-family: var(--serif); font-size: 1rem; color: var(--white); font-weight: 600; margin-bottom: 4px; }
+    .char-origin { font-size: .7rem; color: var(--edt-gold); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+    .char-gift   { font-size: .8rem; color: rgba(255,255,255,.65); line-height: 1.55; }
+    .char-animal { font-size: .74rem; color: rgba(255,255,255,.4); margin-top: 8px; font-style: italic; }
+    .char-card.eva-card {
+      background: rgba(212,160,72,.10); border-color: rgba(212,160,72,.30);
+      grid-column: span 2;
+    }
+    .char-card.eva-card .char-name { color: var(--edt-gold); font-size: 1.1rem; }
+
+    /* THEMES */
+    .themes-section { background: var(--off-white); }
+    .themes-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+    .theme-card {
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: var(--r-lg); padding: 28px;
+      transition: all var(--t); box-shadow: var(--shadow-xs);
+    }
+    .theme-card:hover { box-shadow: var(--shadow-md); border-color: var(--edt-border); transform: translateY(-2px); }
+    .theme-card::before { content: ''; display: block; width: 28px; height: 2px; background: linear-gradient(90deg, var(--edt-purple), var(--edt-light)); margin-bottom: 18px; border-radius: 2px; }
+    .theme-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .theme-card h3 { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 10px; font-weight: 600; }
+    .theme-card p  { font-size: .85rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* AUDIENCE */
+    .audience-section { background: var(--edt-parchment); }
+    .audience-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 44px; }
+    .audience-card {
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: var(--r-lg); padding: 26px; box-shadow: var(--shadow-xs);
+      transition: all var(--t);
+    }
+    .audience-card:hover { box-shadow: var(--shadow-md); border-color: var(--edt-border); }
+    .audience-icon { font-size: 1.6rem; margin-bottom: 12px; }
+    .audience-card h3 { font-family: var(--serif); font-size: 1rem; color: var(--ink); margin-bottom: 8px; font-weight: 600; }
+    .audience-card p  { font-size: .84rem; color: var(--text-mid); line-height: 1.65; }
+    .audience-why { font-size: .78rem; font-style: italic; color: var(--edt-purple); margin-top: 10px; }
+
+    /* PAYMENT SECTION */
+    .payments-section { background: var(--white); border-top: 1px solid var(--rule); }
+    .payments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; align-items: start; }
+    .payment-panel { background: var(--edt-parchment); border: 1px solid var(--edt-border); border-radius: var(--r-lg); padding: 28px; position: sticky; top: 84px; box-shadow: var(--shadow-sm); }
+    .payment-panel h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 20px; font-weight: 600; }
+    .price-table  { margin-bottom: 20px; }
+    .price-row    { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+    .price-row:last-of-type { border-bottom: none; }
+    .price-label  { font-size: .84rem; color: var(--text-mid); }
+    .price-amount { font-size: .95rem; font-weight: 700; color: var(--ink); }
+    .pay-divider  { border: none; border-top: 1px solid var(--rule); margin: 16px 0; }
+    .payment-info h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 12px; font-weight: 600; }
+    .payment-info p  { font-size: .88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }
+    .info-block { background: rgba(61,31,110,.06); border: 1px solid rgba(61,31,110,.14); border-radius: var(--r-sm); padding: 18px; margin-bottom: 16px; }
+    .info-block h4 { font-family: var(--serif); font-size: .9rem; font-weight: 600; color: var(--edt-purple); margin-bottom: 8px; }
+    .info-block p  { font-size: .82rem; color: var(--text-mid); line-height: 1.65; margin: 0; }
+
+    /* OFFERS */
+    .edt-offers-section { background: var(--off-white); padding: 96px 0; }
+    .edt-offers-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+    .edt-offer-card {
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: var(--r-lg); padding: 28px; box-shadow: var(--shadow-xs);
+      transition: all var(--t); position: relative; overflow: hidden;
+    }
+    .edt-offer-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--edt-purple), var(--edt-light)); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }
+    .edt-offer-card:hover { box-shadow: var(--shadow-md); border-color: var(--edt-border); transform: translateY(-3px); }
+    .edt-offer-card:hover::before { transform: scaleX(1); }
+    .edt-offer-trigger { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--edt-gold); margin-bottom: 10px; display: block; }
+    .edt-offer-icon { font-size: 1.6rem; margin-bottom: 12px; }
+    .edt-offer-card h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+    .edt-offer-card p  { font-size: .84rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 18px; }
+
+    /* CLAIM FORM */
+    .claim-section { background: var(--edt-parchment); padding: 96px 0; }
+    .claim-wrap  { max-width: 680px; margin: 0 auto; }
+    .claim-note  { background: var(--gold-wash); border: 1px solid rgba(184,144,58,.25); border-radius: var(--r-lg); padding: 16px 20px; margin-bottom: 28px; font-size: .86rem; color: var(--navy); line-height: 1.65; }
+    .claim-note strong { font-weight: 600; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-row    { margin-bottom: 18px; }
+    .form-label  { display: block; font-size: .8rem; font-weight: 600; color: var(--text-mid); margin-bottom: 7px; }
+    .form-label span { color: #C53030; margin-left: 2px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 11px 14px; border-radius: var(--r-sm);
+      border: 1.5px solid var(--rule); background: var(--white);
+      font-family: var(--sans); font-size: .9rem; color: var(--text-body);
+      outline: none; transition: border-color var(--t); appearance: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--edt-purple); background: var(--edt-parchment); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+    .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233D1F6E' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+    .form-textarea { min-height: 100px; resize: vertical; }
+    .form-disclaimer { font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 12px; line-height: 1.6; }
+    .form-disclaimer a { color: var(--edt-purple); }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 64px 0 36px; border-top: 1px solid rgba(255,255,255,.07); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
+    .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .footer-brand-mark { width: 40px; height: 40px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; }
+    .footer-brand-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); font-weight: 600; letter-spacing: -.01em; }
+    .footer-tagline { font-size: .82rem; line-height: 1.7; color: rgba(255,255,255,.45); max-width: 240px; margin-bottom: 16px; }
+    .footer-imprints { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-imprint  { font-size: .64rem; padding: 3px 10px; border-radius: 4px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .fi-advisory { background: rgba(30,58,95,.5); color: rgba(201,168,76,.85); border: 1px solid rgba(30,58,95,.8); }
+    .fi-creative  { background: rgba(61,31,110,.5); color: rgba(212,160,72,.85); border: 1px solid rgba(61,31,110,.8); }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a { width: 34px; height: 34px; border-radius: var(--r-sm); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); font-size: .8rem; text-decoration: none; transition: all var(--t); }
+    .footer-social a:hover { background: var(--edt-gold); color: var(--ink); border-color: var(--edt-gold); }
+    .footer-col h4 { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
+    .footer-col a  { display: block; font-size: .85rem; color: rgba(255,255,255,.58); text-decoration: none; margin-bottom: 10px; transition: color var(--t); }
+    .footer-col a:hover { color: var(--edt-gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
+    .footer-disclaimer { font-size: .7rem; color: rgba(255,255,255,.28); max-width: 520px; line-height: 1.65; }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .book-hero-grid, .story-grid, .payments-grid { grid-template-columns: 1fr; }
+      .book-hero-panel { max-width: 400px; }
+      .chars-grid { grid-template-columns: 1fr 1fr; }
+      .payment-panel { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width:768px) {
+      .section-pad { padding: 64px 0; }
+      .overview-grid { grid-template-columns: 1fr 1fr; }
+      .overview-item { border-right: none; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+      .overview-item:nth-child(even) { border-bottom: none; }
+      .themes-grid, .audience-grid, .edt-offers-grid { grid-template-columns: 1fr; }
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .chars-grid { grid-template-columns: 1fr 1fr; }
+      .char-card.eva-card { grid-column: span 2; }
+      .nav-links { display: none; }
+      .nav-ham { display: block; }
+    }
+    @media (max-width:480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 20px; }
+      .chars-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="story.html">Our Story</a>
+  <a href="capabilities.html">Capabilities</a>
+  <a href="books_hub.html">Books</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">FE</div>
+      <div class="nav-logo-wordmark">
+        <span class="nav-logo-name">FedEthics Inc.</span>
+        <span class="nav-logo-tagline">Ethical Leadership in the Age of AI</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="story.html">Our Story</a></li>
+      <li><a href="capabilities.html">Capabilities</a></li>
+      <li><a href="books_hub.html">Books</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="nav-imprint">FedEthics Creative™</span>
+      <a href="#payments" class="btn btn-purple" onclick="track('nav_order_edt')">Commander</a>
+      <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- BOOK HERO -->
+<header class="book-hero">
+  <div class="container">
+    <div class="book-hero-grid">
+      <div>
+        <div class="book-hero-imprint">
+          <span>FedEthics Creative™ · Auto-publié · 2025</span>
+        </div>
+        <h1>Étoile de<br/>Tournesol</h1>
+        <p class="book-hero-subtitle">Roman jeunesse · Fiction littéraire française · Fantastique</p>
+
+        <div class="book-hero-excerpt">
+          <p>Pour chasque secret que l'Estoile des Tournesolz garde, ung enfant naist pour le descouvrir.</p>
+          <cite>— Journal de Marguerite de Tournesol, 1286 (extrait du roman)</cite>
+        </div>
+
+        <div class="book-hero-badges">
+          <span class="hero-badge gold-badge">FedEthics Creative™</span>
+          <span class="hero-badge">Roman jeunesse en français</span>
+          <span class="hero-badge">7 personnages · 7 dons · 1 ville secrète</span>
+          <span class="hero-badge">Multiculturel · Fantastique · Appartenance</span>
+        </div>
+
+        <div class="btn-group">
+          <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_edt_order')">Commander un exemplaire dédicacé</a>
+          <a href="#story"    class="btn btn-outline-light" onclick="track('hero_edt_story')">Lire le synopsis</a>
+        </div>
+      </div>
+
+      <div class="book-hero-panel">
+        <!-- Cover visual — replace inner content with <img> once art is finalized -->
+        <div class="book-cover-display">
+          <div class="cover-glow"></div>
+          <div class="cover-ornament tl">✦</div>
+          <div class="cover-ornament tr">✦</div>
+          <div class="cover-ornament bl">✦</div>
+          <div class="cover-ornament br">✦</div>
+          <div class="book-cover-imprint">FedEthics Creative™</div>
+          <div class="book-cover-title">Étoile de Tournesol</div>
+          <div class="book-cover-author">Celio Oliveira</div>
+        </div>
+
+        <div class="hero-price-row">
+          <span class="hero-price-from">À partir de</span>
+          <span class="hero-price-amt">$24.99</span>
+          <span class="hero-price-cad">CAD</span>
+        </div>
+
+        <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🇨🇦 Canada &amp; USA</span>
+        <a href="https://buy.stripe.com/REPLACE_WITH_EDT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hero_edt_stripe')" target="_blank" rel="noopener">💳 Commander imprimé (dédicacé) — Stripe</a>
+        <a href="https://payhip.com/REPLACE_WITH_EDT_PAYHIP" class="pay-btn pay-payhip" onclick="track('hero_edt_payhip')" target="_blank" rel="noopener">📥 Acheter numérique — Payhip</a>
+        <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🌍 International</span>
+        <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER" class="pay-btn pay-payoneer" onclick="track('hero_edt_payoneer')" target="_blank" rel="noopener">🌐 Paiement international — Payoneer</a>
+        <p class="pay-note" style="color:rgba(255,255,255,.4);">✍️ Chaque exemplaire dédicacé · livraison 5–7 jours · <a href="#bulk" style="color:var(--edt-gold);">5+ exemplaires = rencontre avec l'auteur</a></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- OVERVIEW STRIP -->
+<div class="overview-strip">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-item">
+        <div class="overview-icon">📖</div>
+        <div class="overview-label">Genre</div>
+        <div class="overview-value">Roman jeunesse · Fantastique littéraire</div>
+      </div>
+      <div class="overview-item">
+        <div class="overview-icon">👥</div>
+        <div class="overview-label">Personnages</div>
+        <div class="overview-value">7 gardiens · 7 dons · 7 origines culturelles</div>
+      </div>
+      <div class="overview-item">
+        <div class="overview-icon">🌍</div>
+        <div class="overview-label">Langue</div>
+        <div class="overview-value">Français (bilingual reading guide available)</div>
+      </div>
+      <div class="overview-item">
+        <div class="overview-icon">📦</div>
+        <div class="overview-label">Formats</div>
+        <div class="overview-value">Imprimé dédicacé · Numérique ePub/PDF</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SYNOPSIS -->
+<section class="story-section section-pad" id="story">
+  <div class="container">
+    <div class="eyebrow eyebrow-purple">L'histoire · The Story</div>
+    <h2 class="section-title">Une ville secrète.<br/>Sept gardiens. <em>Un seul destin.</em></h2>
+    <div class="story-grid">
+      <div class="story-text">
+        <h3>Le monde d'Étoile des Tournesols</h3>
+        <p>Dans la ville secrète d'Étoile des Tournesols — une cité vivante et consciente, fondée sur des lignes telluriques et des dimensions entrelacées — un équilibre fragile maintient deux mondes séparés depuis des siècles. La ville elle-même choisit ses protecteurs.</p>
+        <p>Lili découvre le carnet de Marguerite de Tournesol, fondatrice légendaire, dans les archives poussiéreuses d'une bibliothèque interdite. Le carnet parle de sept enfants nés pour garder les secrets de la ville — des enfants aux dons extraordinaires, venus des quatre coins du monde.</p>
+        <p>Avec Rafael (Brésil), Jacob (Sénégal), Mathéa (Québec), Tamatoa (Polynésie), Najla (Maroc), et la mystérieuse Eva — fille immortelle des Fondateurs elle-même — Lili va découvrir que l'impossible devient possible quand les cœurs s'unissent.</p>
+        <div class="story-quote">
+          <p>Nous étions tous des notes isolées, cherchant notre mélodie. Maintenant, nous formons un accord parfait.</p>
+          <cite>— Jacob Mercier Parent, Chapitre 3</cite>
+        </div>
+        <h3>Ce qui rend ce livre unique</h3>
+        <p>Étoile de Tournesol est un livre sur l'appartenance — sur le fait de trouver sa tribu dans un monde qui ne comprend pas toujours vos dons. Chacun des sept gardiens vient d'un contexte culturel différent, parle un langage émotionnel différent, et entretient une relation différente avec sa propre identité. La magie dans cette histoire n'est jamais arbitraire — elle est ancrée dans la science, la sagesse des ancêtres, et la vérité profonde que la diversité n'est pas un obstacle à l'unité : elle en est la condition.</p>
+      </div>
+      <div>
+        <div class="story-aside" style="margin-bottom:24px;">
+          <h4>Les thèmes principaux</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px;">
+            <span class="badge badge-purple">Appartenance</span>
+            <span class="badge badge-purple">Diversité culturelle</span>
+            <span class="badge badge-purple">Amitié</span>
+            <span class="badge badge-purple">Identité</span>
+            <span class="badge badge-purple">Science &amp; magie</span>
+            <span class="badge badge-purple">Héritage</span>
+            <span class="badge badge-gold">Francophone</span>
+            <span class="badge badge-gold">YA / Jeunesse</span>
+          </div>
+        </div>
+        <div class="story-aside" style="margin-bottom:24px;">
+          <h4>Extrait — Chapitre 1</h4>
+          <div class="story-aside-extract">
+            <p>Le soleil de fin d'après-midi baignait le bureau d'Aliana d'une lumière dorée, faisant danser des particules de poussière dans l'air comme de minuscules étoiles. Pourtant, alors que la pièce était inondée de cette clarté chaleureuse, un frisson subtil mais indéniable courait le long des murs...</p>
+            <p style="margin-top:10px;">Certaines particules s'attardaient plus longtemps que les autres, traçant de brefs motifs géométriques avant de retomber, comme si elles répondaient aux fluctuations électromagnétiques qu'Aliana percevait.</p>
+          </div>
+        </div>
+        <div class="story-aside">
+          <h4>Structure du roman</h4>
+          <div class="story-struct-row"><strong>Partie I</strong><span>L'Éveil — Les sept gardiens se découvrent</span></div>
+          <div class="story-struct-row"><strong>Partie II</strong><span>Les Épreuves — Le Consortium et les défis dimensionnels</span></div>
+          <div class="story-struct-row"><strong>Partie III</strong><span>L'Harmonie — Le Festival des Éclats Célestes</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
+<section class="characters-section" id="characters">
+  <div class="chars-intro">
+    <div class="eyebrow eyebrow-light" style="justify-content:center;">Les Personnages</div>
+    <h2>Les Sept Gardiens<br/><span>d'Étoile des Tournesols</span></h2>
+    <p>Chacun venu d'un coin du monde, chacun porteur d'un don unique. Ensemble, ils forment l'heptagramme prophétisé par les Fondateurs.</p>
+  </div>
+  <div class="container">
+    <div class="chars-grid">
+      <div class="char-card">
+        <div class="char-icon">⚡</div>
+        <div class="char-name">Lili Peccard</div>
+        <div class="char-origin">🇫🇷 France / Étoile des Tournesols</div>
+        <div class="char-gift">Perçoit les champs électromagnétiques — les courants invisibles qui traversent toute chose</div>
+        <div class="char-animal">Compagnon : Pierrot, renard argenté</div>
+      </div>
+      <div class="char-card">
+        <div class="char-icon">🎵</div>
+        <div class="char-name">Rafael Oliveira Neto</div>
+        <div class="char-origin">🇧🇷 Brésil</div>
+        <div class="char-gift">Synesthésie musicale — voit les sons comme des couleurs et entend les harmoniques dimensionnelles</div>
+        <div class="char-animal">Compagnon : Ritmo, colibri iridescent</div>
+      </div>
+      <div class="char-card">
+        <div class="char-icon">🌿</div>
+        <div class="char-name">Jacob Mercier Parent</div>
+        <div class="char-origin">🇸🇳 Sénégal</div>
+        <div class="char-gift">Communique avec les plantes et les réseaux racinaires — entend la mémoire de la terre</div>
+        <div class="char-animal">Compagnon : Njeri, phacochère irisé</div>
+      </div>
+      <div class="char-card">
+        <div class="char-icon">🌬️</div>
+        <div class="char-name">Mathéa Olivel</div>
+        <div class="char-origin">🇨🇦 Québec</div>
+        <div class="char-gift">Lit et manipule les courants atmosphériques — prédit les tempêtes et guide les vents</div>
+        <div class="char-animal">Compagnon : Zéphyr, lézard caméléon</div>
+      </div>
+      <div class="char-card">
+        <div class="char-icon">🌊</div>
+        <div class="char-name">Tamatoa Tevaiano</div>
+        <div class="char-origin">🇵🇫 Polynésie française</div>
+        <div class="char-gift">Navigation aquatique — perçoit les mémoires de l'eau et les courants interdimensionnels</div>
+        <div class="char-animal">Compagnon : Marama, poisson-perroquet</div>
+      </div>
+      <div class="char-card">
+        <div class="char-icon">🔷</div>
+        <div class="char-name">Najla Bertinel</div>
+        <div class="char-origin">🇲🇦 Maroc</div>
+        <div class="char-gift">Géométries sacrées berbères — trace des motifs qui stabilisent l'espace et les dimensions</div>
+        <div class="char-animal">Compagnon : Zouk, fennec doré</div>
+      </div>
+      <div class="char-card eva-card">
+        <div class="char-icon">✨</div>
+        <div class="char-name">Eva d'Auparavant</div>
+        <div class="char-origin">🌟 Fille immortelle des Fondateurs — Étoile des Tournesols</div>
+        <div class="char-gift">Septième gardienne, imperceptible pendant 700 ans. Maîtrise des passages dimensionnels et mémoire vivante de la ville — fille d'Alexandre du Verbe et de Marguerite de Tournesol</div>
+        <div class="char-animal">Compagnon : Oriel, faon doré aux bois scintillants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section class="themes-section section-pad">
+  <div class="container text-center">
+    <div class="eyebrow" style="justify-content:center;">Ce que le livre explore</div>
+    <h2 class="section-title">Des thèmes qui résonnent<br/><em>pour toutes les générations</em></h2>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-icon">🤝</div>
+        <h3>Appartenance &amp; Identité</h3>
+        <p>Chacun des sept gardiens a grandi en se sentant différent. Leurs dons, longtemps perçus comme des fardeaux, deviennent leurs plus grandes forces une fois réunis. Un message universel pour tous ceux qui ont cherché leur place.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-icon">🌍</div>
+        <h3>Diversité Culturelle</h3>
+        <p>Brésil, Sénégal, Québec, Polynésie, Maroc, France — sept cultures, sept façons d'appréhender le monde. Le roman célèbre cette richesse sans jamais la réduire à un stéréotype.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-icon">🔬</div>
+        <h3>Science &amp; Merveilleux</h3>
+        <p>La magie dans ce roman a toujours une explication scientifique — électromagnétisme, synesthésie, réseaux mycorhiziens, géométries sacrées. La science et l'émerveillement se nourrissent mutuellement.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-icon">🌱</div>
+        <h3>Héritage &amp; Transmission</h3>
+        <p>Les Fondateurs ont créé une ville vivante et consciente pour leurs descendants. Le roman explore ce que signifie recevoir un héritage et choisir d'en devenir gardien plutôt que simple héritier.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-icon">💫</div>
+        <h3>L'Amour comme Force Créatrice</h3>
+        <p>À travers toute l'aventure, le roman affirme une conviction centrale : l'amour — entre amis, entre générations, entre l'humain et sa ville — est la seule force capable de traverser toutes les dimensions.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-icon">🦸</div>
+        <h3>Familles Choisies</h3>
+        <p>Ces sept jeunes ne sont pas liés par le sang mais par un choix. Le roman célèbre les familles que l'on se construit — aussi solides, aussi aimantes, et parfois plus profondes que celles que l'on reçoit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience-section section-pad">
+  <div class="container">
+    <div class="eyebrow eyebrow-purple">Pour qui ce livre?</div>
+    <h2 class="section-title">Un livre qui touche<br/><em>des lecteurs très différents</em></h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">📚</div>
+        <h3>Jeunes lecteurs (10–16 ans)</h3>
+        <p>Aventure, magie, amitié, identité — tous les éléments d'une grande histoire jeunesse, dans un univers original entièrement construit en français.</p>
+        <p class="audience-why">Parfait pour les lecteurs qui cherchent des héros qui leur ressemblent.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🎓</div>
+        <h3>Enseignants &amp; Bibliothécaires</h3>
+        <p>Un roman idéal pour les classes de français L1 et L2 : thèmes riches, personnages multiculturels, langue accessible, et des questions de discussion naturelles.</p>
+        <p class="audience-why">Guide de lecture bilingue disponible pour les commandes en groupe.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">👨‍👩‍👧</div>
+        <h3>Familles Francophones</h3>
+        <p>Pour les parents qui souhaitent offrir à leurs enfants des lectures en français qui ne soient pas des traductions — un roman original, ancré dans des cultures contemporaines.</p>
+        <p class="audience-why">Idéal pour les familles en situation de transmission linguistique.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🌙</div>
+        <h3>Lecteurs adultes de littérature jeunesse</h3>
+        <p>Un roman qui fonctionne à plusieurs niveaux de lecture — les adultes y trouveront des thèmes philosophiques sur l'appartenance, la mémoire, et le sens du devoir.</p>
+        <p class="audience-why">Dans la tradition des grands romans jeunesse qui parlent à tous les âges.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🏫</div>
+        <h3>Clubs de lecture scolaires</h3>
+        <p>La structure narrative chorale — sept voix, sept journaux — offre une richesse de perspectives idéale pour les discussions en groupe et les projets créatifs.</p>
+        <p class="audience-why">Commandez 5+ exemplaires et bénéficiez d'une rencontre avec l'auteur.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">✨</div>
+        <h3>Lecteurs de fantasy / fantastique</h3>
+        <p>Un système magique rigoureux et original, une ville secrète aux lois physiques uniques, et une menace organisée (le Consortium) qui donne à l'histoire une tension narrative soutenue.</p>
+        <p class="audience-why">Pour les fans de fantasy qui cherchent quelque chose de nouveau en français.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT SECTION -->
+<section class="payments-section section-pad" id="payments">
+  <div class="container">
+    <div class="eyebrow eyebrow-purple">Commander</div>
+    <h2 class="section-title">Chaque exemplaire imprimé<br/><em>est dédicacé par l'auteur</em></h2>
+    <div class="payments-grid">
+
+      <div class="payment-panel">
+        <h3>Étoile de Tournesol</h3>
+        <div class="price-table">
+          <div class="price-row"><span class="price-label">Numérique (ePub / PDF)</span><span class="price-amount">$24.99 CAD</span></div>
+          <div class="price-row"><span class="price-label">Imprimé — Exemplaire dédicacé</span><span class="price-amount">$39.99 CAD</span></div>
+          <div class="price-row"><span class="price-label">En gros (5+ exemplaires)</span><span class="price-amount">Nous contacter</span></div>
+        </div>
+        <hr class="pay-divider" />
+        <span class="pay-section-label">🇨🇦 Canada &amp; USA</span>
+        <a href="https://buy.stripe.com/REPLACE_WITH_EDT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('payments_edt_stripe')" target="_blank" rel="noopener">💳 Commander imprimé (dédicacé) — Stripe</a>
+        <a href="https://payhip.com/REPLACE_WITH_EDT_PAYHIP" class="pay-btn pay-payhip" onclick="track('payments_edt_payhip')" target="_blank" rel="noopener">📥 Acheter numérique — Payhip</a>
+        <span class="pay-section-label">🌍 International</span>
+        <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER" class="pay-btn pay-payoneer" onclick="track('payments_edt_payoneer')" target="_blank" rel="noopener">🌐 Paiement international — Payoneer</a>
+        <p class="pay-note">✍️ Chaque exemplaire imprimé est dédicacé personnellement par Celio Oliveira. <a href="#bulk" style="color:var(--edt-purple);">5+ exemplaires = rencontre avec l'auteur.</a></p>
+      </div>
+
+      <div class="payment-info">
+        <h3>Pourquoi commander directement?</h3>
+        <p>Commander via fedethics.ca vous garantit un exemplaire dédicacé par l'auteur, le meilleur prix, et l'accès aux offres exclusives réservées aux commandes groupées.</p>
+        <div class="info-block">
+          <h4>✍️ Exemplaire dédicacé — Inclus gratuitement</h4>
+          <p>Chaque exemplaire imprimé commandé directement sur cette page est signé personnellement par Celio Oliveira avant l'envoi. Sans frais supplémentaires — automatiquement inclus.</p>
+        </div>
+        <div class="info-block">
+          <h4>💬 5+ exemplaires — Rencontre de 15 minutes avec l'auteur</h4>
+          <p>Commandez 5 exemplaires ou plus et recevez une rencontre virtuelle de 15 minutes avec Celio pour discuter du livre. En français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
+        </div>
+        <div class="info-block">
+          <h4>🖊️ 5+ exemplaires — Dédicace personnalisée</h4>
+          <p>Celio écrira une dédicace unique dans chaque exemplaire — avec le prénom de chaque lecteur si vous le souhaitez. Parfait pour votre classe ou votre événement littéraire.</p>
+        </div>
+        <div class="info-block">
+          <h4>🏫 Commandes institutionnelles</h4>
+          <p>Les commandes pour les écoles, bibliothèques ou associations peuvent être facturées directement. Écrivez à <a href="mailto:books@fedethics.ca" style="color:var(--edt-purple);">books@fedethics.ca</a> pour organiser les modalités.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
+          <span class="badge badge-purple">Roman en français</span>
+          <span class="badge badge-purple">Exemplaire dédicacé</span>
+          <span class="badge badge-gold">Guide de lecture disponible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section class="edt-offers-section" id="bulk">
+  <div class="container text-center">
+    <div class="eyebrow" style="justify-content:center;">Offres spéciales</div>
+    <h2 class="section-title">Commandez 5+ exemplaires.<br/><em>Débloquez l'accès exclusif.</em></h2>
+    <p class="section-lead" style="margin:0 auto 40px;">Ces offres sont disponibles uniquement lors d'une commande directe sur cette page.</p>
+    <div class="edt-offers-grid">
+      <div class="edt-offer-card">
+        <span class="edt-offer-trigger">Tout achat direct</span>
+        <div class="edt-offer-icon">✍️</div>
+        <h3>Exemplaire dédicacé</h3>
+        <p>Chaque exemplaire imprimé commandé directement est signé par Celio Oliveira — sans frais supplémentaires, automatiquement pour chaque commande.</p>
+        <a href="#payments" class="btn btn-purple btn-full" onclick="track('offer_edt_auto')">Commander maintenant</a>
+      </div>
+      <div class="edt-offer-card">
+        <span class="edt-offer-trigger">5 exemplaires ou plus</span>
+        <div class="edt-offer-icon">💬</div>
+        <h3>Rencontre de 15 minutes avec l'auteur</h3>
+        <p>Une rencontre virtuelle de 15 minutes avec Celio — personnages, thèmes, univers, processus créatif. En français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
+        <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_call')">Demander la rencontre</a>
+      </div>
+      <div class="edt-offer-card">
+        <span class="edt-offer-trigger">5 exemplaires ou plus</span>
+        <div class="edt-offer-icon">🖊️</div>
+        <h3>Dédicace personnalisée</h3>
+        <p>Celio écrit une dédicace unique dans chaque exemplaire — avec le prénom de chaque lecteur si vous le souhaitez. Un souvenir mémorable pour votre classe ou événement.</p>
+        <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_dedic')">Demander une dédicace</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAIM FORM -->
+<section class="claim-section" id="claim">
+  <div class="container">
+    <div class="claim-wrap">
+      <div class="eyebrow eyebrow-purple">Réclamer votre offre · Claim Your Offer</div>
+      <h2 class="section-title" style="margin-bottom:8px;">Demandez votre rencontre<br/>ou votre dédicace personnalisée</h2>
+      <p style="color:var(--text-mid);font-size:.9rem;margin-bottom:28px;line-height:1.7;">Remplissez ce formulaire après avoir commandé 5 exemplaires ou plus. Notre équipe vous répond dans les 2 jours ouvrables.</p>
+
+      <div class="claim-note">
+        <strong>Comment ça marche :</strong> Commandez vos exemplaires → remplissez ce formulaire → nous vous contactons dans les 48 heures pour confirmer votre offre et convenir d'une date.
+      </div>
+
+      <form action="https://formspree.io/f/REPLACE_WITH_EDT_FORMSPREE_ID" method="POST" onsubmit="track('form_edt_claim_submit')">
+        <input type="hidden" name="_subject" value="Étoile de Tournesol — Demande d'offre / Offer Claim" />
+        <input type="hidden" name="_cc"      value="communications@fedethics.ca" />
+        <input type="hidden" name="book"     value="Étoile de Tournesol" />
+
+        <div class="form-grid-2">
+          <div class="form-row" style="margin-bottom:0;">
+            <label class="form-label" for="fname">Prénom / First Name <span>*</span></label>
+            <input class="form-input" type="text" id="fname" name="first_name" required placeholder="Votre prénom" />
+          </div>
+          <div class="form-row" style="margin-bottom:0;">
+            <label class="form-label" for="lname">Nom / Last Name <span>*</span></label>
+            <input class="form-input" type="text" id="lname" name="last_name" required placeholder="Votre nom de famille" />
+          </div>
+        </div>
+        <div class="form-grid-2" style="margin-top:18px;">
+          <div class="form-row" style="margin-bottom:0;">
+            <label class="form-label" for="email">Courriel / Email <span>*</span></label>
+            <input class="form-input" type="email" id="email" name="email" required placeholder="votre@courriel.com" />
+          </div>
+          <div class="form-row" style="margin-bottom:0;">
+            <label class="form-label" for="phone">Téléphone (optionnel)</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="+1 (___) ___-____" />
+          </div>
+        </div>
+        <div class="form-row" style="margin-top:18px;">
+          <label class="form-label" for="org">École / Organisation / Institution <span>*</span></label>
+          <input class="form-input" type="text" id="org" name="organization" required placeholder="ex. École Polyvalente Saint-Laurent, Alliance Française, Bibliothèque de Montréal" />
+        </div>
+        <div class="form-grid-2">
+          <div class="form-row" style="margin-bottom:0;">
+            <label class="form-label" for="qty">Nombre d'exemplaires achetés <span>*</span></label>
+            <input class="form-input" type="number" id="qty" name="quantity" required min="5" placeholder="Minimum 5" />
+          </div>
+          <div class="form-row" style="margin-bottom:0;">
+            <label class="form-label" for="offer">Offre souhaitée <span>*</span></label>
+            <select class="form-input form-select" id="offer" name="preferred_offer" required>
+              <option value="" disabled selected>Choisissez votre offre</option>
+              <option>Rencontre virtuelle 15 min avec l'auteur (en français)</option>
+              <option>Author Meeting 15 min (in English)</option>
+              <option>Dédicace personnalisée dans chaque exemplaire</option>
+              <option>Rencontre en personne — événement scolaire ou littéraire</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="lang">Langue de la rencontre / Language of meeting</label>
+          <select class="form-input form-select" id="lang" name="preferred_language">
+            <option value="" disabled selected>Sélectionnez / Select</option>
+            <option>Français</option>
+            <option>English</option>
+            <option>Bilingue / Bilingual (FR + EN)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="dates">Dates ou horaires préférés (optionnel)</label>
+          <input class="form-input" type="text" id="dates" name="preferred_dates" placeholder="ex. N'importe quel mardi en avril / Any Tuesday in April" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="context">Contexte — classe, club de lecture, événement, cadeau...</label>
+          <textarea class="form-input form-textarea" id="context" name="context" placeholder="Parlez-nous de votre groupe de lecteurs. Pour les dédicaces personnalisées, indiquez les prénoms des lecteurs si vous les connaissez."></textarea>
+        </div>
+        <button type="submit" class="btn btn-purple btn-lg btn-full" style="margin-top:4px;">Envoyer ma demande · Submit My Request</button>
+        <p class="form-disclaimer">Vos informations sont utilisées uniquement pour traiter cette demande et ne sont jamais partagées. Questions ? <a href="mailto:books@fedethics.ca">books@fedethics.ca</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-SELL: ALSO BY CELIO -->
+<section class="section-pad" style="background:var(--stone);">
+  <div class="container text-center">
+    <div class="eyebrow" style="justify-content:center;">The FedEthics Library</div>
+    <h2 class="section-title" style="margin-bottom:12px;">Also by Celio Oliveira</h2>
+    <p class="section-lead" style="margin:0 auto 36px;">A completely different book — same rigour, same author. Constitutional Intelligence is for the boardroom. Étoile de Tournesol is for the heart. Both unmistakably FedEthics.</p>
+    <div style="max-width:480px;margin:0 auto;">
+      <a href="constitutional_intelligence_page.html"
+         style="display:block;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--rule);box-shadow:var(--shadow-sm);text-decoration:none;transition:box-shadow .22s,transform .22s;"
+         onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 56px rgba(18,25,44,.14)'"
+         onmouseout="this.style.transform='';this.style.boxShadow=''"
+         onclick="track('edt_crossell_ci')">
+        <div style="background:linear-gradient(135deg,#1E3A5F,#0F1F38);padding:28px 24px;">
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:8px;">FedEthics Advisory™ · FriesenPress · ISBN 978-1-0383-5671-0</div>
+          <div style="font-family:var(--serif);font-size:1.5rem;color:#fff;font-weight:600;">Constitutional Intelligence</div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.65);margin-top:6px;">A Decision Architecture for Trustworthy AI Governance</div>
+        </div>
+        <div style="background:var(--white);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-size:.88rem;color:var(--text-mid);line-height:1.5;max-width:320px;">IMPACT™, DECIDE-PLUS™, FIVE-LAYER™ — the frameworks every government executive needs for AI governance in Westminster systems.</span>
+          <span style="font-size:.85rem;font-weight:700;color:#1E3A5F;flex-shrink:0;margin-left:16px;">Explore →</span>
+        </div>
+      </a>
+    </div>
+    <div style="margin-top:32px;">
+      <a href="books_hub.html" class="btn btn-outline-navy" onclick="track('edt_back_hub')">← Back to Books Hub</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-logo">
+          <div class="footer-brand-mark">FE</div>
+          <span class="footer-brand-name">FedEthics Inc.</span>
+        </div>
+        <p class="footer-tagline">All views expressed are those of the author in a personal capacity, independent of any employer.</p>
+        <div class="footer-imprints">
+          <span class="footer-imprint fi-advisory">FedEthics Advisory™</span>
+          <span class="footer-imprint fi-creative">FedEthics Creative™</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://orcid.org/0009-0008-8896-9073" target="_blank" rel="noopener" aria-label="ORCID">◎</a>
+          <a href="mailto:hello@fedethics.ca" aria-label="Email">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="story.html">Our Story</a>
+        <a href="capabilities.html">Core Capabilities</a>
+        <a href="books_hub.html">Books</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ce livre</h4>
+        <a href="#story">Synopsis</a>
+        <a href="#characters">Les personnages</a>
+        <a href="#payments">Commander</a>
+        <a href="#bulk">Offres groupées</a>
+        <a href="#claim">Réclamer l'offre</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:hello@fedethics.ca">hello@fedethics.ca</a>
+        <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="books_hub.html#newsletter">Newsletter</a>
+        <a href="contact.html">Speaking Enquiries</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 FedEthics Inc. All rights reserved. FedEthics Creative™ is an imprint of FedEthics Inc.</span>
+      <p class="footer-disclaimer">All views expressed in this publication are those of the author in a personal capacity and do not represent any government institution or employer.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
