@@ -245,7 +245,7 @@
     </ul>
     <div class="nav-right">
       <span class="nav-imprint">FedEthics Advisory™</span>
-      <a href="#payments" class="btn btn-ci" onclick="track('nav_order_ci')">Order Now</a>
+      <!-- <a href="#payments" class="btn btn-ci" onclick="track('nav_order_ci')">Order Now</a> -->
       <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -272,7 +272,7 @@
           <span class="hero-badge">ISBN 978-1-0383-5671-0</span>
         </div>
         <div class="btn-group">
-          <a href="#payments"   class="btn btn-gold btn-lg" onclick="track('hero_ci_order')">Order Autographed Copy</a>
+          <!-- <a href="#payments"   class="btn btn-gold btn-lg" onclick="track('hero_ci_order')">Order Autographed Copy</a> -->
           <a href="#frameworks" class="btn btn-outline-light" onclick="track('hero_ci_frameworks')">See the Frameworks</a>
         </div>
       </div>
@@ -284,18 +284,26 @@
           <div class="book-cover-author">Celio Oliveira · FriesenPress</div>
           <div class="book-cover-isbn">ISBN 978-1-0383-5671-0</div>
         </div>
-        <div class="hero-price-row">
+        <!-- <div class="hero-price-row">
           <span class="hero-price-from">From</span>
           <span class="hero-price-amt">$34.99</span>
           <span class="hero-price-cad">CAD</span>
+        </div> -->
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <!-- <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
+            <img src="https://flagcdn.com/w20/ca.png" alt="🇨🇦" style="vertical-align: middle; width: 18px; margin-right: 4px; opacity: 0.8;"> Canada &amp; USA:
+          </span>
+          <a href="https://buy.stripe.com/REPLACE_WITH_CI_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hero_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
+          <a href="https://payhip.com/REPLACE_WITH_CI_PAYHIP" class="pay-btn pay-payhip" onclick="track('hero_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital — Payhip</a>
+          
+          <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🌍 International:</span>
+          <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER" class="pay-btn pay-payoneer" onclick="track('hero_ci_payoneer')" target="_blank" rel="noopener">🌐 International — Payoneer</a>
+          <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON" class="pay-btn pay-amazon" onclick="track('hero_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon</a> -->
+          
+          <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;">✍️ All print orders autographed · ships 5–7 business days · <a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
         </div>
-        <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🇨🇦 Canada &amp; USA</span>
-        <a href="https://buy.stripe.com/REPLACE_WITH_CI_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hero_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
-        <a href="https://payhip.com/REPLACE_WITH_CI_PAYHIP" class="pay-btn pay-payhip" onclick="track('hero_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital — Payhip</a>
-        <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🌍 International</span>
-        <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER" class="pay-btn pay-payoneer" onclick="track('hero_ci_payoneer')" target="_blank" rel="noopener">🌐 International — Payoneer</a>
-        <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON" class="pay-btn pay-amazon" onclick="track('hero_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon</a>
-        <p class="pay-note" style="color:rgba(255,255,255,.4);">✍️ All print orders autographed · ships 5–7 business days · <a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
+
       </div>
     </div>
   </div>
@@ -462,19 +470,35 @@
       <div class="payment-panel">
         <h3>Constitutional Intelligence</h3>
         <div class="price-table">
-          <div class="price-row"><span class="price-label">Digital (ePub / PDF)</span><span class="price-amount">$34.99 CAD</span></div>
-          <div class="price-row"><span class="price-label">Print — Autographed Copy</span><span class="price-amount">$49.99 CAD</span></div>
-          <div class="price-row"><span class="price-label">Bulk (5+ copies)</span><span class="price-amount">Contact us</span></div>
+          <div class="price-row">
+            <span class="price-label">Digital (ePub / PDF)</span>
+            <!-- <span class="price-amount">$34.99 CAD</span> -->
+          </div>
+          <div class="price-row">
+            <span class="price-label">Print — Autographed Copy</span>
+            <!-- <span class="price-amount">$49.99 CAD</span> -->
+          </div>
+          <div class="price-row">
+            <span class="price-label">Bulk (5+ copies)</span>
+            <span class="price-amount">Contact us</span>
+          </div>
         </div>
         <hr class="pay-divider" />
-        <span class="pay-section-label">🇨🇦 Canada &amp; USA</span>
-        <a href="https://buy.stripe.com/REPLACE_WITH_CI_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('payments_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
-        <a href="https://payhip.com/REPLACE_WITH_CI_PAYHIP" class="pay-btn pay-payhip" onclick="track('payments_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital Edition — Payhip</a>
-        <span class="pay-section-label">🌍 International Buyers</span>
-        <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER" class="pay-btn pay-payoneer" onclick="track('payments_ci_payoneer')" target="_blank" rel="noopener">🌐 International Payment — Payoneer</a>
-        <span class="pay-section-label">🛒 Online Retailers</span>
-        <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON" class="pay-btn pay-amazon" onclick="track('payments_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon.ca</a>
-        <p class="pay-note">✍️ Print orders personally autographed, ships 5–7 business days. <a href="#bulk" style="color:var(--ci);">Buy 5+ copies → free consultation.</a></p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <!-- <span class="pay-section-label" style="color:rgba(0, 0, 0, 0.5);">
+            <img src="https://flagcdn.com/w20/ca.png" alt="🇨🇦" style="vertical-align: middle; width: 18px; margin-right: 4px; opacity: 0.8;"> Canada &amp; USA:
+          </span>
+          <a href="https://buy.stripe.com/REPLACE_WITH_CI_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hero_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
+          <a href="https://payhip.com/REPLACE_WITH_CI_PAYHIP" class="pay-btn pay-payhip" onclick="track('hero_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital — Payhip</a>
+          
+          <span class="pay-section-label" style="color:rgba(0, 0, 0, 0.5);">🌍 International:</span>
+          <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER" class="pay-btn pay-payoneer" onclick="track('hero_ci_payoneer')" target="_blank" rel="noopener">🌐 International — Payoneer</a>
+          <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON" class="pay-btn pay-amazon" onclick="track('hero_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon</a> -->
+          
+          <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;">✍️ All print orders autographed · ships 5–7 business days · <a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
+        </div>
+
       </div>
       <div class="payment-info">
         <h3>Why order direct?</h3>
@@ -505,28 +529,28 @@
         <div class="ci-offer-icon">✍️</div>
         <h3>Autographed Copy</h3>
         <p>Every book purchased directly is personally signed by Celio Oliveira. No extra charge — automatically included in every print order shipped from this page.</p>
-        <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto')">Order Now</a>
+        <!-- <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto')">Order Now</a> -->
       </div>
       <div class="ci-offer-card">
         <span class="ci-offer-trigger">Buy 5 or More Copies</span>
         <div class="ci-offer-icon">🎯</div>
         <h3>Free 30-Min Consultation with Celio</h3>
         <p>One 30-minute session with Celio — available as a virtual call on AI governance topics, or as a live speaking engagement at your institution at no cost.</p>
-        <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_consult')">Claim This Offer</a>
+        <!-- <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_consult')">Claim This Offer</a> -->
       </div>
       <div class="ci-offer-card">
         <span class="ci-offer-trigger">Buy 5 or More Copies</span>
         <div class="ci-offer-icon">🖊️</div>
         <h3>Personalized Handwritten Dedication</h3>
         <p>A unique message written by hand in each book. Perfect for team gifts, leadership awards, board member recognition, or training program graduation gifts.</p>
-        <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_dedic')">Request Dedication</a>
+        <!-- <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_dedic')">Request Dedication</a> -->
       </div>
     </div>
   </div>
 </section>
 
 <!-- CLAIM FORM -->
-<section class="claim-section" id="claim">
+<!-- <section class="claim-section" id="claim">
   <div class="container">
     <div class="claim-wrap">
       <div class="eyebrow">Claim Your Offer</div>
@@ -567,7 +591,7 @@
       </form>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- BONUS CONTENT -->
 <section class="bonus-section">
@@ -648,15 +672,15 @@
       <div class="footer-col">
         <h4>This Book</h4>
         <a href="#frameworks">The Frameworks</a>
-        <a href="#payments">Order Now</a>
+        <!-- <a href="#payments">Order Now</a> -->
         <a href="#bulk">Bulk Offers</a>
-        <a href="#claim">Claim Your Offer</a>
+        <!-- <a href="#claim">Claim Your Offer</a> -->
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="mailto:hello@fedethics.ca">hello@fedethics.ca</a>
         <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="books-hub.html#newsletter">Newsletter</a>
+        <!-- <a href="books-hub.html#newsletter">Newsletter</a> -->
         <a href="contact.html">Speaking Enquiries</a>
       </div>
     </div>

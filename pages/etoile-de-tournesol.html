@@ -306,7 +306,7 @@
     </ul>
     <div class="nav-right">
       <span class="nav-imprint">FedEthics Creative™</span>
-      <a href="#payments" class="btn btn-purple" onclick="track('nav_order_edt')">Commander</a>
+      <!-- <a href="#payments" class="btn btn-purple" onclick="track('nav_order_edt')">Commander</a> -->
       <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -338,7 +338,7 @@
         </div>
 
         <div class="btn-group">
-          <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_edt_order')">Commander un exemplaire dédicacé</a>
+          <!-- <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_edt_order')">Commander un exemplaire dédicacé</a> -->
           <a href="#story"    class="btn btn-outline-light" onclick="track('hero_edt_story')">Lire le synopsis</a>
         </div>
       </div>
@@ -355,18 +355,45 @@
           <div class="book-cover-author">Celio Oliveira</div>
         </div>
 
-        <div class="hero-price-row">
+        <!-- <div class="hero-price-row">
           <span class="hero-price-from">À partir de</span>
           <span class="hero-price-amt">$24.99</span>
           <span class="hero-price-cad">CAD</span>
+        </div> -->
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <!-- <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
+            <img src="https://flagcdn.com/w20/ca.png" alt="🇨🇦" 
+              style="vertical-align: middle; width: 18px; margin-right: 4px; opacity: 0.8;"> 
+              Canada &amp; USA:
+          </span>
+          <a href="https://buy.stripe.com/REPLACE_WITH_EDT_STRIPE_LINK" class="pay-btn pay-stripe" 
+            onclick="track('hero_edt_stripe')" target="_blank" rel="noopener">
+            💳 Commander imprimé (dédicacé) — Stripe
+          </a>
+          <a href="https://payhip.com/REPLACE_WITH_EDT_PAYHIP" class="pay-btn pay-payhip" 
+            onclick="track('hero_edt_payhip')" target="_blank" rel="noopener">
+            📥 Acheter numérique — Payhip
+          </a>
+
+          <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
+            🌍 International:
+          </span>
+
+          <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER" class="pay-btn pay-payoneer" 
+            onclick="track('hero_edt_payoneer')" target="_blank" rel="noopener">
+            🌐 Paiement international — Payoneer
+          </a> -->
+          
+          <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;">
+            ✍️ Chaque exemplaire dédicacé · livraison 5–7 jours · 
+
+            <a href="#bulk" style="color:var(--gold);">
+              5+ exemplaires = rencontre avec l'auteur
+            </a>
+          </p>
         </div>
 
-        <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🇨🇦 Canada &amp; USA</span>
-        <a href="https://buy.stripe.com/REPLACE_WITH_EDT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hero_edt_stripe')" target="_blank" rel="noopener">💳 Commander imprimé (dédicacé) — Stripe</a>
-        <a href="https://payhip.com/REPLACE_WITH_EDT_PAYHIP" class="pay-btn pay-payhip" onclick="track('hero_edt_payhip')" target="_blank" rel="noopener">📥 Acheter numérique — Payhip</a>
-        <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🌍 International</span>
-        <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER" class="pay-btn pay-payoneer" onclick="track('hero_edt_payoneer')" target="_blank" rel="noopener">🌐 Paiement international — Payoneer</a>
-        <p class="pay-note" style="color:rgba(255,255,255,.4);">✍️ Chaque exemplaire dédicacé · livraison 5–7 jours · <a href="#bulk" style="color:var(--edt-gold);">5+ exemplaires = rencontre avec l'auteur</a></p>
       </div>
     </div>
   </div>
@@ -608,17 +635,56 @@
       <div class="payment-panel">
         <h3>Étoile de Tournesol</h3>
         <div class="price-table">
-          <div class="price-row"><span class="price-label">Numérique (ePub / PDF)</span><span class="price-amount">$24.99 CAD</span></div>
-          <div class="price-row"><span class="price-label">Imprimé — Exemplaire dédicacé</span><span class="price-amount">$39.99 CAD</span></div>
-          <div class="price-row"><span class="price-label">En gros (5+ exemplaires)</span><span class="price-amount">Nous contacter</span></div>
+
+          <div class="price-row">
+            <span class="price-label">Numérique (ePub / PDF)</span>
+            <!-- <span class="price-amount">$24.99 CAD</span> -->
+          </div>
+
+          <div class="price-row">
+            <span class="price-label">Imprimé — Exemplaire dédicacé</span>
+            <!-- <span class="price-amount">$39.99 CAD</span> -->
+          </div>
+
+          <div class="price-row">
+            <span class="price-label">En gros (5+ exemplaires)</span>
+            <span class="price-amount">Nous contacter</span>
+          </div>
         </div>
-        <hr class="pay-divider" />
-        <span class="pay-section-label">🇨🇦 Canada &amp; USA</span>
-        <a href="https://buy.stripe.com/REPLACE_WITH_EDT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('payments_edt_stripe')" target="_blank" rel="noopener">💳 Commander imprimé (dédicacé) — Stripe</a>
-        <a href="https://payhip.com/REPLACE_WITH_EDT_PAYHIP" class="pay-btn pay-payhip" onclick="track('payments_edt_payhip')" target="_blank" rel="noopener">📥 Acheter numérique — Payhip</a>
-        <span class="pay-section-label">🌍 International</span>
-        <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER" class="pay-btn pay-payoneer" onclick="track('payments_edt_payoneer')" target="_blank" rel="noopener">🌐 Paiement international — Payoneer</a>
-        <p class="pay-note">✍️ Chaque exemplaire imprimé est dédicacé personnellement par Celio Oliveira. <a href="#bulk" style="color:var(--edt-purple);">5+ exemplaires = rencontre avec l'auteur.</a></p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <!-- <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
+            <img src="https://flagcdn.com/w20/ca.png" alt="🇨🇦" 
+              style="vertical-align: middle; width: 18px; margin-right: 4px; opacity: 0.8;"> 
+              Canada &amp; USA:
+          </span>
+          <a href="https://buy.stripe.com/REPLACE_WITH_EDT_STRIPE_LINK" class="pay-btn pay-stripe" 
+            onclick="track('hero_edt_stripe')" target="_blank" rel="noopener">
+            💳 Commander imprimé (dédicacé) — Stripe
+          </a>
+          <a href="https://payhip.com/REPLACE_WITH_EDT_PAYHIP" class="pay-btn pay-payhip" 
+            onclick="track('hero_edt_payhip')" target="_blank" rel="noopener">
+            📥 Acheter numérique — Payhip
+          </a>
+
+          <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
+            🌍 International:
+          </span>
+
+          <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER" class="pay-btn pay-payoneer" 
+            onclick="track('hero_edt_payoneer')" target="_blank" rel="noopener">
+            🌐 Paiement international — Payoneer
+          </a> -->
+          
+          <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;">
+            ✍️ Chaque exemplaire dédicacé · livraison 5–7 jours · 
+
+            <a href="#bulk" style="color:var(--gold);">
+              5+ exemplaires = rencontre avec l'auteur
+            </a>
+          </p>
+        </div>
+
       </div>
 
       <div class="payment-info">
@@ -662,28 +728,28 @@
         <div class="edt-offer-icon">✍️</div>
         <h3>Exemplaire dédicacé</h3>
         <p>Chaque exemplaire imprimé commandé directement est signé par Celio Oliveira — sans frais supplémentaires, automatiquement pour chaque commande.</p>
-        <a href="#payments" class="btn btn-purple btn-full" onclick="track('offer_edt_auto')">Commander maintenant</a>
+        <!-- <a href="#payments" class="btn btn-purple btn-full" onclick="track('offer_edt_auto')">Commander maintenant</a> -->
       </div>
       <div class="edt-offer-card">
         <span class="edt-offer-trigger">5 exemplaires ou plus</span>
         <div class="edt-offer-icon">💬</div>
         <h3>Rencontre de 15 minutes avec l'auteur</h3>
         <p>Une rencontre virtuelle de 15 minutes avec Celio — personnages, thèmes, univers, processus créatif. En français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
-        <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_call')">Demander la rencontre</a>
+        <!-- <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_call')">Demander la rencontre</a> -->
       </div>
       <div class="edt-offer-card">
         <span class="edt-offer-trigger">5 exemplaires ou plus</span>
         <div class="edt-offer-icon">🖊️</div>
         <h3>Dédicace personnalisée</h3>
         <p>Celio écrit une dédicace unique dans chaque exemplaire — avec le prénom de chaque lecteur si vous le souhaitez. Un souvenir mémorable pour votre classe ou événement.</p>
-        <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_dedic')">Demander une dédicace</a>
+        <!-- <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_dedic')">Demander une dédicace</a> -->
       </div>
     </div>
   </div>
 </section>
 
 <!-- CLAIM FORM -->
-<section class="claim-section" id="claim">
+<!-- <section class="claim-section" id="claim">
   <div class="container">
     <div class="claim-wrap">
       <div class="eyebrow">Réclamer votre offre · Claim Your Offer</div>
@@ -761,7 +827,7 @@
       </form>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CROSS-SELL: ALSO BY CELIO -->
 <section class="section-pad" style="background:var(--stone);">
@@ -824,15 +890,15 @@
         <h4>Ce livre</h4>
         <a href="#story">Synopsis</a>
         <a href="#characters">Les personnages</a>
-        <a href="#payments">Commander</a>
+        <!-- <a href="#payments">Commander</a> -->
         <a href="#bulk">Offres groupées</a>
-        <a href="#claim">Réclamer l'offre</a>
+        <!-- <a href="#claim">Réclamer l'offre</a> -->
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="mailto:hello@fedethics.ca">hello@fedethics.ca</a>
         <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="books-hub.html#newsletter">Newsletter</a>
+        <!-- <a href="books-hub.html#newsletter">Newsletter</a> -->
         <a href="contact.html">Speaking Enquiries</a>
       </div>
     </div>
