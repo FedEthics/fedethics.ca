@@ -10,26 +10,26 @@
 
 ## Books
 
-### [Constitutional Intelligence (CI) and Etoile des Tournesols (EDT) Book-hub Cards](pages/books-hub.html#L263-L346)
+### [Constitutional Intelligence (CI) and Etoile des Tournesols (EDT) Book-hub Cards](pages/book.html#L263-L346)
 - Price rows
 - Quick Order buttons
 - Quick pay boxes
 #### Needs payments enablement (NPE)
 
-### [Special Offers CI and EDT](pages/books-hub.html#L398-L469)
+### [Special Offers CI and EDT](pages/book.html#L398-L469)
 - Order Now buttons
 - Claim this offer buttons
 - Request dedication buttons
 #### Needs payments and forms enablement (NPFE)
 
 
-### [Claim Form](pages/books-hub.html#L472-L551)
+### [Claim Form](pages/book.html#L472-L551)
 #### Needs forms enablement
 
-### [Newsletter](pages/books-hub.html#L585-L599)
+### [Newsletter](pages/book.html#L585-L599)
 #### (NNE)
 
-### [Claim Your Offer button on footer](pages/books-hub.html#L634)
+### [Claim Your Offer button on footer](pages/book.html#L634)
 ###  
 
 ## Contact
