@@ -17,125 +17,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
+  <!-- REFERENCE TO EXTERNAL fedethics.css -->
+  <link rel="stylesheet" href="../css/fedethics.css" />
+
   <style>
     /* ============================================================
-       FEDETHICS v2 — Core Capabilities
-       Typography: Cormorant Garamond (display) + DM Sans (body)
-       Palette: Ink Navy · Parliamentary Gold · Parchment
+       PAGE-SPECIFIC STYLES — Core Capabilities only
+       These extend fedethics.css with page-unique components
        ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --ink:        #12192C;
-      --navy:       #1B2A4A;
-      --navy-mid:   #243558;
-      --navy-soft:  #2D4270;
-      --gold:       #B8903A;
-      --gold-bright:#D4A84B;
-      --gold-pale:  #F4EDD6;
-      --gold-wash:  #FBF6EA;
-      --parchment:  #FDFBF7;
-      --white:      #FFFFFF;
-      --off-white:  #F8F7F4;
-      --stone:      #EEE9E0;
-      --slate:      #E2DDD5;
-      --text-body:  #2D3242;
-      --text-mid:   #4A5165;
-      --text-muted: #717897;
-      --rule:       #DDD8CE;
-      --ci-blue:    #1E3A5F;
-      --ci-dark:    #0F1F38;
-      --edt-green:  #2C5F3E;
-      --edt-dark:   #14301E;
-      --serif: 'Cormorant Garamond', 'Georgia', serif;
-      --sans:  'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max-w: 1200px;
-      --r-sm:  6px;  --r-md: 10px;  --r-lg: 18px;
-      --shadow-xs:  0 1px 3px rgba(18,25,44,.06);
-      --shadow-sm:  0 2px 8px rgba(18,25,44,.08), 0 1px 3px rgba(18,25,44,.05);
-      --shadow-md:  0 6px 24px rgba(18,25,44,.10), 0 2px 8px rgba(18,25,44,.06);
-      --shadow-lg:  0 16px 56px rgba(18,25,44,.14), 0 4px 16px rgba(18,25,44,.08);
-      --t: .22s ease;
-    }
-
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: var(--sans); background: var(--parchment); color: var(--text-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-
-    /* LAYOUT */
-    .container  { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
-    .section-pad{ padding: 96px 0; }
-    .text-center{ text-align: center; }
-    .text-center .section-lead { margin-left: auto; margin-right: auto; }
-    .text-center .eyebrow { justify-content: center; }
-    .text-center .eyebrow::before { display: none; }
-
-    /* EYEBROW */
-    .eyebrow {
-      font-family: var(--sans); font-size: .68rem; font-weight: 600;
-      letter-spacing: .20em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 14px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .eyebrow::before { content: ''; flex-shrink: 0; display: block; width: 28px; height: 1px; background: var(--gold); }
-    .eyebrow-light { color: rgba(255,255,255,.68); }
-    .eyebrow-light::before { background: var(--gold); }
-
-    /* SECTION TYPOGRAPHY */
-    .section-title {
-      font-family: var(--serif); font-weight: 600;
-      font-size: clamp(2rem,3.8vw,3rem); line-height: 1.12;
-      color: var(--ink); margin-bottom: 20px; letter-spacing: -.01em;
-    }
-    .section-title em { color: var(--gold); font-style: italic; font-weight: 400; }
-    .section-lead { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; max-width: 580px; margin-bottom: 44px; }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 28px; border-radius: var(--r-sm);
-      font-family: var(--sans); font-size: .875rem; font-weight: 600;
-      text-decoration: none; cursor: pointer; border: 1.5px solid transparent;
-      transition: all var(--t); white-space: nowrap; line-height: 1; letter-spacing: .01em;
-    }
-    .btn-primary       { background: var(--ink);       color: var(--white); border-color: var(--ink); }
-    .btn-primary:hover { background: var(--navy);      transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-gold          { background: var(--gold);      color: var(--white); border-color: var(--gold); }
-    .btn-gold:hover    { background: var(--gold-bright); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(184,144,58,.35); }
-    .btn-outline       { background: transparent;      color: var(--ink); border-color: var(--ink); }
-    .btn-outline:hover { background: var(--ink);       color: var(--white); }
-    .btn-outline-light { background: transparent;      color: rgba(255,255,255,.9); border-color: rgba(255,255,255,.35); }
-    .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.65); }
-    .btn-lg  { padding: 15px 36px; font-size: .9375rem; }
-    .btn-group{ display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 300;
-      background: rgba(253,251,247,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule); height: 72px;
-    }
-    .nav-inner { height: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo  { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo-mark { width: 40px; height: 40px; background: var(--ink); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-    .nav-logo-wordmark { display: flex; flex-direction: column; gap: 1px; }
-    .nav-logo-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); line-height: 1; letter-spacing: -.01em; }
-    .nav-logo-tagline { font-size: .58rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .14em; line-height: 1; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-mid); text-decoration: none; transition: color var(--t); position: relative; }
-    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transition: transform var(--t); }
-    .nav-links a:hover { color: var(--ink); }
-    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
-    .nav-links a.active { color: var(--ink); font-weight: 600; }
-    .nav-right { display: flex; align-items: center; gap: 16px; }
-    .nav-ham { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    .nav-ham span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; }
-    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 400; background: rgba(18,25,44,.95); backdrop-filter: blur(8px); flex-direction: column; align-items: center; justify-content: center; gap: 32px; }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-family: var(--serif); font-size: 1.8rem; color: var(--white); text-decoration: none; font-weight: 600; transition: color var(--t); }
-    .mobile-nav a:hover { color: var(--gold-bright); }
-    .mobile-nav-close { position: absolute; top: 24px; right: 28px; background: none; border: none; cursor: pointer; font-size: 1.5rem; color: rgba(255,255,255,.6); }
-
-    /* PAGE HERO */
+    /* Page Hero — unique to capabilities page */
     .page-hero {
       background: var(--ink); padding: 88px 0 72px;
       position: relative; overflow: hidden;
@@ -165,7 +56,7 @@
     .hero-stat-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 4px; }
     .hero-stat-label { font-size: .78rem; color: rgba(255,255,255,.5); font-weight: 500; line-height: 1.4; max-width: 120px; }
 
-    /* TRUST BAR */
+    /* Trust Bar — unique to capabilities page */
     .trust-bar { background: var(--white); border-bottom: 1px solid var(--rule); padding: 20px 0; }
     .trust-bar-inner { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
     .trust-item { padding: 10px 32px; border-right: 1px solid var(--rule); font-size: .78rem; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
@@ -173,7 +64,7 @@
     .trust-item:last-child  { border-right: none; }
     .trust-item strong { color: var(--ink); font-weight: 700; }
 
-    /* CAPABILITY CARDS */
+    /* Capability Cards — unique to capabilities page */
     .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
     .cap-card {
       background: var(--white); border: 1px solid var(--rule);
@@ -205,15 +96,14 @@
     .cap-list li:last-child { border-bottom: none; }
     .cap-list li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
-    /* CREDENTIALS BAND */
+    /* Credentials Band — unique */
     .cred-band { background: var(--navy); padding: 64px 0; }
     .cred-band-inner { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; }
     .cred-item { text-align: center; }
     .cred-item-num { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 8px; }
     .cred-item-label { font-size: .8rem; color: rgba(255,255,255,.55); line-height: 1.5; max-width: 140px; margin: 0 auto; }
-    .cred-divider { width: 1px; background: rgba(255,255,255,.1); }
 
-    /* FRAMEWORKS */
+    /* Frameworks Showcase — unique */
     .fw-section { background: var(--off-white); }
     .fw-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
     .fw-card {
@@ -230,7 +120,7 @@
     .fw-card p   { font-size: .85rem; color: var(--text-mid); line-height: 1.72; margin-bottom: 14px; }
     .fw-source   { font-size: .7rem; color: var(--gold); font-weight: 600; display: block; padding-top: 12px; border-top: 1px solid var(--rule); }
 
-    /* EXPERIENCE STRIP */
+    /* Experience Strip — unique */
     .exp-strip { background: var(--gold-wash); border-top: 1px solid rgba(184,144,58,.2); border-bottom: 1px solid rgba(184,144,58,.2); padding: 56px 0; }
     .exp-strip-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
     .exp-quote { font-family: var(--serif); font-size: 1.35rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 20px; }
@@ -242,7 +132,7 @@
     .exp-sector-title { font-size: .875rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
     .exp-sector-desc  { font-size: .78rem; color: var(--text-muted); line-height: 1.4; }
 
-    /* SPEAKING */
+    /* Speaking Section — unique */
     .speaking-section { background: var(--ink); padding: 96px 0; position: relative; overflow: hidden; }
     .speaking-section::before { content: ''; position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(184,144,58,.06) 0%, transparent 70%); pointer-events: none; }
     .speaking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; z-index: 1; }
@@ -264,7 +154,7 @@
     .lang-flags { display: flex; gap: 6px; margin-top: 12px; }
     .lang-flag  { font-size: .78rem; padding: 3px 10px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; color: rgba(255,255,255,.6); font-weight: 500; }
 
-    /* BOOK TIE-IN */
+    /* Book Tie-in — unique */
     .book-tiein { background: var(--parchment); padding: 96px 0; border-top: 1px solid var(--rule); }
     .book-tiein-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
     .bti-card {
@@ -283,61 +173,30 @@
     .bti-link { font-size: .82rem; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 6px; }
     .bti-link-edt { color: #3D1F6E; }
 
-    /* CTA BAND */
-    .cta-band { background: var(--navy); padding: 96px 0; position: relative; overflow: hidden; }
-    .cta-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(184,144,58,.06) 0%, transparent 60%); pointer-events: none; }
-    .cta-band-inner { text-align: center; max-width: 620px; margin: 0 auto; position: relative; z-index: 1; }
-    .cta-rule { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 24px; }
-    .cta-band h2 { font-family: var(--serif); font-size: clamp(1.8rem,3.2vw,2.5rem); color: var(--white); margin-bottom: 16px; font-weight: 600; letter-spacing: -.01em; line-height: 1.15; }
-    .cta-band p { color: rgba(255,255,255,.6); font-size: .98rem; line-height: 1.8; margin-bottom: 36px; }
+    /* Eyebrow light variant (extends fedethics.css) */
+    .eyebrow-light { color: rgba(255,255,255,.68); }
+    .eyebrow-light::before { background: var(--gold); }
 
-    /* FOOTER */
-    footer { background: var(--ink); color: rgba(255,255,255,.7); padding: 64px 0 36px; border-top: 1px solid rgba(255,255,255,.07); }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
-    .footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-    .footer-brand-mark { width: 40px; height: 40px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--gold); font-weight: 700; }
-    .footer-brand-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); font-weight: 600; letter-spacing: -.01em; }
-    .footer-tagline { font-size: .82rem; line-height: 1.7; color: rgba(255,255,255,.45); max-width: 240px; margin-bottom: 16px; }
-    .footer-imprints { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
-    .footer-imprint  { font-size: .64rem; padding: 3px 10px; border-radius: 4px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .fi-advisory { background: rgba(30,58,95,.5); color: rgba(184,144,58,.85); border: 1px solid rgba(30,58,95,.8); }
-    .fi-creative  { background: rgba(44,95,62,.5); color: rgba(184,144,58,.85); border: 1px solid rgba(44,95,62,.8); }
-    .footer-social { display: flex; gap: 10px; }
-    .footer-social a { width: 34px; height: 34px; border-radius: var(--r-sm); background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); font-size: .8rem; text-decoration: none; transition: all var(--t); }
-    .footer-social a:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
-    .footer-col h4 { font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
-    .footer-col a  { display: block; font-size: .85rem; color: rgba(255,255,255,.58); text-decoration: none; margin-bottom: 10px; transition: color var(--t); }
-    .footer-col a:hover { color: var(--gold); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
-    .footer-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
-    .footer-disclaimer { font-size: .7rem; color: rgba(255,255,255,.28); max-width: 520px; line-height: 1.65; }
-
-    /* RESPONSIVE */
+    /* Responsive overrides for page-specific components */
     @media (max-width:1024px) {
       .cap-grid, .speaking-grid, .book-tiein-grid, .exp-strip-inner { grid-template-columns: 1fr; }
       .cred-band-inner { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
       .trust-item { padding: 10px 20px; }
     }
     @media (max-width:768px) {
-      .section-pad { padding: 64px 0; }
       .fw-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 32px; }
       .trust-bar-inner { gap: 0; }
       .trust-item { border-right: none; border-bottom: 1px solid var(--rule); width: 50%; }
-      .nav-links { display: none; }
-      .nav-ham { display: block; }
     }
     @media (max-width:480px) {
-      .footer-grid { grid-template-columns: 1fr; }
-      .container { padding: 0 20px; }
       .cred-band-inner { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- MOBILE NAV -->
+<!-- MOBILE NAV (uses classes from fedethics.css) -->
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
   <a href="../index.html">Home</a>
@@ -347,7 +206,7 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<!-- NAV -->
+<!-- NAV (uses classes from fedethics.css) -->
 <nav>
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
@@ -378,7 +237,7 @@
   </div>
 </nav>
 
-<!-- PAGE HERO -->
+<!-- PAGE HERO (page-specific) -->
 <header class="page-hero">
   <div class="container">
     <div class="page-hero-inner">
@@ -408,7 +267,7 @@
   </div>
 </header>
 
-<!-- TRUST BAR -->
+<!-- TRUST BAR (page-specific) -->
 <div class="trust-bar">
   <div class="container">
     <div class="trust-bar-inner">
@@ -421,7 +280,7 @@
   </div>
 </div>
 
-<!-- CORE CAPABILITIES -->
+<!-- CORE CAPABILITIES (uses container, section-pad from fedethics.css) -->
 <section class="section-pad" style="background:var(--off-white);">
   <div class="container">
     <div class="eyebrow">Core Capabilities</div>
@@ -429,18 +288,15 @@
     <p class="section-lead">Each capability is grounded in real executive experience — not theoretical models. These frameworks were tested in high-accountability environments where the cost of getting it wrong is measured in public trust.</p>
 
     <div class="cap-grid">
-
+      <!-- Capability cards content remains the same -->
       <div class="cap-card">
         <div class="cap-icon-wrap">🏛️</div>
         <h3>AI Governance Frameworks</h3>
         <p>Structured methodologies for embedding ethical, constitutionally accountable AI into democratic institutions — including Westminster parliamentary systems. This is the core intellectual contribution of Constitutional Intelligence.</p>
         <ul class="cap-list">
-          <!-- <li>IMPACT™ information architecture for governance design</li> -->
           <li>DECIDE-PLUS™ methodology for constitutional evaluation of technical decisions</li>
           <li>FIVE-LAYER™ architecture for cross-departmental AI coordination</li>
           <li>CHARTER RIGHTS DECISION TREE™ unified governance architecture for constitutional AI excellence</li>
-          <!-- <li>Risk tiering and legacy planning across electoral changeover</li> -->
-          <!-- <li>AI procurement accountability aligned with parliamentary principles</li> -->
         </ul>
       </div>
 
@@ -482,19 +338,16 @@
           <li>Academic publications translated for practitioner audiences</li>
         </ul>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CREDENTIALS BAND -->
+<!-- CREDENTIALS BAND (page-specific) -->
 <div class="cred-band">
   <div class="container">
     <div class="cred-band-inner">
       <div class="cred-item">
-        <!-- <div class="cred-item-num">15+</div> -->
         <div class="cred-item-num">30+</div>
-        <!-- <div class="cred-item-label">Years leading data &amp; AI strategy in the public sector</div> -->
         <div class="cred-item-label">Executive briefings and conference addresses</div>
       </div>
       <div class="cred-item">
@@ -503,11 +356,7 @@
       </div>
       <div class="cred-item">
         <div class="cred-item-num">2</div>
-        <div class="cred-item-label">
-          Published books — advisory and 
-          <!-- literary -->
-          creative
-        </div>
+        <div class="cred-item-label">Published books — advisory and creative</div>
       </div>
       <div class="cred-item">
         <div class="cred-item-num">4</div>
@@ -517,7 +366,7 @@
   </div>
 </div>
 
-<!-- FRAMEWORKS SHOWCASE -->
+<!-- FRAMEWORKS SHOWCASE (page-specific) -->
 <section class="fw-section section-pad">
   <div class="container">
     <div class="eyebrow">Proprietary Frameworks</div>
@@ -529,18 +378,8 @@
     </p>
 
     <div class="fw-grid">
-
-      <!-- <div class="fw-card">
-        <div class="fw-acronym">IMPACT™</div>
-        <span class="fw-trademark">Information Architecture</span>
-        <h3>Does this AI initiative have constitutional grounding?</h3>
-        <p>The structural backbone of Constitutional Intelligence. IMPACT™ provides a systematic way to map, assess, and govern AI initiatives across the full institutional lifecycle — from inception through delivery to audit and accountability.</p>
-        <span class="fw-source">From: Constitutional Intelligence (Ch. 2–4)</span>
-      </div> -->
-
       <div class="fw-card">
         <div class="fw-acronym">DECIDE+™</div>
-        <!-- <span class="fw-trademark">Constitutional Evaluation Method</span> -->
         <span class="fw-trademark">Methodology</span> 
         <h3>How do senior leaders make AI decisions responsibly?</h3>
         <p>A decision methodology for evaluating AI choices against constitutional responsibilities. Designed specifically for Westminster systems where legal and democratic accountability are non-negotiable constraints — not optional considerations.</p>
@@ -549,31 +388,19 @@
 
       <div class="fw-card">
         <div class="fw-acronym">FIVE-LAYER™</div>
-        <span class="fw-trademark">
-          <!-- Coordination  -->
-          Architecture
-        </span>
-        <h3>
-          How is accountable AI built and sustained across 
-          <!-- departments? -->
-           organizations?
-        </h3>
+        <span class="fw-trademark">Architecture</span>
+        <h3>How is accountable AI built and sustained across organizations?</h3>
         <p>Five structured layers for coordinating AI governance across departments, mandates, and electoral cycles — preventing the siloed failures that cause large-scale implementation disasters in the public sector.</p>
         <span class="fw-source">From: Constitutional Intelligence (Ch. 2)</span>
       </div>
 
       <div class="fw-card">
         <div class="fw-acronym">CHARTER RIGHTS DECISION TREE™</div>
-        <span class="fw-trademark">
-          <!-- Coordination Architecture -->
-        </span>
-        <h3>
-          Does this AI initiative cause any harm or discrimination against minorities?
-        </h3>
+        <span class="fw-trademark"></span>
+        <h3>Does this AI initiative cause any harm or discrimination against minorities?</h3>
         <p>A decision path that assesses whether an AI initiative is aligned with constitutional principles, rights protection, and public-sector accountability from the outset - embedding fairness, privacy, transparency, and institutional responsibility as core requirements.</p>
         <span class="fw-source">From: Constitutional Intelligence (Ch. 8)</span>
       </div>
-
     </div>
 
     <div style="margin-top:40px;">
@@ -582,7 +409,7 @@
   </div>
 </section>
 
-<!-- EXPERIENCE STRIP -->
+<!-- EXPERIENCE STRIP (page-specific) -->
 <div class="exp-strip">
   <div class="container">
     <div class="exp-strip-inner">
@@ -603,24 +430,14 @@
           <div class="exp-sector-icon">🎓</div>
           <div>
             <div class="exp-sector-title">Academic &amp; Research Credentials</div>
-            <div class="exp-sector-desc">
-              PhD candidate at University of Toronto 
-              · MI Human-Centred Data Science 
-              · MBA in Digital Marketing 
-              · IBM Watson AI Certified
-            </div>
+            <div class="exp-sector-desc">PhD candidate at University of Toronto · MI Human-Centred Data Science · MBA in Digital Marketing · IBM Watson AI Certified</div>
           </div>
         </div>
         <div class="exp-sector-row">
           <div class="exp-sector-icon">🌍</div>
           <div>
             <div class="exp-sector-title">International Platforms</div>
-            <div class="exp-sector-desc">
-              G7 GovAI Grand Challenge 
-              · Speaker in Brazil, Canada, United States, United Arab Emirates, Saudi Arabia, United Kingdom 
-              · Saudi Digital Academy instructor
-              · Canadian Digital Academy Visiting Faculty 
-            </div>
+            <div class="exp-sector-desc">G7 GovAI Grand Challenge · Speaker in Brazil, Canada, United States, United Arab Emirates, Saudi Arabia, United Kingdom · Saudi Digital Academy instructor · Canadian Digital Academy Visiting Faculty</div>
           </div>
         </div>
         <div class="exp-sector-row">
@@ -635,11 +452,10 @@
   </div>
 </div>
 
-<!-- SPEAKING IN DEPTH -->
+<!-- SPEAKING IN DEPTH (page-specific) -->
 <section class="speaking-section">
   <div class="container">
     <div class="speaking-grid">
-
       <div>
         <div class="eyebrow eyebrow-light">Speaking &amp; Events</div>
         <h2>Five talk formats.<br/>One clear voice.</h2>
@@ -670,13 +486,13 @@
             <span class="talk-icon">🤝</span>
             <div>
               <p class="talk-title">The Human Side of Data Leadership</p>
-              <p class="talk-desc">Bridges Constitutional Intelligence and Étoile de Tournesol — exploring what it means to lead with both rigour and humanity in complex institutional environments.</p>
+              <p class="talk-desc">Bridges Constitutional Intelligence and Étoile des Tournesols — exploring what it means to lead with both rigour and humanity in complex institutional environments.</p>
             </div>
           </li>
           <li class="talk-item">
             <span class="talk-icon">📚</span>
             <div>
-              <p class="talk-title">Author Talk — Étoile de Tournesol</p>
+              <p class="talk-title">Author Talk — Étoile des Tournesols</p>
               <p class="talk-desc">For schools, libraries, book clubs, and literary events. Available in French or English. Included free with bulk orders of 5+ copies.</p>
             </div>
           </li>
@@ -704,12 +520,11 @@
           <p style="font-size:.74rem;color:rgba(255,255,255,.38);text-align:center;margin-top:12px;">Responds personally within 48 hours</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- BOOK TIE-IN -->
+<!-- BOOK TIE-IN (page-specific) -->
 <section class="book-tiein">
   <div class="container">
     <div class="eyebrow">The Books</div>
@@ -728,10 +543,10 @@
         </div>
       </a>
 
-      <a href="etoile-de-tournesol.html" class="bti-card" onclick="track('caps_bti_edt')">
+      <a href="etoile-des-tournesols.html" class="bti-card" onclick="track('caps_bti_edt')">
         <div class="bti-header bti-edt">
           <div class="bti-imprint">FedEthics Creative™ · Auto-publié · Roman jeunesse français</div>
-          <div class="bti-title">Étoile de Tournesol</div>
+          <div class="bti-title">Étoile des Tournesols</div>
         </div>
         <div class="bti-body">
           <p>Un roman jeunesse en français sur la magie de la diversité, l'appartenance et le courage. Sept jeunes gardiens aux dons extraordinaires dans une ville secrète et vivante. Parfait pour les classes, les clubs de lecture, et les événements littéraires. Disponible avec dédicace personnalisée.</p>
@@ -742,22 +557,22 @@
   </div>
 </section>
 
-<!-- CTA BAND -->
-<section class="cta-band">
+<!-- CTA BAND (uses bg-navy, container from fedethics.css) -->
+<section class="bg-navy section-pad">
   <div class="container">
-    <div class="cta-band-inner">
-      <div class="cta-rule"></div>
-      <h2>Ready to work together?</h2>
-      <p>Whether you need advisory support on AI governance, a keynote speaker for your executive event, or simply want to order the book — the best next step is a conversation. Celio responds personally.</p>
+    <div class="text-center" style="max-width:620px;margin:0 auto;">
+      <div style="width:40px;height:1px;background:var(--gold);margin:0 auto 24px;"></div>
+      <h2 class="section-title" style="color:var(--white);">Ready to work together?</h2>
+      <p style="color:rgba(255,255,255,.6);font-size:.98rem;line-height:1.8;margin-bottom:36px;">Whether you need advisory support on AI governance, a keynote speaker for your executive event, or simply want to order the book — the best next step is a conversation. Celio responds personally.</p>
       <div class="btn-group" style="justify-content:center;">
-        <a href="contact.html"   class="btn btn-gold btn-lg" onclick="track('caps_cta_contact')">Get in Touch</a>
+        <a href="contact.html" class="btn btn-gold btn-lg" onclick="track('caps_cta_contact')">Get in Touch</a>
         <a href="books-hub.html" class="btn btn-outline-light btn-lg" onclick="track('caps_cta_books')">Order the Books</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (uses classes from fedethics.css) -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -793,15 +608,13 @@
       <div class="footer-col">
         <h4>Books</h4>
         <a href="constitutional-intelligence.html">Constitutional Intelligence</a>
-        <a href="etoile-de-tournesol.html">Étoile de Tournesol</a>
+        <a href="etoile-des-tournesols.html">Étoile des Tournesols</a>
         <a href="books-hub.html#bulk">Bulk Orders</a>
-        <!-- <a href="books-hub.html#claim">Claim Your Offer</a> -->
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="mailto:hello@fedethics.ca">hello@fedethics.ca</a>
         <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <!-- <a href="books-hub.html#newsletter">Newsletter</a> -->
         <a href="contact.html">Speaking Enquiries</a>
       </div>
     </div>

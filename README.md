@@ -10,7 +10,7 @@
 
 ## Books
 
-### [Constitutional Intelligence (CI) and Etoile de Tournesol (EDT) Book-hub Cards](pages/books-hub.html#L263-L346)
+### [Constitutional Intelligence (CI) and Etoile des Tournesols (EDT) Book-hub Cards](pages/books-hub.html#L263-L346)
 - Price rows
 - Quick Order buttons
 - Quick pay boxes
