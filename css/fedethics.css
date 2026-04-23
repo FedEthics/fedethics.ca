@@ -29,10 +29,13 @@
   /* Book-specific identities (used by individual pages) */
   --ci-blue:       #1E3A5F;
   --ci-dark:       #0F1F38;
-  --ci-accent:     #C9A84C;
-  --edt-green:     #2C5F3E;
-  --edt-dark:      #14301E;
-  --edt-accent:    #C9A84C;
+  --ci-deep:       #1A2E4E;
+  
+  --edt-purple:     #3D1F6E;
+  --edt-dark:      #2D1461;
+  --edt-deep:      #1E0B3C;
+  --edt-purple-rgb: 61,31,110;
+  --edt-gold-rgb:   184,144,58;
 
   /* Typography */
   --serif:   'Cormorant Garamond', 'Georgia', serif;
@@ -231,7 +234,11 @@ footer {
   font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
 }
 .fi-advisory { background: rgba(30,58,95,0.45); color: rgba(201,168,76,0.75); border: 1px solid rgba(30,58,95,0.7); }
-.fi-creative { background: rgba(44,95,62,0.45); color: rgba(201,168,76,0.75); border: 1px solid rgba(44,95,62,0.7); }
+.fi-creative { 
+  background: rgba(var(--edt-purple-rgb), 0.45); 
+  color: rgba(var(--edt-gold-rgb), 0.75); 
+  border: 1px solid rgba(var(--edt-purple-rgb), 0.7); 
+}
 .footer-col h4 {
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
   text-transform: uppercase; color: rgba(255,255,255,0.28);

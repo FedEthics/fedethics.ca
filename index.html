@@ -107,8 +107,8 @@
       background: rgba(255,255,255,0.08);
       z-index: 2;
     }
-    .bc-ci { background: linear-gradient(155deg, #1E3A5F 0%, #0D1F38 60%, #1a2e4e 100%); }
-    .bc-edt { background: linear-gradient(155deg, #2C5F3E 0%, #14301E 60%, #1e4029 100%); }
+    .bc-ci { background: linear-gradient(155deg, var(--ci-blue) 0%, var(--ci-dark) 60%, var(--ci-deep) 100%); }
+    .bc-edt { background: linear-gradient(155deg, var(--edt-purple) 0%, var(--edt-dark) 60%, var(--edt-deep) 100%); }
     .book-inner {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 18px 14px 20px;
@@ -295,7 +295,7 @@
       background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
       pointer-events: none;
     }
-    .book-card-edt:hover { background: var(--edt-green); }
+    .book-card-edt:hover { background: var(--edt-purple); }
     .bc-top {
       padding: 40px 36px 28px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -512,12 +512,12 @@
           </div>
         </a>
 
-        <a href="pages/etoile-de-tournesol.html" class="book-3d book-edt" onclick="track('hero_visual_edt')">
+        <a href="pages/etoile-des-tournesols.html" class="book-3d book-edt" onclick="track('hero_visual_edt')">
           <div class="book-cover bc-edt">
             <div class="book-top-rule"></div>
             <div class="book-inner">
               <div class="book-badge">FedEthics Creative™</div>
-              <div class="book-name">Étoile de Tournesol</div>
+              <div class="book-name">Étoile des Tournesols</div>
               <div class="book-author">Celio Oliveira</div>
             </div>
           </div>
@@ -685,11 +685,11 @@
         </div>
       </a>
 
-      <!-- Étoile de Tournesol -->
-      <a href="pages/etoile-de-tournesol.html" class="book-card-edt" onclick="track('home_card_edt')">
+      <!-- Étoile des Tournesols -->
+      <a href="pages/etoile-des-tournesols.html" class="book-card-edt" onclick="track('home_card_edt')">
         <div class="bc-top">
           <div class="bc-imprint">FedEthics Creative™ · Self-Published</div>
-          <div class="bc-title">Étoile de Tournesol</div>
+          <div class="bc-title">Étoile des Tournesols</div>
           <div class="bc-subtitle">Roman jeunesse — Fiction littéraire française</div>
         </div>
         <div class="bc-body">
@@ -802,7 +802,7 @@
       <div class="footer-col">
         <h4>Books</h4>
         <a href="pages/constitutional-intelligence.html">Constitutional Intelligence</a>
-        <a href="pages/etoile-de-tournesol.html">Étoile de Tournesol</a>
+        <a href="pages/etoile-des-tournesols.html">Étoile des Tournesols</a>
         <a href="pages/books-hub.html#bulk">Bulk Orders</a>
         <!-- <a href="pages/books-hub.html#claim">Claim Your Offer</a> -->
       </div>
