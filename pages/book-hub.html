@@ -28,12 +28,20 @@
   <!-- Shared CSS -->
   <link rel="stylesheet" href="../css/fedethics.css" />
 
+  <!-- Stripe Buy Button -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
   <!-- Page-specific styles (books hub) -->
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     /* AUTOGRAPH BANNER */
     .autograph-banner { background: var(--gold-wash); border-bottom: 1px solid rgba(184,144,58,.25); padding: 13px 28px; text-align: center; }
     .autograph-banner p { font-size: .86rem; color: var(--ink); font-weight: 500; }
@@ -52,7 +60,7 @@
 
     /* BOOK CARDS */
     .book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
-    .book-hub-card { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--rule); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: box-shadow var(--t), transform var(--t); background: var(--white); }
+    .book-hub-card { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--rule); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: box-shadow var(--t), transform var(--t); background: var(--white); height: 100%; }
     .book-hub-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
     .bhc-header { padding: 32px 28px 26px; flex-shrink: 0; }
     .bhc-ci  { background: linear-gradient(145deg, var(--ci-blue) 0%, var(--ci-dark) 100%); }
@@ -102,11 +110,26 @@
     .btn-outline-navy { background: transparent; color: var(--navy); border-color: var(--navy); }
     .btn-outline-navy:hover { background: var(--navy); color: var(--white); }
 
+
+    /* Ensure the second card does not stretch in height weirdly */
+    .book-hub-card .bhc-body {
+      justify-content: flex-start;
+    }
+    /* fix alignment for both cards so they stay equal height without extra expansion */
+    .book-grid {
+      align-items: stretch;
+    }
+    /* keep both card bodies consistent */
+    .bhc-body > *:last-child {
+      margin-bottom: 0;
+    }
+    
     /* AUTHOR SECTION */
     .author-section { background: var(--navy); padding: 96px 0; }
     .author-grid { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start; }
     .author-photo { border-radius: var(--r-lg); overflow: hidden; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); aspect-ratio: 3/4; box-shadow: var(--shadow-lg); }
     .author-photo-placeholder { width: 100%; height: 100%; min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,.3); font-size: .8rem; text-align: center; padding: 24px; }
+    .author-photo-placeholder img { max-width: 100%; height: auto; object-fit: cover; border-radius: var(--r-lg); }
     .author-name  { font-family: var(--serif); font-size: clamp(1.7rem,3vw,2.4rem); color: var(--white); font-weight: 600; margin-bottom: 6px; }
     .author-title { font-size: .85rem; color: var(--gold); font-weight: 500; margin-bottom: 22px; line-height: 1.6; }
     .author-bio   { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.8; margin-bottom: 20px; }
@@ -124,7 +147,7 @@
     .offers-how p  { font-size: .88rem; color: var(--text-mid); line-height: 1.65; }
     .offers-how strong { color: var(--text-body); font-weight: 600; }
     .offers-books-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .offer-book-block { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-xs); }
+    .offer-book-block { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-xs); height: 100%; }
     .obb-header { padding: 22px 24px 18px; }
     .obb-ci  { background: linear-gradient(135deg, var(--ci-blue), var(--ci-dark)); }
     .obb-edt { background: linear-gradient(135deg, var(--edt-purple), var(--edt-dark)); }
@@ -195,6 +218,7 @@
       .section-pad { padding: 64px 0; }
       .book-grid, .offers-books-grid, .endorse-grid { grid-template-columns: 1fr; }
       .form-grid-2 { grid-template-columns: 1fr; }
+      .stripe-button-container stripe-buy-button { max-width: 280px; }
     }
   </style>
 </head>
@@ -298,27 +322,17 @@
             <a href="constitutional-intelligence.html" class="btn btn-ci" onclick="track('hub_ci_page')">Full Book Page →</a>
             <a href="constitutional-intelligence.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_ci_pay')">Quick Order</a>
           </div>
-          <!-- <div class="quick-pay">
-            <p class="quick-pay-title">Quick Order — Constitutional Intelligence</p>
-            <div class="quick-pay-section">
-              <span class="pay-label">🇨🇦 Canada &amp; USA</span>
-              <a href="https://buy.stripe.com/REPLACE_WITH_CI_PRINT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hub_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
-              <a href="https://payhip.com/REPLACE_WITH_CI_DIGITAL_PAYHIP_LINK" class="pay-btn pay-payhip" onclick="track('hub_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital — Payhip</a>
-            </div>
-            <div class="quick-pay-section">
-              <span class="pay-label">🌍 International</span>
-              <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER_LINK" class="pay-btn pay-payoneer" onclick="track('hub_ci_payoneer')" target="_blank" rel="noopener">🌐 International Payment — Payoneer</a>
-            </div>
-            <div class="quick-pay-section">
-              <span class="pay-label">🛒 Also On</span>
-              <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON_URL" class="pay-btn pay-amazon" onclick="track('hub_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon</a>
-            </div>
-            <p class="pay-note">✍️ Print orders autographed &amp; shipped within 5–7 business days</p>
-          </div> -->
+
+          <stripe-buy-button
+            buy-button-id="buy_btn_1TOhoj24vGwlmkJQB22LylES"
+            publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+          > 
+          </stripe-buy-button>
+          
         </div>
       </div>
 
-      <!-- EDT CARD -->
+      <!-- EDT CARD - ensure no extra expansion down, body content fixed -->
       <div class="book-hub-card">
         <div class="bhc-header bhc-edt">
           <div class="bhc-imprint">FedEthics Creative™ · Auto-publié · Roman jeunesse français</div>
@@ -343,17 +357,6 @@
             <a href="etoile-des-tournesols.html" class="btn btn-edt" onclick="track('hub_edt_page')">Page complète du livre →</a>
             <!-- <a href="etoile-des-tournesols.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_edt_pay')">Commander vite</a> -->
           </div>
-          <!-- <div class="quick-pay">
-            <p class="quick-pay-title">Commander — Étoile des Tournesols</p>
-            <div class="quick-pay-section">
-              <span class="pay-label">🇨🇦 Canada &amp; USA</span>
-              <a href="https://buy.stripe.com/REPLACE_WITH_EDT_PRINT_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hub_edt_stripe')" target="_blank" rel="noopener">💳 Commander imprimé (dédicacé) — Stripe</a>
-              <a href="https://payhip.com/REPLACE_WITH_EDT_DIGITAL_PAYHIP_LINK" class="pay-btn pay-payhip" onclick="track('hub_edt_payhip')" target="_blank" rel="noopener">📥 Acheter numérique — Payhip</a>
-            </div>
-            <div class="quick-pay-section">
-              <span class="pay-label">🌍 International</span>
-              <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER_LINK" class="pay-btn pay-payoneer" onclick="track('hub_edt_payoneer')" target="_blank" rel="noopener">🌐 Paiement international — Payoneer</a>
-            </div>
             <p class="pay-note">✍️ Chaque exemplaire dédicacé · livraison 5–7 jours ouvrables</p>
           </div> -->
         </div>
@@ -370,8 +373,6 @@
       <div>
         <div class="author-photo">
           <div class="author-photo-placeholder">
-            <!-- <span style="font-size:3rem;opacity:.2;">👤</span>
-            <span>Add photo:<br/>images/headshot.jpg</span> -->
             <img src="../images/headshot.jpg" alt="Celio Oliveira — Founder, FedEthics Inc." />
           </div>
         </div>
@@ -434,7 +435,7 @@
             <span class="offer-trigger">Any direct purchase</span>
             <h4>✍️ Autographed Copy</h4>
             <p>Every copy ordered directly from this page is personally signed by Celio Oliveira. No form, no extra charge — it happens automatically for every print order.</p>
-            <!-- <a href="constitutional-intelligence.html#payments" class="pay-btn offer-btn-ci" onclick="track('offer_ci_autograph')">Order Now</a> -->
+            <a href="constitutional-intelligence.html#payments" class="pay-btn offer-btn-ci" onclick="track('offer_ci_autograph')">Order Now</a>
           </div>
           <div class="offer-item">
             <span class="offer-trigger">Buy 5 or more copies</span>

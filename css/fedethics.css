@@ -146,6 +146,37 @@ body {
 .badge-gold { background: var(--gold-wash); color: #7A5C1A; border: 1px solid rgba(184,144,58,0.25); }
 .badge-navy { background: rgba(27,42,74,0.07); color: var(--navy); border: 1px solid rgba(27,42,74,0.12); }
 
+
+/* Stripe Buy Button Styles */
+.stripe-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+stripe-buy-button {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Force Stripe button inner container to center */
+.bhc-body stripe-buy-button {
+  text-align: center;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .stripe-button-container stripe-buy-button {
+    max-width: 280px;
+  }
+}
+
+
 /* ════════════════════════════════
    NAVIGATION
 ═════════════════════════════════ */

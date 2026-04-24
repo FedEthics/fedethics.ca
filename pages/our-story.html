@@ -178,9 +178,11 @@
       <div class="story-photo-col">
         <div class="story-photo">
           <div class="story-photo-placeholder">
-            <!-- <div class="story-photo-placeholder-circle">C</div>
-            <span style="font-size:.75rem;color:var(--text-muted);">Add headshot:<br/>images/celio_photo.jpg</span> -->
-            <img src="../images/headshot.jpg" alt="Celio Oliveira — Founder, FedEthics Inc." />
+            <img 
+              src="../images/headshot.jpg" 
+              alt="Celio Oliveira — Founder, FedEthics Inc." 
+              onerror="this.outerHTML=
+                '<div class=\'story-photo-placeholder-circle\'>CO</div> <span style=\'font-size:.75rem;color:var(--text-muted);\'>Celio Oliveira — Founder, FedEthics Inc.</span>'" />
           </div>
         </div>
       </div>
@@ -199,7 +201,6 @@
         </p>
         <p>
           He earned his <strong>MI in Human-Centred Data Science</strong> and his <strong>MBA in Digital Media</strong>, and is currently a PhD Candidate at the University of Toronto. 
-          <!-- He speaks English, French, Portuguese, and Spanish — and uses all four in his work. -->
         </p>
 
         <div class="quote-pull">
@@ -231,7 +232,6 @@
           <div class="cred-item">
             <div class="cred-year">Ongoing</div>
             <div class="cred-title">G7 GovAI Grand Challenge</div>
-            <!-- <div class="cred-org">Team Lead</div> -->
           </div>
           <div class="cred-item">
             <div class="cred-year">Ongoing</div>

@@ -29,6 +29,12 @@
   <!-- Shared CSS -->
   <link rel="stylesheet" href="../css/fedethics.css" />
 
+  <!-- Stripe Buy Button -->
+  <script async
+    src=https://js.stripe.com/v3/buy-button.js>
+  </script>
+
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -259,7 +265,7 @@
     </ul>
     <div class="nav-right">
       <span class="nav-imprint">FedEthics Advisory™</span>
-      <!-- <a href="#payments" class="btn btn-ci" onclick="track('nav_order_ci')">Order Now</a> -->
+      <a href="#payments" class="btn btn-ci" onclick="track('nav_order_ci')">Order Now</a>
       <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -283,11 +289,9 @@
           <span class="hero-badge">Endorsed — Former Clerk of the Privy Council</span>
           <span class="hero-badge">Endorsed — Former CIO of Canada</span>
           <span class="hero-badge">Endorsed — Former Chief Statistician of Canada</span>
-          <!-- <span class="hero-badge">Westminster Parliamentary Systems</span> -->
-          <!-- <span class="hero-badge">ISBN 978-1-0383-5671-0</span> -->
         </div>
         <div class="btn-group">
-          <!-- <a href="#payments"   class="btn btn-gold btn-lg" onclick="track('hero_ci_order')">Order Autographed Copy</a> -->
+          <a href="#payments"   class="btn btn-gold btn-lg" onclick="track('hero_ci_order')">Order Autographed Copy</a>
           <a href="#frameworks" class="btn btn-outline-light" onclick="track('hero_ci_frameworks')">See the Frameworks</a>
         </div>
       </div>
@@ -306,16 +310,13 @@
         </div> -->
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <!-- <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
-            <img src="https://flagcdn.com/w20/ca.png" alt="🇨🇦" style="vertical-align: middle; width: 18px; margin-right: 4px; opacity: 0.8;"> Canada &amp; USA:
-          </span>
-          <a href="https://buy.stripe.com/REPLACE_WITH_CI_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hero_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
-          <a href="https://payhip.com/REPLACE_WITH_CI_PAYHIP" class="pay-btn pay-payhip" onclick="track('hero_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital — Payhip</a>
-          
-          <span class="pay-section-label" style="color:rgba(255,255,255,.5);">🌍 International:</span>
-          <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER" class="pay-btn pay-payoneer" onclick="track('hero_ci_payoneer')" target="_blank" rel="noopener">🌐 International — Payoneer</a>
-          <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON" class="pay-btn pay-amazon" onclick="track('hero_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon</a> -->
-          
+
+          <stripe-buy-button
+            buy-button-id="buy_btn_1TOhoj24vGwlmkJQB22LylES"
+            publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+          > 
+          </stripe-buy-button>
+
           <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;">✍️ All print orders autographed · ships 5–7 business days · <a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
         </div>
 
@@ -365,12 +366,10 @@
         <h3>Three proprietary frameworks. One coherent architecture.</h3>
         <p>Constitutional Intelligence offers an integrated decision architecture grounded in the constitutional realities of Westminster parliamentary systems — built specifically for Canadian public servants, executives, and elected officials.</p>
         <ul class="ps-list">
-          <!-- <li>IMPACT™ — ministerial accountability impact assessment for AI</li> -->
           <li>DECIDE-PLUS™ — structured ethical decision-making for senior leaders</li>
           <li>FIVE-LAYER™ — governance implementation architecture for AI systems</li>
           <li>CHARTER RIGHTS DECISION TREE™ — unified governance architecture for constitutional AI excellence</li>
           <li>Real case studies drawn from federal government operations</li>
-          <!-- <li>Bonus digital content with templates and readiness assessments</li> -->
         </ul>
       </div>
     </div>
@@ -384,21 +383,6 @@
     <h2 class="section-title">The tools inside <em>the book</em></h2>
     <p class="section-lead">Three interoperable frameworks that together form a complete decision architecture for AI governance in Westminster parliamentary democracies.</p>
     <div class="fw-grid">
-
-      <!-- <div class="fw-card">
-        <div class="fw-acronym">IMPACT™</div>
-        <div class="fw-trademark">Ministerial Accountability Assessment</div>
-        <h3>Does this AI system preserve ministerial accountability?</h3>
-        <p>A structured assessment tool for evaluating whether an AI initiative protects or erodes the chain of ministerial accountability fundamental to Westminster governance.</p>
-        <ul class="fw-steps">
-          <li><span>I</span> Identify the AI decision boundary</li>
-          <li><span>M</span> Map ministerial accountability flows</li>
-          <li><span>P</span> Probe for accountability gaps</li>
-          <li><span>A</span> Assess constitutional risk</li>
-          <li><span>C</span> Configure oversight mechanisms</li>
-          <li><span>T</span> Test and document the outcome</li>
-        </ul>
-      </div> -->
 
       <div class="fw-card">
         <div class="fw-acronym">DECIDE+™</div>
@@ -504,16 +488,11 @@
         <hr class="pay-divider" />
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <!-- <span class="pay-section-label" style="color:rgba(0, 0, 0, 0.5);">
-            <img src="https://flagcdn.com/w20/ca.png" alt="🇨🇦" style="vertical-align: middle; width: 18px; margin-right: 4px; opacity: 0.8;"> Canada &amp; USA:
-          </span>
-          <a href="https://buy.stripe.com/REPLACE_WITH_CI_STRIPE_LINK" class="pay-btn pay-stripe" onclick="track('hero_ci_stripe')" target="_blank" rel="noopener">💳 Buy Print (Autographed) — Stripe</a>
-          <a href="https://payhip.com/REPLACE_WITH_CI_PAYHIP" class="pay-btn pay-payhip" onclick="track('hero_ci_payhip')" target="_blank" rel="noopener">📥 Buy Digital — Payhip</a>
-          
-          <span class="pay-section-label" style="color:rgba(0, 0, 0, 0.5);">🌍 International:</span>
-          <a href="https://payoneer.com/REPLACE_WITH_CI_PAYONEER" class="pay-btn pay-payoneer" onclick="track('hero_ci_payoneer')" target="_blank" rel="noopener">🌐 International — Payoneer</a>
-          <a href="https://amazon.ca/REPLACE_WITH_CI_AMAZON" class="pay-btn pay-amazon" onclick="track('hero_ci_amazon')" target="_blank" rel="noopener">📦 Buy on Amazon</a> -->
-          
+          <stripe-buy-button
+            buy-button-id="buy_btn_1TOhoj24vGwlmkJQB22LylES"
+            publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+          >
+          </stripe-buy-button>
           <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;">✍️ All print orders autographed · ships 5–7 business days · <a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
         </div>
 
@@ -547,7 +526,7 @@
         <div class="ci-offer-icon">✍️</div>
         <h3>Autographed Copy</h3>
         <p>Every book purchased directly is personally signed by Celio Oliveira. No extra charge — automatically included in every print order shipped from this page.</p>
-        <!-- <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto')">Order Now</a> -->
+        <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto')">Order Now</a>
       </div>
       <div class="ci-offer-card">
         <span class="ci-offer-trigger">Buy 5 or More Copies</span>
@@ -695,7 +674,7 @@
       <div class="footer-col">
         <h4>This Book</h4>
         <a href="#frameworks">The Frameworks</a>
-        <!-- <a href="#payments">Order Now</a> -->
+        <a href="#payments">Order Now</a>
         <a href="#bulk">Bulk Offers</a>
         <!-- <a href="#claim">Claim Your Offer</a> -->
       </div>
