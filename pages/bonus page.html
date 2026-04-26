@@ -19,18 +19,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ============================================================
-       FEDETHICS — UNIFIED READER COMPANION
-       One QR code → one page → two books
-       CI cluster: Parliamentary Blue #1E3A5F + Red #8B1A1A
-       EDT cluster: Violet #5B2D8E + Gold #C9A84C
-       Shared: FedEthics Navy #1B2A4A + Gold #C9A84C
-       White / off-white background — clean, professional
-       ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Core */
       --navy:       #1B2A4A;
       --navy-light: #243558;
       --gold:       #C9A84C;
@@ -43,22 +34,18 @@
       --text-secondary: #4A5568;
       --text-light:     #718096;
       --border:     #E2E6EA;
-      /* CI */
       --ci:         #1E3A5F;
       --ci-light:   #2A4F7F;
       --ci-dark:    #0D1F38;
       --ci-red:     #8B1A1A;
       --ci-pale:    #EEF3FA;
-      /* EDT */
       --edt:        #5B2D8E;
       --edt-light:  #7340B0;
       --edt-dark:   #3A1A62;
       --edt-pale:   #F3EDFC;
       --edt-mid:    #E8DCFA;
-      /* Typography */
       --serif: 'Playfair Display', Georgia, serif;
       --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      /* Layout */
       --max-w:     1040px;
       --radius:    8px;
       --radius-lg: 16px;
@@ -79,7 +66,7 @@
 
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 
-    /* ── PAGE HEADER — shared, neutral navy ── */
+    /* ── PAGE HEADER ── */
     .page-header {
       background: linear-gradient(155deg, #0A1420 0%, var(--navy) 60%, #1A2A40 100%);
       padding: 52px 0 44px; text-align: center; position: relative; overflow: hidden;
@@ -105,8 +92,6 @@
       font-size: .92rem; color: rgba(255,255,255,.65);
       max-width: 520px; margin: 0 auto 24px; line-height: 1.7;
     }
-
-    /* Two-book nav pills in header */
     .book-nav {
       display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center;
     }
@@ -115,16 +100,12 @@
       padding: 8px 18px; border-radius: 20px; font-size: .82rem; font-weight: 600;
       text-decoration: none; transition: all var(--transition); border: 1.5px solid transparent;
     }
-    .book-nav-pill.ci {
-      background: rgba(30,58,95,.5); border-color: rgba(30,58,95,.8); color: rgba(255,255,255,.85);
-    }
-    .book-nav-pill.ci:hover { background: var(--ci); border-color: var(--ci); color: var(--white); }
-    .book-nav-pill.edt {
-      background: rgba(91,45,142,.4); border-color: rgba(91,45,142,.7); color: rgba(255,255,255,.85);
-    }
+    .book-nav-pill.ci  { background: rgba(30,58,95,.5);   border-color: rgba(30,58,95,.8);   color: rgba(255,255,255,.85); }
+    .book-nav-pill.ci:hover  { background: var(--ci);  border-color: var(--ci);  color: var(--white); }
+    .book-nav-pill.edt { background: rgba(91,45,142,.4);  border-color: rgba(91,45,142,.7);  color: rgba(255,255,255,.85); }
     .book-nav-pill.edt:hover { background: var(--edt); border-color: var(--edt); color: var(--white); }
 
-    /* ── WELCOME BOX ── */
+    /* ── WELCOME ── */
     .welcome { padding: 40px 0 0; }
     .welcome-box {
       background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
@@ -136,11 +117,10 @@
     .welcome-box p  { font-size: .88rem; color: var(--text-secondary); line-height: 1.75; }
     .welcome-box p + p { margin-top: 8px; }
 
-    /* ── BOOK CLUSTER — shared structure ── */
+    /* ── BOOK CLUSTER ── */
     .book-cluster { padding: 48px 0; }
     .book-cluster + .book-cluster { padding-top: 0; }
 
-    /* Cluster header band */
     .cluster-header {
       border-radius: var(--radius-lg) var(--radius-lg) 0 0;
       padding: 24px 32px; display: flex; align-items: center; gap: 16px;
@@ -149,31 +129,24 @@
     .cluster-header.edt-header { background: linear-gradient(135deg, var(--edt) 0%, var(--edt-dark) 100%); }
 
     .cluster-icon { font-size: 2rem; flex-shrink: 0; }
-    .cluster-imprint {
-      font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 4px;
-    }
-    .cluster-title {
-      font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--white); line-height: 1.2;
-    }
+    .cluster-imprint { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .cluster-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--white); line-height: 1.2; }
     .cluster-title-italic { font-style: italic; }
     .cluster-subtitle { font-size: .8rem; color: rgba(255,255,255,.6); margin-top: 3px; }
 
-    /* Cluster body wrapper */
     .cluster-body {
       background: var(--white); border: 1px solid var(--border);
       border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg);
       overflow: hidden;
     }
 
-    /* Cluster intro text */
     .cluster-intro {
       padding: 22px 32px; border-bottom: 1px solid var(--border);
       background: var(--off-white);
     }
     .cluster-intro p { font-size: .86rem; color: var(--text-secondary); line-height: 1.75; }
 
-    /* ── DOWNLOAD ROW — each file ── */
+    /* ── DOWNLOAD ROW ── */
     .dl-row {
       display: flex; align-items: flex-start; gap: 20px;
       padding: 22px 32px; border-bottom: 1px solid var(--border);
@@ -182,7 +155,6 @@
     .dl-row:last-child { border-bottom: none; }
     .dl-row:hover { background: var(--off-white); }
 
-    /* Number badge */
     .dl-num {
       width: 32px; height: 32px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -193,31 +165,23 @@
     .dl-num.edt-num { background: var(--edt-pale); color: var(--edt); }
     .dl-num.star    { background: var(--gold-pale); color: #7A5C1A; font-size: 1rem; }
 
-    /* File info */
     .dl-info { flex: 1; min-width: 0; }
     .dl-file-label {
-      font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-      margin-bottom: 4px;
+      font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
     }
     .dl-file-label.ci-label  { color: var(--ci); }
     .dl-file-label.edt-label { color: var(--edt); }
-    .dl-file-title {
-      font-family: var(--serif); font-size: 1rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 5px; line-height: 1.3;
-    }
-    .dl-file-desc {
-      font-size: .82rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 10px;
-    }
+    .dl-file-title { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; line-height: 1.3; }
+    .dl-file-desc  { font-size: .82rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: 10px; }
     .dl-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .dl-tag {
       display: inline-block; padding: 2px 9px; border-radius: 20px;
       font-size: .67rem; font-weight: 600;
     }
-    .dl-tag.ci  { background: var(--ci-pale); color: var(--ci); border: 1px solid rgba(30,58,95,.15); }
-    .dl-tag.edt { background: var(--edt-pale); color: var(--edt); border: 1px solid rgba(91,45,142,.15); }
-    .dl-tag.gold{ background: var(--gold-pale); color: #7A5C1A; border: 1px solid rgba(201,168,76,.25); }
+    .dl-tag.ci   { background: var(--ci-pale);  color: var(--ci);  border: 1px solid rgba(30,58,95,.15); }
+    .dl-tag.edt  { background: var(--edt-pale); color: var(--edt); border: 1px solid rgba(91,45,142,.15); }
+    .dl-tag.gold { background: var(--gold-pale); color: #7A5C1A;   border: 1px solid rgba(201,168,76,.25); }
 
-    /* Download button */
     .dl-btn-wrap { flex-shrink: 0; display: flex; align-items: center; padding-top: 4px; }
     .dl-btn {
       display: inline-flex; align-items: center; gap: 8px;
@@ -226,27 +190,25 @@
       text-decoration: none; cursor: pointer; border: 2px solid transparent;
       transition: all var(--transition); white-space: nowrap;
     }
-    .dl-btn.ci-btn  { background: var(--ci); color: var(--white); border-color: var(--ci); }
-    .dl-btn.ci-btn:hover  { background: var(--ci-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .dl-btn.ci-btn  { background: var(--ci);  color: var(--white); border-color: var(--ci); }
+    .dl-btn.ci-btn:hover  { background: var(--ci-light);  transform: translateY(-1px); box-shadow: var(--shadow-md); }
     .dl-btn.edt-btn { background: var(--edt); color: var(--white); border-color: var(--edt); }
     .dl-btn.edt-btn:hover { background: var(--edt-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }
     .dl-btn-icon { font-size: 1rem; }
 
-    /* ── DIVIDER between clusters ── */
+    /* ── DIVIDER ── */
     .cluster-divider {
       display: flex; align-items: center; gap: 16px;
       padding: 0 0 48px; margin-top: -24px;
     }
     .cluster-divider::before,
-    .cluster-divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
+    .cluster-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
     .cluster-divider span {
       font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
       color: var(--text-light); white-space: nowrap;
     }
 
-    /* ── CHARACTERS MINI PREVIEW (EDT only) ── */
+    /* ── CHARACTERS PREVIEW STRIP ── */
     .chars-preview-strip {
       padding: 16px 32px; background: var(--edt-mid);
       border-bottom: 1px solid rgba(91,45,142,.15);
@@ -265,7 +227,7 @@
 
     /* ── FOOTER ── */
     .page-footer {
-      background: var(--navy); padding: 32px 0 28px; text-align: center;
+      background: var(--navy); padding: 32px 0 40px; text-align: center;
       border-top: 1px solid rgba(255,255,255,.08);
     }
     .footer-logo { font-family: var(--serif); font-size: 1.05rem; color: var(--white); font-weight: 700; margin-bottom: 4px; }
@@ -277,12 +239,12 @@
     .footer-links a { font-size: .8rem; color: rgba(255,255,255,.5); text-decoration: none; transition: color var(--transition); }
     .footer-links a:hover { color: var(--gold); }
 
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
     @media (max-width:768px) {
-      .dl-row { flex-wrap: wrap; padding: 20px 20px; }
+      .dl-row { flex-wrap: wrap; padding: 20px; }
       .dl-btn-wrap { width: 100%; }
       .dl-btn { width: 100%; justify-content: center; }
-      .cluster-header { padding: 20px 20px; }
+      .cluster-header { padding: 20px; }
       .cluster-intro, .chars-preview-strip { padding: 16px 20px; }
       .welcome-box { padding: 20px; flex-direction: column; }
     }
@@ -302,7 +264,7 @@
     <h1>FedEthics Reader Companion</h1>
     <p>You scanned the QR code in one of Celio Oliveira's books. Both reader companions are on this page. Scroll to find your book — or use the links below to jump directly.</p>
     <div class="book-nav">
-      <a href="#ci" class="book-nav-pill ci">🏛️ Constitutional Intelligence</a>
+      <a href="#ci"  class="book-nav-pill ci" >🏛️ Constitutional Intelligence</a>
       <a href="#edt" class="book-nav-pill edt">🌻 Étoile de Tournesol</a>
     </div>
   </div>
@@ -316,7 +278,7 @@
       <div>
         <h2>Your exclusive downloads — both books in one place</h2>
         <p>This page is only accessible via the QR code printed in your book. It is not listed on any search engine and is not linked from the main website. Everything here is yours to download, print, share with your team or your class — free of charge, as a thank you for reading.</p>
-        <p>Constitutional Intelligence readers will find <strong>three practical governance tools</strong>. Étoile de Tournesol readers will find <strong>the full character family tree and five illustrated character sheets</strong>.</p>
+        <p>Constitutional Intelligence readers will find <strong>three practical governance tools</strong>. Étoile de Tournesol readers will find <strong>the full character family tree and six illustrated character sheets</strong> — one for each of the six guardians who received their own illustration.</p>
       </div>
     </div>
   </div>
@@ -357,10 +319,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload file to public_html/bonus/CI_Tool1_Executive_Decision_Canvas.pdf
-            Then this link works automatically
-          -->
+          <!-- ALEX: Upload to public_html/bonus/CI_Tool1_Executive_Decision_Canvas.pdf -->
           <a href="bonus/CI_Tool1_Executive_Decision_Canvas.pdf"
              class="dl-btn ci-btn"
              download="CI_Executive_Decision_Canvas.pdf"
@@ -386,9 +345,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload file to public_html/bonus/CI_Tool2_AI_Readiness_Scorecard.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/CI_Tool2_AI_Readiness_Scorecard.pdf -->
           <a href="bonus/CI_Tool2_AI_Readiness_Scorecard.pdf"
              class="dl-btn ci-btn"
              download="CI_Constitutional_AI_Readiness_Scorecard.pdf"
@@ -414,9 +371,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload file to public_html/bonus/CI_Tool3_90Day_Implementation_Workbook.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/CI_Tool3_90Day_Implementation_Workbook.pdf -->
           <a href="bonus/CI_Tool3_90Day_Implementation_Workbook.pdf"
              class="dl-btn ci-btn"
              download="CI_90Day_Implementation_Workbook.pdf"
@@ -426,14 +381,14 @@
         </div>
       </div>
 
-    </div><!-- end cluster body -->
+    </div>
   </div>
 </div>
 
 <!-- ═══ DIVIDER ═══ -->
 <div class="container">
   <div class="cluster-divider">
-    <span>Étoile de Tournesol · Reader Content Below</span>
+    <span>Étoile de Tournesol · Contenu exclusif ci-dessous</span>
   </div>
 </div>
 
@@ -446,7 +401,7 @@
       <div>
         <div class="cluster-imprint">FedEthics Creative™ · Auto-publié · Roman jeunesse français</div>
         <div class="cluster-title cluster-title-italic">Étoile de Tournesol</div>
-        <div class="cluster-subtitle">Arbre des personnages + Fiches des Gardiens · Six téléchargements exclusifs</div>
+        <div class="cluster-subtitle">Arbre des personnages + Fiches des Gardiens · Sept téléchargements exclusifs</div>
       </div>
     </div>
 
@@ -456,14 +411,15 @@
         <p>Bienvenue dans le monde d'Étoile des Tournesols. Ces fichiers exclusifs ont été créés pour les lecteurs, les classes et les clubs de lecture. Commence par l'arbre des personnages pour une vue d'ensemble de toutes les familles et alliances du roman — puis télécharge les fiches individuelles de chaque gardien qui a reçu son illustration.</p>
       </div>
 
-      <!-- Characters preview strip -->
+      <!-- ── CHARACTERS PREVIEW STRIP — updated with Tamatoa ── -->
       <div class="chars-preview-strip">
-        <p>Les cinq gardiens avec fiches illustrées ↓</p>
+        <p>Les six gardiens avec fiches illustrées ↓</p>
         <div class="chars-mini-row">
           <span class="chars-mini-chip">⚡ Lili · France</span>
           <span class="chars-mini-chip">🎵 Rafa · Brésil</span>
           <span class="chars-mini-chip">🌿 JM · Sénégal</span>
           <span class="chars-mini-chip">🌬️ Moa · Québec</span>
+          <span class="chars-mini-chip">🌊 Tété · Polynésie</span>
           <span class="chars-mini-chip">🔷 Nèj · Maroc</span>
           <span class="chars-mini-chip" style="background:rgba(201,168,76,.2);border-color:rgba(201,168,76,.4);color:#5A3A00;">✨ Eva · 700+ ans</span>
         </div>
@@ -485,9 +441,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload to public_html/bonus/EDT_FamilyTree_Personnages.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/EDT_FamilyTree_Personnages.pdf -->
           <a href="bonus/EDT_FamilyTree_Personnages.pdf"
              class="dl-btn edt-btn"
              download="EDT_Arbre_des_Personnages.pdf"
@@ -511,9 +465,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload to public_html/bonus/EDT_Character_Lili_Peccard.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/EDT_Character_Lili_Peccard.pdf -->
           <a href="bonus/EDT_Character_Lili_Peccard.pdf"
              class="dl-btn edt-btn"
              download="EDT_Fiche_Lili_Peccard.pdf"
@@ -529,7 +481,7 @@
         <div class="dl-info">
           <div class="dl-file-label edt-label">Fiche gardien · 🎵 Synesthésie musicale · 🐦 Ritmo</div>
           <div class="dl-file-title">Rafael Oliveira Neto — « Rafa » · 14 ans · Bahia, Brésil</div>
-          <div class="dl-file-desc">Traducteur des harmoniques et cœur sensible du groupe. Il entend les dimensions comme d'autres écoutent une chanson. Sa synesthésie transforme les sons en couleurs et formes. Avec son illustration originale jouant de la flûte entouré de ses spirales colorées.</div>
+          <div class="dl-file-desc">Traducteur des harmoniques et cœur sensible du groupe. Il entend les dimensions comme d'autres écoutent une chanson. Sa synesthésie transforme les sons en couleurs et formes. Sa note bonus : ses premières traductions des messages de l'éléphantomorphagus ressemblent plus à de la poésie qu'à un langage scientifique. Avec son illustration originale.</div>
           <div class="dl-tags">
             <span class="dl-tag edt">🎵 Synesthésie</span>
             <span class="dl-tag edt">🇧🇷 Brésil</span>
@@ -537,9 +489,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload to public_html/bonus/EDT_Character_Rafael_Oliveira.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/EDT_Character_Rafael_Oliveira.pdf -->
           <a href="bonus/EDT_Character_Rafael_Oliveira.pdf"
              class="dl-btn edt-btn"
              download="EDT_Fiche_Rafael_Oliveira.pdf"
@@ -555,7 +505,7 @@
         <div class="dl-info">
           <div class="dl-file-label edt-label">Fiche gardien · 🌿 Mémoire végétale · 🐗 Njeri</div>
           <div class="dl-file-title">Jacob Mercier Parent — « JM » · 15 ans · Sénégal</div>
-          <div class="dl-file-desc">Gardien de la mémoire végétale et passeur d'histoires. Là où d'autres voient un jardin, il reconnaît une bibliothèque vivante. Calme, observateur, conteur naturel. Avec son illustration originale et sa note bonus : il est celui qui remarque le mieux les silences dans un groupe.</div>
+          <div class="dl-file-desc">Gardien de la mémoire végétale et passeur d'histoires. Là où d'autres voient un jardin, il reconnaît une bibliothèque vivante. Calme, observateur, conteur naturel, présence apaisante. Sa note bonus : il est celui qui remarque le mieux les silences dans un groupe — il sait quand parler, et surtout quand ne pas le faire. Avec son illustration originale.</div>
           <div class="dl-tags">
             <span class="dl-tag edt">🌿 Communication végétale</span>
             <span class="dl-tag edt">🇸🇳 Sénégal</span>
@@ -563,9 +513,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload to public_html/bonus/EDT_Character_Jacob_Mercier_Parent.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/EDT_Character_Jacob_Mercier_Parent.pdf -->
           <a href="bonus/EDT_Character_Jacob_Mercier_Parent.pdf"
              class="dl-btn edt-btn"
              download="EDT_Fiche_Jacob_Mercier_Parent.pdf"
@@ -581,7 +529,7 @@
         <div class="dl-info">
           <div class="dl-file-label edt-label">Fiche gardienne · 🌬️ Météorologie dimensionnelle · 🦎 Zéphyr</div>
           <div class="dl-file-title">Mathéa Olivel — « Moa » · 13 ans · Québec, Canada</div>
-          <div class="dl-file-desc">Esprit analytique du groupe, entre héritage familial et indépendance. Fille du maire, elle perçoit et prédit les modèles météorologiques. Sa tension dramatique centrale : exister autrement que comme « la fille du maire ». Le vent lui parle ; elle apprend à répondre. Avec son illustration originale.</div>
+          <div class="dl-file-desc">Esprit analytique du groupe, entre héritage familial et indépendance. Fille du maire, elle perçoit et prédit les modèles météorologiques avec une précision scientifique. Sa tension dramatique centrale : exister autrement que comme « la fille du maire ». Le vent lui parle ; elle apprend à répondre. Avec son illustration originale.</div>
           <div class="dl-tags">
             <span class="dl-tag edt">🌬️ Météorologie</span>
             <span class="dl-tag edt">🇨🇦 Québec</span>
@@ -589,9 +537,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload to public_html/bonus/EDT_Character_Mathea_Olivel.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/EDT_Character_Mathea_Olivel.pdf -->
           <a href="bonus/EDT_Character_Mathea_Olivel.pdf"
              class="dl-btn edt-btn"
              download="EDT_Fiche_Mathea_Olivel.pdf"
@@ -601,13 +547,38 @@
         </div>
       </div>
 
-      <!-- NAJLA -->
+      <!-- ── TAMATOA — NEW ROW ADDED ── -->
       <div class="dl-row">
         <div class="dl-num edt-num">5</div>
         <div class="dl-info">
+          <div class="dl-file-label edt-label">Fiche gardien · 🌊 Lecture de l'eau · 🐟 Marama</div>
+          <div class="dl-file-title">Tamatoa Tevaiano — « Tété » · 15 ans · Polynésie française</div>
+          <div class="dl-file-desc">Médiateur discret entre l'eau, le ciel et le groupe. Il perçoit les flux d'énergie aquatiques et les mémoires que l'eau conserve — des courants, des intentions, des traces invisibles. Il observe longtemps avant de parler, mais lorsqu'il le fait, le groupe écoute. Sa note bonus : ses connaissances traditionnelles polynésiennes font souvent le pont entre ce que les adultes appellent « phénomène » et ce qu'il reconnaît comme un langage ancien. Avec son illustration originale.</div>
+          <div class="dl-tags">
+            <span class="dl-tag edt">🌊 Lecture de l'eau</span>
+            <span class="dl-tag edt">🇵🇫 Polynésie française</span>
+            <span class="dl-tag edt">Sagesse océanique</span>
+            <span class="dl-tag gold">Illustration incluse</span>
+          </div>
+        </div>
+        <div class="dl-btn-wrap">
+          <!-- ALEX: Upload to public_html/bonus/EDT_Character_Tamatoa_Tevaiano.pdf -->
+          <a href="bonus/EDT_Character_Tamatoa_Tevaiano.pdf"
+             class="dl-btn edt-btn"
+             download="EDT_Fiche_Tamatoa_Tevaiano.pdf"
+             onclick="track('EDT_Char_Tamatoa')">
+            <span class="dl-btn-icon">⬇</span> Télécharger
+          </a>
+        </div>
+      </div>
+
+      <!-- NAJLA -->
+      <div class="dl-row">
+        <div class="dl-num edt-num">6</div>
+        <div class="dl-info">
           <div class="dl-file-label edt-label">Fiche gardienne · 🔷 Géométries sacrées · 🦊 Zouk</div>
           <div class="dl-file-title">Najla Bertinel — « Nèj » · 16 ans · Casablanca, Maroc</div>
-          <div class="dl-file-desc">Architecte des formes invisibles. Iel crée des motifs géométriques berbères qui influencent les énergies dimensionnelles. Identité de genre fluide, intelligence structurante — souvent la première à voir la structure d'un problème avant que le groupe ne le formule. Avec son illustration originale entourée de motifs lumineux.</div>
+          <div class="dl-file-desc">Architecte des formes invisibles. Iel crée des motifs géométriques berbères qui influencent les énergies dimensionnelles. Identité de genre fluide, intelligence structurante — souvent la première à voir la structure d'un problème avant que le groupe ne le formule. Avec son illustration originale entourée de motifs lumineux violets.</div>
           <div class="dl-tags">
             <span class="dl-tag edt">🔷 Géométries sacrées</span>
             <span class="dl-tag edt">🇲🇦 Maroc</span>
@@ -615,9 +586,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload to public_html/bonus/EDT_Character_Najla_Bertinel.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/EDT_Character_Najla_Bertinel.pdf -->
           <a href="bonus/EDT_Character_Najla_Bertinel.pdf"
              class="dl-btn edt-btn"
              download="EDT_Fiche_Najla_Bertinel.pdf"
@@ -631,9 +600,11 @@
       <div class="dl-row" style="background:linear-gradient(135deg,rgba(91,45,142,.04),rgba(201,168,76,.04));">
         <div class="dl-num star">✨</div>
         <div class="dl-info">
-          <div class="dl-file-label" style="color:var(--edt);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;">Fiche gardienne · Septième Gardienne · Fille des Fondateurs · 700+ ans</div>
+          <div class="dl-file-label" style="color:var(--edt);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;">
+            Fiche gardienne · Septième Gardienne · Fille des Fondateurs · 700+ ans
+          </div>
           <div class="dl-file-title">Eva d'Auparavant — « Eva » · Étoile des Tournesols</div>
-          <div class="dl-file-desc">La fiche la plus mystérieuse du compagnon de lecture. Eva d'Auparavant — 17 ans en apparence, plus de 700 ans en réalité — est la Septième Gardienne, fille immortelle des Fondateurs Alexandre du Verbe et Marguerite de Tournesol. Son don : l'Imperceptibilité Multi-Dimensionnelle Sélective. Elle habite les espaces entre les regards. Avec son illustration saisissante.</div>
+          <div class="dl-file-desc">La fiche la plus mystérieuse du compagnon de lecture. Eva d'Auparavant — 17 ans en apparence, plus de 700 ans en réalité — est la Septième Gardienne, fille immortelle des Fondateurs Alexandre du Verbe et Marguerite de Tournesol. Son don : l'Imperceptibilité Multi-Dimensionnelle Sélective. Elle habite les espaces entre les regards. Ses phrases signature doublées : « Proprement propre », « Magnifiquement magnifique ». Avec son illustration saisissante.</div>
           <div class="dl-tags">
             <span class="dl-tag edt">✨ Imperceptibilité</span>
             <span class="dl-tag edt">🦌 Oriel</span>
@@ -643,9 +614,7 @@
           </div>
         </div>
         <div class="dl-btn-wrap">
-          <!--
-            ALEX: Upload to public_html/bonus/EDT_Character_Eva_Auparavant.pdf
-          -->
+          <!-- ALEX: Upload to public_html/bonus/EDT_Character_Eva_Auparavant.pdf -->
           <a href="bonus/EDT_Character_Eva_Auparavant.pdf"
              class="dl-btn edt-btn"
              download="EDT_Fiche_Eva_Auparavant.pdf"
@@ -661,7 +630,7 @@
 </div>
 
 <!-- ═══ FOOTER ═══ -->
-<div class="page-footer" style="padding-bottom:40px;">
+<div class="page-footer">
   <div class="container">
     <div class="footer-logo">FedEthics Inc.</div>
     <div class="footer-sub">FedEthics Advisory™ · FedEthics Creative™</div>
