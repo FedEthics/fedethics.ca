@@ -146,6 +146,17 @@ body {
 .badge-gold { background: var(--gold-wash); color: #7A5C1A; border: 1px solid rgba(184,144,58,0.25); }
 .badge-navy { background: rgba(27,42,74,0.07); color: var(--navy); border: 1px solid rgba(27,42,74,0.12); }
 
+/* ── PAYMENT & PRICING ── */
+.payments-section { background: var(--white); border-top: 1px solid var(--rule); }
+.payments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; align-items: start; }
+.price-row {
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  align-items: flex-start; /* or center*/
+  gap: 10px;               /* Adds spacing between the text and button */
+  padding: 15px 0;
+  border-bottom: 1px solid var(--rule);
+}
 
 /* Stripe Buy Button Styles */
 .stripe-button-container {

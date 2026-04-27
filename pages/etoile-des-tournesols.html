@@ -29,6 +29,9 @@
   <!-- Shared CSS -->
   <link rel="stylesheet" href="../css/fedethics.css" />
 
+  <!-- Stripe Buy Button -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -226,12 +229,9 @@
     .audience-why { font-size: .78rem; font-style: italic; color: var(--edt-purple); margin-top: 10px; }
 
     /* PAYMENT SECTION */
-    .payments-section { background: var(--white); border-top: 1px solid var(--rule); }
-    .payments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; align-items: start; }
     .payment-panel { background: var(--edt-parchment); border: 1px solid var(--edt-border); border-radius: var(--r-lg); padding: 28px; position: sticky; top: 84px; box-shadow: var(--shadow-sm); }
     .payment-panel h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 20px; font-weight: 600; }
     .price-table  { margin-bottom: 20px; }
-    .price-row    { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); }
     .price-row:last-of-type { border-bottom: none; }
     .price-label  { font-size: .84rem; color: var(--text-mid); }
     .price-amount { font-size: .95rem; font-weight: 700; color: var(--ink); }
@@ -291,7 +291,7 @@
   <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
   <a href="../index.html">Home</a>
   <a href="our-story.html">Our Story</a>
-  <a href="capabilities.html">Capabilities</a>
+  <a href="capabilities.html">Core Capabilities</a>
   <a href="book-hub.html">Books</a>
   <a href="contact.html">Contact</a>
 </div>
@@ -314,13 +314,13 @@
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
       <li><a href="our-story.html">Our Story</a></li>
-      <li><a href="capabilities.html">Capabilities</a></li>
+      <li><a href="capabilities.html">Core Capabilities</a></li>
       <li><a href="book-hub.html">Books</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
       <span class="nav-imprint">FedEthics Creative™</span>
-      <!-- <a href="#payments" class="btn btn-purple" onclick="track('nav_order_edt')">Commander</a> -->
+      <a href="#payments" class="btn btn-purple" onclick="track('nav_order_edt')">Commander</a>
       <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -334,7 +334,7 @@
     <div class="book-hero-grid">
       <div>
         <div class="book-hero-imprint">
-          <span>FedEthics Creative™ · Auto-publié · 2025</span>
+          <span>FedEthics Creative™ · Auto-publié · 2026</span>
         </div>
         <h1>Étoile de<br/>Tournesol</h1>
         <p class="book-hero-subtitle">Roman jeunesse · Fiction littéraire française · Fantastique</p>
@@ -352,7 +352,7 @@
         </div>
 
         <div class="btn-group">
-          <!-- <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_edt_order')">Commander un exemplaire dédicacé</a> -->
+          <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_edt_order')">Commander un exemplaire dédicacé</a>
           <a href="#story"    class="btn btn-outline-light" onclick="track('hero_edt_story')">Lire le synopsis</a>
         </div>
       </div>
@@ -400,8 +400,7 @@
           </a> -->
           
           <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;">
-            ✍️ Chaque exemplaire dédicacé · livraison 5–7 jours · 
-
+            ✍️ Chaque exemplaire dédicacé ·
             <a href="#bulk" style="color:var(--gold);">
               5+ exemplaires = rencontre avec l'auteur
             </a>
@@ -435,7 +434,7 @@
       <div class="overview-item">
         <div class="overview-icon">📦</div>
         <div class="overview-label">Formats</div>
-        <div class="overview-value">Imprimé dédicacé · Numérique ePub/PDF</div>
+        <div class="overview-value">Imprimé dédicacé · Numérique ePub</div>
       </div>
     </div>
   </div>
@@ -482,9 +481,9 @@
         </div>
         <div class="story-aside">
           <h4>Structure du roman</h4>
-          <div class="story-struct-row"><strong>Partie I</strong><span>L'Éveil — Les sept gardiens se découvrent</span></div>
-          <div class="story-struct-row"><strong>Partie II</strong><span>Les Épreuves — Le Consortium et les défis dimensionnels</span></div>
-          <div class="story-struct-row"><strong>Partie III</strong><span>L'Harmonie — Le Festival des Éclats Célestes</span></div>
+          <div class="story-struct-row"><strong>Partie I</strong><span>L'Éveil</span></div>
+          <div class="story-struct-row"><strong>Partie II</strong><span>La Résonance</span></div>
+          <div class="story-struct-row"><strong>Partie III</strong><span>L'Harmonie</span></div>
         </div>
       </div>
     </div>
@@ -567,7 +566,7 @@
       <div class="theme-card">
         <div class="theme-icon">🌍</div>
         <h3>Diversité Culturelle</h3>
-        <p>Brésil, Sénégal, Québec, Polynésie, Maroc, France — sept cultures, sept façons d'appréhender le monde. Le roman célèbre cette richesse sans jamais la réduire à un stéréotype.</p>
+        <p>Brésil, Sénégal, Canada, Polynésie, Maroc, France, l’univers infini — sept cultures, sept façons d'appréhender le monde. Le roman célèbre cette richesse sans jamais la réduire à un stéréotype.</p>
       </div>
       <div class="theme-card">
         <div class="theme-icon">🔬</div>
@@ -631,9 +630,9 @@
       </div>
       <div class="audience-card">
         <div class="audience-icon">✨</div>
-        <h3>Lecteurs de fantasy / fantastique</h3>
+        <h3>Lecteurs de fantastique</h3>
         <p>Un système magique rigoureux et original, une ville secrète aux lois physiques uniques, et une menace organisée (le Consortium) qui donne à l'histoire une tension narrative soutenue.</p>
-        <p class="audience-why">Pour les fans de fantasy qui cherchent quelque chose de nouveau en français.</p>
+        <p class="audience-why">Pour les lecteurs francophones de fantastique qui cherchent quelque chose de nouveau en français. </p>
       </div>
     </div>
   </div>
@@ -651,13 +650,22 @@
         <div class="price-table">
 
           <div class="price-row">
-            <span class="price-label">Numérique (ePub / PDF)</span>
-            <!-- <span class="price-amount">$24.99 CAD</span> -->
+            <span class="price-label">Numérique (ePub)</span>
+            <stripe-buy-button
+              buy-button-id="buy_btn_1TPwWs24vGwlmkJQ8pHSVLhn"
+              publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+            >
+            </stripe-buy-button>
           </div>
 
           <div class="price-row">
             <span class="price-label">Imprimé — Exemplaire dédicacé</span>
-            <!-- <span class="price-amount">$39.99 CAD</span> -->
+            <stripe-buy-button
+              buy-button-id="buy_btn_1TPwcn24vGwlmkJQColITpAB"
+              publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+            >
+          </stripe-buy-button>
+
           </div>
 
           <div class="price-row">
@@ -667,36 +675,15 @@
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <!-- <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
-            <img src="https://flagcdn.com/w20/ca.png" alt="🇨🇦" 
-              style="vertical-align: middle; width: 18px; margin-right: 4px; opacity: 0.8;"> 
-              Canada &amp; USA:
-          </span>
-          <a href="https://buy.stripe.com/REPLACE_WITH_EDT_STRIPE_LINK" class="pay-btn pay-stripe" 
-            onclick="track('hero_edt_stripe')" target="_blank" rel="noopener">
-            💳 Commander imprimé (dédicacé) — Stripe
-          </a>
-          <a href="https://payhip.com/REPLACE_WITH_EDT_PAYHIP" class="pay-btn pay-payhip" 
-            onclick="track('hero_edt_payhip')" target="_blank" rel="noopener">
-            📥 Acheter numérique — Payhip
-          </a>
 
-          <span class="pay-section-label" style="color:rgba(255,255,255,.5);">
-            🌍 International:
-          </span>
-
-          <a href="https://payoneer.com/REPLACE_WITH_EDT_PAYONEER" class="pay-btn pay-payoneer" 
-            onclick="track('hero_edt_payoneer')" target="_blank" rel="noopener">
-            🌐 Paiement international — Payoneer
-          </a> -->
-          
           <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;">
-            ✍️ Chaque exemplaire dédicacé · livraison 5–7 jours · 
+            ✍️ Chaque exemplaire dédicacé ·
 
             <a href="#bulk" style="color:var(--gold);">
               5+ exemplaires = rencontre avec l'auteur
             </a>
           </p>
+
         </div>
 
       </div>
@@ -718,7 +705,7 @@
         </div>
         <div class="info-block">
           <h4>🏫 Commandes institutionnelles</h4>
-          <p>Les commandes pour les écoles, bibliothèques ou associations peuvent être facturées directement. Écrivez à <a href="mailto:books@fedethics.ca" style="color:var(--edt-purple);">books@fedethics.ca</a> pour organiser les modalités.</p>
+          <p>Les commandes pour les écoles, bibliothèques ou associations peuvent être facturées directement. Écrivez à <a href="mailto:hello-bonjour@fedethics.ca" style="color:var(--edt-purple);">hello-bonjour@fedethics.ca</a> pour organiser les modalités.</p>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
           <span class="badge badge-purple">Roman en français</span>
@@ -894,7 +881,7 @@
         <div class="footer-social">
           <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
           <a href="https://orcid.org/0009-0008-8896-9073" target="_blank" rel="noopener" aria-label="ORCID">◎</a>
-          <a href="mailto:hello@fedethics.ca" aria-label="Email">✉</a>
+          <a href="mailto:hello-bonjour@fedethics.ca" aria-label="Email">✉</a>
         </div>
       </div>
       <div class="footer-col">
@@ -915,7 +902,7 @@
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <a href="mailto:hello@fedethics.ca">hello@fedethics.ca</a>
+        <a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a>
         <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
         <!-- <a href="book-hub.html#newsletter">Newsletter</a> -->
         <a href="contact.html">Speaking Enquiries</a>
