@@ -110,17 +110,43 @@
     .hero-badge.gold-badge { background: rgba(212,160,72,.14); border-color: rgba(212,160,72,.32); color: var(--edt-gold); }
 
     /* Cover panel */
-    .book-hero-panel { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.11); border-radius: var(--r-lg); padding: 28px; backdrop-filter: blur(6px); position: relative; z-index: 1; }
-    .book-cover-display {
-      width: 100%; aspect-ratio: 2/3; border-radius: 4px 12px 12px 4px;
-      background: linear-gradient(170deg, var(--edt-dark) 0%, var(--edt-purple) 50%, #4A2880 100%);
-      border: 1px solid rgba(212,160,72,.30);
-      box-shadow: 8px 14px 48px rgba(0,0,0,.55), 0 0 40px rgba(212,160,72,.08);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 24px 20px; position: relative; overflow: hidden; margin-bottom: 20px;
+    .book-hero-panel { 
+      background: rgba(255,255,255,.055); 
+      border: 1px solid rgba(255,255,255,.11); 
+      border-radius: var(--r-lg); 
+      padding: 28px; 
+      backdrop-filter: blur(6px); 
+      position: relative; 
+      z-index: 1; 
     }
-    .book-cover-display::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: rgba(0,0,0,.45); box-shadow: inset -5px 0 12px rgba(0,0,0,.35); }
+    .book-cover-display {
+      width: 100%; 
+      aspect-ratio: 2/3; 
+      border-radius: 4px 12px 12px 4px;
+      box-shadow: 8px 14px 48px rgba(0,0,0,.55), 0 0 40px rgba(212,160,72,.08);
+      position: relative; 
+      overflow: hidden; 
+      margin-bottom: 20px;
+    }
+    .book-cover-display::before { 
+      content: ''; 
+      position: absolute; 
+      left: 0; 
+      top: 0; 
+      bottom: 0; 
+      width: 10px; 
+      background: rgba(0,0,0,.45); 
+      box-shadow: inset -5px 0 12px rgba(0,0,0,.35); 
+      z-index: 2;
+    }
     .book-cover-display::after  { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--edt-sunflower); opacity: .75; }
+    .book-cover-display img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      z-index: 1;
+    }
     .cover-glow {
       position: absolute; top: 18%; left: 50%; transform: translateX(-50%);
       width: 72px; height: 72px; border-radius: 50%;
@@ -358,7 +384,7 @@
       </div>
 
       <div class="book-hero-panel">
-        <div class="book-cover-display">
+        <!-- <div class="book-cover-display">
           <div class="cover-glow"></div>
           <div class="cover-ornament tl">✦</div>
           <div class="cover-ornament tr">✦</div>
@@ -367,6 +393,10 @@
           <div class="book-cover-imprint">FedEthics Creative™</div>
           <div class="book-cover-title">Étoile des Tournesols</div>
           <div class="book-cover-author">Celio Oliveira</div>
+        </div> -->
+        
+        <div class="book-cover-display">
+          <img src="../images/EDT_cover.jpg" alt="Étoile des Tournesols by Celio Oliveira">
         </div>
 
         <!-- <div class="hero-price-row">
@@ -590,7 +620,7 @@
     <div class="audience-grid">
       <div class="audience-card">
         <div class="audience-icon">📚</div>
-        <h3>Jeunes lecteurs (10–16 ans)</h3>
+        <h3>Jeunes lecteurs</h3>
         <p>Aventure, magie, amitié, identité — tous les éléments d'une grande histoire jeunesse, dans un univers original entièrement construit en français.</p>
         <p class="audience-why">Parfait pour les lecteurs qui cherchent des héros qui leur ressemblent.</p>
       </div>
@@ -650,12 +680,93 @@
 
           <div class="price-row">
             <span class="price-label">Imprimé — Exemplaire dédicacé</span>
-            <stripe-buy-button
-              buy-button-id="buy_btn_1TPwcn24vGwlmkJQColITpAB"
-              publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
-            >
-            </stripe-buy-button>
+            
+            <!-- Two columns: Paperback (left) and Hardcover (right) -->
+            <div style="display: flex; gap: 20px; margin-top: 10px;">
+              
+              <!-- PAPERBACK COLUMN -->
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                <div style="font-weight: bold; text-align: center; margin-bottom: 5px; color: #333;">Couverture souple</div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">Canada</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TPwcn24vGwlmkJQColITpAB"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
 
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">États-Unis</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR1xj24vGwlmkJQBR6JoEUd"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">UK/EU</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR1zM24vGwlmkJQuMCwqsNg"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">Monde</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR21Q24vGwlmkJQ768AO4nz"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+              </div>
+
+              <!-- HARDCOVER COLUMN -->
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                <div style="font-weight: bold; text-align: center; margin-bottom: 5px; color: #333;">Couverture rigide</div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <!-- <span style="font-size: 0.8em; color: #666; min-width: 70px;">Canada</span> -->
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TRNK024vGwlmkJQXNMJ4tVx"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <!-- <span style="font-size: 0.8em; color: #666; min-width: 70px;">États-Unis</span> -->
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TRNM424vGwlmkJQLZ2mbya2"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <!-- <span style="font-size: 0.8em; color: #666; min-width: 70px;">UK/EU</span> -->
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TRNPl24vGwlmkJQk892VGzD"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <!-- <span style="font-size: 0.8em; color: #666; min-width: 70px;">Monde</span> -->
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TRNF124vGwlmkJQfgTN6Omj"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+              </div>
+            </div>
+            
           </div>
 
           <div class="price-row">
@@ -665,7 +776,6 @@
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
-
           <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;">
             ✍️ Chaque exemplaire dédicacé ·
 
@@ -673,7 +783,6 @@
               5+ exemplaires = rencontre avec l'auteur
             </a>
           </p>
-
         </div>
 
       </div>
