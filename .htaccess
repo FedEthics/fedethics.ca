@@ -4,7 +4,18 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # When new website
-RewriteRule ^Book$ /book-hub [L]
+RewriteRule ^Book/?$ /pages/book.html [L]
+
+# ===== CLEAN URLs FOR PAGES IN /pages FOLDER =====
+# Handle root-level clean URLs (capabilities, book-hub, etc.)
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+# RewriteRule ^([^/.]+)$ pages/$1.html [L]
+
+# Handle nested clean URLs
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{DOCUMENT_ROOT}/pages/$1/$2.html -f
+# RewriteRule ^([^/]+)/([^/]+)$ pages/$1/$2.html [L]
 
 # BEGIN LSCACHE
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
