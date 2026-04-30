@@ -1,11 +1,10 @@
 # Reconsider 'Navigate' at footer
 
 # Tasks
-1. Replace placeholder payment links (Stripe, Payhip, Payoneer, Amazon) with actual URLs
 
-2. Replace Formspree IDs (REPLACE_WITH_...) with actual form endpoints
+- Replace Formspree IDs (REPLACE_WITH_...) with actual form endpoints
 
-3. Add actual photos
+- Newsletter button
 
 # To develop React
 
