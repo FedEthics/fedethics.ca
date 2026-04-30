@@ -481,23 +481,107 @@
     <div class="eyebrow">Order Your Copy</div>
     <h2 class="section-title">Every print order<br/><em>is autographed</em></h2>
     <div class="payments-grid">
+
       <div class="payment-panel">
         <h3>Constitutional Intelligence</h3>
 
-
         <div class="price-table">
-          <!-- <div class="price-row">
-            <span class="price-label">Digital (ePub / PDF)</span>
-            <span class="price-amount">$34.99 CAD</span>
-          </div> -->
+
           <div class="price-row">
             <span class="price-label">Print — Autographed Copy</span>
-            <stripe-buy-button
-              buy-button-id="buy_btn_1TOhoj24vGwlmkJQB22LylES"
-              publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
-            >
-            </stripe-buy-button>
+            
+            <!-- Two columns: Paperback (left) and Hardcover (right) -->
+            <!-- <div style="display: flex; gap: 20px; margin-top: 10px;"> -->
+              
+              <!-- PAPERBACK COLUMN -->
+              <!-- <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                <div style="font-weight: bold; text-align: center; margin-bottom: 5px; color: #333;">Paperback</div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">Canada</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TOhoj24vGwlmkJQB22LylES"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">United States</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR1xj24vGwlmkJQBR6JoEUd"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">UK/EU</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR1zM24vGwlmkJQuMCwqsNg"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.8em; color: #666; min-width: 70px;">Worldwide</span>
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR21Q24vGwlmkJQ768AO4nz"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+              </div> -->
+
+              <!-- HARDCOVER COLUMN -->
+              <!-- <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;"> -->
+                <!-- <div style="font-weight: bold; text-align: center; margin-bottom: 5px; color: #333;">Hardcover</div> -->
+                
+                <!-- Canada -->
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TOhoj24vGwlmkJQB22LylES"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <!-- United States -->
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR1a224vGwlmkJQOIIwmI9Y"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <!-- United Kingdom/EU -->
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR1hM24vGwlmkJQPJ4KenJK"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+
+                <!-- Worldwide -->
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1TR1kA24vGwlmkJQolwdvem8"
+                    publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+                  >
+                  </stripe-buy-button>
+                </div>
+              <!-- </div> -->
+            <!-- </div> -->
+            
           </div>
+
+
+
+
+
           <div class="price-row">
             <span class="price-label">Bulk (5+ copies)</span>
             <span class="price-amount">Contact us</span>
