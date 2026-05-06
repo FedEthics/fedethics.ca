@@ -3,8 +3,11 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# When new website
+# This handles the QR code directing to https://fedethics.ca/Book/
 RewriteRule ^Book/?$ /pages/book.html [L]
+
+# This handles the QR code directing to https://fedethics.ca/Book/
+RewriteRule ^subscribe/?$ /pages/subscribe.html [L]
 
 # ===== CLEAN URLs FOR PAGES IN /pages FOLDER =====
 # Handle root-level clean URLs (capabilities, book-hub, etc.)
