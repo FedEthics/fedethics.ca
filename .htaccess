@@ -7,7 +7,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteRule ^Book/?$ /pages/book.html [L]
 
 # This handles the QR code directing to https://fedethics.ca/Book/
-<!-- RewriteRule ^subscribe/?$ /pages/subscribe.html [L] -->
+RewriteRule ^subscribe/?$ /pages/subscribe.html [L]
 
 # 1. REDIRECT: If .html, force the browser URL bar to drop it
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
