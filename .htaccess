@@ -10,13 +10,13 @@ RewriteRule ^Book/?$ /pages/book.html [L]
 <!-- RewriteRule ^subscribe/?$ /pages/subscribe.html [L] -->
 
 # 1. REDIRECT: If .html, force the browser URL bar to drop it
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
-RewriteRule ^ %1 [R=301,L]
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+#RewriteRule ^ %1 [R=301,L]
 
 # 2. REWRITE: If a clean URL is requested, invisibly serve it from /pages
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
-RewriteRule ^([^/.]+)$ pages/$1.html [L]
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+#RewriteRule ^([^/.]+)$ pages/$1.html [L]
 
 # BEGIN LSCACHE
 ## LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block! ##
