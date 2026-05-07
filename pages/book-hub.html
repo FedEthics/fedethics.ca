@@ -9,15 +9,13 @@
     <title>Books — FedEthics Inc.</title>
     <!--#endregion Metadata -->
 
-    <!--#region TagManager Google -->
+    <!--#region Google -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KVDSCGPR');</script>
-    <!--#endregion TagManager Google -->
     
-    <!--#region Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -26,7 +24,7 @@
       gtag('config', 'G-2F5300W8X0');
       function track(l){ gtag('event','click',{event_category:'CTA',event_label:l}); }
     </script>
-    <!--#endregion Google Analytics -->
+    <!--#endregion Google -->
 
     <!--#tag Shared_CSS -->
     <link rel="stylesheet" href="../css/fedethics.css" />
@@ -37,6 +35,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Newsletter script -->
+    <script src="../js/newsletter.js" defer></script>
 
     <!--#region Page-specific styles -->
     <style>
@@ -230,7 +231,6 @@
 
   <body>
 
-    <!--#region MOBILE NAV OVERLAY -->
     <div class="mobile-nav" id="mobileNav">
       <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
       <a href="../index.html">Home</a>
@@ -239,7 +239,6 @@
       <a href="book-hub.html">Books</a>
       <a href="contact.html">Contact</a>
     </div>
-    <!--#endregion MOBILE NAV OVERLAY -->
 
     <nav>
       <div class="nav-inner">
@@ -293,7 +292,7 @@
       </div>
     </header>
 
-    <!--#region BOOKS HUB CARDS -->
+    <!--BOOKS HUB CARDS -->
     <section class="section-pad" style="background:var(--off-white);" id="books">
       <div class="container">
         <div class="eyebrow">Select a Book</div>
@@ -308,11 +307,6 @@
               <div class="bhc-imprint">FedEthics Advisory™ · FriesenPress · ISBN 978-1-0383-5671-0</div>
               <div class="bhc-title">Constitutional Intelligence</div>
               <div class="bhc-subtitle">A Decision Architecture for Trustworthy AI Governance</div>
-              <!-- <div class="bhc-price-row">
-                <span class="bhc-from">From</span>
-                <span class="bhc-amount">$34.99</span>
-                <span class="bhc-cad">CAD</span>
-              </div> -->
             </div>
             <div class="bhc-body">
               <p class="bhc-desc">The framework every government executive needs to navigate AI in Westminster parliamentary systems. Three proprietary frameworks, real Canadian government case studies, and endorsements from Canada's most senior public service figures. Includes bonus content via QR code.</p>
@@ -328,8 +322,8 @@
               </div>
             </div>
           </div>
-
-          <!-- #region EDT CARD -->
+          
+          <!-- EDT CARD -->
           <div class="book-hub-card">
             <div class="bhc-header bhc-edt">
               <div class="bhc-imprint">FedEthics Creative™ · Auto-publié · Roman jeunesse français</div>
@@ -350,13 +344,13 @@
                 <a href="etoile-des-tournesols.html#payments" class="btn btn-outline-navy btn-sm" onclick="track('hub_edt_pay')">Commander vite</a>
             </div>
           </div>
-          <!-- #endregion EDT CARD-->
+
         </div>
       </div>
     </section>
-    <!--#endregion BOOKS HUB CARDS -->
 
-    <!--#region AboutAuthor -->
+
+    <!-- AboutAuthor -->
     <section class="author-section" id="author">
       <div class="container">
         <div class="author-grid">
@@ -403,7 +397,6 @@
         </div>
       </div>
     </section>
-    <!--#endregion AboutAuthor -->
 
 
     <!-- SPECIAL OFFERS -->
@@ -419,6 +412,7 @@
         </div>
 
         <div class="offers-books-grid">
+
           <!-- CI OFFERS -->
           <div class="offer-book-block">
             <div class="obb-header obb-ci">
@@ -460,7 +454,7 @@
                 <span class="offer-trigger">Tout achat direct</span>
                 <h4>✍️ Exemplaire dédicacé</h4>
                 <p>Chaque exemplaire commandé directement sur ce site est signé personnellement par Celio Oliveira — automatiquement, sans frais supplémentaires.</p>
-                <!-- <a href="etoile-des-tournesols.html#payments" class="pay-btn offer-btn-edt" onclick="track('offer_edt_autograph')">Commander</a> -->
+                <a href="etoile-des-tournesols.html#payments" class="pay-btn offer-btn-edt" onclick="track('offer_edt_autograph')">Commander</a>
               </div>
               <div class="offer-item">
                 <span class="offer-trigger">5 exemplaires ou plus</span>
@@ -480,7 +474,7 @@
       </div>
     </section>
 
-    <!--#region CLAIM FORM -->
+    <!--FORMSPREE CLAIM-->
     <!-- <section class="claim-section" id="claim">
       <div class="container">
         <div class="claim-wrap">
@@ -561,7 +555,6 @@
         </div>
       </div>
     </section> -->
-    <!--#endregion CLAIM FORM -->
 
     <!-- ENDORSEMENTS -->
     <section class="endorse-section">
@@ -595,21 +588,27 @@
     </section>
 
     <!-- NEWSLETTER -->
-    <!-- <section class="newsletter-section" id="newsletter">
+    <section class="newsletter-section" id="newsletter">
       <div class="container">
         <div class="newsletter-inner">
           <div class="eyebrow eyebrow-light" style="justify-content:center;">Stay Connected</div>
           <h2>The FedEthics Dispatch</h2>
           <p>AI governance insights, book updates, and speaking announcements — delivered to executives, policy leaders, and senior practitioners. No noise. Unsubscribe anytime.</p>
-          <form class="newsletter-form" action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORMSPREE" method="POST" onsubmit="track('newsletter_signup')">
-            <input type="text"  name="fname" placeholder="First name" />
-            <input type="email" name="email" placeholder="Email address" required />
+          
+          <form class="newsletter-form" id="fedethics-form" onsubmit="handleSubscription(event)">
+            <!-- IDs -->
+            <!-- <input type="text" name="fname" id="fname" placeholder="First name" /> -->
+            <input type="email" name="email" id="email" placeholder="Email address" required />
             <button type="submit" class="btn btn-gold">Subscribe</button>
+            
+            <!-- Status Div -->
+            <div id="form-status" style="margin-top: 10px; font-weight: bold;"></div>
           </form>
+          
           <p class="newsletter-note">Your information is never shared. All content is published in a personal capacity, independent of any employer.</p>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- FOOTER -->
     <footer>
@@ -655,7 +654,7 @@
             <h4>Connect</h4>
             <a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a>
             <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <!-- <a href="#newsletter">Newsletter</a> -->
+            <a href="#newsletter">Newsletter</a>
             <a href="contact.html">Speaking Enquiries</a>
           </div>
         </div>
