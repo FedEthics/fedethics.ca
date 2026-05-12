@@ -261,6 +261,10 @@ nav {
 /* ════════════════════════════════
    FOOTER
 ═════════════════════════════════ */
+
+footer-section {
+  display: block;
+}
 footer {
   background: #0E1421;
   color: rgba(255,255,255,0.65);
