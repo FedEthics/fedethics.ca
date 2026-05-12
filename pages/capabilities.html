@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="images/FedEthics.png" />
+  <link rel="icon" type="image/x-icon" href="../images/FedEthics.png" />
   <meta name="description" content="FedEthics core capabilities — AI governance advisory, data strategy leadership, executive education, and research by Celio Oliveira. Practical frameworks built from real senior public sector experience." />
   <title>Core Capabilities — FedEthics Inc.</title>
 
-    <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -26,15 +26,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
-  <!-- REFERENCE TO EXTERNAL fedethics.css -->
+  <!-- Shared CSS-->
   <link rel="stylesheet" href="../css/fedethics.css" />
 
-  <style>
-    /* ============================================================
-       PAGE-SPECIFIC STYLES — Core Capabilities only
-       These extend fedethics.css with page-unique components
-       ============================================================ */
+  <!-- Shared JS -->
+  <script src="../js/frame.js"></script>
 
+  <style>
     /* Page Hero — unique to capabilities page */
     .page-hero {
       background: var(--ink); padding: 88px 0 72px;
@@ -581,58 +579,8 @@
   </div>
 </section>
 
-<!-- FOOTER (uses classes from fedethics.css) -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand-logo">
-          <img 
-            src="../images/FedEthics.png" 
-            alt="FE" 
-            class="footer-brand-mark" 
-            onerror="this.outerHTML='<div class=\'footer-brand-mark\'>FE</div>'"
-          >
-          <span class="footer-brand-name">FedEthics Inc.</span>
-        </div>
-        <p class="footer-tagline">AI governance advisory, ethical leadership frameworks, and two books by FedEthics.</p>
-        <div class="footer-imprints">
-          <span class="footer-imprint fi-advisory">FedEthics Advisory™</span>
-          <span class="footer-imprint fi-creative">FedEthics Creative™</span>
-        </div>
-        <div class="footer-social">
-          <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-          <a href="https://orcid.org/0009-0008-8896-9073" target="_blank" rel="noopener" aria-label="ORCID">◎</a>
-          <a href="mailto:hello-bonjour@fedethics.ca" aria-label="Email">✉</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a href="../index.html">Home</a>
-        <a href="our-story.html">Our Story</a>
-        <a href="capabilities.html">Core Capabilities</a>
-        <a href="book-hub.html">Books</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Books</h4>
-        <a href="constitutional-intelligence.html">Constitutional Intelligence</a>
-        <a href="etoile-des-tournesols.html">Étoile des Tournesols</a>
-        <a href="book-hub.html#bulk">Bulk Orders</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a>
-        <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="contact.html">Speaking Enquiries</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 FedEthics Inc. All rights reserved.</span>
-      <p class="footer-disclaimer">FedEthics Inc. is an independent organization. All views expressed in FedEthics publications and advisory engagements are those of Celio Oliveira in a strictly personal capacity, independent of any government institution or employer.</p>
-    </div>
-  </div>
-</footer>
+<!-- FOOTER-->
+<footer-section></footer-section>
 
 </body>
 </html>

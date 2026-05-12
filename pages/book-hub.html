@@ -4,7 +4,7 @@
     <!--#region Metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="images/FedEthics.png" />
+    <link rel="icon" type="image/x-icon" href="../images/FedEthics.png" />
     <meta name="description" content="Order Constitutional Intelligence and Étoile des Tournesols by Celio Oliveira. Every direct order includes an autographed copy. Buy 5+ copies to unlock a free consultation or speaking engagement." />
     <title>Books — FedEthics Inc.</title>
     <!--#endregion Metadata -->
@@ -28,6 +28,9 @@
 
     <!--#tag Shared_CSS -->
     <link rel="stylesheet" href="../css/fedethics.css" />
+
+    <!--#tag Shared_JS -->
+    <script src="../js/frame.js" defer></script>
 
     <!--#tag Stripe_Button_Script -->
     <script async src="https://js.stripe.com/v3/buy-button.js"></script>
@@ -202,17 +205,6 @@
       .endorse-quote { font-size: .9rem; color: var(--text-mid); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
       .endorse-name  { font-family: var(--serif); font-size: .95rem; font-weight: 600; color: var(--ink); }
       .endorse-role  { font-size: .76rem; color: var(--text-muted); margin-top: 3px; }
-
-      /* NEWSLETTER */
-      .newsletter-section { background: var(--ink); padding: 80px 0; }
-      .newsletter-inner { max-width: 560px; margin: 0 auto; text-align: center; }
-      .newsletter-inner h2 { font-family: var(--serif); color: var(--white); font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 600; margin-bottom: 12px; }
-      .newsletter-inner p  { color: rgba(255,255,255,.6); font-size: .9rem; line-height: 1.8; margin-bottom: 28px; }
-      .newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-      .newsletter-form input { flex: 1; min-width: 200px; padding: 11px 16px; border-radius: var(--r-sm); border: 1.5px solid rgba(255,255,255,.2); background: rgba(255,255,255,.07); color: var(--white); font-family: var(--sans); font-size: .9rem; outline: none; transition: border-color var(--t); }
-      .newsletter-form input::placeholder { color: rgba(255,255,255,.38); }
-      .newsletter-form input:focus { border-color: var(--gold); }
-      .newsletter-note { font-size: .72rem; color: rgba(255,255,255,.35); margin-top: 12px; line-height: 1.5; }
 
       @media (max-width:1024px) {
         .author-grid { grid-template-columns: 1fr; }
@@ -587,83 +579,8 @@
       </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section class="newsletter-section" id="newsletter">
-      <div class="container">
-        <div class="newsletter-inner">
-          <div class="eyebrow eyebrow-light" style="justify-content:center;">Stay Connected</div>
-          <h2>The FedEthics Dispatch</h2>
-          <p>AI governance insights, book updates, and speaking announcements — delivered to executives, policy leaders, and senior practitioners. No noise. Unsubscribe anytime.</p>
-          
-          <form class="newsletter-form" id="fedethics-form" onsubmit="handleSubscription(event)">
-            <!-- IDs -->
-            <!-- <input type="text" name="fname" id="fname" placeholder="First name" /> -->
-            <input type="email" name="email" id="email" placeholder="Email address" required />
-            <button type="submit" class="btn btn-gold">Subscribe</button>
-            
-            <!-- Status Div -->
-            <div id="form-status" style="margin-top: 10px; font-weight: bold;"></div>
-          </form>
-          
-          <p class="newsletter-note">Your information is never shared. All content is published in a personal capacity, independent of any employer.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div>
-            <div class="footer-brand-logo">
-              <img 
-                src="../images/FedEthics.png" 
-                alt="FE" 
-                class="footer-brand-mark" 
-                onerror="this.outerHTML='<div class=\'footer-brand-mark\'>FE</div>'"
-              >
-              <span class="footer-brand-name">FedEthics Inc.</span>
-            </div>
-            <p class="footer-tagline">AI governance advisory, ethical leadership frameworks, and two books by FedEthics.</p>
-            <div class="footer-imprints">
-              <span class="footer-imprint fi-advisory">FedEthics Advisory™</span>
-              <span class="footer-imprint fi-creative">FedEthics Creative™</span>
-            </div>
-            <div class="footer-social">
-              <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-              <a href="https://orcid.org/0009-0008-8896-9073" target="_blank" rel="noopener" aria-label="ORCID">◎</a>
-              <a href="mailto:hello-bonjour@fedethics.ca" aria-label="Email">✉</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h4>Navigate</h4>
-            <a href="../index.html">Home</a>
-            <a href="our-story.html">Our Story</a>
-            <a href="capabilities.html">Core Capabilities</a>
-            <a href="book-hub.html">Books</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          <div class="footer-col">
-            <h4>Books</h4>
-            <a href="constitutional-intelligence.html">Constitutional Intelligence</a>
-            <a href="etoile-des-tournesols.html">Étoile des Tournesols</a>
-            <a href="book-hub.html#bulk">Bulk Offers</a>
-            <!-- <a href="book-hub.html#claim">Claim Your Offer</a> -->
-          </div>
-          <div class="footer-col">
-            <h4>Connect</h4>
-            <a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a>
-            <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a href="#newsletter">Newsletter</a>
-            <a href="contact.html">Speaking Enquiries</a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <span class="footer-copy">© 2026 FedEthics Inc. All rights reserved.</span>
-          <p class="footer-disclaimer">FedEthics Inc. is an independent organization. All views, books, and advisory services are produced and delivered by Celio Oliveira in a strictly personal capacity, independent of any government institution or employer.</p>
-        </div>
-      </div>
-    </footer>
+    <footer-section></footer-section>
 
   </body>
 </html>
