@@ -108,7 +108,6 @@ class FooterSection extends HTMLElement {
                     <h4>Connect</h4>
                     <a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a>
                     <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
-                    <a href="pages/book-hub.html#newsletter">Newsletter</a>
                     <a href="pages/contact.html">Speaking Enquiries</a>
                 </div>
             </div>
