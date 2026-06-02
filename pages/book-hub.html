@@ -9,22 +9,32 @@
     <title>Books — FedEthics Inc.</title>
     <!--#endregion Metadata -->
 
-    <!--#region Google -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KVDSCGPR');</script>
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2F5300W8X0');
-      function track(l){ gtag('event','click',{event_category:'CTA',event_label:l}); }
-    </script>
-    <!--#endregion Google -->
+  <!--#region Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5CTTT33C');
+  </script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function track(label) {
+      window.dataLayer.push({
+        event: 'cta_click',
+        event_category: 'CTA',
+        event_label: label
+      });
+    }
+  </script>
+  <!--#endregion Google Tag Manager -->
 
     <!--#tag Shared_CSS -->
     <link rel="stylesheet" href="../css/fedethics.css" />
@@ -222,6 +232,12 @@
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CTTT33C"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
     <div class="mobile-nav" id="mobileNav">
       <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
