@@ -237,6 +237,17 @@
       .form-grid-2 { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- Flag Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+  <!-- Lucide Icons -->
+  <style>
+    [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
+    .audience-icon svg { width:28px; height:28px; }
+    .overview-icon svg { width:22px; height:22px; }
+    .ci-offer-icon svg { width:24px; height:24px; }
+    .ps-block-label svg { width:18px; height:18px; vertical-align:text-bottom; margin-right:4px; }
+    .info-block h4 svg { width:18px; height:18px; vertical-align:text-bottom; margin-right:6px; }
+  </style>
 </head>
 
 <body>
@@ -331,7 +342,7 @@
             > 
             </stripe-buy-button> -->
 
-            <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;">✍️ All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
+            <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;"><i data-lucide="pen-line"></i> All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
           </div>
 
         </div>
@@ -343,10 +354,10 @@
   <div class="overview-strip">
     <div class="container">
       <div class="overview-grid">
-        <div class="overview-item"><div class="overview-icon">🏛️</div><div class="overview-label">Focus</div><div class="overview-value">Westminster parliamentary AI governance</div></div>
-        <div class="overview-item"><div class="overview-icon">🔧</div><div class="overview-label">Frameworks</div><div class="overview-value">DECIDE-PLUS™, FIVE-LAYER™, CHARTER RIGHTS DECISION TREE™ </div></div>
-        <div class="overview-item"><div class="overview-icon">📋</div><div class="overview-label">Case Studies</div><div class="overview-value">Real government examples</div></div>
-        <div class="overview-item"><div class="overview-icon">📦</div><div class="overview-label">Formats</div><div class="overview-value">Hard Cover Executive Print · Bonus content (QR)</div></div>
+        <div class="overview-item"><div class="overview-icon"><i data-lucide="landmark"></i></div><div class="overview-label">Focus</div><div class="overview-value">Westminster parliamentary AI governance</div></div>
+        <div class="overview-item"><div class="overview-icon"><i data-lucide="wrench"></i></div><div class="overview-label">Frameworks</div><div class="overview-value">DECIDE-PLUS™, FIVE-LAYER™, CHARTER RIGHTS DECISION TREE™ </div></div>
+        <div class="overview-item"><div class="overview-icon"><i data-lucide="clipboard-list"></i></div><div class="overview-label">Case Studies</div><div class="overview-value">Real government examples</div></div>
+        <div class="overview-item"><div class="overview-icon"><i data-lucide="package"></i></div><div class="overview-label">Formats</div><div class="overview-value">Hard Cover Executive Print · Bonus content (QR)</div></div>
       </div>
     </div>
   </div>
@@ -359,7 +370,7 @@
       <div class="ps-grid">
         <div>
           <div class="ps-block">
-            <div class="ps-block-label ps-problem-label">⚠️ The Problem</div>
+            <div class="ps-block-label ps-problem-label"><i data-lucide="alert-triangle"></i> The Problem</div>
             <h3>Government executives face AI decisions without the right tools</h3>
             <p>Public sectors around the world is implementing AI systems faster than governance frameworks can keep pace. The result: accountability gaps, ministerial exposure, fragmented procurement, and wasted investment.</p>
             <ul class="ps-list">
@@ -451,12 +462,12 @@
       <h2 class="section-title">Written for decision-makers,<br/>not just <em>data scientists</em></h2>
       <p class="section-lead">Constitutional Intelligence is deliberately designed for the people who sign off on AI — not the people who build it.</p>
       <div class="audience-grid">
-        <div class="audience-card"><div class="audience-icon">🏛️</div><h3>Deputy Ministers &amp; Associate DMs</h3><p>Navigate AI accountability in the most politically exposed roles in the public service, with frameworks that speak the language of Treasury Board and Cabinet.</p></div>
-        <div class="audience-card"><div class="audience-icon">💼</div><h3>Chief Information Officers</h3><p>Bridge the gap between technical AI capabilities and the constitutional realities of ministerial accountability. Speak confidently to DMs and Ministers.</p></div>
-        <div class="audience-card"><div class="audience-icon">📊</div><h3>Chief Data Officers</h3><p>Establish governance frameworks that survive political transitions, access to information requests, and Auditor General scrutiny.</p></div>
-        <div class="audience-card"><div class="audience-icon">⚖️</div><h3>Legal &amp; Ethics Advisors</h3><p>Access the practical decision architecture needed to advise departments on AI risk — beyond the general principles found in most ethics frameworks.</p></div>
-        <div class="audience-card"><div class="audience-icon">🎓</div><h3>Policy Executives &amp; Directors</h3><p>Design AI-informed policy with a constitutional lens, ensuring public sector initiatives serve democratic accountability rather than undermine it.</p></div>
-        <div class="audience-card"><div class="audience-icon">🌐</div><h3>Westminster System Leaders Globally</h3><p>Australia, New Zealand, United Kingdom, and other Westminster democracies face the same structural challenges. These frameworks apply across all of them.</p></div>
+        <div class="audience-card"><div class="audience-icon"><i data-lucide="landmark"></i></div><h3>Deputy Ministers &amp; Associate DMs</h3><p>Navigate AI accountability in the most politically exposed roles in the public service, with frameworks that speak the language of Treasury Board and Cabinet.</p></div>
+        <div class="audience-card"><div class="audience-icon"><i data-lucide="briefcase"></i></div><h3>Chief Information Officers</h3><p>Bridge the gap between technical AI capabilities and the constitutional realities of ministerial accountability. Speak confidently to DMs and Ministers.</p></div>
+        <div class="audience-card"><div class="audience-icon"><i data-lucide="bar-chart-2"></i></div><h3>Chief Data Officers</h3><p>Establish governance frameworks that survive political transitions, access to information requests, and Auditor General scrutiny.</p></div>
+        <div class="audience-card"><div class="audience-icon"><i data-lucide="scale"></i></div><h3>Legal &amp; Ethics Advisors</h3><p>Access the practical decision architecture needed to advise departments on AI risk — beyond the general principles found in most ethics frameworks.</p></div>
+        <div class="audience-card"><div class="audience-icon"><i data-lucide="graduation-cap"></i></div><h3>Policy Executives &amp; Directors</h3><p>Design AI-informed policy with a constitutional lens, ensuring public sector initiatives serve democratic accountability rather than undermine it.</p></div>
+        <div class="audience-card"><div class="audience-icon"><i data-lucide="globe"></i></div><h3>Westminster System Leaders Globally</h3><p>Australia, New Zealand, United Kingdom, and other Westminster democracies face the same structural challenges. These frameworks apply across all of them.</p></div>
       </div>
     </div>
   </section>
@@ -609,17 +620,17 @@
           <hr class="pay-divider" />
 
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;">✍️ All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
+            <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;"><i data-lucide="pen-line"></i> All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
           </div>
 
         </div>
         <div class="payment-info">
           <h3>Why order direct?</h3>
           <p>Ordering through fedethics.ca gives you the best price, an autographed copy, and access to bulk purchase offers not available through any retail channel.</p>
-          <div class="info-block"><h4>✍️ Autographed Copy — Included Free</h4><p>Every print order placed directly through this page is personally signed by Celio Oliveira before shipping. No extra charge, no form required.</p></div>
-          <div class="info-block"><h4>🎯 Buy 5+ Copies — Unlock Free Consultation</h4><p>Purchase five or more copies and receive a complimentary 15-minute advisory session with Celio — either a virtual call or a live speaking engagement at your institution.</p></div>
-          <div class="info-block"><h4>🖊️ Buy 5+ Copies — Personalized Dedication</h4><p>Prefer a handwritten dedication for each recipient? Order 5+ copies and Celio will write a unique, personalized message in every book.</p></div>
-          <div class="info-block"><h4>📦 Institutional &amp; Government Bulk Orders</h4><p>Orders for departments, agencies, universities, or large organizations can be invoiced directly. Contact <a href="mailto:hello-bonjour@fedethics.ca" style="color:var(--ci);">hello-bonjour@fedethics.ca</a> to arrange terms.</p></div>
+          <div class="info-block"><h4><i data-lucide="pen-line"></i> Autographed Copy — Included Free</h4><p>Every print order placed directly through this page is personally signed by Celio Oliveira before shipping. No extra charge, no form required.</p></div>
+          <div class="info-block"><h4><i data-lucide="target"></i> Buy 5+ Copies — Unlock Free Consultation</h4><p>Purchase five or more copies and receive a complimentary 15-minute advisory session with Celio — either a virtual call or a live speaking engagement at your institution.</p></div>
+          <div class="info-block"><h4><i data-lucide="pen"></i> Buy 5+ Copies — Personalized Dedication</h4><p>Prefer a handwritten dedication for each recipient? Order 5+ copies and Celio will write a unique, personalized message in every book.</p></div>
+          <div class="info-block"><h4><i data-lucide="package"></i> Institutional &amp; Government Bulk Orders</h4><p>Orders for departments, agencies, universities, or large organizations can be invoiced directly. Contact <a href="mailto:hello-bonjour@fedethics.ca" style="color:var(--ci);">hello-bonjour@fedethics.ca</a> to arrange terms.</p></div>
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
             <span class="badge badge-ci">Direct Distribution by FedEthics</span>
             <span class="badge badge-gold">Bonus Content QR Code Included</span>
@@ -638,21 +649,21 @@
       <div class="ci-offers-grid">
         <div class="ci-offer-card">
           <span class="ci-offer-trigger">Any Direct Purchase</span>
-          <div class="ci-offer-icon">✍️</div>
+          <div class="ci-offer-icon"><i data-lucide="pen-line"></i></div>
           <h3>Autographed Copy</h3>
           <p>Every book purchased directly is personally signed by Celio Oliveira. No extra charge — automatically included in every print order shipped from this page.</p>
           <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto')">Order Now</a>
         </div>
         <div class="ci-offer-card">
           <span class="ci-offer-trigger">Buy 5 or More Copies</span>
-          <div class="ci-offer-icon">🎯</div>
+          <div class="ci-offer-icon"><i data-lucide="target"></i></div>
           <h3>Free 15-Min Consultation with Celio</h3>
           <p>One 15-minute session with Celio — available as a virtual call on AI governance topics, or as a live speaking engagement at your institution at no cost.</p>
           <!-- <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_consult')">Claim This Offer</a> -->
         </div>
         <div class="ci-offer-card">
           <span class="ci-offer-trigger">Buy 5 or More Copies</span>
-          <div class="ci-offer-icon">🖊️</div>
+          <div class="ci-offer-icon"><i data-lucide="pen"></i></div>
           <h3>Personalized Handwritten Dedication</h3>
           <p>A unique message written by hand in each book. Perfect for team gifts, leadership awards, board member recognition, or training program graduation gifts.</p>
           <!-- <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_dedic')">Request Dedication</a> -->
@@ -714,7 +725,7 @@
         <p>The back cover of Constitutional Intelligence includes a QR code linking to exclusive supplementary content — additional frameworks, implementation templates, and case study deep-dives that extend the book's value beyond the printed pages.</p>
         <div class="bonus-qr">
           <div style="width:120px;height:120px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
-            <span style="font-size:2rem;opacity:.4;">📱</span>
+            <i data-lucide="smartphone" style="width:2rem;height:2rem;opacity:.4;stroke:currentColor;"></i>
           </div>
           <p>Scan QR code inside your book to access exclusive bonus content</p>
         </div>
@@ -755,5 +766,6 @@
   <!-- FOOTER -->
   <footer-section></footer-section>
 
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
 </body>
 </html>

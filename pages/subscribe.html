@@ -545,6 +545,13 @@
         .trust-signals { gap: 14px; }
       }
     </style>
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+    <!-- Lucide Icons -->
+    <style>
+      [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
+      .email-icon svg { width:20px; height:20px; }
+    </style>
   </head>
   <body>
 
@@ -640,7 +647,7 @@
               <div class="form-field">
                 <label class="form-label" for="email" data-i18n="label">Email address</label>
                 <div class="form-input-wrap">
-                  <span class="email-icon">✉</span>
+                  <span class="email-icon"><i data-lucide="mail"></i></span>
                   <input
                     class="form-input"
                     type="email"
@@ -887,5 +894,6 @@
       }
     </script>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
   </body>
 </html>
