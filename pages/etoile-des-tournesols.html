@@ -312,6 +312,22 @@
         .chars-grid { grid-template-columns: 1fr 1fr; }
       }
     </style>
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+    <!-- Lucide Icons -->
+    <style>
+      [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
+      .char-icon svg { width:2rem; height:2rem; }
+      .theme-icon svg { width:1.8rem; height:1.8rem; }
+      .audience-icon svg { width:1.6rem; height:1.6rem; }
+      .char-origin .fi { border-radius:2px; display:inline-block; vertical-align:middle; }
+      .edt-offer-icon svg { width:24px; height:24px; }
+      .overview-icon svg { width:22px; height:22px; }
+      /* Character initial badge */
+      .char-initial-badge { display:flex; flex-direction:column; align-items:center; gap:3px; margin-bottom:10px; }
+      .char-letter { font-family:var(--serif); font-size:2rem; font-weight:700; line-height:1; }
+      .char-symbol { width:16px; height:16px; opacity:.75; }
+    </style>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -427,7 +443,7 @@
               </stripe-buy-button> -->
 
               <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;">
-                ✍️ Chaque exemplaire dédicacé ·
+                <i data-lucide="pen-line"></i> Chaque exemplaire dédicacé ·
                 <a href="#bulk" style="color:var(--gold);">
                   5+ exemplaires = rencontre avec l'auteur
                 </a>
@@ -444,22 +460,22 @@
       <div class="container">
         <div class="overview-grid">
           <div class="overview-item">
-            <div class="overview-icon">📖</div>
+            <div class="overview-icon"><i data-lucide="book-open"></i></div>
             <div class="overview-label">Genre</div>
             <div class="overview-value">Roman jeunesse · Fantastique littéraire</div>
           </div>
           <div class="overview-item">
-            <div class="overview-icon">👥</div>
+            <div class="overview-icon"><i data-lucide="users"></i></div>
             <div class="overview-label">Personnages</div>
             <div class="overview-value">7 gardiens · 7 dons · 7 origines culturelles</div>
           </div>
           <div class="overview-item">
-            <div class="overview-icon">🌍</div>
+            <div class="overview-icon"><i data-lucide="globe"></i></div>
             <div class="overview-label">Langue</div>
             <div class="overview-value">Français (bilingual reading guide available)</div>
           </div>
           <div class="overview-item">
-            <div class="overview-icon">📦</div>
+            <div class="overview-icon"><i data-lucide="package"></i></div>
             <div class="overview-label">Formats</div>
             <div class="overview-value">Imprimé dédicacé · Numérique ePub</div>
           </div>
@@ -527,51 +543,51 @@
       <div class="container">
         <div class="chars-grid">
           <div class="char-card">
-            <div class="char-icon">⚡</div>
+            <div class="char-icon"><div class="char-initial-badge"><span class="char-letter">L</span><i data-lucide="zap" class="char-symbol"></i></div></div>
             <div class="char-name">Lili Peccard</div>
-            <div class="char-origin">🇫🇷 France / Étoile des Tournesols</div>
+            <div class="char-origin"><span class="fi fi-fr"></span> France / Étoile des Tournesols</div>
             <div class="char-gift">Perçoit les champs électromagnétiques — les courants invisibles qui traversent toute chose</div>
             <div class="char-animal">Compagnon : Pierrot, renard argenté</div>
           </div>
           <div class="char-card">
-            <div class="char-icon">🎵</div>
+            <div class="char-icon"><div class="char-initial-badge"><span class="char-letter">R</span><i data-lucide="music" class="char-symbol"></i></div></div>
             <div class="char-name">Rafael Oliveira Neto</div>
-            <div class="char-origin">🇧🇷 Brésil</div>
+            <div class="char-origin"><span class="fi fi-br"></span> Brésil</div>
             <div class="char-gift">Synesthésie musicale — voit les sons comme des couleurs et entend les harmoniques dimensionnelles</div>
             <div class="char-animal">Compagnon : Ritmo, colibri iridescent</div>
           </div>
           <div class="char-card">
-            <div class="char-icon">🌿</div>
+            <div class="char-icon"><div class="char-initial-badge"><span class="char-letter">JM</span><i data-lucide="leaf" class="char-symbol"></i></div></div>
             <div class="char-name">Jacob Mercier Parent</div>
-            <div class="char-origin">🇸🇳 Sénégal</div>
+            <div class="char-origin"><span class="fi fi-sn"></span> Sénégal</div>
             <div class="char-gift">Communique avec les plantes et les réseaux racinaires — entend la mémoire de la terre</div>
             <div class="char-animal">Compagnon : Njeri, phacochère irisé</div>
           </div>
           <div class="char-card">
-            <div class="char-icon">🌬️</div>
+            <div class="char-icon"><div class="char-initial-badge"><span class="char-letter">M</span><i data-lucide="wind" class="char-symbol"></i></div></div>
             <div class="char-name">Mathéa Olivel</div>
-            <div class="char-origin">🇨🇦 Québec</div>
+            <div class="char-origin"><span class="fi fi-ca"></span> Québec</div>
             <div class="char-gift">Lit et manipule les courants atmosphériques — prédit les tempêtes et guide les vents</div>
             <div class="char-animal">Compagnon : Zéphyr, lézard caméléon</div>
           </div>
           <div class="char-card">
-            <div class="char-icon">🌊</div>
+            <div class="char-icon"><div class="char-initial-badge"><span class="char-letter">T</span><i data-lucide="waves" class="char-symbol"></i></div></div>
             <div class="char-name">Tamatoa Tevaiano</div>
-            <div class="char-origin">🇵🇫 Polynésie française</div>
+            <div class="char-origin"><span class="fi fi-pf"></span> Polynésie française</div>
             <div class="char-gift">Navigation aquatique — perçoit les mémoires de l'eau et les courants interdimensionnels</div>
             <div class="char-animal">Compagnon : Marama, poisson-perroquet</div>
           </div>
           <div class="char-card">
-            <div class="char-icon">🔷</div>
+            <div class="char-icon"><div class="char-initial-badge"><span class="char-letter">N</span><i data-lucide="diamond" class="char-symbol"></i></div></div>
             <div class="char-name">Najla Bertinel</div>
-            <div class="char-origin">🇲🇦 Maroc</div>
+            <div class="char-origin"><span class="fi fi-ma"></span> Maroc</div>
             <div class="char-gift">Géométries sacrées berbères — trace des motifs qui stabilisent l'espace et les dimensions</div>
             <div class="char-animal">Compagnon : Zouk, fennec doré</div>
           </div>
           <div class="char-card eva-card">
-            <div class="char-icon">✨</div>
+            <div class="char-icon"><div class="char-initial-badge"><span class="char-letter">E</span><i data-lucide="sparkles" class="char-symbol"></i></div></div>
             <div class="char-name">Eva d'Auparavant</div>
-            <div class="char-origin">🌟 Fille immortelle des Fondateurs — Étoile des Tournesols</div>
+            <div class="char-origin"><i data-lucide="star" style="width:14px;height:14px;vertical-align:middle;"></i> Fille immortelle des Fondateurs — Étoile des Tournesols</div>
             <div class="char-gift">Septième gardienne, imperceptible pendant 700 ans. Maîtrise des passages dimensionnels et mémoire vivante de la ville — fille d'Alexandre du Verbe et de Marguerite de Tournesol</div>
             <div class="char-animal">Compagnon : Oriel, faon doré aux bois scintillants</div>
           </div>
@@ -586,32 +602,32 @@
         <h2 class="section-title">Des thèmes qui résonnent<br/><em>pour toutes les générations</em></h2>
         <div class="themes-grid">
           <div class="theme-card">
-            <div class="theme-icon">🤝</div>
+            <div class="theme-icon"><i data-lucide="handshake"></i></div>
             <h3>Appartenance &amp; Identité</h3>
             <p>Chacun des sept gardiens a grandi en se sentant différent. Leurs dons, longtemps perçus comme des fardeaux, deviennent leurs plus grandes forces une fois réunis. Un message universel pour tous ceux qui ont cherché leur place.</p>
           </div>
           <div class="theme-card">
-            <div class="theme-icon">🌍</div>
+            <div class="theme-icon"><i data-lucide="globe"></i></div>
             <h3>Diversité Culturelle</h3>
             <p>Brésil, Sénégal, Canada, Polynésie, Maroc, France, l’univers infini — sept cultures, sept façons d'appréhender le monde. Le roman célèbre cette richesse sans jamais la réduire à un stéréotype.</p>
           </div>
           <div class="theme-card">
-            <div class="theme-icon">🔬</div>
+            <div class="theme-icon"><i data-lucide="microscope"></i></div>
             <h3>Science &amp; Merveilleux</h3>
             <p>La magie dans ce roman a toujours une explication scientifique — électromagnétisme, synesthésie, réseaux mycorhiziens, géométries sacrées. La science et l'émerveillement se nourrissent mutuellement.</p>
           </div>
           <div class="theme-card">
-            <div class="theme-icon">🌱</div>
+            <div class="theme-icon"><i data-lucide="sprout"></i></div>
             <h3>Héritage &amp; Transmission</h3>
             <p>Les Fondateurs ont créé une ville vivante et consciente pour leurs descendants. Le roman explore ce que signifie recevoir un héritage et choisir d'en devenir gardien plutôt que simple héritier.</p>
           </div>
           <div class="theme-card">
-            <div class="theme-icon">💫</div>
+            <div class="theme-icon"><i data-lucide="heart"></i></div>
             <h3>L'Amour comme Force Créatrice</h3>
             <p>À travers toute l'aventure, le roman affirme une conviction centrale : l'amour — entre amis, entre générations, entre l'humain et sa ville — est la seule force capable de traverser toutes les dimensions.</p>
           </div>
           <div class="theme-card">
-            <div class="theme-icon">🦸</div>
+            <div class="theme-icon"><i data-lucide="shield"></i></div>
             <h3>Familles Choisies</h3>
             <p>Ces sept jeunes ne sont pas liés par le sang mais par un choix. Le roman célèbre les familles que l'on se construit — aussi solides, aussi aimantes, et parfois plus profondes que celles que l'on reçoit.</p>
           </div>
@@ -626,37 +642,37 @@
         <h2 class="section-title">Un livre qui touche<br/><em>des lecteurs très différents</em></h2>
         <div class="audience-grid">
           <div class="audience-card">
-            <div class="audience-icon">📚</div>
+            <div class="audience-icon"><i data-lucide="library"></i></div>
             <h3>Jeunes lecteurs</h3>
             <p>Aventure, magie, amitié, identité — tous les éléments d'une grande histoire jeunesse, dans un univers original entièrement construit en français.</p>
             <p class="audience-why">Parfait pour les lecteurs qui cherchent des héros qui leur ressemblent.</p>
           </div>
           <div class="audience-card">
-            <div class="audience-icon">🎓</div>
+            <div class="audience-icon"><i data-lucide="graduation-cap"></i></div>
             <h3>Enseignants &amp; Bibliothécaires</h3>
             <p>Un roman idéal pour les classes de français L1 et L2 : thèmes riches, personnages multiculturels, langue accessible, et des questions de discussion naturelles.</p>
             <p class="audience-why">Guide de lecture bilingue disponible pour les commandes en groupe.</p>
           </div>
           <div class="audience-card">
-            <div class="audience-icon">👨‍👩‍👧</div>
+            <div class="audience-icon"><i data-lucide="users"></i></div>
             <h3>Familles Francophones</h3>
             <p>Pour les parents qui souhaitent offrir à leurs enfants des lectures en français qui ne soient pas des traductions — un roman original, ancré dans des cultures contemporaines.</p>
             <p class="audience-why">Idéal pour les familles en situation de transmission linguistique.</p>
           </div>
           <div class="audience-card">
-            <div class="audience-icon">🌙</div>
+            <div class="audience-icon"><i data-lucide="moon"></i></div>
             <h3>Lecteurs adultes de littérature jeunesse</h3>
             <p>Un roman qui fonctionne à plusieurs niveaux de lecture — les adultes y trouveront des thèmes philosophiques sur l'appartenance, la mémoire, et le sens du devoir.</p>
             <p class="audience-why">Dans la tradition des grands romans jeunesse qui parlent à tous les âges.</p>
           </div>
           <div class="audience-card">
-            <div class="audience-icon">🏫</div>
+            <div class="audience-icon"><i data-lucide="school-2"></i></div>
             <h3>Clubs de lecture scolaires</h3>
             <p>La structure narrative chorale — sept voix, sept journaux — offre une richesse de perspectives idéale pour les discussions en groupe et les projets créatifs.</p>
             <p class="audience-why">Commandez 5+ exemplaires et bénéficiez d'une rencontre avec l'auteur.</p>
           </div>
           <div class="audience-card">
-            <div class="audience-icon">✨</div>
+            <div class="audience-icon"><i data-lucide="sparkles"></i></div>
             <h3>Lecteurs de fantastique</h3>
             <p>Un système magique rigoureux et original, une ville secrète aux lois physiques uniques, et une menace organisée (le Consortium) qui donne à l'histoire une tension narrative soutenue.</p>
             <p class="audience-why">Pour les lecteurs francophones de fantastique qui cherchent quelque chose de nouveau en français. </p>
@@ -784,7 +800,7 @@
 
             <div style="display: flex; flex-direction: column; gap: 10px;">
               <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;">
-                ✍️ Chaque exemplaire dédicacé ·
+                <i data-lucide="pen-line"></i> Chaque exemplaire dédicacé ·
 
                 <a href="#bulk" style="color:var(--gold);">
                   5+ exemplaires = rencontre avec l'auteur
@@ -798,19 +814,19 @@
             <h3>Pourquoi commander directement?</h3>
             <p>Commander via fedethics.ca vous garantit un exemplaire dédicacé par l'auteur, le meilleur prix, et l'accès aux offres exclusives réservées aux commandes groupées.</p>
             <div class="info-block">
-              <h4>✍️ Exemplaire dédicacé — Inclus gratuitement</h4>
+              <h4><i data-lucide="pen-line"></i> Exemplaire dédicacé — Inclus gratuitement</h4>
               <p>Chaque exemplaire imprimé commandé directement sur cette page est signé personnellement par Celio Oliveira avant l'envoi. Sans frais supplémentaires — automatiquement inclus.</p>
             </div>
             <div class="info-block">
-              <h4>💬 5+ exemplaires — Rencontre de 15 minutes avec l'auteur</h4>
+              <h4><i data-lucide="message-circle"></i> 5+ exemplaires — Rencontre de 15 minutes avec l'auteur</h4>
               <p>Commandez 5 exemplaires ou plus et recevez une rencontre virtuelle de 15 minutes avec Celio pour discuter du livre. En français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
             </div>
             <div class="info-block">
-              <h4>🖊️ 5+ exemplaires — Dédicace personnalisée</h4>
+              <h4><i data-lucide="pen"></i> 5+ exemplaires — Dédicace personnalisée</h4>
               <p>Celio écrira une dédicace unique dans chaque exemplaire — avec le prénom de chaque lecteur si vous le souhaitez. Parfait pour votre classe ou votre événement littéraire.</p>
             </div>
             <div class="info-block">
-              <h4>🏫 Commandes institutionnelles</h4>
+              <h4><i data-lucide="school-2"></i> Commandes institutionnelles</h4>
               <p>Les commandes pour les écoles, bibliothèques ou associations peuvent être facturées directement. Écrivez à <a href="mailto:hello-bonjour@fedethics.ca" style="color:var(--edt-purple);">hello-bonjour@fedethics.ca</a> pour organiser les modalités.</p>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
@@ -832,21 +848,21 @@
         <div class="edt-offers-grid">
           <div class="edt-offer-card">
             <span class="edt-offer-trigger">Tout achat direct</span>
-            <div class="edt-offer-icon">✍️</div>
+            <div class="edt-offer-icon"><i data-lucide="pen-line"></i></div>
             <h3>Exemplaire dédicacé</h3>
             <p>Chaque exemplaire imprimé commandé directement est signé par Celio Oliveira — sans frais supplémentaires, automatiquement pour chaque commande.</p>
             <!-- <a href="#payments" class="btn btn-purple btn-full" onclick="track('offer_edt_auto')">Commander maintenant</a> -->
           </div>
           <div class="edt-offer-card">
             <span class="edt-offer-trigger">5 exemplaires ou plus</span>
-            <div class="edt-offer-icon">💬</div>
+            <div class="edt-offer-icon"><i data-lucide="message-circle"></i></div>
             <h3>Rencontre de 15 minutes avec l'auteur</h3>
             <p>Une rencontre virtuelle de 15 minutes avec Celio — personnages, thèmes, univers, processus créatif. En français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
             <!-- <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_call')">Demander la rencontre</a> -->
           </div>
           <div class="edt-offer-card">
             <span class="edt-offer-trigger">5 exemplaires ou plus</span>
-            <div class="edt-offer-icon">🖊️</div>
+            <div class="edt-offer-icon"><i data-lucide="pen"></i></div>
             <h3>Dédicace personnalisée</h3>
             <p>Celio écrit une dédicace unique dans chaque exemplaire — avec le prénom de chaque lecteur si vous le souhaitez. Un souvenir mémorable pour votre classe ou événement.</p>
             <!-- <a href="#claim" class="btn btn-purple btn-full" onclick="track('offer_edt_dedic')">Demander une dédicace</a> -->
@@ -968,5 +984,6 @@
     <!-- FOOTER -->
     <footer-section></footer-section>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
   </body>
 </html>

@@ -160,6 +160,14 @@
       @media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
       @media(max-width:480px){.form-grid-2{grid-template-columns:1fr;}}
     </style>
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+    <!-- Lucide Icons -->
+    <style>
+      [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
+      .enquiry-icon-wrap svg { width:22px; height:22px; }
+      .contact-email-icon svg { width:22px; height:22px; }
+    </style>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -222,22 +230,22 @@
         <h2 style="font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);color:var(--ink);font-weight:600;margin-bottom:14px;letter-spacing:-.01em;">Four ways to work with FedEthics</h2>
         <div class="enquiry-grid">
           <div class="enquiry-card">
-            <div class="enquiry-icon-wrap">🎙️</div>
+            <div class="enquiry-icon-wrap"><i data-lucide="mic"></i></div>
             <h3>Speaking Engagements</h3>
             <p>Book us for keynotes, workshops, panels, or author talks — in English, French, Portuguese, or Spanish. Available internationally.</p>
           </div>
           <div class="enquiry-card">
-            <div class="enquiry-icon-wrap">🏛️</div>
+            <div class="enquiry-icon-wrap"><i data-lucide="landmark"></i></div>
             <h3>Advisory Work</h3>
             <p>AI governance frameworks, data strategy, and executive education for public and private sector organizations navigating the AI transition.</p>
           </div>
           <div class="enquiry-card">
-            <div class="enquiry-icon-wrap">📚</div>
+            <div class="enquiry-icon-wrap"><i data-lucide="library"></i></div>
             <h3>Book Orders &amp; Offers</h3>
             <p>Bulk orders, institutional invoicing, autographed copies, and the free consultation offer for 5+ copy purchases.</p>
           </div>
           <div class="enquiry-card">
-            <div class="enquiry-icon-wrap">📰</div>
+            <div class="enquiry-icon-wrap"><i data-lucide="newspaper"></i></div>
             <h3>Media &amp; Press</h3>
             <p>Interview requests, expert commentary on AI governance, podcast appearances, and press enquiries for both books and advisory work.</p>
           </div>
@@ -326,14 +334,14 @@
             <div class="contact-info-card">
               <!-- <h3>Direct Contact</h3> -->
               <div class="contact-email-item">
-                <div class="contact-email-icon">💬</div>
+                <div class="contact-email-icon"><i data-lucide="message-circle"></i></div>
                 <div>
                   <div class="contact-email-label">Communications &amp; Orders</div>
                   <div class="contact-email-address"><a href="mailto:communications@fedethics.ca">communications@fedethics.ca</a></div>
                 </div>
               </div>
               <div class="contact-email-item">
-                <div class="contact-email-icon">👋</div>
+                <div class="contact-email-icon"><i data-lucide="mail-open"></i></div>
                 <div>
                   <div class="contact-email-label">General Enquiries</div>
                   <div class="contact-email-address"><a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a></div>
@@ -344,7 +352,7 @@
             <div class="contact-info-card">
               <h3>Connect Online</h3>
               <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-body);font-size:.875rem;font-weight:500;padding:10px 0;border-bottom:1px solid var(--rule);" onclick="track('contact_linkedin')">
-                <span style="font-size:1rem;">💼</span> LinkedIn — Celio Oliveira <span style="margin-left:auto;color:var(--text-muted);">↗</span>
+                <i data-lucide="linkedin" style="width:1rem;height:1rem;flex-shrink:0;"></i> LinkedIn — Celio Oliveira <span style="margin-left:auto;color:var(--text-muted);">↗</span>
               </a>
               <p style="font-size:.8rem;color:var(--text-muted);margin-top:14px;line-height:1.6;">ORCID · Lattes CV profiles available on the Story page.</p>
             </div>
@@ -424,5 +432,6 @@
 
     <footer-section></footer-section>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
   </body>
 </html>

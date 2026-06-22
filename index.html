@@ -436,6 +436,13 @@
       }
     </style>
     <!--#endregion Styles-->
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+    <!-- Lucide Icons -->
+    <style>
+      [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
+      .cap-icon-wrap svg { width:24px; height:24px; }
+    </style>
   </head>
   <body>
 
@@ -574,17 +581,17 @@
       <p class="section-lead">FedEthics Inc. was founded on a single premise: ethical AI governance is not a constraint — it is a competitive advantage when implemented properly and responsibly.</p>
       <div class="caps-grid">
         <div class="cap-card">
-          <div class="cap-icon-wrap">🏛️</div>
+          <div class="cap-icon-wrap"><i data-lucide="landmark"></i></div>
           <h3>AI Governance Frameworks</h3>
           <p>Structured methodologies for embedding ethical, accountable AI into democratic institutions. Including the IMPACT™ and DECIDE-PLUS™ frameworks from Constitutional Intelligence.</p>
         </div>
         <div class="cap-card">
-          <div class="cap-icon-wrap">📊</div>
+          <div class="cap-icon-wrap"><i data-lucide="bar-chart-2"></i></div>
           <h3>Data Strategy &amp; Leadership</h3>
           <p>Building decision-ready data capabilities that align with constitutional responsibilities and operational excellence. Practical, not theoretical.</p>
         </div>
         <div class="cap-card">
-          <div class="cap-icon-wrap">🎙️</div>
+          <div class="cap-icon-wrap"><i data-lucide="mic"></i></div>
           <h3>Speaking &amp; Executive Education</h3>
           <p>International keynotes, expert panels, and workshops for senior leaders navigating the AI transition in public and private sector contexts.</p>
         </div>
@@ -717,5 +724,6 @@
   <!-- FOOTER -->
   <footer-section></footer-section>
 
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
   </body>
 </html>

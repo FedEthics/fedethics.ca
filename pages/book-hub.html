@@ -228,7 +228,16 @@
       }
     </style>
     <!--#endregion Page-specific styles -->
-    
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+    <!-- Lucide Icons -->
+    <style>
+      [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
+      .hero-chip svg { width:14px; height:14px; }
+      .offers-how-icon svg { width:26px; height:26px; }
+      .claim-how-icon svg { width:26px; height:26px; }
+      .lang-flags .fi { border-radius:2px; width:1.4em; height:1.05em; }
+    </style>
   </head>
 
   <body>
@@ -279,7 +288,7 @@
     </nav>
 
     <div class="autograph-banner">
-      <p>✍️ <strong>Every book ordered directly from this page is personally autographed</strong> — at no extra charge. <a href="#bulk">Buy 5+ copies</a> to unlock a free consultation or speaking engagement.</p>
+      <p><i data-lucide="pen-line"></i> <strong>Every book ordered directly from this page is personally autographed</strong> — at no extra charge. <a href="#bulk">Buy 5+ copies</a> to unlock a free consultation or speaking engagement.</p>
     </div>
 
     <header class="page-hero">
@@ -288,10 +297,10 @@
         <h1>Two books. One author.<br/>Every order autographed.</h1>
         <p>Two very different books — one for the boardroom, one for the imagination — both unmistakably FedEthics. Order directly and receive a copy signed personally.</p>
         <div class="page-hero-chips">
-          <span class="hero-chip">✍️ Every copy autographed</span>
-          <span class="hero-chip">🌍 International payments available</span>
-          <span class="hero-chip">📚 Exclusive print format</span>
-          <span class="hero-chip">🎙️ Buy 5+ → free consultation</span>
+          <span class="hero-chip"><i data-lucide="pen-line"></i> Every copy autographed</span>
+          <span class="hero-chip"><i data-lucide="globe"></i> International payments available</span>
+          <span class="hero-chip"><i data-lucide="library"></i> Exclusive print format</span>
+          <span class="hero-chip"><i data-lucide="mic"></i> Buy 5+ → free consultation</span>
         </div>
         <div class="btn-group">
           <a href="constitutional-intelligence.html" class="btn btn-ci btn-lg" onclick="track('hub_hero_ci')">Constitutional Intelligence →</a>
@@ -319,10 +328,10 @@
             <div class="bhc-body">
               <p class="bhc-desc">The framework every government executive needs to navigate AI in Westminster parliamentary systems. Three proprietary frameworks, real Canadian government case studies, and endorsements from Canada's most senior public service figures. Includes bonus content via QR code.</p>
               <div class="bhc-tags">
-                <span class="bhc-tag bhc-tag-ci">AI Governance</span>
-                <span class="bhc-tag bhc-tag-ci">Public Sector</span>
-                <span class="bhc-tag bhc-tag-ci">Westminster Systems</span>
-                <span class="bhc-tag bhc-tag-ci">Executive Leadership</span>
+                <span class="bhc-tag bhc-tag-ci"># AI Governance</span>
+                <span class="bhc-tag bhc-tag-ci"># Public Sector</span>
+                <span class="bhc-tag bhc-tag-ci"># Westminster Systems</span>
+                <span class="bhc-tag bhc-tag-ci"># Executive Leadership</span>
               </div>
               <div class="btn-group" style="margin-bottom:20px;">
                 <a href="constitutional-intelligence.html" class="btn btn-ci" onclick="track('hub_ci_page')">Full Book Page →</a>
@@ -341,11 +350,11 @@
             <div class="bhc-body">
               <p class="bhc-desc">Dans la ville secrète d'Étoile des Tournesols, sept jeunes gardiens aux dons extraordinaires découvrent que l'impossible devient possible quand les cœurs s'unissent. Un roman d'aventure, de diversité culturelle et d'appartenance — parfait pour les classes, clubs de lecture et familles francophones.</p>
               <div class="bhc-tags">
-                <span class="bhc-tag bhc-tag-edt">Jeunesse</span>
-                <span class="bhc-tag bhc-tag-edt">Français</span>
-                <span class="bhc-tag bhc-tag-edt">Fantastique</span>
-                <span class="bhc-tag bhc-tag-edt">Multiculturel</span>
-                <span class="bhc-tag bhc-tag-edt">Club de lecture</span>
+                <span class="bhc-tag bhc-tag-edt"># Jeunesse</span>
+                <span class="bhc-tag bhc-tag-edt"># Français</span>
+                <span class="bhc-tag bhc-tag-edt"># Fantastique</span>
+                <span class="bhc-tag bhc-tag-edt"># Multiculturel</span>
+                <span class="bhc-tag bhc-tag-edt"># Club de lecture</span>
               </div>
               <div class="btn-group" style="margin-bottom:20px;">
                 <a href="etoile-des-tournesols.html" class="btn btn-edt" onclick="track('hub_edt_page')">Page complète du livre →</a>
@@ -394,7 +403,7 @@
               <span class="cred-chip">15+ Years with Federal Leadership</span>
             </div>
             <div class="lang-row">
-              <span>🇨🇦 🇧🇷 🇪🇸 🇫🇷</span>
+              <span class="lang-flags"><span class="fi fi-ca"></span> <span class="fi fi-br"></span> <span class="fi fi-es"></span> <span class="fi fi-fr"></span></span>
               <span>Communicates in English, French, Portuguese &amp; Spanish</span>
             </div>
             <div class="btn-group">
@@ -415,7 +424,7 @@
         <p class="section-lead">Every copy ordered through this page is autographed. Buy five or more copies and unlock one of these exclusive offers — no extra cost, no complicated process.</p>
 
         <div class="offers-how">
-          <div class="offers-how-icon">💡</div>
+          <div class="offers-how-icon"><i data-lucide="lightbulb"></i></div>
           <p><strong>How it works:</strong> Purchase your copies using any payment button on this page → complete the claim form below → our team contacts you within 48 hours to confirm your offer and schedule your consultation or dedication.</p>
         </div>
 
@@ -431,19 +440,19 @@
               <p style="font-size:.84rem;color:var(--text-mid);margin-bottom:18px;line-height:1.65;">For executives, teams, and organizations ordering multiple copies.</p>
               <div class="offer-item">
                 <span class="offer-trigger">Any direct purchase</span>
-                <h4>✍️ Autographed Copy</h4>
+                <h4><i data-lucide="pen-line"></i> Autographed Copy</h4>
                 <p>Every copy ordered directly from this page is personally signed by Celio Oliveira. No form, no extra charge — it happens automatically for every print order.</p>
                 <a href="constitutional-intelligence.html#payments" class="pay-btn offer-btn-ci" onclick="track('offer_ci_autograph')">Order Now</a>
               </div>
               <div class="offer-item">
                 <span class="offer-trigger">Buy 5 or more copies</span>
-                <h4>🎯 Free 15-Minute Consultation</h4>
+                <h4><i data-lucide="target"></i> Free 15-Minute Consultation</h4>
                 <p>Order 5+ copies and receive 15 minutes of advisory time with Celio — available as a virtual call or a live speaking engagement at your institution at no cost.</p>
                 <!-- <a href="#claim" class="pay-btn offer-btn-ci" onclick="track('offer_ci_consult')">Claim This Offer</a> -->
               </div>
               <div class="offer-item">
                 <span class="offer-trigger">Buy 5 or more copies</span>
-                <h4>🖊️ Personalized Handwritten Dedication</h4>
+                <h4><i data-lucide="pen"></i> Personalized Handwritten Dedication</h4>
                 <p>Prefer a personal touch for each recipient? Celio writes a unique dedication in every book — perfect for team gifts, leadership awards, or recognition programs.</p>
                 <!-- <a href="#claim" class="pay-btn offer-btn-ci" onclick="track('offer_ci_dedication')">Request Dedication</a> -->
               </div>
@@ -460,19 +469,19 @@
               <p style="font-size:.84rem;color:var(--text-mid);margin-bottom:18px;line-height:1.65;">Pour les classes, clubs de lecture, bibliothèques et familles.</p>
               <div class="offer-item">
                 <span class="offer-trigger">Tout achat direct</span>
-                <h4>✍️ Exemplaire dédicacé</h4>
+                <h4><i data-lucide="pen-line"></i> Exemplaire dédicacé</h4>
                 <p>Chaque exemplaire commandé directement sur ce site est signé personnellement par Celio Oliveira — automatiquement, sans frais supplémentaires.</p>
                 <a href="etoile-des-tournesols.html#payments" class="pay-btn offer-btn-edt" onclick="track('offer_edt_autograph')">Commander</a>
               </div>
               <div class="offer-item">
                 <span class="offer-trigger">5 exemplaires ou plus</span>
-                <h4>💬 Rencontre de 15 minutes avec l'auteur</h4>
+                <h4><i data-lucide="message-circle"></i> Rencontre de 15 minutes avec l'auteur</h4>
                 <p>Commandez 5 exemplaires et recevez une rencontre virtuelle de 15 minutes avec Celio pour discuter du livre — en français ou en anglais. Idéal pour les classes et clubs de lecture.</p>
                 <!-- <a href="#claim" class="pay-btn offer-btn-edt" onclick="track('offer_edt_call')">Demander la rencontre</a> -->
               </div>
               <div class="offer-item">
                 <span class="offer-trigger">5 exemplaires ou plus</span>
-                <h4>🖊️ Dédicace personnalisée</h4>
+                <h4><i data-lucide="pen"></i> Dédicace personnalisée</h4>
                 <p>Chaque lecteur reçoit une dédicace unique écrite à la main par Celio — un souvenir personnel parfait pour votre classe ou votre événement littéraire.</p>
                 <!-- <a href="#claim" class="pay-btn offer-btn-edt" onclick="track('offer_edt_dedication')">Demander une dédicace</a> -->
               </div>
@@ -598,5 +607,6 @@
     <!-- FOOTER -->
     <footer-section></footer-section>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
   </body>
 </html>

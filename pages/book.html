@@ -270,6 +270,21 @@
         .book-nav { gap: 8px; }
       }
     </style>
+    <!-- Flag Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
+    <!-- Lucide Icons -->
+    <style>
+      [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
+      .cluster-icon svg { width:32px; height:32px; }
+      .welcome-icon svg { width:28px; height:28px; }
+      .dl-num svg { width:28px; height:28px; }
+      .chars-mini-chip { display:inline-flex; align-items:center; gap:5px; }
+      .chars-mini-chip .fi { border-radius:2px; }
+      .char-initial-badge { display:flex; flex-direction:column; align-items:center; gap:3px; margin-bottom:10px; }
+      .char-letter { font-family:var(--serif); font-size:1.8rem; font-weight:700; line-height:1; }
+      .char-symbol { width:16px; height:16px; opacity:.75; }
+      .dl-tag .fi { border-radius:2px; display:inline-block; vertical-align:middle; }
+    </style>
   </head>
   <body>
 
@@ -281,12 +296,12 @@
     <!-- ═══ HEADER ═══ -->
     <div class="page-header">
       <div class="container">
-        <div class="header-lock">🔒 Exclusive Reader Content · Contenu exclusif · QR Access Only</div>
+        <div class="header-lock"><i data-lucide="lock"></i> Exclusive Reader Content · Contenu exclusif · QR Access Only</div>
         <h1>FedEthics Reader Companion</h1>
         <p>Welcome — you've just unlocked exclusive bonus content from your FedEthics book. Scroll down to find your title, or use the links below to go directly to your content.</p>
         <div class="book-nav">
-          <a href="#ci"  class="book-nav-pill ci" >🏛️ Constitutional Intelligence</a>
-          <a href="#edt" class="book-nav-pill edt">🌻 Étoile de Tournesol</a>
+          <a href="#ci"  class="book-nav-pill ci" ><i data-lucide="landmark"></i> Constitutional Intelligence</a>
+          <a href="#edt" class="book-nav-pill edt"><i data-lucide="flower-2"></i> Étoile de Tournesol</a>
         </div>
       </div>
     </div>
@@ -295,7 +310,7 @@
     <div class="welcome">
       <div class="container">
         <div class="welcome-box">
-          <div class="welcome-icon">📦</div>
+          <div class="welcome-icon"><i data-lucide="package"></i></div>
           <div>
             <h2>Your exclusive downloads — both books in one place</h2>
             <p>This page is only accessible via the QR code printed in your book. It is not listed on any search engine and is not linked from the main website. Everything here is yours to download, print, share with your team or your class — free of charge, as a thank you for reading.</p>
@@ -310,7 +325,7 @@
       <div class="container">
 
         <div class="cluster-header ci-header">
-          <div class="cluster-icon">🏛️</div>
+          <div class="cluster-icon"><i data-lucide="landmark"></i></div>
           <div>
             <div class="cluster-imprint">FedEthics Advisory™ · FriesenPress · ISBN 978-1-0383-5671-0</div>
             <div class="cluster-title">Constitutional Intelligence</div>
@@ -415,7 +430,7 @@
       <div class="container">
 
         <div class="cluster-header edt-header">
-          <div class="cluster-icon">🌻</div>
+          <div class="cluster-icon"><i data-lucide="flower-2"></i></div>
           <div>
             <div class="cluster-imprint">FedEthics Creative™ · Auto-publié · Roman jeunesse français</div>
             <div class="cluster-title cluster-title-italic">Étoile de Tournesol</div>
@@ -433,19 +448,19 @@
           <div class="chars-preview-strip">
             <p>Les six gardiens avec fiches illustrées ↓</p>
             <div class="chars-mini-row">
-              <span class="chars-mini-chip">⚡ Lili · France</span>
-              <span class="chars-mini-chip">🎵 Rafa · Brésil</span>
-              <span class="chars-mini-chip">🌿 JM · Sénégal</span>
-              <span class="chars-mini-chip">🌬️ Moa · Québec</span>
-              <span class="chars-mini-chip">🌊 Tété · Polynésie</span>
-              <span class="chars-mini-chip">🔷 Nèj · Maroc</span>
-              <span class="chars-mini-chip" style="background:rgba(201,168,76,.2);border-color:rgba(201,168,76,.4);color:#5A3A00;">✨ Eva · 700+ ans</span>
+              <span class="chars-mini-chip"><i data-lucide="zap"></i> <span class="fi fi-fr"></span> L · Lili</span>
+              <span class="chars-mini-chip"><i data-lucide="music"></i> <span class="fi fi-br"></span> R · Rafa</span>
+              <span class="chars-mini-chip"><i data-lucide="leaf"></i> <span class="fi fi-sn"></span> JM</span>
+              <span class="chars-mini-chip"><i data-lucide="wind"></i> <span class="fi fi-ca"></span> M · Moa</span>
+              <span class="chars-mini-chip"><i data-lucide="waves"></i> <span class="fi fi-pf"></span> T · Tété</span>
+              <span class="chars-mini-chip"><i data-lucide="diamond"></i> <span class="fi fi-ma"></span> N · Nèj</span>
+              <span class="chars-mini-chip" style="background:rgba(201,168,76,.2);border-color:rgba(201,168,76,.4);color:#5A3A00;"><i data-lucide="sparkles"></i> E · Eva · 700+ ans</span>
             </div>
           </div>
 
           <!-- FAMILY TREE -->
           <div class="dl-row">
-            <div class="dl-num star">🌳</div>
+            <div class="dl-num star"><i data-lucide="tree-deciduous"></i></div>
             <div class="dl-info">
               <div class="dl-file-label edt-label">Guide de lecture · Vue d'ensemble · Commencer ici</div>
               <div class="dl-file-title">L'arbre des personnages — Familles, alliances et constellations relationnelles</div>
@@ -472,12 +487,12 @@
           <div class="dl-row">
             <div class="dl-num edt-num">1</div>
             <div class="dl-info">
-              <div class="dl-file-label edt-label">Fiche gardienne · ⚡ Sensibilité électromagnétique · 🦊 Pierrot</div>
+              <div class="dl-file-label edt-label">Fiche gardienne · <i data-lucide="zap"></i> Sensibilité électromagnétique · <i data-lucide="paw-print"></i> Pierrot</div>
               <div class="dl-file-title">Lili Peccard — « Lili » · 14 ans · Reims, France</div>
               <div class="dl-file-desc">Exploratrice curieuse et future leader du groupe. Perçoit les champs électromagnétiques comme des fils lumineux invisibles. Révèle son rituel secret, sa peur discrète, son lieu préféré, et ce qu'elle serait devenue si elle n'avait pas été gardienne. Avec son illustration exclusive du roman.</div>
               <div class="dl-tags">
-                <span class="dl-tag edt">⚡ Électromagnétisme</span>
-                <span class="dl-tag edt">🇫🇷 France</span>
+                <span class="dl-tag edt"><i data-lucide="zap"></i> Électromagnétisme</span>
+                <span class="dl-tag edt"><span class="fi fi-fr"></span> France</span>
                 <span class="dl-tag gold">Illustration incluse</span>
               </div>
             </div>
@@ -495,12 +510,12 @@
           <div class="dl-row">
             <div class="dl-num edt-num">2</div>
             <div class="dl-info">
-              <div class="dl-file-label edt-label">Fiche gardien · 🎵 Synesthésie musicale · 🐦 Ritmo</div>
+              <div class="dl-file-label edt-label">Fiche gardien · <i data-lucide="music"></i> Synesthésie musicale · <i data-lucide="paw-print"></i> Ritmo</div>
               <div class="dl-file-title">Rafael Oliveira Neto — « Rafa » · 14 ans · Bahia, Brésil</div>
               <div class="dl-file-desc">Traducteur des harmoniques et cœur sensible du groupe. Il entend les dimensions comme d'autres écoutent une chanson. Sa synesthésie transforme les sons en couleurs et formes. Sa note bonus : ses premières traductions des messages de l'éléphantomorphagus ressemblent plus à de la poésie qu'à un langage scientifique. Avec son illustration exclusive.</div>
               <div class="dl-tags">
-                <span class="dl-tag edt">🎵 Synesthésie</span>
-                <span class="dl-tag edt">🇧🇷 Brésil</span>
+                <span class="dl-tag edt"><i data-lucide="music"></i> Synesthésie</span>
+                <span class="dl-tag edt"><span class="fi fi-br"></span> Brésil</span>
                 <span class="dl-tag gold">Illustration incluse</span>
               </div>
             </div>
@@ -518,12 +533,12 @@
           <div class="dl-row">
             <div class="dl-num edt-num">3</div>
             <div class="dl-info">
-              <div class="dl-file-label edt-label">Fiche gardien · 🌿 Mémoire végétale · 🐗 Njeri</div>
+              <div class="dl-file-label edt-label">Fiche gardien · <i data-lucide="leaf"></i> Mémoire végétale · <i data-lucide="paw-print"></i> Njeri</div>
               <div class="dl-file-title">Jacob Mercier Parent — « JM » · 15 ans · Sénégal</div>
               <div class="dl-file-desc">Gardien de la mémoire végétale et passeur d'histoires. Là où d'autres voient un jardin, il reconnaît une bibliothèque vivante. Calme, observateur, conteur naturel, présence apaisante. Sa note bonus : il est celui qui remarque le mieux les silences dans un groupe — il sait quand parler, et surtout quand ne pas le faire. Avec son illustration exclusive.</div>
               <div class="dl-tags">
-                <span class="dl-tag edt">🌿 Communication végétale</span>
-                <span class="dl-tag edt">🇸🇳 Sénégal</span>
+                <span class="dl-tag edt"><i data-lucide="leaf"></i> Communication végétale</span>
+                <span class="dl-tag edt"><span class="fi fi-sn"></span> Sénégal</span>
                 <span class="dl-tag gold">Illustration incluse</span>
               </div>
             </div>
@@ -541,12 +556,12 @@
           <div class="dl-row">
             <div class="dl-num edt-num">4</div>
             <div class="dl-info">
-              <div class="dl-file-label edt-label">Fiche gardienne · 🌬️ Météorologie dimensionnelle · 🦎 Zéphyr</div>
+              <div class="dl-file-label edt-label">Fiche gardienne · <i data-lucide="wind"></i> Météorologie dimensionnelle · <i data-lucide="paw-print"></i> Zéphyr</div>
               <div class="dl-file-title">Mathéa Olivel — « Moa » · 13 ans · Québec, Canada</div>
               <div class="dl-file-desc">Esprit analytique du groupe, entre héritage familial et indépendance. Fille du maire, elle perçoit et prédit les modèles météorologiques avec une précision scientifique. Sa tension dramatique centrale : exister autrement que comme « la fille du maire ». Le vent lui parle ; elle apprend à répondre. Avec son illustration exclusive.</div>
               <div class="dl-tags">
-                <span class="dl-tag edt">🌬️ Météorologie</span>
-                <span class="dl-tag edt">🇨🇦 Québec</span>
+                <span class="dl-tag edt"><i data-lucide="wind"></i> Météorologie</span>
+                <span class="dl-tag edt"><span class="fi fi-ca"></span> Québec</span>
                 <span class="dl-tag gold">Illustration incluse</span>
               </div>
             </div>
@@ -564,12 +579,12 @@
           <div class="dl-row">
             <div class="dl-num edt-num">5</div>
             <div class="dl-info">
-              <div class="dl-file-label edt-label">Fiche gardien · 🌊 Lecture de l'eau · 🐟 Marama</div>
+              <div class="dl-file-label edt-label">Fiche gardien · <i data-lucide="waves"></i> Lecture de l'eau · <i data-lucide="paw-print"></i> Marama</div>
               <div class="dl-file-title">Tamatoa Tevaiano — « Tété » · 15 ans · Polynésie française</div>
               <div class="dl-file-desc">Médiateur discret entre l'eau, le ciel et le groupe. Il perçoit les flux d'énergie aquatiques et les mémoires que l'eau conserve — des courants, des intentions, des traces invisibles. Il observe longtemps avant de parler, mais lorsqu'il le fait, le groupe écoute. Sa note bonus : ses connaissances traditionnelles polynésiennes font souvent le pont entre ce que les adultes appellent « phénomène » et ce qu'il reconnaît comme un langage ancien. Avec son illustration exclusive.</div>
               <div class="dl-tags">
-                <span class="dl-tag edt">🌊 Lecture de l'eau</span>
-                <span class="dl-tag edt">🇵🇫 Polynésie française</span>
+                <span class="dl-tag edt"><i data-lucide="waves"></i> Lecture de l'eau</span>
+                <span class="dl-tag edt"><span class="fi fi-pf"></span> Polynésie française</span>
                 <span class="dl-tag edt">Sagesse océanique</span>
                 <span class="dl-tag gold">Illustration incluse</span>
               </div>
@@ -588,12 +603,12 @@
           <div class="dl-row">
             <div class="dl-num edt-num">6</div>
             <div class="dl-info">
-              <div class="dl-file-label edt-label">Fiche gardienne · 🔷 Géométries sacrées · 🦊 Zouk</div>
+              <div class="dl-file-label edt-label">Fiche gardienne · <i data-lucide="diamond"></i> Géométries sacrées · <i data-lucide="paw-print"></i> Zouk</div>
               <div class="dl-file-title">Najla Bertinel — « Nèj » · 16 ans · Casablanca, Maroc</div>
               <div class="dl-file-desc">Architecte des formes invisibles. Iel crée des motifs géométriques berbères qui influencent les énergies dimensionnelles. Identité de genre fluide, intelligence structurante — souvent la première à voir la structure d'un problème avant que le groupe ne le formule. Avec son illustration exclusive entourée de motifs lumineux violets.</div>
               <div class="dl-tags">
-                <span class="dl-tag edt">🔷 Géométries sacrées</span>
-                <span class="dl-tag edt">🇲🇦 Maroc</span>
+                <span class="dl-tag edt"><i data-lucide="diamond"></i> Géométries sacrées</span>
+                <span class="dl-tag edt"><span class="fi fi-ma"></span> Maroc</span>
                 <span class="dl-tag gold">Illustration incluse</span>
               </div>
             </div>
@@ -609,7 +624,7 @@
 
           <!-- EVA -->
           <div class="dl-row" style="background:linear-gradient(135deg,rgba(91,45,142,.04),rgba(201,168,76,.04));">
-            <div class="dl-num star">✨</div>
+            <div class="dl-num star"><i data-lucide="sparkles"></i></div>
             <div class="dl-info">
               <div class="dl-file-label" style="color:var(--edt);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;">
                 Fiche gardienne · Septième Gardienne · Fille des Fondateurs · 700+ ans
@@ -617,8 +632,8 @@
               <div class="dl-file-title">Eva d'Auparavant — « Eva » · Étoile des Tournesols</div>
               <div class="dl-file-desc">La fiche la plus mystérieuse du compagnon de lecture. Eva d'Auparavant — 17 ans en apparence, plus de 700 ans en réalité — est la Septième Gardienne, fille immortelle des Fondateurs Alexandre du Verbe et Marguerite de Tournesol. Son don : l'Imperceptibilité Multi-Dimensionnelle Sélective. Elle habite les espaces entre les regards. Ses phrases signature doublées : « Proprement propre », « Magnifiquement magnifique ». Avec son illustration saisissante.</div>
               <div class="dl-tags">
-                <span class="dl-tag edt">✨ Imperceptibilité</span>
-                <span class="dl-tag edt">🦌 Oriel</span>
+                <span class="dl-tag edt"><i data-lucide="sparkles"></i> Imperceptibilité</span>
+                <span class="dl-tag edt"><i data-lucide="paw-print"></i> Oriel</span>
                 <span class="dl-tag edt">Fille des Fondateurs</span>
                 <span class="dl-tag gold">700+ ans · Fiche spéciale</span>
                 <span class="dl-tag gold">Illustration incluse</span>
@@ -655,5 +670,6 @@
       </div>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
   </body>
 </html>
