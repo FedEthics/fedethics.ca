@@ -1,3 +1,28 @@
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('modal-open');
+  document.body.style.overflow = 'hidden';
+  window.dispatchEvent(new Event('resize'));
+  var closeBtn = el.querySelector('.modal-close');
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.classList.remove('modal-open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.modal-open').forEach(function(m) {
+      closeModal(m.id);
+    });
+  }
+});
+
 window.handleSubscription = async function(event) {
     event.preventDefault(); // Stop form from refreshing the page
     

@@ -369,7 +369,7 @@
         </ul>
         <div class="nav-right">
           <span class="nav-imprint">FedEthics Creative™</span>
-          <a href="#payments" class="btn btn-purple" onclick="track('nav_order_edt')">Commander</a>
+          <a href="#payments" class="btn btn-purple" onclick="track('nav_order_edt'); openModal('edtModal'); return false;">Commander</a>
           <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
@@ -401,7 +401,7 @@
             </div>
 
             <div class="btn-group">
-              <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_edt_order')">Commander un exemplaire</a>
+              <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_edt_order'); openModal('edtModal'); return false;">Commander un exemplaire</a>
               <a href="#story"    class="btn btn-outline-light" onclick="track('hero_edt_story')">Lire le synopsis</a>
             </div>
           </div>
@@ -985,5 +985,78 @@
     <footer-section></footer-section>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
+
+  <!-- PURCHASE MODAL — EDT -->
+  <div class="modal-overlay" id="edtModal"
+       style="--modal-accent: var(--edt-purple);"
+       onclick="if(event.target===this)closeModal('edtModal')">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="edtModalTitle">
+      <div class="modal-header">
+        <div>
+          <div class="modal-header-title" id="edtModalTitle">Commander Étoile des Tournesols</div>
+          <div class="modal-header-subtitle">Chaque exemplaire imprimé est dédicacé par l'auteur · FedEthics Creative™</div>
+        </div>
+        <button class="modal-close" onclick="closeModal('edtModal')" aria-label="Fermer">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="price-table">
+
+          <div class="price-row">
+            <span class="price-label">Numérique (ePub)</span>
+            <stripe-buy-button
+              buy-button-id="buy_btn_1TPwWs24vGwlmkJQ8pHSVLhn"
+              publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+            ></stripe-buy-button>
+          </div>
+
+          <div class="price-row">
+            <span class="price-label">Imprimé — Exemplaire dédicacé</span>
+            <div style="display:flex;gap:20px;margin-top:10px;flex-wrap:wrap;">
+
+              <div style="flex:1;min-width:140px;display:flex;flex-direction:column;gap:10px;">
+                <div style="font-weight:bold;text-align:center;font-size:.8rem;color:#333;">Couverture souple</div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <span style="font-size:.8em;color:#666;min-width:70px;">Canada</span>
+                  <stripe-buy-button buy-button-id="buy_btn_1TPwcn24vGwlmkJQColITpAB" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <span style="font-size:.8em;color:#666;min-width:70px;">États-Unis</span>
+                  <stripe-buy-button buy-button-id="buy_btn_1TR1xj24vGwlmkJQBR6JoEUd" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <span style="font-size:.8em;color:#666;min-width:70px;">UK / EU</span>
+                  <stripe-buy-button buy-button-id="buy_btn_1TR1zM24vGwlmkJQuMCwqsNg" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <span style="font-size:.8em;color:#666;min-width:70px;">Monde</span>
+                  <stripe-buy-button buy-button-id="buy_btn_1TR21Q24vGwlmkJQ768AO4nz" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+                </div>
+              </div>
+
+              <div style="flex:1;min-width:140px;display:flex;flex-direction:column;gap:10px;">
+                <div style="font-weight:bold;text-align:center;font-size:.8rem;color:#333;">Couverture rigide</div>
+                <stripe-buy-button buy-button-id="buy_btn_1TRNK024vGwlmkJQXNMJ4tVx" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+                <stripe-buy-button buy-button-id="buy_btn_1TRNM424vGwlmkJQLZ2mbya2" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+                <stripe-buy-button buy-button-id="buy_btn_1TRNPl24vGwlmkJQk892VGzD" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+                <stripe-buy-button buy-button-id="buy_btn_1TRNF124vGwlmkJQfgTN6Omj" publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"></stripe-buy-button>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="price-row">
+            <span class="price-label">En gros (5+ exemplaires)</span>
+            <span class="price-amount">Nous contacter</span>
+          </div>
+
+        </div>
+        <p class="pay-note" style="color:rgba(0,0,0,0.4);margin-top:16px;">
+          <i data-lucide="pen-line"></i> Chaque exemplaire dédicacé ·
+          <a href="#bulk" style="color:var(--gold);" onclick="closeModal('edtModal')">5+ exemplaires = rencontre avec l'auteur</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
   </body>
 </html>

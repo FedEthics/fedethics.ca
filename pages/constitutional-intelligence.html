@@ -290,7 +290,7 @@
       </ul>
       <div class="nav-right">
         <span class="nav-imprint">FedEthics Advisory™</span>
-        <a href="#payments" class="btn btn-ci" onclick="track('nav_order_ci')">Order Now</a>
+        <a href="#payments" class="btn btn-ci" onclick="track('nav_order_ci'); openModal('ciModal'); return false;">Order Now</a>
         <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -316,7 +316,7 @@
             <span class="hero-badge">Endorsed — Former Chief Statistician of Canada</span>
           </div>
           <div class="btn-group">
-            <a href="#payments"   class="btn btn-gold btn-lg" onclick="track('hero_ci_order')">Order Copy</a>
+            <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_ci_order'); openModal('ciModal'); return false;">Order Copy</a>
             <a href="#frameworks" class="btn btn-outline-light" onclick="track('hero_ci_frameworks')">See the Frameworks</a>
           </div>
         </div>
@@ -767,5 +767,71 @@
   <footer-section></footer-section>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
+
+  <!-- PURCHASE MODAL — CI -->
+  <div class="modal-overlay" id="ciModal"
+       style="--modal-accent: var(--ci-blue);"
+       onclick="if(event.target===this)closeModal('ciModal')">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="ciModalTitle">
+      <div class="modal-header">
+        <div>
+          <div class="modal-header-title" id="ciModalTitle">Order Constitutional Intelligence</div>
+          <div class="modal-header-subtitle">Every print order is autographed · FedEthics Advisory™</div>
+        </div>
+        <button class="modal-close" onclick="closeModal('ciModal')" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="price-table">
+
+          <div class="price-row">
+            <span class="price-label">Print — Autographed Copy</span>
+
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8em;color:#666;min-width:80px;">Canada</span>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1TOhoj24vGwlmkJQB22LylES"
+                publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+              ></stripe-buy-button>
+            </div>
+
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8em;color:#666;min-width:80px;">United States</span>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1TR1a224vGwlmkJQOIIwmI9Y"
+                publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+              ></stripe-buy-button>
+            </div>
+
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8em;color:#666;min-width:80px;">UK / EU</span>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1TR1hM24vGwlmkJQPJ4KenJK"
+                publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+              ></stripe-buy-button>
+            </div>
+
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span style="font-size:0.8em;color:#666;min-width:80px;">Worldwide</span>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1TR1kA24vGwlmkJQolwdvem8"
+                publishable-key="pk_live_51THZB524vGwlmkJQwfgq0qWlte58eqiihqYPULI0bnUzkg0KSgs4dNxTClfmiAnBvCL2Gww5t0C0b505WSK4JpUj00MPK7PDMs"
+              ></stripe-buy-button>
+            </div>
+          </div>
+
+          <div class="price-row">
+            <span class="price-label">Bulk (5+ copies)</span>
+            <span class="price-amount">Contact us</span>
+          </div>
+
+        </div>
+        <p class="pay-note" style="color:rgba(0,0,0,0.4);margin-top:16px;">
+          <i data-lucide="pen-line"></i> All print orders autographed ·
+          <a href="#bulk" style="color:var(--gold);" onclick="closeModal('ciModal')">Buy 5+ for free consultation</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
