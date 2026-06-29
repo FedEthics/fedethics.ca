@@ -652,7 +652,7 @@
           <div class="ci-offer-icon"><i data-lucide="pen-line"></i></div>
           <h3>Autographed Copy</h3>
           <p>Every book purchased directly is personally signed by Celio Oliveira. No extra charge — automatically included in every print order shipped from this page.</p>
-          <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto')">Order Now</a>
+          <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto'); openModal('ciModal'); return false;">Order Now</a>
         </div>
         <div class="ci-offer-card">
           <span class="ci-offer-trigger">Buy 5 or More Copies</span>
@@ -766,7 +766,7 @@
   <!-- FOOTER -->
   <footer-section></footer-section>
 
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
+  <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
 
   <!-- PURCHASE MODAL — CI -->
   <div class="modal-overlay" id="ciModal"
