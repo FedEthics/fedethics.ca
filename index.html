@@ -94,6 +94,7 @@
       .hero-visual {
         display: flex; justify-content: center; align-items: flex-end;
         gap: 24px; padding-bottom: 8px;
+        transform: translateY(-24px);
       }
       .book-3d {
         position: relative; text-decoration: none;
@@ -104,10 +105,14 @@
       .book-3d.book-ci { transform: rotate(2deg); z-index: 2; }
       .book-3d.book-edt { transform: rotate(-2.5deg) translateY(12px); z-index: 1; }
       .book-cover {
-        width: 152px; height: 228px;
+        width: 184px; height: 276px;
         border-radius: 2px 8px 8px 2px;
         position: relative; overflow: hidden;
         box-shadow: var(--shadow-book);
+      }
+      .book-cover img {
+        width: 100%; height: 100%;
+        object-fit: cover; display: block;
       }
       .book-cover::before {
         content: ''; position: absolute;
@@ -519,23 +524,13 @@
 
           <a href="pages/constitutional-intelligence.html" class="book-3d book-ci" onclick="track('hero_visual_ci')">
             <div class="book-cover bc-ci">
-              <div class="book-top-rule"></div>
-              <div class="book-inner">
-                <div class="book-badge">FedEthics Advisory™</div>
-                <div class="book-name">Constitutional Intelligence</div>
-                <div class="book-author">Celio Oliveira</div>
-              </div>
+              <img src="images/CI_cover.jpg" alt="Constitutional Intelligence by Celio Oliveira">
             </div>
           </a>
 
           <a href="pages/etoile-des-tournesols.html" class="book-3d book-edt" onclick="track('hero_visual_edt')">
             <div class="book-cover bc-edt">
-              <div class="book-top-rule"></div>
-              <div class="book-inner">
-                <div class="book-badge">FedEthics Creative™</div>
-                <div class="book-name">Étoile des Tournesols</div>
-                <div class="book-author">Celio Oliveira</div>
-              </div>
+              <img src="images/EDT_cover.jpg" alt="Étoile des Tournesols by Celio Oliveira">
             </div>
           </a>
 
