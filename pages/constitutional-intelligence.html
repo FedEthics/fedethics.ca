@@ -103,13 +103,12 @@
     .book-hero-panel { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-lg); padding: 28px; backdrop-filter: blur(4px); position: relative; z-index: 1; }
     .book-cover-display {
       width: 100%; aspect-ratio: 2/3; border-radius: 4px 12px 12px 4px;
-      background: linear-gradient(145deg, #152D4D, #0A1520);
-      border: 1px solid rgba(184,144,58,.35); box-shadow: 8px 12px 40px rgba(0,0,0,.5);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 24px 20px; position: relative; overflow: hidden; margin-bottom: 20px;
+      box-shadow: 8px 12px 40px rgba(0,0,0,.5);
+      position: relative; overflow: hidden; margin-bottom: 20px;
     }
-    .book-cover-display::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: rgba(0,0,0,.4); box-shadow: inset -5px 0 10px rgba(0,0,0,.3); }
-    .book-cover-display::after  { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--ci-red); opacity: .7; }
+    .book-cover-display::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: rgba(0,0,0,.4); box-shadow: inset -5px 0 10px rgba(0,0,0,.3); z-index: 2; }
+    .book-cover-display::after  { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--ci-red); opacity: .7; z-index: 2; }
+    .book-cover-display img { width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
     .book-cover-imprint { font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
     .book-cover-title   { font-family: var(--serif); font-size: 1.05rem; color: var(--white); line-height: 1.3; font-weight: 600; margin-bottom: 4px; }
     .book-cover-author  { font-size: .65rem; color: rgba(255,255,255,.5); }
@@ -310,23 +309,21 @@
             <p>When AI systems are implemented in Canada without constitutional grounding, they result in fragmented approaches causing an estimated <strong>CAD$2–3 million in annual waste</strong> per initiative. This book exists to solve that problem.</p>
           </div>
           <div class="book-hero-badges">
-            <span class="hero-badge gold-badge">Global Top 100 AI Innovators 2025</span>
+            <!-- <span class="hero-badge gold-badge">Global Top 100 AI Innovators 2025</span> -->
+            <span class="hero-badge">Global Top 100 AI Innovators 2025</span>
             <span class="hero-badge">Endorsed — Former Clerk of the Privy Council</span>
             <span class="hero-badge">Endorsed — Former CIO of Canada</span>
             <span class="hero-badge">Endorsed — Former Chief Statistician of Canada</span>
           </div>
           <div class="btn-group">
             <a href="#payments" class="btn btn-gold btn-lg" onclick="track('hero_ci_order'); openModal('ciModal'); return false;">Order Copy</a>
-            <a href="#frameworks" class="btn btn-outline-light" onclick="track('hero_ci_frameworks')">See the Frameworks</a>
+            <a href="#frameworks" class="btn btn-outline-light" onclick="track('hero_ci_frameworks')">Proprietary Frameworks</a>
           </div>
         </div>
 
         <div class="book-hero-panel">
           <div class="book-cover-display">
-            <div class="book-cover-imprint">FedEthics Advisory™</div>
-            <div class="book-cover-title">Constitutional Intelligence</div>
-            <div class="book-cover-author">Celio Oliveira · FriesenPress</div>
-            <div class="book-cover-isbn">ISBN 978-1-0383-5671-0</div>
+            <img src="../images/CI_cover.jpg" alt="Constitutional Intelligence by Celio Oliveira">
           </div>
           <!-- <div class="hero-price-row">
             <span class="hero-price-from">From</span>
