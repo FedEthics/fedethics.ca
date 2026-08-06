@@ -16,6 +16,7 @@
   --gold-bright:   #D4A84B;
   --gold-pale:     #F4EDD6;
   --gold-wash:     #FBF6EA;
+  --gold-deep:     #7A5C1A;  /* AA-contrast gold for small text on light backgrounds */
   --parchment:     #FDFBF7;
   --white:         #FFFFFF;
   --off-white:     #F8F7F4;
@@ -86,7 +87,7 @@ body {
   font-family: var(--sans);
   font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.20em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 14px;
+  color: var(--gold-deep); margin-bottom: 14px;
   display: flex; align-items: center; gap: 12px;
 }
 .eyebrow::before {
@@ -94,6 +95,9 @@ body {
   display: block; width: 28px; height: 1px;
   background: var(--gold);
 }
+/* Eyebrow on dark backgrounds — light text for AA contrast (shared default) */
+.eyebrow-light { color: rgba(255,255,255,0.72); }
+.eyebrow-light::before { background: var(--gold-bright); }
 .section-title {
   font-family: var(--serif);
   font-weight: 600;
@@ -148,7 +152,10 @@ body {
 
 /* ── PAYMENT & PRICING ── */
 .payments-section { background: var(--white); border-top: 1px solid var(--rule); }
-.payments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; align-items: start; }
+/* minmax(0,1fr) + min-width:0 prevent grid/flex blowout from wide embeds (Stripe buttons) */
+.payments-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 40px; margin-top: 48px; align-items: start; }
+.payments-grid > * { min-width: 0; }
+.payment-panel, .payment-panel div { min-width: 0; }
 .price-row {
   display: flex;
   flex-direction: column; /* Stacks items vertically */
@@ -156,6 +163,7 @@ body {
   gap: 10px;               /* Adds spacing between the text and button */
   padding: 15px 0;
   border-bottom: 1px solid var(--rule);
+  min-width: 0;
 }
 
 /* Stripe Buy Button Styles */
@@ -171,7 +179,7 @@ body {
 stripe-buy-button {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: min(320px, 100%);
   margin: 0 auto;
 }
 
@@ -256,7 +264,7 @@ nav {
 .newsletter-form input { flex: 1; min-width: 200px; padding: 11px 16px; border-radius: var(--r-sm); border: 1.5px solid rgba(255,255,255,.2); background: rgba(255,255,255,.07); color: var(--white); font-family: var(--sans); font-size: .9rem; outline: none; transition: border-color var(--t); }
 .newsletter-form input::placeholder { color: rgba(255,255,255,.38); }
 .newsletter-form input:focus { border-color: var(--gold); }
-.newsletter-note { font-size: .72rem; color: rgba(255,255,255,.35); margin-top: 12px; line-height: 1.5; }
+.newsletter-note { font-size: .72rem; color: rgba(255,255,255,.72); margin-top: 12px; line-height: 1.5; }
 
 /* ════════════════════════════════
    FOOTER
@@ -284,7 +292,7 @@ footer {
   font-family: var(--serif); font-size: 1rem; color: var(--gold); font-weight: 700;
 }
 .footer-brand-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); font-weight: 600; }
-.footer-tagline { font-size: 0.82rem; line-height: 1.72; color: rgba(255,255,255,0.4); max-width: 220px; margin-bottom: 20px; }
+.footer-tagline { font-size: 0.82rem; line-height: 1.72; color: rgba(255,255,255,0.6); max-width: 220px; margin-bottom: 20px; }
 .footer-imprints { display: flex; gap: 10px; flex-wrap: wrap; }
 .footer-imprint {
   font-size: 0.6rem; padding: 3px 10px; border-radius: 3px;
@@ -298,12 +306,12 @@ footer {
 }
 .footer-col h4 {
   font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(255,255,255,0.28);
+  text-transform: uppercase; color: rgba(255,255,255,0.62);
   margin-bottom: 18px;
 }
 .footer-col a {
   display: block; font-size: 0.84rem;
-  color: rgba(255,255,255,0.52); text-decoration: none;
+  color: rgba(255,255,255,0.66); text-decoration: none;
   margin-bottom: 11px; transition: color var(--t);
 }
 .footer-col a:hover { color: var(--gold-bright); }
@@ -311,14 +319,17 @@ footer {
   display: flex; justify-content: space-between;
   align-items: flex-start; gap: 24px; flex-wrap: wrap;
 }
-.footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
-.footer-disclaimer { font-size: 0.68rem; color: rgba(255,255,255,0.22); max-width: 480px; line-height: 1.65; }
+.footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+.footer-disclaimer { font-size: 0.68rem; color: rgba(255,255,255,0.58); max-width: 480px; line-height: 1.65; }
+.footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.72); text-decoration: none; transition: color var(--t); }
+.footer-legal a:hover { color: var(--gold-bright); }
 .footer-social { display: flex; gap: 12px; margin-top: 14px; }
 .footer-social a {
   width: 32px; height: 32px; border-radius: 6px;
   border: 1px solid rgba(255,255,255,0.12);
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.8rem; color: rgba(255,255,255,0.45);
+  font-size: 0.8rem; color: rgba(255,255,255,0.6);
   transition: all var(--t); text-decoration: none;
 }
 .footer-social a:hover { border-color: var(--gold); color: var(--gold-bright); }
@@ -333,6 +344,18 @@ footer {
   .section-pad { padding: 64px 0; }
   .nav-links { display: none; }
   .nav-ham { display: block; }
+}
+@media (max-width: 560px) {
+  /* Allow long button labels to wrap instead of forcing horizontal scroll */
+  .btn { white-space: normal; max-width: 100%; }
+  /* Keep the sticky nav within the viewport on small screens */
+  .nav-logo-tagline { display: none; }
+  .nav-imprint { display: none; }
+  .nav-right .btn { padding: 8px 14px; font-size: 0.78rem; }
+  /* Stack side-by-side Stripe purchase columns instead of overflowing */
+  .payment-panel div[style*="flex"] { flex-direction: column; }
+  /* Let nowrap divider labels wrap rather than overflow */
+  .cluster-divider span { white-space: normal; }
 }
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
@@ -440,4 +463,54 @@ footer {
     max-height: 90vh;
     border-radius: var(--r-lg) var(--r-lg) 0 0;
   }
+}
+
+/* ════════════════════════════════
+   COOKIE CONSENT BANNER
+════════════════════════════════ */
+.cookie-banner {
+  position: fixed;
+  left: 20px; right: 20px; bottom: 20px;
+  z-index: 600;
+  background: var(--ink);
+  color: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  animation: modalIn 0.28s ease;
+}
+.cookie-banner-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cookie-banner-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.82);
+  margin: 0;
+  flex: 1;
+  min-width: 240px;
+}
+.cookie-banner-text a { color: var(--gold-bright); text-decoration: underline; }
+.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-banner .btn-outline {
+  color: rgba(255,255,255,0.9);
+  border-color: rgba(255,255,255,0.35);
+  background: transparent;
+}
+.cookie-banner .btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  border-color: rgba(255,255,255,0.6);
+}
+@media (max-width: 560px) {
+  .cookie-banner { left: 12px; right: 12px; bottom: 12px; }
+  .cookie-banner-actions { width: 100%; }
+  .cookie-banner-actions .btn { flex: 1; }
 }

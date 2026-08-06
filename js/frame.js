@@ -71,7 +71,7 @@ class FooterSection extends HTMLElement {
             <div class="newsletter-inner">
             <div class="eyebrow eyebrow-light" style="justify-content:center;">Stay Connected</div>
             <h2>The FedEthics Dispatch</h2>
-            <p>AI governance insights, book updates, and speaking announcements — delivered to executives, policy leaders, and senior practitioners. No noise. Unsubscribe anytime.</p>
+            <p>AI governance insights, book updates, and speaking announcements, delivered to executives, policy leaders, and senior practitioners. No noise. Unsubscribe anytime.</p>
             
             <form class="newsletter-form" id="fedethics-form" onsubmit="handleSubscription(event)">
                 <!-- IDs -->
@@ -96,7 +96,7 @@ class FooterSection extends HTMLElement {
                     <div class="footer-brand-logo">
                         <img 
                         src="../images/FedEthics.png" 
-                        alt="FE" 
+                        alt="FedEthics Inc." 
                         class="footer-brand-mark" 
                         onerror="this.outerHTML='<div class=\\'footer-brand-mark\\'>FE</div>'"
                         >
@@ -139,6 +139,10 @@ class FooterSection extends HTMLElement {
 
             <div class="footer-bottom">
                 <span class="footer-copy">© 2026 FedEthics Inc. All rights reserved.</span>
+                <div class="footer-legal">
+                    <a href="../pages/privacy.html">Privacy Policy</a>
+                    <a href="../pages/terms.html">Terms of Use</a>
+                </div>
                 <p class="footer-disclaimer">FedEthics Inc. is an independent organization. All views expressed in FedEthics publications are those of the author in a personal capacity and do not represent the position of any employer, government, or institution.</p>
             </div>
         </div>
@@ -147,3 +151,50 @@ class FooterSection extends HTMLElement {
   }
 }
 customElements.define('footer-section', FooterSection);
+
+// ── COOKIE CONSENT BANNER ──
+// Pairs with consent.js (Google Consent Mode v2). Shows an interactive Accept/Decline
+// prompt on first visit; only "Accept" grants analytics_storage. Choice persists.
+function feCookieConsent() {
+  try {
+    if (localStorage.getItem('fe-cookie-consent')) return; // already chosen
+  } catch (e) { /* ignore */ }
+
+  var banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', 'Cookie consent');
+  banner.innerHTML =
+    '<div class="cookie-banner-inner">' +
+      '<p class="cookie-banner-text">We use cookies to measure site traffic and improve your experience. ' +
+      'Analytics cookies are only set if you accept. Read our ' +
+      '<a href="../pages/privacy.html">Privacy Policy</a>.</p>' +
+      '<div class="cookie-banner-actions">' +
+        '<button type="button" class="btn btn-outline btn-sm cookie-decline">Decline</button>' +
+        '<button type="button" class="btn btn-gold btn-sm cookie-accept">Accept</button>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(banner);
+
+  function setConsent(granted) {
+    try { localStorage.setItem('fe-cookie-consent', granted ? 'granted' : 'denied'); } catch (e) {}
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        ad_storage: granted ? 'granted' : 'denied',
+        ad_user_data: granted ? 'granted' : 'denied',
+        ad_personalization: granted ? 'granted' : 'denied',
+        analytics_storage: granted ? 'granted' : 'denied'
+      });
+    }
+    banner.remove();
+  }
+
+  banner.querySelector('.cookie-accept').addEventListener('click', function () { setConsent(true); });
+  banner.querySelector('.cookie-decline').addEventListener('click', function () { setConsent(false); });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', feCookieConsent);
+} else {
+  feCookieConsent();
+}
