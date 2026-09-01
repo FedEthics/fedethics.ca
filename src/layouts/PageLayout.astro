@@ -1,0 +1,32 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Newsletter from '../components/Newsletter.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  active?: string;
+  /** Imprint badge shown in the nav (book pages). */
+  imprint?: string;
+  /** Overrides the nav's default call to action. */
+  cta?: { href: string; label: string; class?: string; onclick?: string };
+  /** Set false on pages that already carry their own newsletter section. */
+  newsletter?: boolean;
+}
+
+const { active, imprint, cta, newsletter = true, ...meta } = Astro.props;
+---
+
+<BaseLayout {...meta}>
+  <slot name="head" slot="head" />
+  <Nav active={active} imprint={imprint} cta={cta} />
+  <slot />
+  {newsletter && <Newsletter />}
+  <Footer />
+  <CookieBanner />
+</BaseLayout>

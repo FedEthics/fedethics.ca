@@ -1,304 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="../images/FedEthics.png" />
-  <meta name="description" content="Constitutional Intelligence: A Decision Architecture for Trustworthy AI Governance by Celio Oliveira. The framework every government executive needs to navigate AI in Westminster parliamentary systems." />
-  <meta property="og:title" content="Constitutional Intelligence — Celio Oliveira" />
-  <title>Constitutional Intelligence — FedEthics Advisory™</title>
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Icon from '../components/Icon.astro';
+---
 
-  <!-- Consent defaults (must run before analytics) -->
-  <script src="../js/consent.js"></script>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i)
-      {w[l]=w[l]||[];
-        w[l].push({
-          'gtm.start': new Date().getTime(),
-          event:'gtm.js'
-        });
-        var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-          j.async=true;
-          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-5CTTT33C');
-  </script>
-  <!-- End Google Tag Manager -->
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2F5300W8X0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2F5300W8X0');
-    function track(l){ gtag('event','click',{event_category:'CTA',event_label:l}); }
-  </script>
-
-  <!-- Shared CSS -->
-  <link rel="stylesheet" href="../css/fedethics.css" />
-
-  <!-- Shared JS -->
-  <script src="../js/frame.js"></script>
-
+<PageLayout
+  title="Constitutional Intelligence — FedEthics Advisory™"
+  description="Constitutional Intelligence: A Decision Architecture for Trustworthy AI Governance by Celio Oliveira. The framework for leaders governing AI."
+  ogImage="/images/CI_cover.jpg"
+  imprint="FedEthics Advisory™"
+  cta={{"href": "#payments", "label": "Order Now", "class": "btn btn-ci", "onclick": "track('nav_order_ci'); openModal('ciModal'); return false;"}}
+  active="books"
+>
   <!-- Stripe Buy Button -->
-  <script async
-    src=https://js.stripe.com/v3/buy-button.js>
-  </script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-
-  <!-- Page-specific styles (CI book) -->
-  <style>
-    /* CI brand — Parliamentary */
-    :root {
-      --ci:         var(--ci-blue);
-      --ci-light:   #2A4F7F;
-      --ci-dark:    #0F1F38;
-      --ci-red:     #8B1A1A;
-      --ci-red-l:   #A52020;
-      --ci-pale:    #EEF3FA;
-      --ci-pale-red:#FDF0F0;
-    }
-
-    .badge-ci   { background: var(--ci-pale); color: var(--ci); border: 1px solid rgba(30,58,95,.2); }
-    .badge-red  { background: var(--ci-pale-red); color: var(--ci-red); border: 1px solid rgba(139,26,26,.2); }
-    .badge-gold { background: var(--gold-pale); color: #7A5C1A; border: 1px solid rgba(184,144,58,.28); }
-
-    .btn-ci           { background: var(--ci);       color: var(--white); border-color: var(--ci); }
-    .btn-ci:hover     { background: var(--ci-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }
-    .btn-red          { background: var(--ci-red);   color: var(--white); border-color: var(--ci-red); }
-    .btn-red:hover    { background: var(--ci-red-l); transform: translateY(-1px); }
-    .btn-outline-ci   { background: transparent;     color: var(--ci); border-color: var(--ci); }
-    .btn-outline-ci:hover { background: var(--ci); color: var(--white); }
-
-    .nav-imprint { font-size: .65rem; background: var(--ci-pale); color: var(--ci); border: 1px solid rgba(30,58,95,.2); border-radius: 4px; padding: 3px 8px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-
-    /* BOOK HERO */
-    .book-hero {
-      background: linear-gradient(160deg, var(--ci-dark) 0%, var(--ci) 55%, #1A3560 100%);
-      padding: 80px 0 72px; position: relative; overflow: hidden;
-    }
-    .book-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-    }
-    .book-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; z-index: 1; }
-    .book-hero-imprint { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--r-sm); padding: 6px 14px; }
-    .book-hero-imprint span { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
-    .book-hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.2rem,4.5vw,3.8rem); line-height: 1.08; color: var(--white); margin-bottom: 12px; letter-spacing: -.02em; }
-    .book-hero-subtitle { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,.72); margin-bottom: 24px; line-height: 1.5; }
-    .book-hero-problem { background: rgba(139,26,26,.2); border: 1px solid rgba(139,26,26,.4); border-radius: var(--r-sm); padding: 14px 18px; margin-bottom: 28px; }
-    .book-hero-problem p { font-size: .88rem; color: rgba(255,255,255,.85); line-height: 1.65; }
-    .book-hero-problem strong { color: #FFB3B3; font-weight: 700; }
-    .book-hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-    .hero-badge { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 5px 14px; font-size: .73rem; color: rgba(255,255,255,.8); font-weight: 500; }
-    .hero-badge.gold-badge { background: rgba(184,144,58,.15); border-color: rgba(184,144,58,.3); color: var(--gold); }
-
-    /* Book cover panel */
-    .book-hero-panel { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-lg); padding: 28px; backdrop-filter: blur(4px); position: relative; z-index: 1; }
-    .book-cover-display {
-      width: 100%; aspect-ratio: 2/3; border-radius: 4px 12px 12px 4px;
-      box-shadow: 8px 12px 40px rgba(0,0,0,.5);
-      position: relative; overflow: hidden; margin-bottom: 20px;
-    }
-    .book-cover-display::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: rgba(0,0,0,.4); box-shadow: inset -5px 0 10px rgba(0,0,0,.3); z-index: 2; }
-    .book-cover-display::after  { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--ci-red); opacity: .7; z-index: 2; }
-    .book-cover-display img { width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
-    .book-cover-imprint { font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .book-cover-title   { font-family: var(--serif); font-size: 1.05rem; color: var(--white); line-height: 1.3; font-weight: 600; margin-bottom: 4px; }
-    .book-cover-author  { font-size: .65rem; color: rgba(255,255,255,.5); }
-    .book-cover-isbn    { font-size: .58rem; color: rgba(255,255,255,.3); margin-top: 10px; letter-spacing: .08em; }
-    .hero-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
-    .hero-price-from{ font-size: .75rem; color: rgba(255,255,255,.55); }
-    .hero-price-amt { font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--white); }
-    .hero-price-cad { font-size: .75rem; color: rgba(255,255,255,.55); }
-
-    /* OVERVIEW STRIP */
-    .overview-strip { background: var(--white); border-bottom: 1px solid var(--rule); }
-    .overview-grid  { display: grid; grid-template-columns: repeat(4,1fr); }
-    .overview-item  { padding: 22px 24px; border-right: 1px solid var(--rule); }
-    .overview-item:last-child { border-right: none; }
-    .overview-icon  { font-size: 1.3rem; margin-bottom: 8px; }
-    .overview-label { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ci); margin-bottom: 4px; }
-    .overview-value { font-size: .85rem; color: var(--text-mid); font-weight: 500; line-height: 1.4; }
-
-    /* PROBLEM / SOLUTION */
-    .ps-section { background: var(--off-white); }
-    .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .ps-block { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow-xs); }
-    .ps-block-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-    .ps-problem-label  { color: var(--ci-red); }
-    .ps-solution-label { color: var(--ci); }
-    .ps-block h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--ink); margin-bottom: 14px; line-height: 1.3; }
-    .ps-block p  { font-size: .88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 12px; }
-    .ps-list { list-style: none; margin: 0; padding: 0; }
-    .ps-list li { font-size: .86rem; color: var(--text-mid); line-height: 1.6; padding: 8px 0; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-start; gap: 10px; }
-    .ps-list li:last-child { border-bottom: none; }
-    .ps-list li::before { content: '→'; color: var(--ci); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .stat-callout { background: linear-gradient(135deg, var(--ci-dark), var(--ci)); border-radius: var(--r-lg); padding: 32px; color: var(--white); margin-top: 24px; }
-    .stat-callout-number { font-family: var(--serif); font-size: 3rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 8px; }
-    .stat-callout-label  { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 12px; }
-    .stat-callout p      { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.7; }
-
-    /* FRAMEWORKS */
-    .fw-section { background: var(--parchment); }
-    .fw-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 48px; }
-    .fw-card {
-      background: var(--white); border: 1px solid var(--rule);
-      border-radius: var(--r-lg); padding: 32px; position: relative; overflow: hidden;
-      box-shadow: var(--shadow-xs); transition: all var(--t);
-    }
-    .fw-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: rgba(30,58,95,.25); }
-    .fw-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ci), var(--ci-light)); }
-    .fw-acronym  { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--ci); margin-bottom: 4px; line-height: 1; }
-    .fw-trademark{ font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
-    .fw-card h3  { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.35; }
-    .fw-card p   { font-size: .85rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 16px; }
-    .fw-steps    { list-style: none; padding: 0; margin: 0; }
-    .fw-steps li { font-size: .8rem; color: var(--text-mid); padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; }
-    .fw-steps li span { background: var(--ci-pale); color: var(--ci); font-weight: 700; font-size: .68rem; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
-
-    /* AUDIENCE */
-    .audience-section { background: var(--off-white); }
-    .audience-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 44px; }
-    .audience-card { background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 26px; box-shadow: var(--shadow-xs); transition: all var(--t); }
-    .audience-card:hover { box-shadow: var(--shadow-md); border-color: rgba(30,58,95,.2); }
-    .audience-icon { font-size: 1.6rem; margin-bottom: 14px; }
-    .audience-card h3 { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
-    .audience-card p  { font-size: .84rem; color: var(--text-mid); line-height: 1.65; }
-
-    /* ENDORSEMENTS */
-    .endorse-section { background: var(--ci-pale); padding: 96px 0; }
-    .endorse-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
-    .endorse-card { background: var(--white); border: 1px solid rgba(30,58,95,.12); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow-xs); }
-    .endorse-mark { font-family: var(--serif); font-size: 3.5rem; color: var(--ci); line-height: 1; margin-bottom: 8px; opacity: .55; }
-    .endorse-rule { width: 32px; height: 1px; background: var(--ci-red); margin-bottom: 18px; }
-    .endorse-quote { font-size: .9rem; color: var(--text-mid); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
-    .endorse-name  { font-family: var(--serif); font-size: .95rem; font-weight: 600; color: var(--ci); }
-    .endorse-role  { font-size: .76rem; color: var(--text-muted); margin-top: 3px; }
-
-    /* PAYMENT SECTION */
-    .payment-panel { background: var(--off-white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 28px; position: sticky; top: 84px; box-shadow: var(--shadow-sm); }
-    .payment-panel h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 20px; font-weight: 600; }
-    .price-table  { margin-bottom: 20px; }
-    .price-row:last-of-type { border-bottom: none; }
-    .price-label  { font-size: .84rem; color: var(--text-mid); }
-    .price-amount { font-size: .95rem; font-weight: 700; color: var(--ink); }
-    .pay-divider  { border: none; border-top: 1px solid var(--rule); margin: 16px 0; }
-    .payment-info h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 12px; font-weight: 600; }
-    .payment-info p  { font-size: .88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }
-    .info-block { background: var(--ci-pale); border: 1px solid rgba(30,58,95,.15); border-radius: var(--r-sm); padding: 18px; margin-bottom: 16px; }
-    .info-block h4 { font-family: var(--serif); font-size: .9rem; font-weight: 600; color: var(--ci); margin-bottom: 8px; }
-    .info-block p  { font-size: .82rem; color: var(--text-mid); line-height: 1.65; margin: 0; }
-
-    /* CI OFFERS */
-    .ci-offers-section { background: var(--ci-pale); padding: 96px 0; }
-    .ci-offers-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
-    .ci-offer-card { background: var(--white); border: 1px solid rgba(30,58,95,.15); border-radius: var(--r-lg); padding: 28px; transition: all var(--t); box-shadow: var(--shadow-xs); position: relative; overflow: hidden; }
-    .ci-offer-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ci), var(--ci-light)); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }
-    .ci-offer-card:hover { box-shadow: var(--shadow-md); border-color: var(--ci); transform: translateY(-2px); }
-    .ci-offer-card:hover::before { transform: scaleX(1); }
-    .ci-offer-trigger { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ci-red); margin-bottom: 10px; display: block; }
-    .ci-offer-icon { font-size: 1.6rem; margin-bottom: 12px; }
-    .ci-offer-card h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
-    .ci-offer-card p  { font-size: .84rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 18px; }
-
-    /* CLAIM FORM */
-    .claim-section { background: var(--parchment); padding: 96px 0; }
-    .claim-wrap  { max-width: 680px; margin: 0 auto; }
-    .claim-note  { background: var(--gold-wash); border: 1px solid rgba(184,144,58,.25); border-radius: var(--r-lg); padding: 16px 20px; margin-bottom: 28px; font-size: .86rem; color: var(--navy); line-height: 1.65; }
-    .claim-note strong { font-weight: 600; }
-
-    /* BONUS */
-    .bonus-section { background: var(--ci-dark); padding: 64px 0; }
-    .bonus-inner { text-align: center; max-width: 580px; margin: 0 auto; }
-    .bonus-inner h2 { font-family: var(--serif); color: var(--white); font-size: clamp(1.5rem,3vw,2.1rem); font-weight: 600; margin-bottom: 12px; }
-    .bonus-inner p  { color: rgba(255,255,255,.68); font-size: .9rem; line-height: 1.75; margin-bottom: 24px; }
-    .bonus-qr { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--r-lg); padding: 24px; display: inline-block; margin-bottom: 20px; }
-    .bonus-qr p { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 10px; }
-
-    @media (max-width:1024px) {
-      .book-hero-grid, .ps-grid, .payments-grid { grid-template-columns: 1fr; }
-      .book-hero-panel { max-width: 400px; }
-      .fw-grid { grid-template-columns: 1fr 1fr; }
-      .payment-panel { position: static; }
-    }
-    @media (max-width:768px) {
-      .section-pad { padding: 64px 0; }
-      .overview-grid { grid-template-columns: 1fr 1fr; }
-      .overview-item { border-right: none; padding: 16px 0; border-bottom: 1px solid var(--rule); }
-      .audience-grid, .endorse-grid, .ci-offers-grid, .fw-grid { grid-template-columns: 1fr; }
-      .form-grid-2 { grid-template-columns: 1fr; }
-    }
-  </style>
-  <!-- Flag Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
-  <!-- Lucide Icons -->
-  <style>
-    [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
-    .audience-icon svg { width:28px; height:28px; }
-    .overview-icon svg { width:22px; height:22px; }
-    .ci-offer-icon svg { width:24px; height:24px; }
-    .ps-block-label svg { width:18px; height:18px; vertical-align:text-bottom; margin-right:4px; }
-    .info-block h4 svg { width:18px; height:18px; vertical-align:text-bottom; margin-right:6px; }
-  </style>
-</head>
-
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CTTT33C"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
-  <!-- MOBILE NAV -->
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
-    <a href="../index.html">Home</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="capabilities.html">Core Capabilities</a>
-    <a href="book-hub.html">Books</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
+  <script slot="head" async is:inline src="https://js.stripe.com/v3/buy-button.js"></script>
+<!-- MOBILE NAV -->
   <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <img 
-          src="../images/FedEthics.png" 
-          alt="FedEthics Inc." 
-          class="nav-logo-mark" 
-          onerror="this.outerHTML='<div class=\'nav-logo-mark\'>FE</div>'"
-        >
-        <div class="nav-logo-wordmark">
-          <span class="nav-logo-name">FedEthics Inc.</span>
-          <span class="nav-logo-tagline">Ethical Leadership in the Age of AI</span>
-        </div>
-      </a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="capabilities.html">Core Capabilities</a></li>
-        <li><a href="book-hub.html">Books</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <span class="nav-imprint">FedEthics Advisory™</span>
-        <a href="#payments" class="btn btn-ci" onclick="track('nav_order_ci'); openModal('ciModal'); return false;">Order Now</a>
-        <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
+  
 
   <!-- BOOK HERO -->
   <header class="book-hero">
@@ -326,7 +43,7 @@
 
         <div class="book-hero-panel">
           <div class="book-cover-display">
-            <img src="../images/CI_cover.jpg" alt="Constitutional Intelligence by Celio Oliveira">
+            <img src="/images/CI_cover.jpg" alt="Constitutional Intelligence by Celio Oliveira">
           </div>
           <!-- <div class="hero-price-row">
             <span class="hero-price-from">From</span>
@@ -342,7 +59,7 @@
             > 
             </stripe-buy-button> -->
 
-            <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;"><i data-lucide="pen-line"></i> All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
+            <p class="pay-note" style="color:rgba(255,255,255,.4); margin: 0;"><Icon name="pen-line" /> All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
           </div>
 
         </div>
@@ -354,10 +71,10 @@
   <div class="overview-strip">
     <div class="container">
       <div class="overview-grid">
-        <div class="overview-item"><div class="overview-icon"><i data-lucide="landmark"></i></div><div class="overview-label">Focus</div><div class="overview-value">Westminster parliamentary AI governance</div></div>
-        <div class="overview-item"><div class="overview-icon"><i data-lucide="wrench"></i></div><div class="overview-label">Frameworks</div><div class="overview-value">DECIDE-PLUS™, FIVE-LAYER™, CHARTER RIGHTS DECISION TREE™ </div></div>
-        <div class="overview-item"><div class="overview-icon"><i data-lucide="clipboard-list"></i></div><div class="overview-label">Case Studies</div><div class="overview-value">Real government examples</div></div>
-        <div class="overview-item"><div class="overview-icon"><i data-lucide="package"></i></div><div class="overview-label">Formats</div><div class="overview-value">Hard Cover Executive Print · Bonus content (QR)</div></div>
+        <div class="overview-item"><div class="overview-icon"><Icon name="landmark" /></div><div class="overview-label">Focus</div><div class="overview-value">Westminster parliamentary AI governance</div></div>
+        <div class="overview-item"><div class="overview-icon"><Icon name="wrench" /></div><div class="overview-label">Frameworks</div><div class="overview-value">DECIDE-PLUS™, FIVE-LAYER™, CHARTER RIGHTS DECISION TREE™ </div></div>
+        <div class="overview-item"><div class="overview-icon"><Icon name="clipboard-list" /></div><div class="overview-label">Case Studies</div><div class="overview-value">Real government examples</div></div>
+        <div class="overview-item"><div class="overview-icon"><Icon name="package" /></div><div class="overview-label">Formats</div><div class="overview-value">Hard Cover Executive Print · Bonus content (QR)</div></div>
       </div>
     </div>
   </div>
@@ -370,7 +87,7 @@
       <div class="ps-grid">
         <div>
           <div class="ps-block">
-            <div class="ps-block-label ps-problem-label"><i data-lucide="alert-triangle"></i> The Problem</div>
+            <div class="ps-block-label ps-problem-label"><Icon name="alert-triangle" /> The Problem</div>
             <h3>Government executives face AI decisions without the right tools</h3>
             <p>Public sectors around the world is implementing AI systems faster than governance frameworks can keep pace. The result: accountability gaps, ministerial exposure, fragmented procurement, and wasted investment.</p>
             <ul class="ps-list">
@@ -462,12 +179,12 @@
       <h2 class="section-title">Written for decision-makers,<br/>not just <em>data scientists</em></h2>
       <p class="section-lead">Constitutional Intelligence is deliberately designed for the people who sign off on AI, not the people who build it.</p>
       <div class="audience-grid">
-        <div class="audience-card"><div class="audience-icon"><i data-lucide="landmark"></i></div><h3>Deputy Ministers &amp; Associate DMs</h3><p>Navigate AI accountability in the most politically exposed roles in the public service, with frameworks that speak the language of Treasury Board and Cabinet.</p></div>
-        <div class="audience-card"><div class="audience-icon"><i data-lucide="briefcase"></i></div><h3>Chief Information Officers</h3><p>Bridge the gap between technical AI capabilities and the constitutional realities of ministerial accountability. Speak confidently to DMs and Ministers.</p></div>
-        <div class="audience-card"><div class="audience-icon"><i data-lucide="bar-chart-2"></i></div><h3>Chief Data Officers</h3><p>Establish governance frameworks that survive political transitions, access to information requests, and Auditor General scrutiny.</p></div>
-        <div class="audience-card"><div class="audience-icon"><i data-lucide="scale"></i></div><h3>Legal &amp; Ethics Advisors</h3><p>Access the practical decision architecture needed to advise departments on AI risk, beyond the general principles found in most ethics frameworks.</p></div>
-        <div class="audience-card"><div class="audience-icon"><i data-lucide="graduation-cap"></i></div><h3>Policy Executives &amp; Directors</h3><p>Design AI-informed policy with a constitutional lens, ensuring public sector initiatives serve democratic accountability rather than undermine it.</p></div>
-        <div class="audience-card"><div class="audience-icon"><i data-lucide="globe"></i></div><h3>Westminster System Leaders Globally</h3><p>Australia, New Zealand, United Kingdom, and other Westminster democracies face the same structural challenges. These frameworks apply across all of them.</p></div>
+        <div class="audience-card"><div class="audience-icon"><Icon name="landmark" /></div><h3>Deputy Ministers &amp; Associate DMs</h3><p>Navigate AI accountability in the most politically exposed roles in the public service, with frameworks that speak the language of Treasury Board and Cabinet.</p></div>
+        <div class="audience-card"><div class="audience-icon"><Icon name="briefcase" /></div><h3>Chief Information Officers</h3><p>Bridge the gap between technical AI capabilities and the constitutional realities of ministerial accountability. Speak confidently to DMs and Ministers.</p></div>
+        <div class="audience-card"><div class="audience-icon"><Icon name="bar-chart-2" /></div><h3>Chief Data Officers</h3><p>Establish governance frameworks that survive political transitions, access to information requests, and Auditor General scrutiny.</p></div>
+        <div class="audience-card"><div class="audience-icon"><Icon name="scale" /></div><h3>Legal &amp; Ethics Advisors</h3><p>Access the practical decision architecture needed to advise departments on AI risk, beyond the general principles found in most ethics frameworks.</p></div>
+        <div class="audience-card"><div class="audience-icon"><Icon name="graduation-cap" /></div><h3>Policy Executives &amp; Directors</h3><p>Design AI-informed policy with a constitutional lens, ensuring public sector initiatives serve democratic accountability rather than undermine it.</p></div>
+        <div class="audience-card"><div class="audience-icon"><Icon name="globe" /></div><h3>Westminster System Leaders Globally</h3><p>Australia, New Zealand, United Kingdom, and other Westminster democracies face the same structural challenges. These frameworks apply across all of them.</p></div>
       </div>
     </div>
   </section>
@@ -620,17 +337,17 @@
           <hr class="pay-divider" />
 
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;"><i data-lucide="pen-line"></i> All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
+            <p class="pay-note" style="color:rgba(0, 0, 0, 0.4); margin: 0;"><Icon name="pen-line" /> All print orders autographed ·<a href="#bulk" style="color:var(--gold);">Buy 5+ for free consultation</a></p>
           </div>
 
         </div>
         <div class="payment-info">
           <h3>Why order direct?</h3>
           <p>Ordering through fedethics.ca gives you the best price, an autographed copy, and access to bulk purchase offers not available through any retail channel.</p>
-          <div class="info-block"><h4><i data-lucide="pen-line"></i> Autographed Copy — Included Free</h4><p>Every print order placed directly through this page is personally signed by Celio Oliveira before shipping. No extra charge, no form required.</p></div>
-          <div class="info-block"><h4><i data-lucide="target"></i> Buy 5+ Copies — Unlock Free Consultation</h4><p>Purchase five or more copies and receive a complimentary 15-minute advisory session with Celio, either a virtual call or a live speaking engagement at your institution.</p></div>
-          <div class="info-block"><h4><i data-lucide="pen"></i> Buy 5+ Copies — Personalized Dedication</h4><p>Prefer a handwritten dedication for each recipient? Order 5+ copies and Celio will write a unique, personalized message in every book.</p></div>
-          <div class="info-block"><h4><i data-lucide="package"></i> Institutional &amp; Government Bulk Orders</h4><p>Orders for departments, agencies, universities, or large organizations can be invoiced directly. Contact <a href="mailto:hello-bonjour@fedethics.ca" style="color:var(--ci);">hello-bonjour@fedethics.ca</a> to arrange terms.</p></div>
+          <div class="info-block"><h4><Icon name="pen-line" /> Autographed Copy — Included Free</h4><p>Every print order placed directly through this page is personally signed by Celio Oliveira before shipping. No extra charge, no form required.</p></div>
+          <div class="info-block"><h4><Icon name="target" /> Buy 5+ Copies — Unlock Free Consultation</h4><p>Purchase five or more copies and receive a complimentary 15-minute advisory session with Celio, either a virtual call or a live speaking engagement at your institution.</p></div>
+          <div class="info-block"><h4><Icon name="pen" /> Buy 5+ Copies — Personalized Dedication</h4><p>Prefer a handwritten dedication for each recipient? Order 5+ copies and Celio will write a unique, personalized message in every book.</p></div>
+          <div class="info-block"><h4><Icon name="package" /> Institutional &amp; Government Bulk Orders</h4><p>Orders for departments, agencies, universities, or large organizations can be invoiced directly. Contact <a href="mailto:hello-bonjour@fedethics.ca" style="color:var(--ci);">hello-bonjour@fedethics.ca</a> to arrange terms.</p></div>
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;">
             <span class="badge badge-ci">Direct Distribution by FedEthics</span>
             <span class="badge badge-gold">Bonus Content QR Code Included</span>
@@ -649,21 +366,21 @@
       <div class="ci-offers-grid">
         <div class="ci-offer-card">
           <span class="ci-offer-trigger">Any Direct Purchase</span>
-          <div class="ci-offer-icon"><i data-lucide="pen-line"></i></div>
+          <div class="ci-offer-icon"><Icon name="pen-line" /></div>
           <h3>Autographed Copy</h3>
           <p>Every book purchased directly is personally signed by Celio Oliveira. No extra charge, automatically included in every print order shipped from this page.</p>
           <a href="#payments" class="btn btn-ci btn-full" onclick="track('offer_ci_auto'); openModal('ciModal'); return false;">Order Now</a>
         </div>
         <div class="ci-offer-card">
           <span class="ci-offer-trigger">Buy 5 or More Copies</span>
-          <div class="ci-offer-icon"><i data-lucide="target"></i></div>
+          <div class="ci-offer-icon"><Icon name="target" /></div>
           <h3>Free 15-Min Consultation with Celio</h3>
           <p>One 15-minute session with Celio, available as a virtual call on AI governance topics, or as a live speaking engagement at your institution at no cost.</p>
           <!-- <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_consult')">Claim This Offer</a> -->
         </div>
         <div class="ci-offer-card">
           <span class="ci-offer-trigger">Buy 5 or More Copies</span>
-          <div class="ci-offer-icon"><i data-lucide="pen"></i></div>
+          <div class="ci-offer-icon"><Icon name="pen" /></div>
           <h3>Personalized Handwritten Dedication</h3>
           <p>A unique message written by hand in each book. Perfect for team gifts, leadership awards, board member recognition, or training program graduation gifts.</p>
           <!-- <a href="#claim" class="btn btn-ci btn-full" onclick="track('offer_ci_dedic')">Request Dedication</a> -->
@@ -725,7 +442,7 @@
         <p>The back cover of Constitutional Intelligence includes a QR code linking to exclusive supplementary content: additional frameworks, implementation templates, and case study deep-dives that extend the book's value beyond the printed pages.</p>
         <div class="bonus-qr">
           <div style="width:120px;height:120px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
-            <i data-lucide="smartphone" style="width:2rem;height:2rem;opacity:.4;stroke:currentColor;"></i>
+            <Icon name="smartphone" style="width:2rem;height:2rem;opacity:.4;stroke:currentColor;" />
           </div>
           <p>Scan QR code inside your book to access exclusive bonus content</p>
         </div>
@@ -745,7 +462,7 @@
       <h2 class="section-title" style="margin-bottom:12px;">Also by Celio Oliveira</h2>
       <p class="section-lead" style="margin:0 auto 36px;">A completely different book, same author, same commitment to rigour and humanity. Étoile des Tournesols is a French-language young adult literary novel with its own world, its own identity, and its own reader.</p>
       <div style="max-width:480px;margin:0 auto;">
-        <a href="etoile-des-tournesols.html" style="display:block;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--rule);box-shadow:var(--shadow-sm);text-decoration:none;transition:box-shadow .22s,transform .22s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 56px rgba(18,25,44,.14)'" onmouseout="this.style.transform='';this.style.boxShadow=''" onclick="track('ci_crossell_edt')">
+        <a href="/etoile-des-tournesols/" style="display:block;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--rule);box-shadow:var(--shadow-sm);text-decoration:none;transition:box-shadow .22s,transform .22s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 16px 56px rgba(18,25,44,.14)'" onmouseout="this.style.transform='';this.style.boxShadow=''" onclick="track('ci_crossell_edt')">
           <div style="background:linear-gradient(135deg,#2D1461,#3D1F6E);padding:28px 24px;">
             <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:8px;">FedEthics Creative™ · Auto-publié</div>
             <div style="font-family:var(--serif);font-size:1.5rem;color:#fff;font-weight:600;font-style:italic;">Étoile des Tournesols</div>
@@ -758,15 +475,15 @@
         </a>
       </div>
       <div style="margin-top:32px;">
-        <a href="book-hub.html" class="btn btn-outline-navy" onclick="track('ci_back_hub')">← Back to Books Hub</a>
+        <a href="/book-hub/" class="btn btn-outline-navy" onclick="track('ci_back_hub')">← Back to Books Hub</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer-section></footer-section>
+  
+  
 
-  <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
+  
 
   <!-- PURCHASE MODAL — CI -->
   <div class="modal-overlay" id="ciModal"
@@ -826,12 +543,55 @@
 
         </div>
         <p class="pay-note" style="color:rgba(0,0,0,0.4);margin-top:16px;">
-          <i data-lucide="pen-line"></i> All print orders autographed ·
+          <Icon name="pen-line" /> All print orders autographed ·
           <a href="#bulk" style="color:var(--gold);" onclick="closeModal('ciModal')">Buy 5+ for free consultation</a>
         </p>
       </div>
     </div>
   </div>
+<script>import "../scripts/modals.js";</script>
+</PageLayout>
 
-</body>
-</html>
+<style>
+/* CI brand — Parliamentary */
+    :root{
+      --ci:         var(--ci-blue);
+      --ci-light:   #2A4F7F;
+      --ci-red:     #8B1A1A;
+      --ci-red-l:   #A52020;
+      --ci-pale:    #EEF3FA;
+      --ci-pale-red:#FDF0F0;
+    }.badge-ci{ background: var(--ci-pale); color: var(--ci); border: 1px solid rgba(30,58,95,.2); }.badge-red{ background: var(--ci-pale-red); color: var(--ci-red); border: 1px solid rgba(139,26,26,.2); }.badge-gold{ background: var(--gold-pale); color: #7A5C1A; border: 1px solid rgba(184,144,58,.28); }.btn-ci{ background: var(--ci);       color: var(--white); border-color: var(--ci); }.btn-ci:hover{ background: var(--ci-light); transform: translateY(-1px); box-shadow: var(--shadow-md); }.btn-red{ background: var(--ci-red);   color: var(--white); border-color: var(--ci-red); }.btn-red:hover{ background: var(--ci-red-l); transform: translateY(-1px); }.btn-outline-ci{ background: transparent;     color: var(--ci); border-color: var(--ci); }.btn-outline-ci:hover{ background: var(--ci); color: var(--white); }.nav-imprint{ font-size: .65rem; background: var(--ci-pale); color: var(--ci); border: 1px solid rgba(30,58,95,.2); border-radius: 4px; padding: 3px 8px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }/* BOOK HERO */
+    .book-hero{
+      background: linear-gradient(160deg, var(--ci-dark) 0%, var(--ci) 55%, #1A3560 100%);
+      padding: 80px 0 72px; position: relative; overflow: hidden;
+    }.book-hero::before{
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }.book-hero-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; z-index: 1; }.book-hero-imprint{ display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--r-sm); padding: 6px 14px; }.book-hero-imprint span{ font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }.book-hero h1{ font-family: var(--serif); font-weight: 600; font-size: clamp(2.2rem,4.5vw,3.8rem); line-height: 1.08; color: var(--white); margin-bottom: 12px; letter-spacing: -.02em; }.book-hero-subtitle{ font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,.72); margin-bottom: 24px; line-height: 1.5; }.book-hero-problem{ background: rgba(139,26,26,.2); border: 1px solid rgba(139,26,26,.4); border-radius: var(--r-sm); padding: 14px 18px; margin-bottom: 28px; }.book-hero-problem p{ font-size: .88rem; color: rgba(255,255,255,.85); line-height: 1.65; }.book-hero-problem strong{ color: #FFB3B3; font-weight: 700; }.book-hero-badges{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }.hero-badge{ background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 5px 14px; font-size: .73rem; color: rgba(255,255,255,.8); font-weight: 500; }.hero-badge.gold-badge{ background: rgba(184,144,58,.15); border-color: rgba(184,144,58,.3); color: var(--gold); }/* Book cover panel */
+    .book-hero-panel{ background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r-lg); padding: 28px; backdrop-filter: blur(4px); position: relative; z-index: 1; }.book-cover-display{
+      width: 100%; aspect-ratio: 2/3; border-radius: 4px 12px 12px 4px;
+      box-shadow: 8px 12px 40px rgba(0,0,0,.5);
+      position: relative; overflow: hidden; margin-bottom: 20px;
+    }.book-cover-display::before{ content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: rgba(0,0,0,.4); box-shadow: inset -5px 0 10px rgba(0,0,0,.3); z-index: 2; }.book-cover-display::after{ content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--ci-red); opacity: .7; z-index: 2; }.book-cover-display img{ width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }.book-cover-imprint{ font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }.book-cover-title{ font-family: var(--serif); font-size: 1.05rem; color: var(--white); line-height: 1.3; font-weight: 600; margin-bottom: 4px; }.book-cover-author{ font-size: .65rem; color: rgba(255,255,255,.5); }.book-cover-isbn{ font-size: .58rem; color: rgba(255,255,255,.3); margin-top: 10px; letter-spacing: .08em; }.hero-price-row{ display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }.hero-price-from{ font-size: .75rem; color: rgba(255,255,255,.55); }.hero-price-amt{ font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--white); }.hero-price-cad{ font-size: .75rem; color: rgba(255,255,255,.55); }/* OVERVIEW STRIP */
+    .overview-strip{ background: var(--white); border-bottom: 1px solid var(--rule); }.overview-grid{ display: grid; grid-template-columns: repeat(4,1fr); }.overview-item{ padding: 22px 24px; border-right: 1px solid var(--rule); }.overview-item:last-child{ border-right: none; }.overview-icon{ font-size: 1.3rem; margin-bottom: 8px; }.overview-label{ font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ci); margin-bottom: 4px; }.overview-value{ font-size: .85rem; color: var(--text-mid); font-weight: 500; line-height: 1.4; }/* PROBLEM / SOLUTION */
+    .ps-section{ background: var(--off-white); }.ps-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }.ps-block{ background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow-xs); }.ps-block-label{ font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }.ps-problem-label{ color: var(--ci-red); }.ps-solution-label{ color: var(--ci); }.ps-block h3{ font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--ink); margin-bottom: 14px; line-height: 1.3; }.ps-block p{ font-size: .88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 12px; }.ps-list{ list-style: none; margin: 0; padding: 0; }.ps-list li{ font-size: .86rem; color: var(--text-mid); line-height: 1.6; padding: 8px 0; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-start; gap: 10px; }.ps-list li:last-child{ border-bottom: none; }.ps-list li::before{ content: '→'; color: var(--ci); font-weight: 700; flex-shrink: 0; margin-top: 1px; }.stat-callout{ background: linear-gradient(135deg, var(--ci-dark), var(--ci)); border-radius: var(--r-lg); padding: 32px; color: var(--white); margin-top: 24px; }.stat-callout-number{ font-family: var(--serif); font-size: 3rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 8px; }.stat-callout-label{ font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 12px; }.stat-callout p{ font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.7; }/* FRAMEWORKS */
+    .fw-section{ background: var(--parchment); }.fw-grid{ display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 48px; }.fw-card{
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: var(--r-lg); padding: 32px; position: relative; overflow: hidden;
+      box-shadow: var(--shadow-xs); transition: all var(--t);
+    }.fw-card:hover{ box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: rgba(30,58,95,.25); }.fw-card::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ci), var(--ci-light)); }.fw-acronym{ font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--ci); margin-bottom: 4px; line-height: 1; }.fw-trademark{ font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }.fw-card h3{ font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.35; }.fw-card p{ font-size: .85rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 16px; }.fw-steps{ list-style: none; padding: 0; margin: 0; }.fw-steps li{ font-size: .8rem; color: var(--text-mid); padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; }.fw-steps li span{ background: var(--ci-pale); color: var(--ci); font-weight: 700; font-size: .68rem; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }/* AUDIENCE */
+    .audience-section{ background: var(--off-white); }.audience-grid{ display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 44px; }.audience-card{ background: var(--white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 26px; box-shadow: var(--shadow-xs); transition: all var(--t); }.audience-card:hover{ box-shadow: var(--shadow-md); border-color: rgba(30,58,95,.2); }.audience-icon{ font-size: 1.6rem; margin-bottom: 14px; }.audience-card h3{ font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }.audience-card p{ font-size: .84rem; color: var(--text-mid); line-height: 1.65; }/* ENDORSEMENTS */
+    .endorse-section{ background: var(--ci-pale); padding: 96px 0; }.endorse-grid{ display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }.endorse-card{ background: var(--white); border: 1px solid rgba(30,58,95,.12); border-radius: var(--r-lg); padding: 32px; box-shadow: var(--shadow-xs); }.endorse-mark{ font-family: var(--serif); font-size: 3.5rem; color: var(--ci); line-height: 1; margin-bottom: 8px; opacity: .55; }.endorse-rule{ width: 32px; height: 1px; background: var(--ci-red); margin-bottom: 18px; }.endorse-quote{ font-size: .9rem; color: var(--text-mid); line-height: 1.8; font-style: italic; margin-bottom: 20px; }.endorse-name{ font-family: var(--serif); font-size: .95rem; font-weight: 600; color: var(--ci); }.endorse-role{ font-size: .76rem; color: var(--text-muted); margin-top: 3px; }/* PAYMENT SECTION */
+    .payment-panel{ background: var(--off-white); border: 1px solid var(--rule); border-radius: var(--r-lg); padding: 28px; position: sticky; top: 84px; box-shadow: var(--shadow-sm); }.payment-panel h3{ font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 20px; font-weight: 600; }.price-table{ margin-bottom: 20px; }.price-row:last-of-type{ border-bottom: none; }.price-label{ font-size: .84rem; color: var(--text-mid); }.price-amount{ font-size: .95rem; font-weight: 700; color: var(--ink); }.pay-divider{ border: none; border-top: 1px solid var(--rule); margin: 16px 0; }.payment-info h3{ font-family: var(--serif); font-size: 1.2rem; color: var(--ink); margin-bottom: 12px; font-weight: 600; }.payment-info p{ font-size: .88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }.info-block{ background: var(--ci-pale); border: 1px solid rgba(30,58,95,.15); border-radius: var(--r-sm); padding: 18px; margin-bottom: 16px; }.info-block h4{ font-family: var(--serif); font-size: .9rem; font-weight: 600; color: var(--ci); margin-bottom: 8px; }.info-block p{ font-size: .82rem; color: var(--text-mid); line-height: 1.65; margin: 0; }/* CI OFFERS */
+    .ci-offers-section{ background: var(--ci-pale); padding: 96px 0; }.ci-offers-grid{ display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }.ci-offer-card{ background: var(--white); border: 1px solid rgba(30,58,95,.15); border-radius: var(--r-lg); padding: 28px; transition: all var(--t); box-shadow: var(--shadow-xs); position: relative; overflow: hidden; }.ci-offer-card::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ci), var(--ci-light)); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }.ci-offer-card:hover{ box-shadow: var(--shadow-md); border-color: var(--ci); transform: translateY(-2px); }.ci-offer-card:hover::before{ transform: scaleX(1); }.ci-offer-trigger{ font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ci-red); margin-bottom: 10px; display: block; }.ci-offer-icon{ font-size: 1.6rem; margin-bottom: 12px; }.ci-offer-card h3{ font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }.ci-offer-card p{ font-size: .84rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 18px; }/* CLAIM FORM */
+    .claim-section{ background: var(--parchment); padding: 96px 0; }.claim-wrap{ max-width: 680px; margin: 0 auto; }.claim-note{ background: var(--gold-wash); border: 1px solid rgba(184,144,58,.25); border-radius: var(--r-lg); padding: 16px 20px; margin-bottom: 28px; font-size: .86rem; color: var(--navy); line-height: 1.65; }.claim-note strong{ font-weight: 600; }/* BONUS */
+    .bonus-section{ background: var(--ci-dark); padding: 64px 0; }.bonus-inner{ text-align: center; max-width: 580px; margin: 0 auto; }.bonus-inner h2{ font-family: var(--serif); color: var(--white); font-size: clamp(1.5rem,3vw,2.1rem); font-weight: 600; margin-bottom: 12px; }.bonus-inner p{ color: rgba(255,255,255,.68); font-size: .9rem; line-height: 1.75; margin-bottom: 24px; }.bonus-qr{ background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--r-lg); padding: 24px; display: inline-block; margin-bottom: 20px; }.bonus-qr p{ font-size: .78rem; color: rgba(255,255,255,.55); margin-top: 10px; }
+
+    @media (max-width:1024px) {.book-hero-grid,.ps-grid,.payments-grid{ grid-template-columns: 1fr; }.book-hero-panel{ max-width: 400px; }.fw-grid{ grid-template-columns: 1fr 1fr; }.payment-panel{ position: static; }
+    }
+    @media (max-width:768px) {.section-pad{ padding: 64px 0; }.overview-grid{ grid-template-columns: 1fr 1fr; }.overview-item{ border-right: none; padding: 16px 0; border-bottom: 1px solid var(--rule); }.audience-grid,.endorse-grid,.ci-offers-grid,.fw-grid{ grid-template-columns: 1fr; }.form-grid-2{ grid-template-columns: 1fr; }
+    }[data-lucide]{ display:inline-block; vertical-align:middle; stroke-width:1.6; }.audience-icon :global(svg){ width:28px; height:28px; }.overview-icon :global(svg){ width:22px; height:22px; }.ci-offer-icon :global(svg){ width:24px; height:24px; }.ps-block-label :global(svg){ width:18px; height:18px; vertical-align:text-bottom; margin-right:4px; }.info-block h4 :global(svg){ width:18px; height:18px; vertical-align:text-bottom; margin-right:6px; }
+  
+</style>

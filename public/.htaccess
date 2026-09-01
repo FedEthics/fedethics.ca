@@ -1,0 +1,90 @@
+# ============================================================
+#  fedethics.ca — Apache config for the static Astro build
+#  The site is built to /dist and uploaded to /public_html.
+# ============================================================
+
+RewriteEngine On
+RewriteBase /
+
+# ── Force HTTPS ──────────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── Newsletter API (Python/Passenger app) ────────────────────
+# /subscribe/ is a mounted application, not a page. It must be matched
+# before the redirects below so nothing rewrites it away.
+RewriteRule ^subscribe(/.*)?$ - [L]
+
+# ── Legacy URL redirects ─────────────────────────────────────
+# The site previously served /pages/<name>.html. Preserve link equity and
+# any printed/QR references by permanently redirecting to the clean URLs.
+# Only ...\.html paths are matched, so /pages/bonus/*.pdf is never touched.
+RewriteRule ^index\.html$                              /                              [R=301,L]
+RewriteRule ^pages/our-story\.html$                    /our-story/                    [R=301,L]
+RewriteRule ^pages/capabilities\.html$                 /capabilities/                 [R=301,L]
+RewriteRule ^pages/book-hub\.html$                     /book-hub/                     [R=301,L]
+RewriteRule ^pages/constitutional-intelligence\.html$  /constitutional-intelligence/  [R=301,L]
+RewriteRule ^pages/etoile-des-tournesols\.html$        /etoile-des-tournesols/        [R=301,L]
+RewriteRule ^pages/contact\.html$                      /contact/                      [R=301,L]
+RewriteRule ^pages/privacy\.html$                      /privacy/                      [R=301,L]
+RewriteRule ^pages/terms\.html$                        /terms/                        [R=301,L]
+RewriteRule ^pages/book\.html$                         /book/                         [R=301,L]
+# The marketing page moved to /newsletter/ so /subscribe/ stays free for the API.
+RewriteRule ^pages/subscribe\.html$                    /newsletter/                   [R=301,L]
+
+# ── QR code shortcut ─────────────────────────────────────────
+# Printed in Constitutional Intelligence: https://fedethics.ca/Book/
+RewriteRule ^Book/?$ /book/ [L,R=301]
+
+# ── Directory index ──────────────────────────────────────────
+DirectoryIndex index.html
+
+# ── Caching ──────────────────────────────────────────────────
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault A0
+	ExpiresByType image/gif        A691200
+	ExpiresByType image/png        A691200
+	ExpiresByType image/jpeg       A691200
+	ExpiresByType image/svg+xml    A691200
+	ExpiresByType text/css         A691200
+	ExpiresByType text/javascript  A691200
+	ExpiresByType application/javascript A691200
+	ExpiresByType font/otf         A691200
+	ExpiresByType font/ttf         A691200
+	ExpiresByType font/woff        A691200
+	ExpiresByType font/woff2       A691200
+</IfModule>
+
+# Astro emits content-hashed filenames under /_astro/, so they can be
+# cached indefinitely and busted by the hash alone.
+<IfModule mod_headers.c>
+	# Everything under /_astro/ has a content hash in its filename, so the URL
+	# changes whenever the bytes do. Only these may be cached immutably.
+	<IfModule mod_setenvif.c>
+		SetEnvIf Request_URI "^/_astro/" IMMUTABLE_ASSET=1
+	</IfModule>
+	Header set Cache-Control "public, max-age=31536000, immutable" env=IMMUTABLE_ASSET
+
+	# HTML must always revalidate so a deploy is picked up immediately.
+	<FilesMatch "\.html$">
+		Header set Cache-Control "public, max-age=0, must-revalidate"
+	</FilesMatch>
+</IfModule>
+
+# ── Hardening ────────────────────────────────────────────────
+<FilesMatch "^(web\.config|\.env|package(-lock)?\.json)$">
+	<IfModule mod_authz_core.c>
+		Require all denied
+	</IfModule>
+</FilesMatch>
+
+ErrorDocument 401 "Unauthorized"
+ErrorDocument 403 "Forbidden"
+
+# Pass through Authorization headers (needed by the Passenger app).
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+# Let ACME/well-known challenges through untouched.
+RewriteRule ^\.well-known/.+ - [L]

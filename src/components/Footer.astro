@@ -1,0 +1,74 @@
+---
+// Server-rendered port of the FooterSection web component that previously lived
+// in js/frame.js. Rendering it at build time makes the footer and every internal
+// link inside it visible to crawlers.
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img
+            src="/images/FedEthics.png"
+            alt="FedEthics Inc."
+            class="footer-brand-mark"
+            width="40"
+            height="40"
+          />
+          <span class="footer-brand-name">FedEthics Inc.</span>
+        </div>
+        <p class="footer-tagline">
+          AI governance advisory, ethical leadership frameworks, and two books by FedEthics.
+        </p>
+        <div class="footer-imprints">
+          <span class="footer-imprint fi-advisory">FedEthics Advisory™</span>
+          <span class="footer-imprint fi-creative">FedEthics Creative™</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://orcid.org/0009-0008-8896-9073" target="_blank" rel="noopener" aria-label="ORCID">◎</a>
+          <a href="mailto:hello-bonjour@fedethics.ca" aria-label="Email">✉</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="/">Home</a>
+        <a href="/our-story/">Our Story</a>
+        <a href="/capabilities/">Core Capabilities</a>
+        <a href="/book-hub/">Books</a>
+        <a href="/contact/">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Books</h4>
+        <a href="/constitutional-intelligence/">Constitutional Intelligence</a>
+        <a href="/etoile-des-tournesols/">Étoile des Tournesols</a>
+        <a href="/book-hub/#bulk">Bulk Orders</a>
+        <a href="/book-hub/#claim">Claim Your Offer</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="mailto:hello-bonjour@fedethics.ca">hello-bonjour@fedethics.ca</a>
+        <a href="https://linkedin.com/in/celioroliveira" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="/contact/">Speaking Enquiries</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© {year} FedEthics Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+      <p class="footer-disclaimer">
+        FedEthics Inc. is an independent organization. All views expressed in FedEthics
+        publications are those of the author in a personal capacity and do not represent the
+        position of any employer, government, or institution.
+      </p>
+    </div>
+  </div>
+</footer>

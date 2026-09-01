@@ -1,0 +1,52 @@
+---
+// Port of feCookieConsent() from js/frame.js. Pairs with the Consent Mode v2
+// defaults set in BaseLayout: nothing is granted until the visitor accepts.
+---
+
+<script>
+  function feCookieConsent() {
+    try {
+      if (localStorage.getItem('fe-cookie-consent')) return; // already chosen
+    } catch (e) { /* ignore */ }
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.innerHTML =
+      '<div class="cookie-banner-inner">' +
+        '<p class="cookie-banner-text">We use cookies to measure site traffic and improve your experience. ' +
+        'Analytics cookies are only set if you accept. Read our ' +
+        '<a href="/privacy/">Privacy Policy</a>.</p>' +
+        '<div class="cookie-banner-actions">' +
+          '<button type="button" class="btn btn-outline btn-sm cookie-decline">Decline</button>' +
+          '<button type="button" class="btn btn-gold btn-sm cookie-accept">Accept</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    function setConsent(granted) {
+      try {
+        localStorage.setItem('fe-cookie-consent', granted ? 'granted' : 'denied');
+      } catch (e) { /* ignore */ }
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          ad_storage: granted ? 'granted' : 'denied',
+          ad_user_data: granted ? 'granted' : 'denied',
+          ad_personalization: granted ? 'granted' : 'denied',
+          analytics_storage: granted ? 'granted' : 'denied'
+        });
+      }
+      banner.remove();
+    }
+
+    banner.querySelector('.cookie-accept').addEventListener('click', () => setConsent(true));
+    banner.querySelector('.cookie-decline').addEventListener('click', () => setConsent(false));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', feCookieConsent);
+  } else {
+    feCookieConsent();
+  }
+</script>

@@ -1,283 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="../images/FedEthics.png" />
-  <meta name="description" content="FedEthics core capabilities — AI governance advisory, data strategy leadership, executive education, and research by Celio Oliveira. Practical frameworks built from real senior public sector experience." />
-  <title>Core Capabilities — FedEthics Inc.</title>
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Icon from '../components/Icon.astro';
+---
 
-  <!-- Consent defaults (must run before analytics) -->
-  <script src="../js/consent.js"></script>
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event:'gtm.js'
-      });
-      var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-          j.async=true;
-          j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5CTTT33C');
-  </script>
-  <!-- End Google Tag Manager -->
-  
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function track(label) {
-      window.dataLayer.push({
-        event: 'cta_click',
-        event_category: 'CTA',
-        event_label: label
-      });
-    }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-
-  <!-- Shared CSS-->
-  <link rel="stylesheet" href="../css/fedethics.css" />
-
-  <!-- Shared JS -->
-  <script src="../js/frame.js"></script>
-
-  <style>
-    /* Page Hero — unique to capabilities page */
-    .page-hero {
-      background: var(--ink); padding: 88px 0 72px;
-      position: relative; overflow: hidden;
-    }
-    .page-hero::before {
-      content: ''; position: absolute; right: -60px; top: -60px;
-      width: 520px; height: 520px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(184,144,58,.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .page-hero::after {
-      content: ''; position: absolute; left: -80px; bottom: -80px;
-      width: 360px; height: 360px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(27,42,74,.6) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .page-hero-inner { position: relative; z-index: 1; }
-    .page-hero .eyebrow { color: var(--gold-bright); }
-    .page-hero .eyebrow::before { background: var(--gold-bright); }
-    .page-hero h1 {
-      font-family: var(--serif); font-size: clamp(2.4rem,4.8vw,3.8rem);
-      font-weight: 600; color: var(--white); margin-bottom: 20px;
-      line-height: 1.08; letter-spacing: -.02em; max-width: 760px;
-    }
-    .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,.6); max-width: 580px; line-height: 1.8; margin-bottom: 36px; }
-    .hero-stats { display: flex; gap: 48px; flex-wrap: wrap; padding-top: 36px; border-top: 1px solid rgba(255,255,255,.1); }
-    .hero-stat-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 4px; }
-    .hero-stat-label { font-size: .78rem; color: rgba(255,255,255,.5); font-weight: 500; line-height: 1.4; max-width: 120px; }
-
-    /* Trust Bar — unique to capabilities page */
-    .trust-bar { background: var(--white); border-bottom: 1px solid var(--rule); padding: 20px 0; }
-    .trust-bar-inner { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
-    .trust-item { padding: 10px 32px; border-right: 1px solid var(--rule); font-size: .78rem; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
-    .trust-item:first-child { padding-left: 0; }
-    .trust-item:last-child  { border-right: none; }
-    .trust-item strong { color: var(--ink); font-weight: 700; }
-
-    /* Capability Cards — unique to capabilities page */
-    .cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }
-    .cap-card {
-      background: var(--white); border: 1px solid var(--rule);
-      border-radius: var(--r-lg); padding: 40px 36px;
-      transition: all var(--t); display: flex; flex-direction: column;
-      position: relative; overflow: hidden;
-      box-shadow: var(--shadow-xs);
-    }
-    .cap-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--ink), var(--navy-soft));
-      transform: scaleX(0); transform-origin: left; transition: transform .38s ease;
-    }
-    .cap-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: rgba(18,25,44,.14); }
-    .cap-card:hover::before { transform: scaleX(1); }
-    .cap-icon-wrap {
-      width: 52px; height: 52px; background: var(--off-white); border: 1px solid var(--rule);
-      border-radius: var(--r-md); display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; margin-bottom: 22px; flex-shrink: 0;
-    }
-    .cap-card h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.2; }
-    .cap-card > p { font-size: .9rem; color: var(--text-mid); line-height: 1.78; margin-bottom: 24px; }
-    .cap-list { list-style: none; margin-top: auto; }
-    .cap-list li {
-      font-size: .84rem; color: var(--text-mid); padding: 9px 0;
-      border-bottom: 1px solid var(--rule);
-      display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
-    }
-    .cap-list li:last-child { border-bottom: none; }
-    .cap-list li::before { content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-    /* Credentials Band — unique */
-    .cred-band { background: var(--navy); padding: 64px 0; }
-    .cred-band-inner { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; }
-    .cred-item { text-align: center; }
-    .cred-item-num { font-family: var(--serif); font-size: 2.6rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 8px; }
-    .cred-item-label { font-size: .8rem; color: rgba(255,255,255,.55); line-height: 1.5; max-width: 140px; margin: 0 auto; }
-
-    /* Frameworks Showcase — unique */
-    .fw-section { background: var(--off-white); }
-    .fw-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
-    .fw-card {
-      background: var(--white); border: 1px solid var(--rule);
-      border-radius: var(--r-lg); padding: 32px;
-      position: relative; overflow: hidden; box-shadow: var(--shadow-xs);
-      transition: all var(--t);
-    }
-    .fw-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ci-blue), #2A4F7F); }
-    .fw-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-    .fw-acronym  { font-family: var(--serif); font-size: 1.9rem; font-weight: 700; color: var(--ci-blue); line-height: 1; margin-bottom: 4px; }
-    .fw-trademark{ font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: block; }
-    .fw-card h3  { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
-    .fw-card p   { font-size: .85rem; color: var(--text-mid); line-height: 1.72; margin-bottom: 14px; }
-    .fw-source   { font-size: .7rem; color: var(--gold); font-weight: 600; display: block; padding-top: 12px; border-top: 1px solid var(--rule); }
-
-    /* Experience Strip — unique */
-    .exp-strip { background: var(--gold-wash); border-top: 1px solid rgba(184,144,58,.2); border-bottom: 1px solid rgba(184,144,58,.2); padding: 56px 0; }
-    .exp-strip-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .exp-quote { font-family: var(--serif); font-size: 1.35rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 20px; }
-    .exp-quote::before { content: '"'; color: var(--gold); font-size: 3rem; line-height: 0; vertical-align: -.35em; margin-right: 4px; }
-    .exp-attr { font-size: .8rem; color: var(--text-muted); font-weight: 500; }
-    .exp-sectors { display: flex; flex-direction: column; gap: 14px; }
-    .exp-sector-row { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: var(--white); border: 1px solid rgba(184,144,58,.2); border-radius: var(--r-md); box-shadow: var(--shadow-xs); }
-    .exp-sector-icon { font-size: 1.3rem; flex-shrink: 0; }
-    .exp-sector-title { font-size: .875rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
-    .exp-sector-desc  { font-size: .78rem; color: var(--text-muted); line-height: 1.4; }
-
-    /* Speaking Section — unique */
-    .speaking-section { background: var(--ink); padding: 96px 0; position: relative; overflow: hidden; }
-    .speaking-section::before { content: ''; position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(184,144,58,.06) 0%, transparent 70%); pointer-events: none; }
-    .speaking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; z-index: 1; }
-    .speaking-grid h2 { font-family: var(--serif); color: var(--white); font-size: clamp(1.7rem,3vw,2.4rem); font-weight: 600; margin-bottom: 16px; line-height: 1.15; letter-spacing: -.01em; }
-    .speaking-grid > div > p { color: rgba(255,255,255,.6); font-size: .95rem; line-height: 1.8; margin-bottom: 36px; }
-    .talk-list { list-style: none; }
-    .talk-item { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: flex-start; gap: 16px; }
-    .talk-item:last-child { border-bottom: none; }
-    .talk-icon { color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
-    .talk-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 5px; line-height: 1.3; }
-    .talk-desc  { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.6; }
-    .speaking-cta-box { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.11); border-radius: var(--r-lg); padding: 36px; }
-    .speaking-cta-box h3 { font-family: var(--serif); color: var(--gold); font-size: 1.25rem; margin-bottom: 12px; font-weight: 600; }
-    .speaking-cta-box > p { font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 24px; }
-    .speaking-formats { list-style: none; margin-bottom: 28px; }
-    .speaking-formats li { font-size: .86rem; color: rgba(255,255,255,.68); padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.07); display: flex; gap: 12px; align-items: flex-start; }
-    .speaking-formats li:last-child { border-bottom: none; }
-    .speaking-formats li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .lang-flags { display: flex; gap: 6px; margin-top: 12px; }
-    .lang-flag  { font-size: .78rem; padding: 3px 10px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; color: rgba(255,255,255,.6); font-weight: 500; }
-
-    /* Book Tie-in — unique */
-    .book-tiein { background: var(--parchment); padding: 96px 0; border-top: 1px solid var(--rule); }
-    .book-tiein-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
-    .bti-card {
-      background: var(--white); border-radius: var(--r-lg); overflow: hidden;
-      border: 1px solid var(--rule); box-shadow: var(--shadow-sm);
-      text-decoration: none; display: block; transition: all var(--t);
-    }
-    .bti-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .bti-header { padding: 28px 26px; }
-    .bti-ci  { background: linear-gradient(145deg,var(--ci-blue),var(--ci-dark)); }
-    .bti-edt { background: linear-gradient(145deg,#2D1461,#3D1F6E); }
-    .bti-imprint { font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .bti-title { font-family: var(--serif); font-size: 1.35rem; color: var(--white); font-weight: 600; line-height: 1.2; }
-    .bti-body { padding: 22px 26px; }
-    .bti-body p { font-size: .86rem; color: var(--text-mid); line-height: 1.72; margin-bottom: 16px; }
-    .bti-link { font-size: .82rem; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 6px; }
-    .bti-link-edt { color: #3D1F6E; }
-
-    /* Eyebrow light variant (extends fedethics.css) */
-    .eyebrow-light { color: rgba(255,255,255,.68); }
-    .eyebrow-light::before { background: var(--gold); }
-
-    /* Responsive overrides for page-specific components */
-    @media (max-width:1024px) {
-      .cap-grid, .speaking-grid, .book-tiein-grid, .exp-strip-inner { grid-template-columns: 1fr; }
-      .cred-band-inner { grid-template-columns: 1fr 1fr; }
-      .trust-item { padding: 10px 20px; }
-    }
-    @media (max-width:768px) {
-      .fw-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 32px; }
-      .trust-bar-inner { gap: 0; }
-      .trust-item { border-right: none; border-bottom: 1px solid var(--rule); width: 50%; white-space: normal; }
-    }
-    @media (max-width:480px) {
-      .cred-band-inner { grid-template-columns: 1fr 1fr; }
-      .trust-item { width: 100%; }
-    }
-  </style>
-  <!-- Flag Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css" />
-  <!-- Lucide Icons -->
-  <style>
-    [data-lucide] { display:inline-block; vertical-align:middle; stroke-width:1.6; }
-    .cap-icon-wrap svg { width:24px; height:24px; }
-    .exp-sector-icon svg { width:26px; height:26px; }
-    .talk-icon svg { width:20px; height:20px; }
-    .lang-flag { display:inline-flex; align-items:center; gap:6px; }
-    .lang-flag .fi { border-radius:2px; }
-  </style>
-</head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
+<PageLayout
+  title="Core Capabilities — FedEthics Inc."
+  description="FedEthics core capabilities — AI governance advisory, data strategy leadership, executive education, and research-backed publications."
+  active="capabilities"
+>
+  <!-- Country flags used by the book/language sections (pinned release) -->
+  <link
+    slot="head"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
+  />
+<noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CTTT33C"
       height="0" width="0" style="display:none;visibility:hidden">
     </iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  
 
   <!-- MOBILE NAV (uses classes from fedethics.css) -->
-  <div class="mobile-nav" id="mobileNav">
-    <button class="mobile-nav-close" onclick="document.getElementById('mobileNav').classList.remove('open')">✕</button>
-    <a href="../index.html">Home</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="capabilities.html">Core Capabilities</a>
-    <a href="book-hub.html">Books</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
   <!-- NAV (uses classes from fedethics.css) -->
-  <nav>
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <img 
-          src="../images/FedEthics.png" 
-          alt="FedEthics Inc." 
-          class="nav-logo-mark" 
-          onerror="this.outerHTML='<div class=\'nav-logo-mark\'>FE</div>'"
-        >
-        <div class="nav-logo-wordmark">
-          <span class="nav-logo-name">FedEthics Inc.</span>
-          <span class="nav-logo-tagline">Ethical Leadership in the Age of AI</span>
-        </div>
-      </a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="capabilities.html" class="active">Core Capabilities</a></li>
-        <li><a href="book-hub.html">Books</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <a href="book-hub.html" class="btn btn-gold" onclick="track('nav_books')">Order a Book</a>
-        <button class="nav-ham" onclick="document.getElementById('mobileNav').classList.add('open')" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
+  
 
   <!-- PAGE HERO (page-specific) -->
   <header class="page-hero">
@@ -332,7 +78,7 @@
       <div class="cap-grid">
         <!-- Capability cards content remains the same -->
         <div class="cap-card">
-          <div class="cap-icon-wrap"><i data-lucide="landmark"></i></div>
+          <div class="cap-icon-wrap"><Icon name="landmark" /></div>
           <h3>AI Governance Frameworks</h3>
           <p>Structured methodologies for embedding ethical, constitutionally accountable AI into democratic institutions, including Westminster parliamentary systems. This is the core intellectual contribution of Constitutional Intelligence.</p>
           <ul class="cap-list">
@@ -343,7 +89,7 @@
         </div>
 
         <div class="cap-card">
-          <div class="cap-icon-wrap"><i data-lucide="bar-chart-2"></i></div>
+          <div class="cap-icon-wrap"><Icon name="bar-chart-2" /></div>
           <h3>Data Strategy &amp; Leadership</h3>
           <p>Building decision-ready data capabilities that serve both operational excellence and institutional accountability. Designed for senior executives who need results, not just architecture diagrams.</p>
           <ul class="cap-list">
@@ -356,7 +102,7 @@
         </div>
 
         <div class="cap-card">
-          <div class="cap-icon-wrap"><i data-lucide="mic"></i></div>
+          <div class="cap-icon-wrap"><Icon name="mic" /></div>
           <h3>Speaking &amp; Executive Education</h3>
           <p>International keynotes, expert panels, and workshops for senior leaders and their teams, delivered in English, French, Portuguese, or Spanish, tailored to the specific decision-makers in the room.</p>
           <ul class="cap-list">
@@ -369,7 +115,7 @@
         </div>
 
         <div class="cap-card">
-          <div class="cap-icon-wrap"><i data-lucide="microscope"></i></div>
+          <div class="cap-icon-wrap"><Icon name="microscope" /></div>
           <h3>Research &amp; Policy Analysis</h3>
           <p>Applied research connecting academic rigour with policy reality. PhD-level analytical capability deployed in service of practical institutional change, not abstract theory.</p>
           <ul class="cap-list">
@@ -446,7 +192,7 @@
       </div>
 
       <div style="margin-top:40px;">
-        <a href="constitutional-intelligence.html" class="btn btn-primary btn-lg" onclick="track('caps_ci_book')">Read Constitutional Intelligence →</a>
+        <a href="/constitutional-intelligence/" class="btn btn-primary btn-lg" onclick="track('caps_ci_book')">Read Constitutional Intelligence →</a>
       </div>
     </div>
   </section>
@@ -462,28 +208,28 @@
         </div>
         <div class="exp-sectors">
           <div class="exp-sector-row">
-            <div class="exp-sector-icon"><i data-lucide="landmark"></i></div>
+            <div class="exp-sector-icon"><Icon name="landmark" /></div>
             <div>
               <div class="exp-sector-title">Public Sector Executive Experience</div>
               <div class="exp-sector-desc">Senior leadership roles across multiple federal departments: CBSA, Health Canada, Statistics Canada, PCO, NRC, and others</div>
             </div>
           </div>
           <div class="exp-sector-row">
-            <div class="exp-sector-icon"><i data-lucide="graduation-cap"></i></div>
+            <div class="exp-sector-icon"><Icon name="graduation-cap" /></div>
             <div>
               <div class="exp-sector-title">Academic &amp; Research Credentials</div>
               <div class="exp-sector-desc">PhD candidate at University of Toronto · MI Human-Centred Data Science · MBA in Digital Marketing · IBM Watson AI Certified</div>
             </div>
           </div>
           <div class="exp-sector-row">
-            <div class="exp-sector-icon"><i data-lucide="globe"></i></div>
+            <div class="exp-sector-icon"><Icon name="globe" /></div>
             <div>
               <div class="exp-sector-title">International Platforms</div>
               <div class="exp-sector-desc">G7 GovAI Grand Challenge · Speaker in Brazil, Canada, United States, United Arab Emirates, Saudi Arabia, United Kingdom · Saudi Digital Academy instructor · Canadian Digital Academy Visiting Faculty</div>
             </div>
           </div>
           <div class="exp-sector-row">
-            <div class="exp-sector-icon"><i data-lucide="book-open"></i></div>
+            <div class="exp-sector-icon"><Icon name="book-open" /></div>
             <div>
               <div class="exp-sector-title">Published Author — Two Books</div>
               <div class="exp-sector-desc">Constitutional Intelligence (FriesenPress, 2026) and Étoile des Tournesols (Self-Published, 2026), advisory and creative</div>
@@ -504,35 +250,35 @@
           <p>Keynotes, workshops, and panels for government, corporate, and academic audiences, in four languages. Each engagement is grounded in real executive practice and tailored to the decision-makers in the room.</p>
           <ul class="talk-list">
             <li class="talk-item">
-              <span class="talk-icon"><i data-lucide="landmark"></i></span>
+              <span class="talk-icon"><Icon name="landmark" /></span>
               <div>
                 <p class="talk-title">AI Governance in Parliamentary Democracies</p>
                 <p class="talk-desc">For government executives, policy leaders, and senior public sector practitioners. Draws directly from Constitutional Intelligence frameworks and real-world implementation cases.</p>
               </div>
             </li>
             <li class="talk-item">
-              <span class="talk-icon"><i data-lucide="scale"></i></span>
+              <span class="talk-icon"><Icon name="scale" /></span>
               <div>
                 <p class="talk-title">Responsible AI Adoption for Public Institutions</p>
                 <p class="talk-desc">Practical frameworks for senior executives who need to implement AI without abandoning accountability. Available as keynote or half-day workshop.</p>
               </div>
             </li>
             <li class="talk-item">
-              <span class="talk-icon"><i data-lucide="wrench"></i></span>
+              <span class="talk-icon"><Icon name="wrench" /></span>
               <div>
                 <p class="talk-title">Building Ethical AI from the Ground Up</p>
                 <p class="talk-desc">For technical and leadership teams who need to translate governance principles into operating practice. Includes real public sector case studies.</p>
               </div>
             </li>
             <li class="talk-item">
-              <span class="talk-icon"><i data-lucide="handshake"></i></span>
+              <span class="talk-icon"><Icon name="handshake" /></span>
               <div>
                 <p class="talk-title">The Human Side of Data Leadership</p>
                 <p class="talk-desc">Bridges Constitutional Intelligence and Étoile des Tournesols, exploring what it means to lead with both rigour and humanity in complex institutional environments.</p>
               </div>
             </li>
             <li class="talk-item">
-              <span class="talk-icon"><i data-lucide="library"></i></span>
+              <span class="talk-icon"><Icon name="library" /></span>
               <div>
                 <p class="talk-title">Author Talk — Étoile des Tournesols</p>
                 <p class="talk-desc">For schools, libraries, book clubs, and literary events. Available in French or English. Included free with bulk orders of 5+ copies.</p>
@@ -552,7 +298,7 @@
               <li>Author talk and Q&amp;A for literary or school events</li>
               <li>Free engagement for bulk book order clients (5+ copies)</li>
             </ul>
-            <a href="contact.html" class="btn btn-gold btn-lg" onclick="track('caps_speaking_contact')" style="width:100%;justify-content:center;">Request a Speaking Engagement</a>
+            <a href="/contact/" class="btn btn-gold btn-lg" onclick="track('caps_speaking_contact')" style="width:100%;justify-content:center;">Request a Speaking Engagement</a>
             <div class="lang-flags" style="justify-content:center;margin-top:16px;">
               <span class="lang-flag"><span class="fi fi-ca"></span> EN</span>
               <span class="lang-flag"><span class="fi fi-ca"></span> FR</span>
@@ -574,7 +320,7 @@
       <p class="section-lead">Every framework and insight described on this page is documented and expanded in two books, both available to order direct, with autographed copies included at no extra charge.</p>
 
       <div class="book-tiein-grid">
-        <a href="constitutional-intelligence.html" class="bti-card" onclick="track('caps_bti_ci')">
+        <a href="/constitutional-intelligence/" class="bti-card" onclick="track('caps_bti_ci')">
           <div class="bti-header bti-ci">
             <div class="bti-imprint">FedEthics Advisory™ · FriesenPress · ISBN 978-1-0383-5671-0</div>
             <div class="bti-title">Constitutional Intelligence</div>
@@ -585,7 +331,7 @@
           </div>
         </a>
 
-        <a href="etoile-des-tournesols.html" class="bti-card" onclick="track('caps_bti_edt')">
+        <a href="/etoile-des-tournesols/" class="bti-card" onclick="track('caps_bti_edt')">
           <div class="bti-header bti-edt">
             <div class="bti-imprint">FedEthics Creative™ · Auto-publié · Roman jeunesse français</div>
             <div class="bti-title">Étoile des Tournesols</div>
@@ -607,16 +353,74 @@
         <h2 class="section-title" style="color:var(--white);">Ready to work together?</h2>
         <p style="color:rgba(255,255,255,.6);font-size:.98rem;line-height:1.8;margin-bottom:36px;">Whether you need advisory support on AI governance, a keynote speaker for your executive event, or simply want to order the book, the best next step is a conversation.</p>
         <div class="btn-group" style="justify-content:center;">
-          <a href="contact.html" class="btn btn-gold btn-lg" onclick="track('caps_cta_contact')">Get in Touch</a>
-          <a href="book-hub.html" class="btn btn-outline-light btn-lg" onclick="track('caps_cta_books')">Order the Books</a>
+          <a href="/contact/" class="btn btn-gold btn-lg" onclick="track('caps_cta_contact')">Get in Touch</a>
+          <a href="/book-hub/" class="btn btn-outline-light btn-lg" onclick="track('caps_cta_books')">Order the Books</a>
         </div>
       </div>
     </div>
   </section>
+</PageLayout>
 
-  <!-- FOOTER-->
-  <footer-section></footer-section>
-
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" onload="lucide.createIcons()"></script>
-</body>
-</html>
+<style>
+/* Page Hero — unique to capabilities page */
+    .page-hero{
+      background: var(--ink); padding: 88px 0 72px;
+      position: relative; overflow: hidden;
+    }.page-hero::before{
+      content: ''; position: absolute; right: -60px; top: -60px;
+      width: 520px; height: 520px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(184,144,58,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }.page-hero::after{
+      content: ''; position: absolute; left: -80px; bottom: -80px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(27,42,74,.6) 0%, transparent 70%);
+      pointer-events: none;
+    }.page-hero-inner{ position: relative; z-index: 1; }.page-hero .eyebrow{ color: var(--gold-bright); }.page-hero .eyebrow::before{ background: var(--gold-bright); }.page-hero h1{
+      font-family: var(--serif); font-size: clamp(2.4rem,4.8vw,3.8rem);
+      font-weight: 600; color: var(--white); margin-bottom: 20px;
+      line-height: 1.08; letter-spacing: -.02em; max-width: 760px;
+    }.page-hero p{ font-size: 1.1rem; color: rgba(255,255,255,.6); max-width: 580px; line-height: 1.8; margin-bottom: 36px; }.hero-stats{ display: flex; gap: 48px; flex-wrap: wrap; padding-top: 36px; border-top: 1px solid rgba(255,255,255,.1); }.hero-stat-num{ font-family: var(--serif); font-size: 2.4rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 4px; }.hero-stat-label{ font-size: .78rem; color: rgba(255,255,255,.5); font-weight: 500; line-height: 1.4; max-width: 120px; }/* Trust Bar — unique to capabilities page */
+    .trust-bar{ background: var(--white); border-bottom: 1px solid var(--rule); padding: 20px 0; }.trust-bar-inner{ display: flex; align-items: center; gap: 0; flex-wrap: wrap; }.trust-item{ padding: 10px 32px; border-right: 1px solid var(--rule); font-size: .78rem; color: var(--text-muted); font-weight: 500; white-space: nowrap; }.trust-item:first-child{ padding-left: 0; }.trust-item:last-child{ border-right: none; }.trust-item strong{ color: var(--ink); font-weight: 700; }/* Capability Cards — unique to capabilities page */
+    .cap-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px; }.cap-card{
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: var(--r-lg); padding: 40px 36px;
+      transition: all var(--t); display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      box-shadow: var(--shadow-xs);
+    }.cap-card::before{
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--ink), var(--navy-soft));
+      transform: scaleX(0); transform-origin: left; transition: transform .38s ease;
+    }.cap-card:hover{ box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: rgba(18,25,44,.14); }.cap-card:hover::before{ transform: scaleX(1); }.cap-icon-wrap{
+      width: 52px; height: 52px; background: var(--off-white); border: 1px solid var(--rule);
+      border-radius: var(--r-md); display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 22px; flex-shrink: 0;
+    }.cap-card h3{ font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; line-height: 1.2; }.cap-card > p{ font-size: .9rem; color: var(--text-mid); line-height: 1.78; margin-bottom: 24px; }.cap-list{ list-style: none; margin-top: auto; }.cap-list li{
+      font-size: .84rem; color: var(--text-mid); padding: 9px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+    }.cap-list li:last-child{ border-bottom: none; }.cap-list li::before{ content: '→'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }/* Credentials Band — unique */
+    .cred-band{ background: var(--navy); padding: 64px 0; }.cred-band-inner{ display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; }.cred-item{ text-align: center; }.cred-item-num{ font-family: var(--serif); font-size: 2.6rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 8px; }.cred-item-label{ font-size: .8rem; color: rgba(255,255,255,.55); line-height: 1.5; max-width: 140px; margin: 0 auto; }/* Frameworks Showcase — unique */
+    .fw-section{ background: var(--off-white); }.fw-grid{ display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }.fw-card{
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: var(--r-lg); padding: 32px;
+      position: relative; overflow: hidden; box-shadow: var(--shadow-xs);
+      transition: all var(--t);
+    }.fw-card::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--ci-blue), #2A4F7F); }.fw-card:hover{ box-shadow: var(--shadow-md); transform: translateY(-2px); }.fw-acronym{ font-family: var(--serif); font-size: 1.9rem; font-weight: 700; color: var(--ci-blue); line-height: 1; margin-bottom: 4px; }.fw-trademark{ font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: block; }.fw-card h3{ font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }.fw-card p{ font-size: .85rem; color: var(--text-mid); line-height: 1.72; margin-bottom: 14px; }.fw-source{ font-size: .7rem; color: var(--gold); font-weight: 600; display: block; padding-top: 12px; border-top: 1px solid var(--rule); }/* Experience Strip — unique */
+    .exp-strip{ background: var(--gold-wash); border-top: 1px solid rgba(184,144,58,.2); border-bottom: 1px solid rgba(184,144,58,.2); padding: 56px 0; }.exp-strip-inner{ display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }.exp-quote{ font-family: var(--serif); font-size: 1.35rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 20px; }.exp-quote::before{ content: '"'; color: var(--gold); font-size: 3rem; line-height: 0; vertical-align: -.35em; margin-right: 4px; }.exp-attr{ font-size: .8rem; color: var(--text-muted); font-weight: 500; }.exp-sectors{ display: flex; flex-direction: column; gap: 14px; }.exp-sector-row{ display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: var(--white); border: 1px solid rgba(184,144,58,.2); border-radius: var(--r-md); box-shadow: var(--shadow-xs); }.exp-sector-icon{ font-size: 1.3rem; flex-shrink: 0; }.exp-sector-title{ font-size: .875rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }.exp-sector-desc{ font-size: .78rem; color: var(--text-muted); line-height: 1.4; }/* Speaking Section — unique */
+    .speaking-section{ background: var(--ink); padding: 96px 0; position: relative; overflow: hidden; }.speaking-section::before{ content: ''; position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(184,144,58,.06) 0%, transparent 70%); pointer-events: none; }.speaking-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; z-index: 1; }.speaking-grid h2{ font-family: var(--serif); color: var(--white); font-size: clamp(1.7rem,3vw,2.4rem); font-weight: 600; margin-bottom: 16px; line-height: 1.15; letter-spacing: -.01em; }.speaking-grid > div > p{ color: rgba(255,255,255,.6); font-size: .95rem; line-height: 1.8; margin-bottom: 36px; }.talk-list{ list-style: none; }.talk-item{ padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: flex-start; gap: 16px; }.talk-item:last-child{ border-bottom: none; }.talk-icon{ color: var(--gold); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }.talk-title{ font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 5px; line-height: 1.3; }.talk-desc{ font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.6; }.speaking-cta-box{ background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.11); border-radius: var(--r-lg); padding: 36px; }.speaking-cta-box h3{ font-family: var(--serif); color: var(--gold); font-size: 1.25rem; margin-bottom: 12px; font-weight: 600; }.speaking-cta-box > p{ font-size: .88rem; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 24px; }.speaking-formats{ list-style: none; margin-bottom: 28px; }.speaking-formats li{ font-size: .86rem; color: rgba(255,255,255,.68); padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,.07); display: flex; gap: 12px; align-items: flex-start; }.speaking-formats li:last-child{ border-bottom: none; }.speaking-formats li::before{ content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 1px; }.lang-flags{ display: flex; gap: 6px; margin-top: 12px; }.lang-flag{ font-size: .78rem; padding: 3px 10px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; color: rgba(255,255,255,.6); font-weight: 500; }/* Book Tie-in — unique */
+    .book-tiein{ background: var(--parchment); padding: 96px 0; border-top: 1px solid var(--rule); }.book-tiein-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }.bti-card{
+      background: var(--white); border-radius: var(--r-lg); overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--shadow-sm);
+      text-decoration: none; display: block; transition: all var(--t);
+    }.bti-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-lg); }.bti-header{ padding: 28px 26px; }.bti-ci{ background: linear-gradient(145deg,var(--ci-blue),var(--ci-dark)); }.bti-edt{ background: linear-gradient(145deg,#2D1461,#3D1F6E); }.bti-imprint{ font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }.bti-title{ font-family: var(--serif); font-size: 1.35rem; color: var(--white); font-weight: 600; line-height: 1.2; }.bti-body{ padding: 22px 26px; }.bti-body p{ font-size: .86rem; color: var(--text-mid); line-height: 1.72; margin-bottom: 16px; }.bti-link{ font-size: .82rem; font-weight: 700; color: var(--navy); display: flex; align-items: center; gap: 6px; }.bti-link-edt{ color: #3D1F6E; }/* Eyebrow light variant (extends fedethics.css) */
+    .eyebrow-light{ color: rgba(255,255,255,.68); }.eyebrow-light::before{ background: var(--gold); }/* Responsive overrides for page-specific components */
+    @media (max-width:1024px){.cap-grid,.speaking-grid,.book-tiein-grid,.exp-strip-inner{ grid-template-columns: 1fr; }.cred-band-inner{ grid-template-columns: 1fr 1fr; }.trust-item{ padding: 10px 20px; }
+    }
+    @media (max-width:768px) {.fw-grid{ grid-template-columns: 1fr; }.hero-stats{ gap: 32px; }.trust-bar-inner{ gap: 0; }.trust-item{ border-right: none; border-bottom: 1px solid var(--rule); width: 50%; white-space: normal; }
+    }
+    @media (max-width:480px) {.cred-band-inner{ grid-template-columns: 1fr 1fr; }.trust-item{ width: 100%; }
+    }[data-lucide]{ display:inline-block; vertical-align:middle; stroke-width:1.6; }.cap-icon-wrap :global(svg){ width:24px; height:24px; }.exp-sector-icon :global(svg){ width:26px; height:26px; }.talk-icon :global(svg){ width:20px; height:20px; }.lang-flag{ display:inline-flex; align-items:center; gap:6px; }.lang-flag .fi{ border-radius:2px; }
+  
+</style>

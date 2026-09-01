@@ -1,0 +1,58 @@
+---
+import { icons } from 'lucide';
+
+export interface Props {
+  /** kebab-case Lucide icon name, e.g. "book-open" */
+  name: string;
+  class?: string;
+  style?: string;
+  size?: number | string;
+}
+
+const { name, class: className, style, size } = Astro.props;
+
+const pascal = name
+  .split('-')
+  .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+  .join('');
+
+// Lucide removed brand marks from the core set, so they are kept locally.
+const brandIcons = {
+  linkedin: [
+    ['path', { d: 'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z' }],
+    ['rect', { width: '4', height: '12', x: '2', y: '9' }],
+    ['circle', { cx: '4', cy: '4', r: '2' }],
+  ],
+};
+
+const node = icons[pascal] ?? brandIcons[name];
+
+if (!node) {
+  throw new Error(
+    `Unknown Lucide icon "${name}" (looked up as "${pascal}"). ` +
+    `Check the name against https://lucide.dev/icons/`
+  );
+}
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size ?? 24}
+  height={size ?? 24}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  style={style}
+  aria-hidden="true"
+  focusable="false"
+  data-lucide={name}
+>
+  {node.map(([tag, attrs]) => {
+    const Tag = tag;
+    return <Tag {...attrs} />;
+  })}
+</svg>

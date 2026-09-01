@@ -1,0 +1,73 @@
+---
+export interface Props {
+  /** Slug of the current page, used to mark the active nav item. */
+  active?: string;
+  /** Imprint badge shown left of the CTA (used by the two book pages). */
+  imprint?: string;
+  /** Overrides the default "Order a Book" call to action. */
+  cta?: { href: string; label: string; class?: string; onclick?: string };
+}
+
+const {
+  active,
+  imprint,
+  cta = {
+    href: '/book-hub/',
+    label: 'Order a Book',
+    class: 'btn btn-gold btn-sm',
+    onclick: "track('nav_order')",
+  },
+} = Astro.props;
+
+const links = [
+  { slug: 'home',         href: '/',              label: 'Home' },
+  { slug: 'our-story',    href: '/our-story/',    label: 'Our Story' },
+  { slug: 'capabilities', href: '/capabilities/', label: 'Core Capabilities' },
+  { slug: 'books',        href: '/book-hub/',     label: 'Books' },
+  { slug: 'contact',      href: '/contact/',      label: 'Contact' },
+];
+---
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/FedEthics.png" alt="FedEthics Inc." class="nav-logo-mark" width="40" height="40" />
+      <div class="nav-logo-wordmark">
+        <span class="nav-logo-name">FedEthics Inc.</span>
+        <span class="nav-logo-tagline">Ethical Leadership in the Age of AI</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      {links.map((link) => (
+        <li>
+          <a href={link.href} class={active === link.slug ? 'active' : undefined}>{link.label}</a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="nav-right">
+      {imprint && <span class="nav-imprint">{imprint}</span>}
+      <a href={cta.href} class={cta.class ?? 'btn btn-gold btn-sm'} onclick={cta.onclick}>{cta.label}</a>
+      <button
+        class="nav-ham"
+        onclick="document.getElementById('mobileNav').classList.add('open')"
+        aria-label="Open menu"
+        aria-controls="mobileNav"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button
+    class="mobile-nav-close"
+    onclick="document.getElementById('mobileNav').classList.remove('open')"
+    aria-label="Close menu"
+  >✕</button>
+  {links.map((link) => <a href={link.href}>{link.label}</a>)}
+  <a href="/newsletter/">Newsletter</a>
+</div>

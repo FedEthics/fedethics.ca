@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Reader-only bonus content, linked from printed books.
+Disallow: /book/
+Disallow: /pages/bonus/
+
+Sitemap: https://fedethics.ca/sitemap-index.xml

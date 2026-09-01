@@ -1,0 +1,71 @@
+---
+// Sitewide newsletter band. Deliberately framework-free: this form is simple
+// enough for a few lines of vanilla JS, and it appears on nearly every page.
+// The richer translated form on /newsletter/ is a React island instead.
+---
+
+<section class="newsletter-section" id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="eyebrow eyebrow-light" style="justify-content:center;">Stay Connected</div>
+      <h2>The FedEthics Dispatch</h2>
+      <p>
+        AI governance insights, book updates, and speaking announcements, delivered to
+        executives, policy leaders, and senior practitioners. No noise. Unsubscribe anytime.
+      </p>
+
+      <form class="newsletter-form" id="fedethics-form">
+        <input
+          type="email"
+          name="email"
+          id="newsletter-email"
+          placeholder="Email address"
+          aria-label="Email address"
+          required
+        />
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+        <div id="form-status" role="status" aria-live="polite" style="margin-top:10px;font-weight:bold;"></div>
+      </form>
+
+      <p class="newsletter-note">
+        Your information is never shared. All content is published in a personal capacity,
+        independent of any employer.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { submitSubscription } from '../scripts/subscribe.js';
+
+  const form = document.getElementById('fedethics-form');
+  const status = document.getElementById('form-status');
+  const input = document.getElementById('newsletter-email');
+  const button = form?.querySelector('button[type=submit]');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = input.value.trim();
+    if (!email) return;
+
+    if (typeof window.track === 'function') window.track('newsletter_signup');
+
+    button.disabled = true;
+    status.style.color = 'inherit';
+    status.textContent = 'Sending...';
+
+    const result = await submitSubscription(email);
+
+    if (result.ok) {
+      status.style.color = '#D4AF37';
+      status.textContent = 'Welcome to the Dispatch!';
+      form.reset();
+    } else {
+      status.style.color = '#E5736F';
+      status.textContent = result.network
+        ? 'Service unavailable. Please try later.'
+        : result.error || 'Subscription failed. Please try again.';
+    }
+    button.disabled = false;
+  });
+</script>
